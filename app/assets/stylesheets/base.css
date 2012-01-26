@@ -1,0 +1,120 @@
+@charset "utf-8";
+/* CSS Document */
+body{
+	background-color:#F2F2F2;
+}
+a{
+	text-decoration:none;
+}
+.header{
+	width:975px;
+	margin-left:auto;
+	margin-right:auto;
+	margin-top:30px;
+}
+.navigation{
+	font-family:Verdana, Geneva, sans-serif;
+	font-size:13px;
+	background-color:#333;
+	color:white;
+	width:975px;
+	margin-left:auto;
+	margin-right:auto;
+}
+.navigation ul{
+	list-style:none;
+    background:#2d2d2d;
+    margin:0;
+    padding:0;
+
+}
+.navigation li{
+	display:inline-block;
+    float:left;
+}
+.navigation a{
+    display:block;
+    padding:10px;
+    text-decoration:none;
+    color:#bbbbbb;
+    border-top:2px solid transparent;
+}
+.navigation a:hover{
+    background:#3d3d3d;
+    color:#dddddd;
+}
+.navigation li.active a{
+    background:#3d3d3d;
+    color:#dddddd;
+    border-top:2px solid #9C0;
+}
+.navigation li.portada a:hover{
+    background:#3d3d3d;
+    color:#dddddd;
+    border-top:2px solid #09F;
+}
+.navigation li.mes_llegits a:hover{
+    background:#3d3d3d;
+    color:#dddddd;
+    border-top:2px solid #ff4800;
+}
+.navigation li.enquestes a:hover{
+    background:#3d3d3d;
+    color:#dddddd;
+    border-top:2px solid #06F;
+}
+.navigation li.colabos a:hover{
+    background:#3d3d3d;
+    color:#dddddd;
+    border-top:2px solid #FF0;
+}
+.navigation li.contacta a:hover{
+    background:#3d3d3d;
+    color:#dddddd;
+    border-top:2px solid #F00;
+}
+.navigation li.envians a:hover{
+    background:#3d3d3d;
+    color:#dddddd;
+    border-top:2px solid #fff;
+}
+.clearFloat{
+    clear:both;
+}
+.category_bar{
+	font-family:Verdana, Geneva, sans-serif;
+	font-size:11px;
+	margin-left:auto;
+	margin-right:auto;
+	width:963px;
+	color:#333;
+	background-color:#fff;
+	margin-bottom:35px;
+	padding:5px;
+	border:1px solid #CCC;
+	border-top:hidden;
+}
+.category_bar a{
+	color:#333;
+}
+.category_bar a:hover{
+	color:#F30;
+}
+.submenu_active{
+	font-weight:bold;
+	color:#9C0;
+}
+
+
+.row{
+	margin-left:auto;
+	margin-right:auto;
+	width:960px;
+	border:1px solid #CCC;
+	padding:5px;
+	background-color:white;
+	}
+	
+.articles_row{
+
+	}

@@ -1,0 +1,54 @@
+<!--<h1>Listing articles</h1>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Body</th>
+    <th>Author</th>
+    <th>Image</th>
+    <th>Published</th>
+    <th>Published date</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @articles.each do |article| %>
+  <tr>
+    <td><%= article.title %></td>
+    <td><%= article.body %></td>
+    <td><%= article.author %></td>
+    <td><%= article.image %></td>
+    <td><%= article.published %></td>
+    <td><%= article.published_date %></td>
+    <td><%= link_to 'Show', article %></td>
+    <td><%= link_to 'Edit', edit_article_path(article) %></td>
+    <td><%= link_to 'Destroy', article, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Article', new_article_path %>-->
+
+<!-- ARTICLES ROWS START -->
+<div class="row">
+	<div class="span6 articles_row">
+	<% @articles.each do |article| %>
+	<h1><%= article.title %></h1>
+	<h2><%= article.author %></h2>
+	<p><%= article.body %></p>
+	<p>---------------------</p>
+	<br />
+	<% end %>
+	</div>
+	<div class="span5 articles_row">
+	</div>
+	<div class="span5 articles_row"> 
+	Opinion
+	</div>
+</div>
+<div class="footer">
+</div>
+<!-- ARTICLES ROWS END -->

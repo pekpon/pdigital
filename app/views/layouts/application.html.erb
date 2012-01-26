@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Papiol Digital</title>
+  <link rel="stylesheet" href="http://twitter.github.com/bootstrap/1.4.0/bootstrap.min.css">
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<div class="header">
+<%= image_tag "logodigital_new.png" %><%= image_tag "silueta.png" %>
+</div>
+<%= render :partial => 'shared/navigation'%>
+
+<div class="category_bar">
+	<a href="http://papioldigital.com/categoria.php?id_categoria=10">Comarca</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+	<a href="http://papioldigital.com/categoria.php?id_categoria=6">Cultura</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+	<a href="http://papioldigital.com/categoria.php?id_categoria=11">Economia</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+	<a href="http://papioldigital.com/categoria.php?id_categoria=7">Educació</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+	<a href="http://papioldigital.com/categoria.php?id_categoria=5">Entitats</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+	<a href="http://papioldigital.com/categoria.php?id_categoria=2">Esports</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+	<a href="http://papioldigital.com/categoria.php?id_categoria=9">Mitjans</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+	<a href="http://papioldigital.com/categoria.php?id_categoria=8">Opinió</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+	<a href="http://papioldigital.com/categoria.php?id_categoria=3">Política</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+	<a href="http://papioldigital.com/categoria.php?id_categoria=4">Serveis</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+	<a href="http://papioldigital.com/categoria.php?id_categoria=1">Societat</a>
+</div>
+
+<%= yield %>
+
+</body>
+</html>

@@ -1,0 +1,90 @@
+/************************************
+            By Dan Harper
+        http://www.danharper.me
+
+           For NETTUTS.com
+
+     Check out http://vivawp.com
+************************************/
+
+.widget * {
+margin: 0;
+padding: 0;
+}
+
+.widget {
+font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+line-height: 1.6em;
+margin-top: 20px;
+padding: 10px;
+background: #f3f1eb;
+border: 1px solid #dedbd1;
+margin-bottom: 15px;
+font-size: 75%;
+color: #222;
+}
+
+	.widget a {
+	color: #222;
+	text-decoration: none;
+	}
+	
+	.widget a:hover {
+	color: #06C;
+	}
+
+	.tabnav li {
+	display: inline;
+	list-style: none;
+	padding-right: 5px;
+	}
+	
+		.tabnav li a {
+		text-decoration: none;
+		text-transform: uppercase;
+		color: #222;
+		font-weight: bold;
+		padding: 4px 6px;
+		outline: none;
+		}
+		
+		.tabnav li a:hover, .tabnav li a:active, .tabnav li.ui-tabs-selected a {
+		background: #dedbd1;
+		color: #222;
+		text-decoration: none;
+		}
+		
+	.tabdiv {
+	margin-top: 2px;
+	background: #fff;
+	border: 1px solid #dedbd1;
+	padding: 5px;
+	}
+	
+		.tabdiv li {
+			list-style:none;
+		margin-left: 5px;
+		margin-bottom:3px;
+		border-bottom:1px solid #EBEBEB;
+		}
+.ui-tabs-hide {
+		display: none;
+		}
+
+		#featuredvid {
+		text-align: center;
+		}
+		
+			.fvid {
+			margin-bottom: 5px;
+			}
+		
+			.vidselector li {
+			text-align: left;
+			list-style: none;
+			padding: 5px;
+			background: #ffffff;
+			border: 1px solid #dedbd1;
+			text-transform: uppercase;
+			margin-bottom: 5px;
+			}
