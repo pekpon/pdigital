@@ -1,0 +1,54 @@
+#news_header{
+	font-size:40px;
+	font-family:Georgia;
+	color:#333;
+	border-bottom:5px solid #069;
+	margin:20px 0 20px 0;
+	padding-bottom:15px;
+}
+#sports_header{
+	font-size:40px;
+	font-family:Georgia;
+	color:#333;
+	border-bottom:5px solid #9C0;
+	margin:20px 0 20px 0;
+	padding-bottom:15px;
+}
+#opinion_header{
+	font-size:40px;
+	font-family:Georgia;
+	color:#333;
+	border-bottom:5px solid #F60;
+	margin:20px 0 20px 0;
+	padding-bottom:15px;
+}
+.articleBoxContent{
+	font-size:12px;
+	border-bottom:1px solid #CCC;
+	margin-bottom:20px;
+}
+.article_title{
+	font-family:Georgia;
+	font-size:24px;
+	margin-bottom:5px;
+	margin-top:5px;
+	}
+.article_author{
+	color:#999;
+	}
+.article_date{
+	color:#069;
+}
+.article_sport_date{
+	color:#9C0;
+}
+.article_opinion_date{
+	color:#F60;
+}
+.article_preview{
+	margin-bottom:7px;
+}
+.article_info{
+	text-align:right;
+	margin-bottom:10px;
+}

@@ -5,6 +5,9 @@ body{
 a{
 	text-decoration:none;
 }
+.articles_row{
+	/*border:1px solid black;*/
+}
 #header{
 	width:975px;
 	margin-left:auto;

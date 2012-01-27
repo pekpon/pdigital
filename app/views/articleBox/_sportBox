@@ -1,0 +1,16 @@
+<% @articles_sport.each do |article| %>
+	<div class="articleBoxContent">
+		<div class="article_title"><%= article.title %></div>
+		<div style="margin-bottom:5px;">
+			<span class="article_author"><%= article.author.upcase %></span>
+			<span class="article_sport_date">&nbsp;&nbsp;|&nbsp;&nbsp;<%= article.category.name %> - <%= article.published_date %></span>
+		</div>
+		<div class="article_img"><%= image_tag article.image , {:width => 280} %></div>
+		<div class="article_preview"><%= article.body.slice!(0,100) %>...</div>
+		<div class="article_info">
+			<div class="article_comments">
+				0 comentaris                
+			</div>
+		</div>
+	</div>
+<% end %>

@@ -2,9 +2,8 @@ class ArticlesController < ApplicationController
   # GET /articles
   # GET /articles.json
   def index
-    @articles = Article.all
+    @articles = Article.where("category_id != '3' and category_id != '4'")
     @categories = Category.order('name').all
-    
     @articles_sport = Article.where("category_id = '3'")
     @articles_opinion = Article.where("category_id = '4'")
 

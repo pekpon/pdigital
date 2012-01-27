@@ -1,40 +1,14 @@
 <div class="row">
 	<div class="span6 articles_row">
-		<% @articles.each do |article| %>
-		<div class="contingut_noticies_esquerra">
-			<div class="titol_noticia"><%= article.title %></div>
-			<div style="margin-bottom:5px;">
-				<span class="autor_noticia"><%= article.author %></span>
-				<span class="data_noticia">&nbsp;&nbsp;|&nbsp;&nbsp;<%= article.category.name %> - <%= article.published_date %></span>
-			</div>
-			<div class="imatge_noticia"></div>
-			<div class="subtitol_noticia"><%= article.body %>...</div>
-			<div class="info_noticia">
-				<div class="comentaris_noticia">
-					0 comentaris                
-				</div>
-			</div>
-        </div>
-		<% end %>
+		<p id="news_header">News</p>
+		<%= render :partial => 'articleBox/articleBox'%>
 	</div>
 	<div class="span5 articles_row">
-		<% @articles_sport.each do |article| %>
-		<h2><%= link_to article.title, article_path(article) %></h2>
-		<p><%= "Categoria: "+article.category.name %><br>
-		<%= "Autor: "+article.author %></p>
-		<p><%= article.body %></p>
-		<p>---------------------</p>
-		<br />
-		<% end %>
+		<p id="sports_header">Sports</p>
+		<%= render :partial => 'articleBox/sportBox'%>
 	</div>
 	<div class="span5 articles_row"> 
-		<% @articles_opinion.each do |article| %>
-		<h2><%= link_to article.title, article_path(article) %></h2>
-		<p><%= "Categoria: "+article.category.name %><br>
-		<%= "Autor: "+article.author %></p>
-		<p><%= article.body %></p>
-		<p>---------------------</p>
-		<br />
-		<% end %>
+		<p id="opinion_header">Opinion</p>
+		<%= render :partial => 'articleBox/opinionBox'%>
 	</div>
 </div>
