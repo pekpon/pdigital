@@ -1,0 +1,5 @@
+<div class="category_bar">
+	<% @categories.each do |category| %>
+	<a href="http://papioldigital.com/categoria.php?id_categoria=<%= category.id %>"><%= category.name %></a>&nbsp;&nbsp;|&nbsp;&nbsp;
+	<% end %>
+</div>

@@ -3,7 +3,10 @@ class ArticlesController < ApplicationController
   # GET /articles.json
   def index
     @articles = Article.all
+    @categories = Category.order('name').all
     
+    @articles_sport = Article.where("category_id = '3'")
+    @articles_opinion = Article.where("category_id = '4'")
 
     respond_to do |format|
       format.html # index.html.erb
@@ -33,9 +36,9 @@ class ArticlesController < ApplicationController
   end
 
   # GET /articles/1/edit
-  def edit
-    @article = Article.find(params[:id])
-  end
+  #def edit
+   # @article = Article.find(params[:id])
+  #end
 
   # POST /articles
   # POST /articles.json
