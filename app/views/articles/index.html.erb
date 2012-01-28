@@ -1,14 +1,16 @@
+<%= stylesheet_link_tag    "articleBox" %>
+
 <div class="row">
-	<div class="span6 articles_row">
+	<div class="span6 articles_row general_row">
 		<p id="news_header">News</p>
-		<%= render :partial => 'articleBox/articleBox'%>
+		<%= render :partial => 'box', :locals => {:articles => @articles} %>
 	</div>
-	<div class="span5 articles_row">
+	<div class="span5 articles_row sports_row">
 		<p id="sports_header">Sports</p>
-		<%= render :partial => 'articleBox/sportBox'%>
+		<%= render :partial => 'box', :locals => {:articles => @articles_sport}%>
 	</div>
-	<div class="span5 articles_row"> 
+	<div class="span5 articles_row opinion_row"> 
 		<p id="opinion_header">Opinion</p>
-		<%= render :partial => 'articleBox/opinionBox'%>
+		<%= render :partial => 'box', :locals => {:articles => @articles_opinion}%>
 	</div>
 </div>

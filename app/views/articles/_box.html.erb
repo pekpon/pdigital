@@ -1,11 +1,11 @@
-<% @articles.each do |article| %>
+<% articles.each do |article| %>
 	<div class="articleBoxContent">
-		<div class="article_title"><%= article.title %></div>
+		<div class="article_title"><%= link_to article.title, article_path(article) %></div>
 		<div style="margin-bottom:5px;">
 			<span class="article_author"><%= article.author.upcase %></span>
 			<span class="article_date">&nbsp;&nbsp;|&nbsp;&nbsp;<%= article.category.name %> - <%= article.published_date %></span>
 		</div>
-		<div class="article_img"><%= image_tag article.image , {:width => 340} %></div>
+		<div class="article_img_div"><%= image_tag article.image , :class => "article_img" %></div>
 		<div class="article_preview"><%= article.body.slice!(0,100) %>...</div>
 		<div class="article_info">
 			<div class="article_comments">

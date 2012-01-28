@@ -1,0 +1,13 @@
+<div id="article_category"><%= @article.category.name %></div>
+<div id="article_info">
+	<span id="article_author"><%= @article.author.upcase %></span>
+	<span id="article_date">&nbsp;&nbsp;|&nbsp;&nbsp;<%= @article.published_date.strftime("%m/%d/%Y")  %></span>
+</div>
+
+<%= render :partial => 'addThis' %>
+
+<div id="article_title"><%= @article.title %></div>
+<div id="article_image"><%= image_tag @article.image, :width => "600px" %></div>
+<div id="article_body"><%= @article.body %></div>
+
+<%= render :partial => 'addThis' %>
