@@ -9,7 +9,7 @@
 		<div class="article_preview"><%= article.body.slice!(0,100) %>...</div>
 		<div class="article_info">
 			<div class="article_comments">
-				0 comentaris                
+				<%= article.article_comments.count %> comentaris                
 			</div>
 		</div>
 	</div>

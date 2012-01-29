@@ -8,7 +8,7 @@ gem 'rails', '3.2.0'
 gem 'sqlite3'
 
 gem 'activeadmin', :git => 'git://github.com/gregbell/active_admin.git'
-  
+gem 'devise'
 gem "meta_search",    '>= 1.1.0.pre'
 
 # Gems used only for assets and not required

@@ -1,8 +1,19 @@
 class ArticlesController < ApplicationController
+  before_filter :store_location
+
+  def store_location
+      session[:user_return_to] = request.url unless params[:controller] == "devise/sessions"
+      # If devise model is not User, then replace :user_return_to with :{your devise model}_return_to
+  end
+
+  def after_sign_in_path_for(resource)
+      stored_location_for(resource) || root_path
+  end
+
   # GET /articles
   # GET /articles.json
   def index
-    @articles = Article.where(:category_id => 3, :category_id => 4)
+    @articles = Article.where('category_id <> 3 AND category_id <> 4')
     @categories = Category.order('name').all
     @articles_sport = Article.where(:category_id => 3)
     @articles_opinion = Article.where(:category_id => 4)
@@ -36,7 +47,7 @@ class ArticlesController < ApplicationController
 
   # GET /articles/1/edit
   #def edit
-   # @article = Article.find(params[:id])
+  # @article = Article.find(params[:id])
   #end
 
   # POST /articles

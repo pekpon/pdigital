@@ -1,5 +1,5 @@
 <div class="category_bar">
 	<% Category.all.each do |category| %>
-	<a href="http://papioldigital.com/categoria.php?id_categoria=<%= category.id %>"><%= category.name %></a>&nbsp;&nbsp;|&nbsp;&nbsp;
+	<%= link_to category.name, category_path(category) %>&nbsp;&nbsp;|&nbsp;&nbsp;
 	<% end %>
 </div>

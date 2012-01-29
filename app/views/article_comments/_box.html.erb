@@ -1,0 +1,19 @@
+<% if @article.article_comments.empty? %>
+
+	<div class="comment_box">
+		<div class="comment_body">No hi ha comentaris en aquesta notícia</div>
+	</div>
+
+<% else %>
+
+	<% @article.article_comments.each do |comment| %>
+
+		<div class="comment_box">
+			<div class="comment_header"><%= comment.user.email %></div>
+			<div class="comment_body"><%= comment.comment %></div>
+			<div class="comment_social">Ben dit! | No ho comparteixo</div>
+		</div>
+
+	<% end %>
+
+<% end %>

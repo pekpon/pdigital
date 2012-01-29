@@ -151,6 +151,7 @@ PLATFORMS
 DEPENDENCIES
   activeadmin!
   coffee-rails (~> 3.2.1)
+  devise
   jquery-rails
   meta_search (>= 1.1.0.pre)
   rails (= 3.2.0)

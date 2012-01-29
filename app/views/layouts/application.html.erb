@@ -3,7 +3,7 @@
 <head>
   <title>Papiol Digital</title>
   <link rel="stylesheet" href="http://twitter.github.com/bootstrap/1.4.0/bootstrap.min.css">
-  <%= stylesheet_link_tag    "application", "base", "style", "styles" %>
+  <%= stylesheet_link_tag    "application", "base", "style", "styles", "article_comments" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
@@ -14,6 +14,9 @@
 <%= render :partial => 'shared/navigation'%>
 
 <%= render :partial => 'shared/categories'%>
+
+<p class="notice"><%= notice %></p>
+<p class="alert"><%= alert %></p>
 
 <%= yield %>
 

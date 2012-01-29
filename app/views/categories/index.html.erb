@@ -1,0 +1,11 @@
+<%= stylesheet_link_tag    "categories" %>
+
+<div class="row">
+	<div id="categories_header">Categories</div>
+	<div class="span16 categoryBox">
+		<% @categories.each do |category| %>	
+			<h1><%= link_to category.name, categor_path(category) %></h1>
+			<p>There are <%= category.articles.count %> articles in this category</p>
+		<% end %>
+	</div>
+</div>

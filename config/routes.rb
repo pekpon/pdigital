@@ -1,9 +1,11 @@
 Pdigital::Application.routes.draw do
+  devise_for :users
+
   ActiveAdmin.routes(self)
 
   devise_for :admin_users, ActiveAdmin::Devise.config
   root :to => 'articles#index'
-  resources :articles
+  resources :articles, :categories
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

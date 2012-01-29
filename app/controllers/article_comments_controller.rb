@@ -1,0 +1,2 @@
+class ArticleCommentsController < ApplicationController
+end

@@ -1,0 +1,25 @@
+// Place all the styles related to the ArticleComments controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.comment_box{
+	padding: 10px;
+	margin-bottom: 10px;
+	border: 1px solid #CCC;
+	font-family: Verdana, Geneva, sans-serif;
+	font-size: 12px;
+	color: #333;
+	background-color: #F9F9F9;
+	border-image: initial;
+}
+.comment_social {
+	margin-left: auto;
+	margin-top: 10px;
+	font-size: 10px;
+	display: table;
+	color: #666;
+}
+.comment_header{
+	color: #999;
+	margin-bottom: 15px;
+}

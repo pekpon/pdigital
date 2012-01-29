@@ -11,3 +11,11 @@
 <div id="article_body"><%= @article.body %></div>
 
 <%= render :partial => 'addThis' %>
+
+<div id="article_comments_header">Comments</div>
+
+<%= render :partial => 'article_comments/box'%>
+
+<div id="article_comments_header">Add a coment</div>
+
+<%= render :partial => 'article_comments/addComment' %>

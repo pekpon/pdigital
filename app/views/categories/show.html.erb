@@ -1,0 +1,19 @@
+<%= stylesheet_link_tag    "categories" %>
+
+<div class="row">
+	<div id="categories_header"><%= @category.name %></div>
+	<div class="span16 categoryBox">
+		<% if @articles.empty? %>
+		
+		<p>There aren't articles in this category</p>
+		
+		<% else %>
+		
+		<% @articles.each do |article| %>	
+			<h1><%= link_to article.title, article_path(article) %></h1>
+			<p>Some text</p>
+		<% end %>
+
+		<% end %>
+	</div>
+</div>
