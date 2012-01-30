@@ -18,4 +18,4 @@
 
 <div id="article_comments_header">Add a coment</div>
 
-<%= render :partial => 'article_comments/addComment' %>
+<%= render :partial => 'article_comments/addComment', :locals => {:article => @article} %>

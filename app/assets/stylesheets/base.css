@@ -6,6 +6,10 @@ body{
 a{
 	text-decoration:none;
 }
+.middle{
+	margin-left:auto;
+	margin-right:auto;
+}
 .header{
 	width:975px;
 	margin-left:auto;
@@ -89,7 +93,7 @@ a{
 	width:963px;
 	color:#333;
 	background-color:#fff;
-	margin-bottom:35px;
+	margin-bottom:25px;
 	padding:5px;
 	border:1px solid #CCC;
 	border-top:hidden;
@@ -112,4 +116,5 @@ a{
 	width:980px;
 	border:1px solid #CCC;
 	background-color:white;
+	padding-bottom:20px;
 	}

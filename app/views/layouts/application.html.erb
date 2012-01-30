@@ -15,8 +15,29 @@
 
 <%= render :partial => 'shared/categories'%>
 
-<p class="notice"><%= notice %></p>
-<p class="alert"><%= alert %></p>
+<p class="notice">
+	<% if notice.blank? %>
+	<% else %>
+	
+		<div class="alert-message success span16 middle">
+		  <a class="close" href="#">×</a>
+		  <p><%= notice %></p>
+		</div>
+	<% end %>
+</p>
+<p class="alert">
+	
+	<% if alert.blank? %>
+	<% else %>
+	
+		<div class="alert-message alert span16 middle">
+		  <a class="close" href="#">×</a>
+		  <p><%= alert %></p>
+		</div>
+		<br />
+	<% end %>
+	
+</p>
 
 <%= yield %>
 

@@ -1,10 +1,7 @@
 <% if user_signed_in? %>
-
-	<%= form_tag do %>
-	<textarea class="span11" rows="5"></textarea>
-	<% end %>
-	
-	<button class="btn primary large">Send</button>
+	<p>Logged as <b><%= current_user.email %></b></p>
+	<%= render 'article_comments/form' %>
+	<!--<button class="btn primary large">Send</button>-->
 	
 	
 <% else %>
@@ -13,8 +10,7 @@
 	 <%= link_to 'Register', new_user_registration_path %> or <%= link_to 'Sign in', new_user_session_path %>
 	
 <% end %>
-
-<br>
-
+ 
+<!-- aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa -->
 	
 
