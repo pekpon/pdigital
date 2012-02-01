@@ -8,6 +8,17 @@
 </head>
 <body>
 <div class="container">
+	<div id="users_block">
+		<% if user_signed_in? %>
+			<p><b><%= current_user.email %></b> <%= link_to "Sign out", destroy_user_session_path, :method => :delete, :class => "btn small danger" %></p>
+
+		<% else %>
+		
+			 <%= link_to 'Register', new_user_registration_path, :class => "btn small default"%>  <%= link_to 'Sign in', new_user_session_path , :class => "btn small success"%>
+
+		<% end %>
+	</div>
+	
 <%= render :partial => 'shared/header'%>
 
 <%= render :partial => 'shared/navigation'%>
