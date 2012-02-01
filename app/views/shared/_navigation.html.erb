@@ -1,3 +1,4 @@
+
 <div class="navigation">
 	<ul>
       <li class="active portada"><%= link_to "Portada", root_path %></li>
@@ -8,14 +9,6 @@
       <!--<li class="mes_llegits"><a href="#">Envia'ns notícies</a></li>-->
       <!--<li class="envians"><a href="#">Setmana en imatges</a></li>-->
       <li class="portada"><a href="http://papiolfm.com/" target="_blank">Papiol FM (Ràdio amiga)</a></li>
-      <div class="clearFloat"></div>
-	<div id="user_nav">
-	    <% if user_signed_in? %>
-	        Signed in as <%= current_user.email %>. This cannot be cheese?
-	        <%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
-	    <% else %>
-	        <%= link_to 'Register', new_user_registration_path %> or <%= link_to 'Sign in', new_user_session_path %>
-	    <% end %>
-	</div>
+	<div class="clearFloat"></div>
    </ul>
 </div>

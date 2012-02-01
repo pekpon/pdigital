@@ -1,0 +1,20 @@
+#sign_in{
+	float:left;
+	margin-left:0;
+	background-color:white;
+	padding:15px;
+	border:1px solid #ccc;
+	margin-top:10px;
+}
+#sign_info{
+	width:630px;
+	float:right;
+	background-color:white;
+	padding:15px;
+	border:1px solid #ccc;
+	margin-top:10px;
+}
+.row_sign{
+	
+	display:table;
+}

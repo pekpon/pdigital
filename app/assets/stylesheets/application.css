@@ -11,3 +11,18 @@
  *= require_self
  * require_tree .
 */
+body{
+	background-color:#F2F2F2;
+}
+.row{
+	margin-left:0;
+	margin-bottom:30px;
+	margin-top:10px;
+}
+.row>[class*="span"]{
+	margin-left:10px;
+}
+.white{
+	background-color:white;
+	border:1px solid #CCC;
+}

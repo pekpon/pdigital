@@ -3,35 +3,39 @@
 	font-family:Georgia;
 	color:#333;
 	border-bottom:5px solid #069;
-	margin:20px 0 20px 0;
 	padding-bottom:15px;
+	width:330px;
+	margin:20px 5px 20px 5px;
 }
 #sports_header{
 	font-size:40px;
 	font-family:Georgia;
 	color:#333;
 	border-bottom:5px solid #9C0;
-	margin:20px 0 20px 0;
 	padding-bottom:15px;
+	width:270px;
+	margin:20px 5px 20px 5px;
 }
 #opinion_header{
 	font-size:40px;
 	font-family:Georgia;
 	color:#333;
 	border-bottom:5px solid #F60;
-	margin:20px 0 20px 0;
 	padding-bottom:15px;
+	width:270px;
+	margin:20px 5px 20px 5px;
 }
 .articleBoxContent{
 	font-size:12px;
 	border-bottom:1px solid #CCC;
-	margin-bottom:20px;
+	margin:0px;
+	padding:5px;
 }
 .article_title a{
 	font-family:Georgia;
 	font-size:24px;
 	margin-bottom:5px;
-	margin-top:5px;
+	margin-top:15px;
 	color:#333;
 	}
 .general_row .article_title a:hover{
@@ -59,13 +63,13 @@
 	color:#F60;
 }
 .general_row .article_img{
-	width:340px;
+	width:330px;
 }
 .sports_row .article_img{
-	width:280px;
+	width:270px;
 }
 .opinion_row .article_img{
-	width:280px;
+	width:270px;
 }
 .article_preview{
 	margin-bottom:7px;

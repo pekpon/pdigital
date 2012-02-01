@@ -6,14 +6,7 @@ body{
 a{
 	text-decoration:none;
 }
-.middle{
-	margin-left:auto;
-	margin-right:auto;
-}
 .header{
-	width:975px;
-	margin-left:auto;
-	margin-right:auto;
 	margin-top:30px;
 }
 .navigation{
@@ -21,9 +14,6 @@ a{
 	font-size:13px;
 	background-color:#333;
 	color:white;
-	width:975px;
-	margin-left:auto;
-	margin-right:auto;
 }
 .navigation ul{
 	list-style:none;
@@ -88,12 +78,9 @@ a{
 .category_bar{
 	font-family:Verdana, Geneva, sans-serif;
 	font-size:11px;
-	margin-left:auto;
-	margin-right:auto;
-	width:963px;
 	color:#333;
 	background-color:#fff;
-	margin-bottom:25px;
+	margin-bottom:10px;
 	padding:5px;
 	border:1px solid #CCC;
 	border-top:hidden;
@@ -108,13 +95,3 @@ a{
 	font-weight:bold;
 	color:#9C0;
 }
-
-
-.row{
-	margin-left:auto;
-	margin-right:auto;
-	width:980px;
-	border:1px solid #CCC;
-	background-color:white;
-	padding-bottom:20px;
-	}

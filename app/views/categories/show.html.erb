@@ -1,8 +1,8 @@
 <%= stylesheet_link_tag    "categories" %>
 
-<div class="row">
+<div class="row white">
 	<div id="categories_header"><%= @category.name %></div>
-	<div class="span16 categoryBox">
+	<div class="span16">
 		<% if @articles.empty? %>
 		
 		<p>There aren't articles in this category</p>

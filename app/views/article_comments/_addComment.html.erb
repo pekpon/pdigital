@@ -1,5 +1,5 @@
 <% if user_signed_in? %>
-	<p>Logged as <b><%= current_user.email %></b></p>
+	<p>Logged as <b><%= current_user.email %></b>. If not are you, please <%= link_to "Sign out", destroy_user_session_path, :method => :delete %>.</p>
 	<%= render 'article_comments/form' %>
 	<!--<button class="btn primary large">Send</button>-->
 	

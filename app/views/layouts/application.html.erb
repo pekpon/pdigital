@@ -2,44 +2,43 @@
 <html>
 <head>
   <title>Papiol Digital</title>
-  <link rel="stylesheet" href="http://twitter.github.com/bootstrap/1.4.0/bootstrap.min.css">
-  <%= stylesheet_link_tag    "application", "base", "style", "styles", "article_comments" %>
-  <%= javascript_include_tag "application" %>
+  <%= stylesheet_link_tag    "bootstrap.min", "base", "style", "styles", "article_comments", "application" %>
+  <%= javascript_include_tag "application","bootstrap-alert" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-<div class="header">
-<%= image_tag "logodigital_new.png" %><%= image_tag "silueta.png" %>
-</div>
+<div class="container">
+<%= render :partial => 'shared/header'%>
+
 <%= render :partial => 'shared/navigation'%>
 
 <%= render :partial => 'shared/categories'%>
 
-<p class="notice">
+<div class="notice">
 	<% if notice.blank? %>
 	<% else %>
 	
-		<div class="alert-message success span16 middle">
+		<div class="alert-message success fade in" data-alert="alert">
 		  <a class="close" href="#">×</a>
 		  <p><%= notice %></p>
 		</div>
 	<% end %>
-</p>
-<p class="alert">
+</div>
+<div class="alert">
 	
 	<% if alert.blank? %>
 	<% else %>
 	
-		<div class="alert-message alert span16 middle">
+		<div class="alert-message error fade in" data-alert="alert">
 		  <a class="close" href="#">×</a>
 		  <p><%= alert %></p>
 		</div>
-		<br />
 	<% end %>
 	
-</p>
+</div>
 
 <%= yield %>
 
+</div>
 </body>
 </html>

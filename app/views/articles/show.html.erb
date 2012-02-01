@@ -1,11 +1,10 @@
-<%= stylesheet_link_tag    "details" %>
+<%= stylesheet_link_tag    "details","articles" %>
 
-<div class="row">
+<div class="row white">
 	<div class="span11">
 		<%= render :partial => 'details', :locals => {:article => @articles} %>
 	</div>
-	<div class="span5">
+	<div class="span4">
 		<p>Sidebar</p>
 	</div>
 </div>
-<br><br>
