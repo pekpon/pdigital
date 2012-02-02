@@ -9,7 +9,7 @@
 		<div class="article_preview"><%= article.body.slice!(0,100) %>...</div>
 		<div class="article_info">
 			<div class="article_comments">
-				<%= article.article_comments.count %> comentaris                
+				<%= article.article_comments.count %> comentaris i <%= article.impressionist_count(:filter=>:ip_address) %> visites        
 			</div>
 		</div>
 	</div>

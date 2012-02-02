@@ -1,5 +1,6 @@
 class ArticlesController < ApplicationController
   before_filter :store_location
+  impressionist :actions=>[:show]
 
   def store_location
       session[:user_return_to] = request.url unless params[:controller] == "devise/sessions"
@@ -27,7 +28,7 @@ class ArticlesController < ApplicationController
   # GET /articles/1.json
   def show
     @article = Article.find(params[:id])
-
+    
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @article }
