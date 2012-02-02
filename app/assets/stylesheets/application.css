@@ -22,6 +22,7 @@ body{
 	margin-left:0;
 	margin-bottom:30px;
 	margin-top:10px;
+	padding-bottom:10px;
 }
 .row>[class*="span"]{
 	margin-left:10px;

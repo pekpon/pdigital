@@ -14,6 +14,13 @@ GIT
       rails (>= 3.0.0)
       sass (>= 3.1.0)
 
+GIT
+  remote: git://github.com/spohlenz/tinymce-rails.git
+  revision: bb9bfb299ae2615bd6eae6628f1a6a11b86a1688
+  specs:
+    tinymce-rails (3.4.7.0.2)
+      railties (>= 3.1)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -157,4 +164,5 @@ DEPENDENCIES
   rails (= 3.2.0)
   sass-rails (~> 3.2.3)
   sqlite3
+  tinymce-rails!
   uglifier (>= 1.0.3)
