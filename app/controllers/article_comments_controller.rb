@@ -30,9 +30,6 @@ class ArticleCommentsController < ApplicationController
       format.js
     end
   end
-  
-  
-  
 end
 
 
