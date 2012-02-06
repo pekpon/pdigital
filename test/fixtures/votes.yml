@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  comment: 
+  type: 
+  ip: MyString
+
+two:
+  comment: 
+  type: 
+  ip: MyString

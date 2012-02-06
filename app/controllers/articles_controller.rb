@@ -94,4 +94,10 @@ class ArticlesController < ApplicationController
       format.json { head :no_content }
     end
   end
+  
+  def vote
+    respond_to do |format|
+      format.js
+    end
+  end
 end

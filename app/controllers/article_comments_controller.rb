@@ -4,7 +4,6 @@ class ArticleCommentsController < ApplicationController
   def create
     
     #:active => true
-    
     @article_comment = ArticleComment.new(:article_id => params[:article_comment][:article_id],
                                           :comment => params[:article_comment][:comment], 
                                           :user => current_user,
@@ -23,4 +22,17 @@ class ArticleCommentsController < ApplicationController
       end
     end
   end
+  
+  def vote
+    @comment = ArticleComment.find(params[:id])
+    @comment.vote(params[:vote_type], request.ip) if @comment
+    respond_to do |format|
+      format.js
+    end
+  end
+  
+  
+  
 end
+
+

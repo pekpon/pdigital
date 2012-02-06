@@ -18,6 +18,7 @@ ActiveAdmin.register Article do
             f.input :body
             f.input :author
             f.input :image
+            f.input :avatar
             f.input :published
             f.input :published_date, :as => :datepicker, :input_html => { :width => "50px" }
         end

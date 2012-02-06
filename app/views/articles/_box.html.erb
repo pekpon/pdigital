@@ -5,7 +5,7 @@
 			<span class="article_author"><%= article.author.upcase %></span>
 			<span class="article_date">&nbsp;&nbsp;|&nbsp;&nbsp;<%= article.category.name %> - <%= article.published_date %></span>
 		</div>
-		<div class="article_img_div"><%= link_to (image_tag article.image , :class => "article_img", :border => 0), article_path(article) %></div>
+		<div class="article_img_div"><%= link_to (image_tag article.avatar.url(:medium) , :class => "article_img", :border => 0), article_path(article) %></div>
 		<div class="article_preview"><%= article.body.slice!(0,100) %>...</div>
 		<div class="article_info">
 			<div class="article_comments">

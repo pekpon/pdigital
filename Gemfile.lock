@@ -15,11 +15,14 @@ GIT
       sass (>= 3.1.0)
 
 GIT
-  remote: git://github.com/spohlenz/tinymce-rails.git
-  revision: bb9bfb299ae2615bd6eae6628f1a6a11b86a1688
+  remote: git://github.com/thoughtbot/paperclip.git
+  revision: 1cb40e352eaa0f42560021c32705933f4d4eb46a
   specs:
-    tinymce-rails (3.4.7.0.2)
-      railties (>= 3.1)
+    paperclip (2.5.2)
+      activerecord (>= 2.3.0)
+      activesupport (>= 2.3.2)
+      cocaine (>= 0.0.2)
+      mime-types
 
 GEM
   remote: https://rubygems.org/
@@ -56,6 +59,7 @@ GEM
     bourbon (1.3.5)
       sass (>= 3.1)
     builder (3.0.0)
+    cocaine (0.2.1)
     coffee-rails (3.2.1)
       coffee-script (>= 2.2.0)
       railties (~> 3.2.0.beta)
@@ -163,8 +167,8 @@ DEPENDENCIES
   impressionist
   jquery-rails
   meta_search (>= 1.1.0.pre)
+  paperclip!
   rails (= 3.2.0)
   sass-rails (~> 3.2.3)
   sqlite3
-  tinymce-rails!
   uglifier (>= 1.0.3)

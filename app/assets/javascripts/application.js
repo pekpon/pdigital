@@ -11,6 +11,6 @@
 // GO AFTER THE REQUIRES BELOW.
 //
 //= require jquery
-//= require tinymce-jquery
+
 //= require jquery_ujs
 //= require_tree .

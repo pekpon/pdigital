@@ -6,7 +6,9 @@ Pdigital::Application.routes.draw do
   devise_for :admin_users, ActiveAdmin::Devise.config
   root :to => 'articles#index'
   resources :articles, :categories, :article_comments
-
+  
+  match 'article_comments/vote/:id/:vote_type' => 'article_comments#vote', :as => :vote
+  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
