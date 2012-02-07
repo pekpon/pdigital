@@ -1,5 +1,9 @@
+<% if comment.voted(request.remote_ip) == false %>
 <%= link_to image_tag('ico/good.png', :valign => '-6px'), vote_url(comment,1), :remote => true %> 
 <%= link_to ("Ben dit!"), vote_url(comment,1),  :remote => true, :class => "vote" %> | 
 <%= image_tag "ico/bad.png", :valign => "-6px" %> 
-<%= link_to "No ho comparteixo ", vote_url(comment,2), :remote => true %> 
+<%= link_to "No ho comparteixo...", vote_url(comment,2), :remote => true %> 
 <span class="result_vot <%= vote_status(comment.vots_result)%>"><%= comment.vots_result %></span><span class="total_vot"> (<%= comment.votes.count %> vots)</span>
+<% else %>
+Voted! <span class="result_vot <%= vote_status(comment.vots_result)%>"><%= comment.vots_result %></span><span class="total_vot"> (<%= comment.votes.count %> vots)</span>
+<% end %>

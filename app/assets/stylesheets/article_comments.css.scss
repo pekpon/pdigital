@@ -2,6 +2,14 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+a{
+	color:#666;
+	text-decoration:none;
+}
+a:hover{
+	color:#903;
+	text-decoration:none;
+}
 .comment_box{
 	padding: 10px;
 	margin-bottom: 10px;

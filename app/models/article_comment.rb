@@ -13,4 +13,14 @@ class ArticleComment < ActiveRecord::Base
     total = positive.count - negative.count
     return total
   end
+  
+  def voted(ip)
+    voted = self.votes.where(:ip => ip)
+    if voted.count == 0
+      return false
+    else
+      return true
+    end
+  end
+  
 end
