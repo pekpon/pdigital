@@ -97,9 +97,11 @@ ActiveAdmin.setup do |config|
   #
   # To load a stylesheet:
   #   config.register_stylesheet 'my_stylesheet.css'
+  config.register_stylesheet '/assets/imperavi-rails/imperavi/redactor.css'
   #
   # To load a javascript file:
   #   config.register_javascript 'my_javascript.js'
-  
+  config.register_javascript '/assets/imperavi-rails/imperavi.js'
+  config.register_javascript '/assets/custom-imperavi.js'
   
 end

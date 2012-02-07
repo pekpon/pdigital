@@ -5,7 +5,7 @@ ActiveAdmin.register Article do
   		column :author
   		column :published
   		column "Category", :category do |art|
-  			art.category.name
+  			art.category.name if art.category
   		end
   		default_actions
   	end
@@ -15,7 +15,7 @@ ActiveAdmin.register Article do
             
             f.input :category
             f.input :title
-            f.input :body
+            f.input :body, :input_html => { :class => "editor" }
             f.input :author
             f.input :image
             f.input :avatar

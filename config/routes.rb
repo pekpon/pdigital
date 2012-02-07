@@ -9,6 +9,8 @@ Pdigital::Application.routes.draw do
   
   match 'article_comments/vote/:id/:vote_type' => 'article_comments#vote', :as => :vote
   
+  mount ImperaviRails::Engine => "/imperavi"
+  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
