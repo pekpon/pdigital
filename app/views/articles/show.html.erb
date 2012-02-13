@@ -1,10 +1,14 @@
 <%= stylesheet_link_tag    "details","articles" %>
 
 <div class="row white">
-	<div class="span11">
-		<%= render :partial => 'details', :locals => {:article => @articles} %>
+	<div class="span8 border_right">
+		<div class="left_div">
+			<%= render :partial => 'details', :locals => {:article => @articles} %>
+		</div>
 	</div>
 	<div class="span4">
-		<p>Sidebar</p>
+		<div class="right_div">
+			<%= render :partial => 'polls/box', :locals => {:poll => @poll} %>
+		</div>
 	</div>
 </div>

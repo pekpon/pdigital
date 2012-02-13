@@ -1,0 +1,44 @@
+// Place all the styles related to the polls controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+#poll_box{
+	background-color: #F3F1EB;
+	padding: 10px;
+	border: 1px solid #CCC;
+	margin-top: 10px;
+}
+#poll_title {
+	padding-top: 10px;
+	border-bottom: 1px solid #CCC;
+	font-family: Georgia, "Times New Roman", Times, serif;
+	font-size: 24px;
+	font-style: italic;
+	color: #222;
+}
+#question {
+	text-align: center;
+	font-family: Verdana, Geneva, sans-serif;
+	font-size: 12px;
+	padding: 5px;
+	border: 1px solid #CCC;
+	color: #333;
+	margin-top: 10px;
+	margin-bottom: 20px;
+	background-color: white;
+}
+.option {
+	margin-top: 5px;
+	background-color: white;
+	padding: 3px 0 3px 6px;
+	font-family: Verdana, Geneva, sans-serif;
+	font-size: 12px;
+	border: 1px solid #CCC;
+	border-left: 3px solid #06C;
+	color: black;
+}
+.option:hover {
+	background-color: #06C;
+	border:1px solid #06C;
+	color: white;
+}

@@ -4,7 +4,6 @@
 	color:#333;
 	border-bottom:5px solid #069;
 	padding-bottom:15px;
-	width:330px;
 	margin:20px 5px 20px 5px;
 }
 #sports_header{
@@ -13,7 +12,6 @@
 	color:#333;
 	border-bottom:5px solid #9C0;
 	padding-bottom:15px;
-	width:270px;
 	margin:20px 5px 20px 5px;
 }
 #opinion_header{
@@ -22,7 +20,6 @@
 	color:#333;
 	border-bottom:5px solid #F60;
 	padding-bottom:15px;
-	width:270px;
 	margin:20px 5px 20px 5px;
 }
 .articleBoxContent{
@@ -30,6 +27,7 @@
 	border-bottom:1px solid #CCC;
 	margin-bottom:20px;
 	padding:5px;
+	
 }
 .article_title a{
 	font-family:Georgia;
@@ -77,4 +75,10 @@
 .article_info{
 	text-align:right;
 	margin-bottom:10px;
+}
+.article_comments{
+	font-size:11px;
+}
+.thumb_img{
+	vertical-align:bottom;
 }

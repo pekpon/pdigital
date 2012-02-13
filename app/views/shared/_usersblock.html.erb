@@ -1,0 +1,10 @@
+<div id="users_block">
+	<% if user_signed_in? %>
+		<p><b><%= current_user.email %></b> <%= link_to "Sign out", destroy_user_session_path, :method => :delete, :class => "btn btn-danger btn-small" %></p>
+
+	<% else %>
+	
+		 <%= link_to 'Register', new_user_registration_path, :class => "btn btn-default btn-small"%>  <%= link_to 'Sign in', new_user_session_path , :class => "btn btn-small btn-success"%>
+
+	<% end %>
+</div>

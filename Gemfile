@@ -15,6 +15,8 @@ gem "imperavi-rails", "~> 0.0.3.beta"
 gem 'impressionist'
 gem "paperclip", :git => "git://github.com/thoughtbot/paperclip.git"
 
+gem "sanitize", :require => 'sanitize'
+
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do

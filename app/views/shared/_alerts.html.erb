@@ -1,0 +1,18 @@
+<% if notice.blank? %>
+<% else %>
+
+	<div class="alert alert-success fade in">
+	  <a class="close" data-dismiss="alert" href="#">×</a>
+	  <p><%= notice %></p>
+	</div>
+<% end %>
+
+<% if alert.blank? %>
+<% else %>
+
+	<div class="alert alert-error fade in">
+	  <a class="close" data-dismiss="alert" href="#">×</a>
+	  <p><%= alert %></p>
+	</div>
+<% end %>
+	

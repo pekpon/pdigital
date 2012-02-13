@@ -8,6 +8,7 @@ Pdigital::Application.routes.draw do
   resources :articles, :categories, :article_comments
   
   match 'article_comments/vote/:id/:vote_type' => 'article_comments#vote', :as => :vote
+  match 'polls/vote/:id/:id_option' => 'polls#vote', :as => :vote_poll
   
   mount ImperaviRails::Engine => "/imperavi"
   

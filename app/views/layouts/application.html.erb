@@ -2,7 +2,7 @@
 <html>
 <head>
   <title>Papiol Digital</title>
-  <%= stylesheet_link_tag    "bootstrap.min", "base", "style", "styles", "article_comments", "application" %>
+  <%= stylesheet_link_tag "bootstrap", "base", "style", "styles", "article_comments", "application" %>
   <%= javascript_include_tag "application" %>
   <%= include_imperavi_javascript %>
   <%= include_imperavi_stylesheet %>
@@ -10,47 +10,18 @@
 </head>
 <body>
 <div class="container">
-	<div id="users_block">
-		<% if user_signed_in? %>
-			<p><b><%= current_user.email %></b> <%= link_to "Sign out", destroy_user_session_path, :method => :delete, :class => "btn small danger" %></p>
-
-		<% else %>
-		
-			 <%= link_to 'Register', new_user_registration_path, :class => "btn small default"%>  <%= link_to 'Sign in', new_user_session_path , :class => "btn small success"%>
-
-		<% end %>
-	</div>
 	
-<%= render :partial => 'shared/header'%>
+	<%= render :partial => 'shared/usersblock' %>
 
-<%= render :partial => 'shared/navigation'%>
+	<%= render :partial => 'shared/header' %>
 
-<%= render :partial => 'shared/categories'%>
+	<%= render :partial => 'shared/navigation' %>
 
-<div class="notice">
-	<% if notice.blank? %>
-	<% else %>
-	
-		<div class="alert-message success fade in" data-alert="alert">
-		  <a class="close" href="#">×</a>
-		  <p><%= notice %></p>
-		</div>
-	<% end %>
-</div>
-<div class="alert">
-	
-	<% if alert.blank? %>
-	<% else %>
-	
-		<div class="alert-message error fade in" data-alert="alert">
-		  <a class="close" href="#">×</a>
-		  <p><%= alert %></p>
-		</div>
-	<% end %>
-	
-</div>
+	<%= render :partial => 'shared/categories' %>
 
-<%= yield %>
+	<%= render :partial => 'shared/alerts' %>
+
+	<%= yield %>
 
 </div>
 </body>

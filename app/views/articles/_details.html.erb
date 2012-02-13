@@ -7,7 +7,7 @@
 <%= render :partial => 'addThis' %>
 
 <div id="article_title"><%= @article.title %></div>
-<div id="article_image"><%= image_tag @article.avatar.url(:detail) %></div>
+<div><%= image_tag @article.avatar.url(:detail) %></div>
 <div id="article_body"><%=raw @article.body %></div>
 
 <%= render :partial => 'addThis' %>
