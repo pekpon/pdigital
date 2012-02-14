@@ -5,6 +5,8 @@
 <% @poll.poll_options.each do |option|  %>
 <%= link_to raw("<div class='option'>"+option.option+"</div>"), vote_poll_url(@poll,option),  :remote => true %> 
 <% end %>
+<!--
 <div id="poll_link">
 	<%= link_to t(:view_results), vote_result_path(@poll), :remote => true %>
 </div>
+-->

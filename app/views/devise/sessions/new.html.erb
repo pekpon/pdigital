@@ -1,27 +1,31 @@
 <%= stylesheet_link_tag    "devise" %>
 
-<div class="row_sign"
-	<div id="sign_in">
-		<h2>Sign in</h2>
+<div class="row">
+	<div class="span3 white">
+		<div class="left_padding">
+			<h2>Sign in</h2>
 
-		<%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
-		<br>
-		 <div><%= f.text_field :email, :placeholder => "User" %></div>
-		<br>
-		 <div><%= f.password_field :password, :placeholder => "Password" %></div>
-		<br>
-		 <% if devise_mapping.rememberable? -%>
-		   <div><%= f.check_box :remember_me %> Remember me</div>
-		 <% end -%>
-		<br>
-		 <div><%= f.submit :class => "btn primary span4", :value => "Sign In" %></div>
-		<% end %>
+			<%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
+			<br>
+			 <div><%= f.text_field :email, :placeholder => "User", :class => "size_3" %></div>
+			<br>
+			 <div><%= f.password_field :password, :placeholder => "Password", :class => "size_3" %></div>
+			<br>
+			 <% if devise_mapping.rememberable? -%>
+			   <div><%= f.check_box :remember_me %> Remember me</div>
+			 <% end -%>
+			<br>
+			 <div><%= f.submit :class => "btn-primary span3 centred", :value => "Sign In" %></div>
+			<% end %>
 
-		<%= render :partial => "devise/shared/links" %>
+			<%= render :partial => "devise/shared/links" %>
+		</div>
 	</div>
-	<div id="sign_info">
-	<h1>Ara, més PapiolDigital que mai!</h1>
-	<p>Ser usuari registrat només et donarà avantatges!</p>
-	<h1>1.</h1><h1>2.</h1><h1>3.</h1>
-	</divs>
+	<div class="span9 white left_margin">
+		<div class="left_padding">
+			<h1>Ara, més PapiolDigital que mai!</h1>
+			<p>Ser usuari registrat només et donarà avantatges!</p>
+			<h1>1.</h1><h1>2.</h1><h1>3.</h1>
+		</div>
+	</div>
 </div>

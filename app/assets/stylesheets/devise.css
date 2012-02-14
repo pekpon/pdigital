@@ -1,16 +1,12 @@
-#sign_in{
-	float:left;
-	margin-left:0;
-	background-color:white;
-	padding:15px;
-	border:1px solid #ccc;
-	margin-top:10px;
+.left_margin{
+	margin-left:16px;
 }
-#sign_info{
-	width:630px;
-	float:right;
-	background-color:white;
-	padding:15px;
-	border:1px solid #ccc;
-	margin-top:10px;
+.left_padding{
+	padding:5px 0 5px 10px;
+}
+.size_3{
+	width:91%;
+}
+.centred{
+	width:300px;
 }

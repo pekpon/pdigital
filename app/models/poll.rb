@@ -9,4 +9,12 @@ class Poll < ActiveRecord::Base
   def vote(id, ip)
     self.poll_votes.create! :poll_option_id => id, :ip => ip
   end
+  
+  def voted(ip)
+    if self.poll_votes.where(:ip => ip).count == 0
+      return false
+    else
+      return true
+    end
+  end
 end
