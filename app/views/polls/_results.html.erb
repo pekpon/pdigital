@@ -1,0 +1,12 @@
+<% @poll.poll_options.each do |option| %>
+<div class="option_result_box">
+	<div class="result_text">
+		<span><%= option.option %></span>
+		<span class="result_data">(Vots:<%= option.votes %> | <%= '%.2f' % option.percent %>%)</span>
+	</div>
+	<div class="barra" style="width:<%= option.percent %>%; background-color:#FF5F00;height:15px;"></div>
+</div>
+<% end %>
+<div id="poll_link">
+	<%= link_to t(:view_poll), poll_options_path(@poll), :remote => true %>
+</div>

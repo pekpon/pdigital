@@ -110,10 +110,10 @@ ActiveRecord::Schema.define(:version => 20120213185340) do
 
   create_table "poll_votes", :force => true do |t|
     t.integer  "poll_id"
-    t.integer  "option_id"
+    t.integer  "poll_option_id"
     t.string   "ip"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
   end
 
   create_table "polls", :force => true do |t|

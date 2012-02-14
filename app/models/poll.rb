@@ -7,6 +7,6 @@ class Poll < ActiveRecord::Base
   end
   
   def vote(id, ip)
-    self.poll_votes.create! :option_id => id, :ip => ip
+    self.poll_votes.create! :poll_option_id => id, :ip => ip
   end
 end

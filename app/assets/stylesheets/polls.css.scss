@@ -15,6 +15,7 @@
 	font-size: 24px;
 	font-style: italic;
 	color: #222;
+	margin-bottom:10px;
 }
 #question {
 	text-align: center;
@@ -23,7 +24,6 @@
 	padding: 5px;
 	border: 1px solid #CCC;
 	color: #333;
-	margin-top: 10px;
 	margin-bottom: 20px;
 	background-color: white;
 }
@@ -34,11 +34,25 @@
 	font-family: Verdana, Geneva, sans-serif;
 	font-size: 12px;
 	border: 1px solid #CCC;
-	border-left: 3px solid #06C;
+	border-left: 3px solid #ff5f00;
 	color: black;
 }
 .option:hover {
-	background-color: #06C;
-	border:1px solid #06C;
+	background-color: #ff5f00;
+	border:1px solid #ff5f00;
 	color: white;
+}
+.option_result_box {
+	padding: 5px;
+	border: 1px solid #DDD;
+	margin-bottom: 3px;
+	background-color: white;
+}
+.result_data{
+	font-size:10px;
+	color:#555;
+}
+#poll_link{
+	text-align:center;
+	margin-top:10px;
 }

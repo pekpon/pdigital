@@ -4,11 +4,7 @@
 	<div id="poll_title">
 		The poll of the week!
 	</div>
-	<div id="question">
-		<%= @poll.question %>
+	<div id="poll_content">
+		<%= render :partial => 'polls/options', :locals => {:poll => @poll} %>
 	</div>
-	
-	<% @poll.poll_options.each do |option|  %>
-	<%= link_to raw("<div class='option'>"+option.option+"</div>"), vote_poll_url(@poll,option),  :remote => true %> 
-	<% end %>
 </div>
