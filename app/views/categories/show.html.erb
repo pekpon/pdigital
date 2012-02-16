@@ -2,19 +2,39 @@
 
 <div class="row white">
 	<div id="categories_header"><%= @category.name %></div>
-	<div class="span16">
 		<% if @articles.empty? %>
 		
 		<p>There aren't articles in this category</p>
 		
 		<% else %>
 		
-		<% @articles.each do |article| %>	
+		<div class="span4">
+		
+		<% @articles.each_with_index do |article,index| %>	
+		<% if (index-2)%2 == 0 %>
 			<h1><%= link_to article.title, article_path(article) %></h1>
-			<p><%= link_to (image_tag article.image, :width => "300px", :border => "0"), article_path(article) %></p>
-			<p><%= article.body %></p>
+			<p><%= link_to (image_tag article.avatar.url(:medium), :border => "0"), article_path(article) %></p>
+			<p><%= article.resume %></p>
 		<% end %>
-
 		<% end %>
-	</div>
+		
+		</div>
+		<div class="span4">
+		
+		<% @articles.each_with_index do |article,index| %>	
+		<% if (index-1)%2 == 0 %>
+			<h1><%= link_to article.title, article_path(article) %></h1>
+			<p><%= link_to (image_tag article.avatar.url(:medium), :border => "0"), article_path(article) %></p>
+			<p><%= article.resume %></p>
+		<% end %>
+		<% end %>
+		
+		</div>
+		<div class="span4">
+		
+		
+		</div>
+		
+		<% end %>
+	
 </div>

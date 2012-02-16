@@ -55,3 +55,19 @@
 .left_div{
 	margin-right:10px;
 }
+.article_box{
+	background-color: #F3F1EB;
+	padding: 10px;
+	border: 1px solid #CCC;
+	margin-top: 10px;
+	margin-bottom:20px;
+}
+.article_box_title{
+	padding-top: 10px;
+	border-bottom: 1px solid #CCC;
+	font-family: Georgia, "Times New Roman", Times, serif;
+	font-size: 24px;
+	font-style: italic;
+	color: #222;
+	margin-bottom:10px;
+}

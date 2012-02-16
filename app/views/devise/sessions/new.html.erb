@@ -7,15 +7,15 @@
 
 			<%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
 			<br>
-			 <div><%= f.text_field :email, :placeholder => "User", :class => "size_3" %></div>
+			 <div><%= f.text_field :email, :placeholder => "User", :class => "input_signin" %></div>
 			<br>
-			 <div><%= f.password_field :password, :placeholder => "Password", :class => "size_3" %></div>
+			 <div><%= f.password_field :password, :placeholder => "Password", :class => "input_signin" %></div>
 			<br>
 			 <% if devise_mapping.rememberable? -%>
 			   <div><%= f.check_box :remember_me %> Remember me</div>
 			 <% end -%>
 			<br>
-			 <div><%= f.submit :class => "btn-primary span3 centred", :value => "Sign In" %></div>
+			 <div><%= f.submit :id => "signin_button", :class => "btn-primary", :value => "Sign In" %></div>
 			<% end %>
 
 			<%= render :partial => "devise/shared/links" %>
