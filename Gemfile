@@ -10,11 +10,9 @@ gem 'sqlite3'
 gem 'activeadmin', :git => 'git://github.com/gregbell/active_admin.git'
 gem 'devise'
 gem "meta_search",    '>= 1.1.0.pre'
-
 gem "imperavi-rails", "~> 0.0.3.beta"
 gem 'impressionist'
 gem "paperclip", :git => "git://github.com/thoughtbot/paperclip.git"
-
 gem "sanitize", :require => 'sanitize'
 
 # Gems used only for assets and not required
