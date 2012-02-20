@@ -1,0 +1,2 @@
+module TheMostsHelper
+end

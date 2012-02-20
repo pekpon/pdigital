@@ -5,10 +5,11 @@ Pdigital::Application.routes.draw do
 
   devise_for :admin_users, ActiveAdmin::Devise.config
   root :to => 'articles#index'
-  resources :articles, :categories, :article_comments
+  resources :articles, :categories, :article_comments, :polls, :the_mosts
   
   match 'article_comments/vote/:id/:vote_type' => 'article_comments#vote', :as => :vote
   match 'polls/vote/:id/:id_option' => 'polls#vote', :as => :vote_poll
+  
   # match 'polls/vote_result/:id' => 'polls#vote_result', :as => :vote_result
   # match 'polls/poll_options/:id' => 'polls#poll_options', :as => :poll_options
   
