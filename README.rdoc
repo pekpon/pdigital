@@ -1,3 +1,0 @@
-== Welcome to pdigital
-
-pdigital is a NewsPaper platform built on ruby on rails
