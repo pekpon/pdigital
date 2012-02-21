@@ -1,21 +1,23 @@
 <%= stylesheet_link_tag    "devise" %>
 
-<div class="row_sign"
-	<div id="sign_in">
-		<h2>Sign up</h2>
-		<br>
-		<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
-		  <%= devise_error_messages! %>
+<div class="row white"
+	<div id="span3">
+		<div class="left_padding">
+			<h2>Sign up</h2>
+		
+			<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
+			  <%= devise_error_messages! %>
 
-		  <div><%= f.email_field :email, :placeholder => "Email" %></div><br>
+			  <div><%= f.email_field :email, :placeholder => "Email" %></div><br>
 
-		  <div><%= f.password_field :password, :placeholder => "Password" %></div><br>
+			  <div><%= f.password_field :password, :placeholder => "Password" %></div><br>
 
-		  <div><%= f.password_field :password_confirmation, :placeholder => "Repeat Password" %></div><br>
+			  <div><%= f.password_field :password_confirmation, :placeholder => "Repeat Password" %></div><br>
 
-		  <div><%= f.submit :class => "btn primary span4", :value => "Sign Up" %></div>
-		<% end %>
+			  <div><%= f.submit :class => "btn-primary span3", :value => "Sign Up" %></div>
+			<% end %>
 
-		<%= render :partial => "devise/shared/links" %>
+			<%= render :partial => "devise/shared/links" %>
+		</div>
 	</div>
 </div>

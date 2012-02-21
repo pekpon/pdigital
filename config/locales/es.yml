@@ -1,0 +1,4 @@
+# Archivo de prueba para el Español. Añade más archivos en este directorio para otros idiomas.
+
+es:
+  hello: "Hola mundo"

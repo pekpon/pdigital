@@ -1,7 +1,7 @@
 <%= stylesheet_link_tag    "devise" %>
 
-<div class="row">
-	<div class="span3 white">
+<div class="row white">
+	<div class="span3">
 		<div class="left_padding">
 			<h2>Sign in</h2>
 
@@ -15,17 +15,10 @@
 			   <div><%= f.check_box :remember_me %> Remember me</div>
 			 <% end -%>
 			<br>
-			 <div><%= f.submit :id => "signin_button", :class => "btn-primary", :value => "Sign In" %></div>
+			 <div><%= f.submit :id => "signin_button", :class => "btn-success span3", :value => "Sign In" %></div>
 			<% end %>
 
 			<%= render :partial => "devise/shared/links" %>
-		</div>
-	</div>
-	<div class="span9 white left_margin">
-		<div class="left_padding">
-			<h1>Ara, més PapiolDigital que mai!</h1>
-			<p>Ser usuari registrat només et donarà avantatges!</p>
-			<h1>1.</h1><h1>2.</h1><h1>3.</h1>
 		</div>
 	</div>
 </div>
