@@ -7,7 +7,13 @@
 <%= render :partial => 'addThis' %>
 
 <div id="article_title"><%= @article.title %></div>
-<div><%= image_tag @article.avatar.url(:detail) %></div>
+
+<div>
+<% if(@article.avatar.url(:detail) != "/avatars/detail/missing.png") %>
+	<%= image_tag @article.avatar.url(:detail) %>
+<% end %>
+</div>
+
 <div id="article_body"><%=raw @article.body %></div>
 
 <%= render :partial => 'addThis' %>
