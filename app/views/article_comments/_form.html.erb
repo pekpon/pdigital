@@ -1,5 +1,7 @@
-<%= form_tag(article_comments_path, :method => "POST") do %>
-  <%= text_area(:article_comment, :comment, :rows => 3, :class => "span7") %><br /><br />
-<%= hidden_field(:article_comment, :article_id, :value => @article.id) %>
-  <%= submit_tag("Send", :class => "btn btn-primary btn-large") %>
-<% end %>
+<div id="comment_form">
+	<%= form_tag(article_comments_path, :method => "POST") do %>
+		<%= text_area(:article_comment, :comment, :rows => 3, :class => "textarea_comment") %><br /><br />
+		<%= hidden_field(:article_comment, :article_id, :value => @article.id) %>
+		<%= submit_tag("Send", :class => "btn-primary btn-large") %>
+	<% end %>
+</div>

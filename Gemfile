@@ -15,6 +15,8 @@ gem 'impressionist'
 gem "paperclip", :git => "git://github.com/thoughtbot/paperclip.git"
 gem "sanitize", :require => 'sanitize'
 gem "thin", "~> 1.3.1"
+gem 'rails-i18n'
+gem 'therubyracer', require: "v8"
 
 # Gems used only for assets and not required
 # in production environments by default.

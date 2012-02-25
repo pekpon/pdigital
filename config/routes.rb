@@ -1,10 +1,21 @@
 Pdigital::Application.routes.draw do
-  devise_for :users
+  
+  
+  
+  scope "/:locale" do
+    devise_for :users
+    
+    devise_for :admin_users, ActiveAdmin::Devise.config
+    ActiveAdmin.routes(self)
 
-  ActiveAdmin.routes(self)
-
-  devise_for :admin_users, ActiveAdmin::Devise.config
+    resources :articles, :categories, :polls, :the_mosts
+  end
+  
   root :to => 'articles#index'
+  
+
+  
+  
   resources :articles, :categories, :article_comments, :polls, :the_mosts
   
   match 'article_comments/vote/:id/:vote_type' => 'article_comments#vote', :as => :vote

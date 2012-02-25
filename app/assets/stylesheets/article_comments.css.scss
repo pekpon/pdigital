@@ -2,7 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-a{
+.comment_box a{
 	color:#666;
 	text-decoration:none;
 }
@@ -55,4 +55,7 @@ a:hover{
 }
 .neutral{
 	background-color: #999;
+}
+.textarea_comment{
+	width:600px;
 }
