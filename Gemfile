@@ -18,6 +18,11 @@ gem "thin", "~> 1.3.1"
 gem 'rails-i18n'
 gem 'therubyracer', require: "v8"
 
+
+group :deploy do
+  gem 'capistrano'
+end
+
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
