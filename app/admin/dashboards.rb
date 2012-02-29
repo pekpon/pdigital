@@ -14,6 +14,39 @@ ActiveAdmin::Dashboards.build do
   #       end
   #     end
   #   end
+
+  section "Last Articles" do
+    ul do
+      articles = Article.limit(5)
+      unless articles.empty?
+        articles.collect do |art|
+          li link_to(art.title, admin_article_path(art))
+        end
+      else
+        li "No Articles in the DB"
+      end
+    end
+  end
+
+  section "Last Polls" do
+    ul do
+      polls = Article.limit(5)
+      unless polls.empty?
+        articles.collect do |poll|
+          li link_to(poll.title, admin_poll_path(poll))
+        end
+      else
+        li "No Polls in the DB"
+      end
+    end
+
+  end
+
+  section "tools" do
+    ul do
+      li link_to(t(:create_article), new_admin_article_path)
+    end
+  end
   
   # == Render Partial Section
   # The block is rendered within the context of the view, so you can
