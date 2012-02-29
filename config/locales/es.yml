@@ -1,6 +1,36 @@
 # Archivo de prueba para el Español. Añade más archivos en este directorio para otros idiomas.
 
 es:
-  hello: "Hola mundo"
+  sports: "Deportes"
+  news: "Noticias"
+  opinion: "Opinión"
+  home: "Portada"
   polls: "Encuestas"
+  the_most: "Los +"
+  register: "Regístrate"
+  sign_in: "Entra"
+  sign_out: "Salir"
   
+  comments: "Comentarios"
+  add_comment: "Añade un comentario"
+  no_comments: "No hay comentarios en esta notícia"
+  user_required_comments: "Necesitas ser un usuario registrado para poder comentar"
+  at: "a las"
+  
+  vote_ok: "Bien dicho!"
+  vote_ko: "No lo comparto..."
+  votes: "votos"
+  voted: "Votado!"
+  
+  or: "o"
+  
+  the_poll_of_the_week: "La encuesta de la semana"
+  the_most_moved: "La más \"movida\""
+  
+  email: "Correo electónico"
+  password: "Contraseña"
+  r_password: "Repite la contraseña"
+  remember: "Recuérdame"
+  forgot_password: "¿Has olvidado tu contraseña?"
+  confirmation_instructions: "¿No has recibido la confirmación por correo electrónico?"
+  unlock_instructions: "¿No has recibido las instrucciones de desbloqueo?"

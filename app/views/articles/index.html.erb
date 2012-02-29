@@ -2,15 +2,15 @@
 
 <div class="row white">
 	<div class="span4">
-		<p id="news_header">News</p>
+		<p id="news_header"><%= t(:news)%></p>
 		<%= render :partial => 'box', :locals => {:articles => @articles} %>
 	</div>
 	<div class="span4">
-		<p id="sports_header">Sports</p>
+		<p id="sports_header"><%= t(:sports)%></p>
 		<%= render :partial => 'box', :locals => {:articles => @articles_sport}%>
 	</div>
 	<div class="span4"> 
-		<p id="opinion_header">Opinion</p>
+		<p id="opinion_header"><%= t(:opinion)%></p>
 		<%= render :partial => 'box', :locals => {:articles => @articles_opinion}%>
 	</div>
 </div>

@@ -2,7 +2,7 @@
 
 <div id="poll_box" class="article_box">
 	<div class="article_box_title">
-		The poll of the week!
+		<%=t(:the_poll_of_the_week)%>
 	</div>
 	<div id="poll_content">
 		<% if @poll.voted(request.remote_ip) == false %>

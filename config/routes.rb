@@ -1,7 +1,5 @@
 Pdigital::Application.routes.draw do
   
-  
-  
   scope "/:locale" do
     devise_for :users
     
@@ -12,9 +10,6 @@ Pdigital::Application.routes.draw do
   end
   
   root :to => 'articles#index'
-  
-
-  
   
   resources :articles, :categories, :article_comments, :polls, :the_mosts
   
