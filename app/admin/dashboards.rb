@@ -30,9 +30,9 @@ ActiveAdmin::Dashboards.build do
 
   section "Last Polls" do
     ul do
-      polls = Article.limit(5)
+      polls = Polls.limit(5)
       unless polls.empty?
-        articles.collect do |poll|
+        polls.collect do |poll|
           li link_to(poll.title, admin_poll_path(poll))
         end
       else
