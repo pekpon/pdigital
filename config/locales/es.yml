@@ -11,6 +11,12 @@ es:
   sign_in: "Entra"
   sign_out: "Salir"
   
+  
+  singular_comment: "comentario"
+  plural_comments: "comentarios"  
+  singular_vote: "voto"
+  plural_votes: "votos"
+  
   comments: "Comentarios"
   add_comment: "Añade un comentario"
   no_comments: "No hay comentarios en esta notícia"

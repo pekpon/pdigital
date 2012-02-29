@@ -9,6 +9,11 @@ ca:
   sign_in: "Inicia sessió"
   sign_out: "Sortir"
   
+  singular_comment: "comentari"
+  plural_comments: "comentaris"
+  singular_vote: "vot"
+  plural_votes: "vots"
+  
   comments: "Comentaris"
   add_comment: "Afegeix un comentari"
   no_comments: "No hi ha comentaris en aquesta notícia"
