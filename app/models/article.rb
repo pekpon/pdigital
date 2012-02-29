@@ -3,7 +3,9 @@ class Article < ActiveRecord::Base
 	has_many :article_comments
 	is_impressionable
 	
-	has_attached_file :avatar, :styles => { :detail => "610x610>", :medium => "330x330>", :thumb => "100x100>" }
+	has_attached_file :avatar, :styles => { :detail => "610x610>", :medium => "330x330>", :thumb => "100x100>" },
+      :url => "/system/avatars/:id/:basename.:extension",          
+      :path => ":rails_root/public/system/avatars/:id/:basename.:extension"
 	
 	def resume
 	  Sanitize.clean(self.body).slice!(0,200)
