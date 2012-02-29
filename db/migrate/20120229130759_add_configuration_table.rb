@@ -7,6 +7,11 @@ class AddConfigurationTable < ActiveRecord::Migration
 
       t.timestamps
     end
+    
+    Configuration.create([
+      {:key => 'head_image_left', :values => 'http://placehold.it/500x100'},
+      {:key => 'head_image_right', :values => 'http://placehold.it/400x64'}
+    ])
   end
 
   def down
