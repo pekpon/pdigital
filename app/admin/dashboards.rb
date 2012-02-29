@@ -33,7 +33,7 @@ ActiveAdmin::Dashboards.build do
       polls = Poll.limit(5)
       unless polls.empty?
         polls.collect do |poll|
-          li link_to(poll.title, admin_poll_path(poll))
+         # li link_to(poll.title, admin_poll_path(poll))
         end
       else
         li "No Polls in the DB"
