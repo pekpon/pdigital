@@ -1,5 +1,5 @@
 Pdigital::Application.routes.draw do
-  scope "/:locale" do
+  scope "/(:locale)" do
     devise_for :admin_users, ActiveAdmin::Devise.config
     ActiveAdmin.routes(self)
 
