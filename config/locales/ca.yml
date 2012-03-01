@@ -8,6 +8,7 @@ ca:
   register: "Registret"
   sign_in: "Inicia sessió"
   sign_out: "Sortir"
+  welcome: "Benvingut,"
   
   singular_comment: "comentari"
   plural_comments: "comentaris"
@@ -30,6 +31,7 @@ ca:
   the_poll_of_the_week: "L'enquesta de la setmana"
   the_most_moved: "La més \"moguda\""
   
+  username: "Usuari"
   email: "Correu elèctronic"
   password: "Contrasenya"
   r_password: "Repeteix la contrasenya"

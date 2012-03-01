@@ -10,6 +10,7 @@ es:
   register: "Regístrate"
   sign_in: "Entra"
   sign_out: "Salir"
+  welcome: "Bienvenido,"
   
   
   singular_comment: "comentario"
@@ -33,6 +34,7 @@ es:
   the_poll_of_the_week: "La encuesta de la semana"
   the_most_moved: "La más \"movida\""
   
+  username: "Usuario"
   email: "Correo electónico"
   password: "Contraseña"
   r_password: "Repite la contraseña"
