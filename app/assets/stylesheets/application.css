@@ -22,3 +22,7 @@ body{
 	background-color:white;
 	border:1px solid #ccc;
 }
+.category_separator{
+	margin-left:4px;
+	margin-right:4px;
+}

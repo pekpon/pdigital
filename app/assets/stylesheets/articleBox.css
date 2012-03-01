@@ -29,6 +29,9 @@
 	padding:5px;
 	
 }
+.lastBox{
+	border-bottom:0px;
+}
 .article_title a{
 	font-family:Georgia;
 	font-size:24px;

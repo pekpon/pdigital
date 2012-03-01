@@ -1,5 +1,6 @@
 <div class="category_bar">
 	<% Category.all.each do |category| %>
-	<%= link_to category.name, category_path(category) %>&nbsp;&nbsp;|&nbsp;&nbsp;
+	<%= link_to category.name, category_path(category) %>
+	<%= "<span class='category_separator'>|</span>".html_safe unless Category.last == category %>
 	<% end %>
 </div>

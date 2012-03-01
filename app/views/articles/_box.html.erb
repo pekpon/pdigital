@@ -1,5 +1,5 @@
 <% articles.each do |article| %>
-	<div class="articleBoxContent">
+	<div class="articleBoxContent <%= "lastBox" if article == articles.last %>">
 		<div class="article_title"><%= link_to article.title, article_path(article) %></div>
 		<div style="margin-bottom:5px;">
 			<span class="article_author"><%= article.author.upcase %></span>
