@@ -1,8 +1,16 @@
 require "minitest_helper"
 
 describe Article do
-  it "should add the title text" do
-    article = Article.create!(:title => "testing with minitest")
-    assert_equal article.title, "testing with minitest"
+  
+  ## Testing Articles validations
+  describe 'validations' do
+    it 'should fail' do
+      article = Article.create
+      [:category, :body, :title, :published_date].each do |key|
+        assert article.errors.messages.has_key? key
+      end
+    end
   end
+
+
 end
