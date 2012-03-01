@@ -5,10 +5,12 @@
 		<%=t(:the_poll_of_the_week)%>
 	</div>
 	<div id="poll_content">
-		<% if @poll.voted(request.remote_ip) == false %>
-			<%= render :partial => 'polls/options', :locals => {:poll => @poll} %>
-		<% else %>
-			<%= render :partial => 'polls/results', :locals => {:poll => @poll} %>
-		<% end %>
+        <% if @poll %>
+          <% if @poll.voted(request.remote_ip) == false %>
+            <%= render :partial => 'polls/options', :locals => {:poll => @poll} %>
+          <% else %>
+            <%= render :partial => 'polls/results', :locals => {:poll => @poll} %>
+          <% end %>
+        <% end %>
 	</div>
 </div>
