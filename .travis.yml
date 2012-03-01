@@ -1,0 +1,6 @@
+rvm: 
+  - 1.9.2
+  - 1.9.3
+before_script:
+  - "ruby --version"
+  - "bundle exec rake test"
