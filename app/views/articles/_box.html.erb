@@ -1,5 +1,5 @@
 <% articles.each do |article| %>
-	<div class="articleBoxContent">
+	<div class="articleBoxContent <%= "lastBox" if article == articles.last %>">
 		<div class="article_title"><%= link_to article.title, article_path(article) %></div>
 		<div style="margin-bottom:5px;">
 			<span class="article_author"><%= article.author.upcase %></span>
@@ -13,7 +13,7 @@
 		<div class="article_preview"><%= article.resume %>...</div>
 		<div class="article_info">
 			<div class="article_comments">
-				<%= image_tag "ico/comment.png", :class => "thumb_img" %> <%= article.article_comments.count %> comentaris
+				<%= image_tag "ico/comment.png", :class => "thumb_img" %> <%= pluralize(article.article_comments.count,t(:singular_comment),t(:plural_comments)) %>
 			</div>
 		</div>
 	</div>

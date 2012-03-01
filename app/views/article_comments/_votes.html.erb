@@ -5,5 +5,5 @@
 <%= link_to t(:vote_ko), vote_url(comment,2), :remote => true %> 
 <span class="result_vot <%= vote_status(comment.vots_result)%>"><%= comment.vots_result %></span><span class="total_vot"> (<%= comment.votes.count %> <%=t(:votes)%>)</span>
 <% else %>
-<%=t(:voted)%> <span class="result_vot <%= vote_status(comment.vots_result)%>"><%= comment.vots_result %></span><span class="total_vot"> (<%= comment.votes.count %> <%=t(:votes)%>)</span>
+<%=t(:voted)%> <span class="result_vot <%= vote_status(comment.vots_result)%>"><%= comment.vots_result %></span><span class="total_vot"> (<%= pluralize(comment.votes.count,t(:singular_vote),t(:plural_votes))%>)</span>
 <% end %>

@@ -4,9 +4,21 @@ class Article < ActiveRecord::Base
 	is_impressionable
 	
 	has_attached_file :avatar, :styles => { :detail => "610x610>", :medium => "330x330>", :thumb => "100x100>" },
-      :url => "/system/avatars/:id/:basename.:extension",          
-      :path => ":rails_root/public/system/avatars/:id/:basename.:extension"
+      :url => "/system/avatars/:id/:style/:basename.:extension",          
+      :path => ":rails_root/public/system/avatars/:id/:style/:basename.:extension"
 	
+	#Article.damedato
+	def self.damedato
+    numbers = []
+    self.all.each { |x| numbers << {:id => x.id,  :count => x.article_comments.count} }
+    sorted = numbers.sort! {|x,y| y[:count] <=> x[:count] }
+    ids =[]
+    sorted[0..4].each{|x| ids << x[:id] }
+    Article.find(ids)
+  end
+	
+	#Article.resume
+	#artcle.resume
 	def resume
 	  Sanitize.clean(self.body).slice!(0,200)
   end
