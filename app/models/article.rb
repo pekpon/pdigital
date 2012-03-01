@@ -4,8 +4,8 @@ class Article < ActiveRecord::Base
 	is_impressionable
 	
 	has_attached_file :avatar, :styles => { :detail => "610x610>", :medium => "330x330>", :thumb => "100x100>" },
-      :url => "/system/avatars/:id/:basename.:extension",          
-      :path => ":rails_root/public/system/avatars/:id/:basename.:extension"
+      :url => "/system/avatars/:id/:style/:basename.:extension",          
+      :path => ":rails_root/public/system/avatars/:id/:style/:basename.:extension"
 	
 	#Article.damedato
 	def self.damedato
