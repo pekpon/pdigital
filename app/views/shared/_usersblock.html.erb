@@ -1,6 +1,6 @@
 <div id="users_block">
 	<% if user_signed_in? %>
-		<p><b><%= t(:welcome)+" "+current_user.username %></b> <%= link_to t(:sign_out), destroy_user_session_path, :method => :delete, :class => "btn btn-danger btn-small" %></p>
+		<p><b><%= t(:welcome)+" "+current_user.username %></b> <%= link_to raw("<i class='icon-off icon-white'></i>  "), destroy_user_session_path, :method => :delete, :class => "btn btn-danger btn-small btn-close", :rel => "tooltip", :title => t(:sign_out) %></p>
 
 	<% else %>
 	

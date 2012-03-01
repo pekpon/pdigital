@@ -7,7 +7,7 @@ ca:
   the_most: "Els +"
   register: "Registret"
   sign_in: "Inicia sessió"
-  sign_out: "Sortir"
+  sign_out: "Tanca sessió"
   welcome: "Benvingut,"
   
   singular_comment: "comentari"
@@ -20,6 +20,8 @@ ca:
   no_comments: "No hi ha comentaris en aquesta notícia"
   user_required_comments: "Necesites ser un usuari registrat per escriure un comentari"
   at: "a les"
+  logged_as: "Has entrat amb el nom d'usuari"
+  if_not_you: "Si no ets tu"
   
   vote_ok: "Ben dit!"
   vote_ko: "No ho comparteixo..."

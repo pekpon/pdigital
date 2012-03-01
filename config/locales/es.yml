@@ -9,7 +9,7 @@ es:
   the_most: "Los +"
   register: "Regístrate"
   sign_in: "Entra"
-  sign_out: "Salir"
+  sign_out: "Cierra sessión"
   welcome: "Bienvenido,"
   
   
@@ -23,6 +23,8 @@ es:
   no_comments: "No hay comentarios en esta notícia"
   user_required_comments: "Necesitas ser un usuario registrado para poder comentar"
   at: "a las"
+  logged_as: "Has entrado como"
+  if_not_you: "Si no eres tu"
   
   vote_ok: "Bien dicho!"
   vote_ko: "No lo comparto..."

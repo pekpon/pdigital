@@ -10,7 +10,7 @@
 	<% @article.article_comments.each do |comment| %>
 	
 		<div class="comment_box">
-			<div class="comment_header">#<%= comment_number+=1 %> <span class="comment_author"><%= comment.user.email %></span> - <%= comment.created_at.strftime("%d/%m/%Y "+t(:at)+" %H:%M") %></div>			
+			<div class="comment_header">#<%= comment_number+=1 %> <span class="comment_author"><%= comment.user.username %></span> - <%= comment.created_at.strftime("%d/%m/%Y "+t(:at)+" %H:%M") %></div>			
 			<div class="comment_body"><%= comment.comment %></div>
 			<div class="comment_social <%= "comment#{comment.id}" %>">
 				

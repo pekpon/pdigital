@@ -1,5 +1,5 @@
 <% if user_signed_in? %>
-	<p>Logged as <b><%= current_user.email %></b>. If not are you, please <%= link_to "Sign out", destroy_user_session_path, :method => :delete %>.</p>
+	<p><%=t(:logged_as)%> <b><%= current_user.username %></b>. <%=t(:if_not_you)%> <%= link_to t(:sign_out), destroy_user_session_path, :method => :delete %>.</p>
 	<%= render 'article_comments/form' %>
 
 <% else %>
