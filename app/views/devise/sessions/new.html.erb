@@ -7,7 +7,7 @@
 
 			<%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
 			<br>
-			 <div><%= f.text_field :login, :placeholder => t(:username), :class => "input_signin" %></div>
+			 <div><%= f.text_field :email, :placeholder => t(:email), :class => "input_signin" %></div>
 			<br>
 			 <div><%= f.password_field :password, :placeholder => t(:password), :class => "input_signin" %></div>
 			<br>
