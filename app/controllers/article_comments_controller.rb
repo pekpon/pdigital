@@ -14,11 +14,9 @@ class ArticleCommentsController < ApplicationController
 
     respond_to do |format|
       if @article_comment.save
-        format.html { redirect_to @article, notice: 'Comment was successfully created.' }
-        format.json { render json: @article_comment, status: :created, location: @article_comment }
+        format.html { redirect_to @article, notice: t(:comment_succefull) }
       else
-        format.html { render action: "new" }
-        format.json { render json: @article_comment.errors, status: :unprocessable_entity }
+        format.html { redirect_to @article, alert: t(:comment_error) }
       end
     end
   end

@@ -15,6 +15,8 @@ ca:
   singular_vote: "vot"
   plural_votes: "vots"
   
+  comment_succefull: "Comentari afegit correctament"
+  comment_error: "Has d'afegir un comentari"
   comments: "Comentaris"
   add_comment: "Afegeix un comentari"
   no_comments: "No hi ha comentaris en aquesta notícia"

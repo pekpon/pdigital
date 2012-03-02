@@ -1,4 +1,2 @@
 <h1>The +</h1>
-<% @articles_commented.each do |article| %>
-<%= article.article_comments.count %>
-<% end %>
+<%= render :partial => 'articles/box', :locals => {:articles => @articles_commented} %>

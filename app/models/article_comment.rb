@@ -3,6 +3,8 @@ class ArticleComment < ActiveRecord::Base
   belongs_to :user
   has_many :votes
   
+  validates :comment, :presence => true
+  
   def vote(type, ip)
     self.votes.create! :vote_type => type, :ip => ip
   end

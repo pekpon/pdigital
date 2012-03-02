@@ -12,14 +12,26 @@ class Article < ActiveRecord::Base
     validates :title, :presence => true
     validates :published_date, :presence => true
 
-    def self.damedato
+    def self.damedato(method=:views_filtered_by_ip)
+      ########## FIX ###########
       numbers = []
-      self.all.each { |x| numbers << {:id => x.id,  :count => x.article_comments.count} }
+      self.all.each { |x| numbers << {:id => x.id,  :count => x.try(method), :article => x} }
       sorted = numbers.sort! {|x,y| y[:count] <=> x[:count] }
       ids =[]
-      sorted[0..4].each{|x| ids << x[:id] }
-      Article.find(ids)
+      sorted[0..9].each{|x| ids << x[:article] }
+      ids
     end
+	
+	  #Number
+	  def views_filtered_by_ip
+	    self.impressionist_count(:filter => :ip_address)
+	  end
+
+	  #Number
+	  def comments_count
+	    self.article_comments.count
+	  end
+
 	
     def resume
       Sanitize.clean(self.body).slice!(0,200)

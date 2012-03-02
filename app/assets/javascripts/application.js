@@ -13,4 +13,13 @@
 //= require jquery
 
 //= require jquery_ujs
-//= require_tree .
+//= require bootstrap.js
+// require_tree .
+
+
+
+$(document).ready(function(){
+	$('.btn-close').tooltip({
+		placement:'bottom'
+	});
+});

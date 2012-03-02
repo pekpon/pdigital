@@ -1,14 +1,13 @@
 ActiveAdmin.register Article do
   	index do
   		column :title
-  		column :body
   		column :author
-  		column :published
   		column "Category", :category do |art|
   			art.category.name if art.category
   		end
   		default_actions
   	end
+  
   	
   	form do |f|
         f.inputs "Article" do
