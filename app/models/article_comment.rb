@@ -5,6 +5,10 @@ class ArticleComment < ActiveRecord::Base
   
   validates :comment, :presence => true
   
+  def clean
+    Sanitize.clean(self.comment,Sanitize::Config::RESTRICTED)
+  end
+  
   def vote(type, ip)
     self.votes.create! :vote_type => type, :ip => ip
   end
