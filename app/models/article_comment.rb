@@ -6,7 +6,7 @@ class ArticleComment < ActiveRecord::Base
   validates :comment, :presence => true
   
   def clean
-    Sanitize.clean(self.comment,Sanitize::Config::RESTRICTED)
+    Sanitize.clean(self.comment, :elements => ['a','b','br'])
   end
   
   def vote(type, ip)
