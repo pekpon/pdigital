@@ -4,7 +4,7 @@
 	<div id="categories_header"><%= @category.name %></div>
 		<% if @articles.empty? %>
 		
-		<p>There aren't articles in this category</p>
+		<p class="no_message"><%=t(:no_articles_category)%></p>
 		
 		<% else %>
 		

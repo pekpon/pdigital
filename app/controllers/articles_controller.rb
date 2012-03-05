@@ -16,7 +16,7 @@ class ArticlesController < ApplicationController
   def index
     @articles = Article.where('category_id <> 3 AND category_id <> 4').order('id DESC')
     @categories = Category.order('name').all
-    @articles_sport = Article.where(:category_id => 3).order('id DESC')
+    @articles_sport = Article.where(:category_id => Configuration.value(:main_sports_category)).order('id DESC')
     @articles_opinion = Article.where(:category_id => 4).order('id DESC')
 
     respond_to do |format|
