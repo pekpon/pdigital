@@ -46,3 +46,5 @@ es:
   forgot_password: "¿Has olvidado tu contraseña?"
   confirmation_instructions: "¿No has recibido la confirmación por correo electrónico?"
   unlock_instructions: "¿No has recibido las instrucciones de desbloqueo?"
+  
+  no_articles_category: "No hay artículos en esta categoría"
