@@ -15,20 +15,4 @@ class PollsController < ApplicationController
     
     render :vote_result
   end
-
-  # def vote_result
-  #   @poll = @poll || Poll.find(params[:id])
-  # 
-  #   respond_to do |format|
-  #     format.js
-  #   end
-  # end
-  # 
-  # def poll_options
-  #   @poll = @poll || Poll.find(params[:id])
-  # 
-  #   respond_to do |format|
-  #     format.js
-  #   end
-  # end
 end
