@@ -5,7 +5,7 @@ ca:
   home: "Portada"
   polls: "Enquestes"
   the_most: "Els +"
-  register: "Registret"
+  register: "Registra't"
   sign_in: "Inicia sessió"
   sign_out: "Tanca sessió"
   welcome: "Benvingut,"
@@ -43,3 +43,5 @@ ca:
   forgot_password: "Has perdut la contrasenya?"
   confirmation_instructions: "No has rebut la comfirmació per correu electrònic?"
   unlock_instructions: "No has rebut les instruccions de desbloquejament?"
+  
+  no_articles_category: "No hi ha articles en aquesta categoria"
