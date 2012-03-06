@@ -9,8 +9,8 @@
 <div id="article_title"><%= @article.title %></div>
 
 <div>
-<% if(@article.avatar.url(:detail) != "/avatars/detail/missing.png") %>
-	<%= image_tag @article.avatar.url(:detail) %>
+<% if(@article.image.url(:detail) != "/image/detail/missing.png") %>
+	<%= image_tag @article.image.url(:detail) %>
 <% end %>
 </div>
 

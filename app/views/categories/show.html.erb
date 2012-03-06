@@ -13,7 +13,7 @@
 		<% @articles.each_with_index do |article,index| %>	
 		<% if (index-2)%2 == 0 %>
 			<span class="title"><%= link_to article.title, article_path(article) %></span>
-			<p><%= link_to (image_tag article.avatar.url(:medium), :border => "0"), article_path(article) %></p>
+			<p><%= link_to (image_tag article.image.url(:medium), :border => "0"), article_path(article) %></p>
 			<p><%= article.resume %></p>
 		<% end %>
 		<% end %>
@@ -24,7 +24,7 @@
 		<% @articles.each_with_index do |article,index| %>	
 		<% if (index-1)%2 == 0 %>
 			<span class="title"><%= link_to article.title, article_path(article) %></span>
-			<p><%= link_to (image_tag article.avatar.url(:medium), :border => "0"), article_path(article) %></p>
+			<p><%= link_to (image_tag article.image.url(:medium), :border => "0"), article_path(article) %></p>
 			<p><%= article.resume %></p>
 		<% end %>
 		<% end %>
