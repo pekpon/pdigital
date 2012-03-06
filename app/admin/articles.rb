@@ -16,8 +16,7 @@ ActiveAdmin.register Article do
             f.input :title
             f.input :body, :input_html => { :class => "editor" }
             f.input :author
-            f.input :image
-            f.input :avatar, :hint => f.template.image_tag(f.object.avatar.url(:thumb))
+            f.input :image, :hint => f.template.image_tag(f.object.image.url(:thumb))
             f.input :published
             f.input :published_date, :as => :datepicker, :input_html => { :width => "50px" }
             

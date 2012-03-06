@@ -3,9 +3,9 @@ class Article < ActiveRecord::Base
 	has_many :article_comments
 	is_impressionable
 	
-	has_attached_file :avatar, :styles => { :detail => "610x610>", :medium => "330x330>", :thumb => "100x100>" },
-      :url => "/system/avatars/:id/:style/:basename.:extension",          
-      :path => ":rails_root/public/system/avatars/:id/:style/:basename.:extension"
+	has_attached_file :image, :styles => { :detail => "610x610>", :medium => "330x330>", :thumb => "100x100>" },
+      :url => "/system/images/:id/:style/:basename.:extension",          
+      :path => ":rails_root/public/system/images/:id/:style/:basename.:extension"
 	
     validates :category, :presence => true
     validates :body, :presence => true
