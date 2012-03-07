@@ -13,7 +13,9 @@
 		<% @articles.each_with_index do |article,index| %>	
 		<% if (index-2)%2 == 0 %>
 			<span class="title"><%= link_to article.title, article_path(article) %></span>
+			<% if(article.image.url(:medium) != "/images/medium/missing.png") %>
 			<p><%= link_to (image_tag article.image.url(:medium), :border => "0"), article_path(article) %></p>
+			<% end %>
 			<p><%= article.resume %></p>
 		<% end %>
 		<% end %>
