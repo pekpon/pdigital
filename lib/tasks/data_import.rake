@@ -75,8 +75,13 @@ task :pruebas => :environment do
     
   article = Article.create(:title => row[2], :body => row[4].gsub(/\#/, '"'), :author => row[7],
       :category => Category.find(cat), :published_date => row[8])
+      
+    #Insertamos la imagen
+    article.image = File.new("../data/img/#{row[9]}") if File.exists?("../data/img/#{row[9]}")
+   # article.img.attachment = File.open("../data/img/#{row[9]}")
+    #article.image = File.read("../data/img/#{row[9]}")
+    article.save
 
-    
     id_old = row[0]
     old_user = "usuari"
    
