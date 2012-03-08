@@ -11,19 +11,20 @@ task :migrate_polls => :environment do
   polls_options = CSV.read("../data/enquesta_opcions.csv",:col_sep => ";")
   polls_votes = CSV.read("../data/enquesta_vots.csv",:col_sep => ";")
 
-  polls.each do |row|
-    old_poll_id = row[0].to_i
-    poll = Poll.create(:question => row[1])
-    
-    polls_options.each do |row2|
-      old_poll_option_id = row2[0].to_i
+  p = {}
+  polls.each do |poll|
+    poll_id = poll[0]
+    p[poll_id] = Poll.create(:question => poll[1])
+  end
+  
+  o = {}  
+  polls_options.each do |option|
+    option_id = option[0]
+    o[option_id] = PollOption.create(:option => option[2], :poll => p[option[1]])
+  end
       
-      poll_option = PollOption.create(:option => row2[2], :poll => poll) if row2[1].to_i == old_poll_id
-        
-      polls_votes.each do |row3| 
-        poll.vote(poll_option.id,row3[4]) if row3[2].to_i == old_poll_option_id
-      end
-    end
+  polls_votes.each do |vote|
+    p[vote[1]].vote(o[vote[2]].id,vote[4])
   end
 end
 

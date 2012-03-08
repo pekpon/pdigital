@@ -12,7 +12,7 @@ class Article < ActiveRecord::Base
     validates :title, :presence => true
     validates :published_date, :presence => true
 
-    def self.damedato(method=:views_filtered_by_ip)
+    def self.get_comments(method=:views_filtered_by_ip)
       ########## FIX ###########
       numbers = []
       self.all.each { |x| numbers << {:id => x.id,  :count => x.try(method), :article => x} }

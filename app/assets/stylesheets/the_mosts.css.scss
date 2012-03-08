@@ -1,3 +1,30 @@
 // Place all the styles related to the the_mosts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.mostTitle{
+	font-family:Georgia;
+	font-size:36px;
+	padding-bottom:10px;
+}
+.mostBoxContent{
+	border:1px solid #ccc;
+	padding:10px;
+	background-color:white;
+	margin-bottom:10px;
+}
+
+.mostBoxContent .article_title{
+	font-family:Georgia;
+	font-size:20px;
+	margin-bottom:5px;
+	line-height:24px;
+}
+
+.mostBoxContent .article_title a{
+	color:#333;
+}
+
+.mostBoxContent .article_title a:hover{
+	color:#0088cc;
+}

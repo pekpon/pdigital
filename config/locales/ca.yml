@@ -45,3 +45,6 @@ ca:
   unlock_instructions: "No has rebut les instruccions de desbloquejament?"
   
   no_articles_category: "No hi ha articles en aquesta categoria"
+  
+  more_viewed: "Els + llegits"
+  more_commented: "Els + comentats"

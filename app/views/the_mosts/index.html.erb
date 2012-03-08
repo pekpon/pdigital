@@ -1,2 +1,15 @@
-<h1>The +</h1>
-<%= render :partial => 'articles/box', :locals => {:articles => @articles_commented} %>
+<%= stylesheet_link_tag    "the_mosts" %>
+
+<br />
+<div class="row">
+	<div class="span4">
+		<p class="mostTitle"><%= t(:more_commented)%></p>
+		<%= render :partial => 'most_box', :locals => {:articles => @articles_commented} %>
+	</div>
+	<div class="span4">
+		<p class="mostTitle"><%= t(:more_viewed)%></p>
+		<%= render :partial => 'most_box', :locals => {:articles => @articles_viewed} %>
+	</div>
+	<div class="span4">
+	</div>
+</div>
