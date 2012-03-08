@@ -3,4 +3,4 @@ rvm:
   - 1.9.3
 before_script:
   - "ruby --version"
-  - "bundle exec rake test"
+  - "bundle exec rake db:migrate"
