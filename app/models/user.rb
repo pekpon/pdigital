@@ -1,6 +1,10 @@
 class User < ActiveRecord::Base
   has_many :article_comments
   
+  validates :username, :presence => true
+  validates :password, :presence => true
+  validates :email, :presence => true
+  
   # Include default devise modules. Others available are:
   # :token_authenticatable, :encryptable, :confirmable, :lockable, :timeoutable and :omniauthable
   
