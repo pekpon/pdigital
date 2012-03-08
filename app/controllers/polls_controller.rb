@@ -10,7 +10,7 @@ class PollsController < ApplicationController
   def vote
     if params[:id_option]
       @poll = Poll.find(params[:id])
-      @poll.vote(params[:id_option], request.ip) if @poll
+      @poll.vote(params[:id_option], request.remote_ip) if @poll
     end
     
     render :vote_result
