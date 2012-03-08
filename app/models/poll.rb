@@ -2,6 +2,8 @@ class Poll < ActiveRecord::Base
   has_many :poll_options
   has_many :poll_votes
   
+  validates :question, :presence => true
+  
   def to_s
     self.question
   end

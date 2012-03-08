@@ -2,6 +2,9 @@ class PollOption < ActiveRecord::Base
   belongs_to :poll
   has_many :poll_votes
   
+  validates :poll, :presence => true
+  validates :option, :presence => true
+  
   def votes
     self.poll_votes.count
   end
