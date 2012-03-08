@@ -6,7 +6,7 @@ class RenameAvatarColumn < ActiveRecord::Migration
     rename_column :articles, :avatar_updated_at, :image_updated_at
     
     #Si existe el dir public/system/avatars  rename public/system/images
-    File.rename( "public/system/avatars", "public/system/images" )
+    File.rename( "public/system/avatars", "public/system/images" ) if Dir.exist? "public/system/avatars"
   end
 
   def down
@@ -15,6 +15,7 @@ class RenameAvatarColumn < ActiveRecord::Migration
     rename_column :articles, :image_file_size, :avatar_file_size
     rename_column :articles, :image_updated_at, :avatar_updated_at
     #Si existe el dir public/system/images rename public/system/avatar
-    File.rename( "public/system/images", "public/system/avatars" )
+    File.rename( "public/system/images", "public/system/avatars" ) if Dir.exist? "public/system/images"
+    
   end
 end
