@@ -3,13 +3,14 @@ class Poll < ActiveRecord::Base
   has_many :poll_votes
   
   validates :question, :presence => true
+  validates :question, :length => { :minimum => 3 }
   
   def to_s
     self.question
   end
   
   def vote(id, ip)
-    self.poll_votes.create! :poll_option_id => id, :ip => ip
+    self.poll_votes.create!(:poll_option_id => id, :ip => ip) unless self.voted ip
   end
   
   def voted(ip)

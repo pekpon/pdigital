@@ -8,6 +8,13 @@ describe Category do
       cat = Category.create
       assert cat.errors.messages.has_key? :name
     end
+    
+    it 'should fail duplicated name' do
+      cat = Category.create :name => 'test'
+      cat2 = Category.create :name => 'test'
+      assert cat2.id.must_be_nil
+    end
+      
   end
 
 

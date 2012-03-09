@@ -9,8 +9,11 @@ class Article < ActiveRecord::Base
 	
     validates :category, :presence => true
     validates :body, :presence => true
+    validates :body, :length => { :minimum => 10 }
     validates :title, :presence => true
+    validates :title, :length => { :minimum => 3 }
     validates :published_date, :presence => true
+    validates :published_date, :format => { :with => /\d{4}-\d{2}-\d{2}/ }
 
     def self.get_comments(method=:views_filtered_by_ip)
       ########## FIX ###########

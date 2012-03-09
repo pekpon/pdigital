@@ -8,6 +8,12 @@ describe Poll do
       poll = Poll.create
       assert poll.errors.messages.has_key? :question
     end
+    
+    it 'should fail becouse short' do
+      poll = Poll.create :question => 'Hi'
+      
+      assert poll.id.must_be_nil
+    end
   end
 
 
