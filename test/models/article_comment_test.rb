@@ -18,7 +18,7 @@ describe ArticleComment do
         assert comment.id.must_be_nil
       end
       
-      it 'should not create a comment field empty' do
+      it 'should not create a comment with comment field empty' do
         comment = @article.article_comments.create :user => @user, :comment => '', :username => 'test_user'
         assert comment.id.must_be_nil
       end
@@ -42,9 +42,8 @@ describe ArticleComment do
       end
       
       it 'should create a comment with username' do
-        skip 
-        comment = @article.article_comments.create :user => nil, :comment => 'x', :username => 'test_user'
-        assert comment.id.wont_be_nil
+        comment = @article.article_comments.create :user => nil, :comment => 'xxx', :username => 'test_user'
+        assert comment.id.must_be :>, 0
       end
       
     end
