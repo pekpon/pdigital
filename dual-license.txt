@@ -1,0 +1,55 @@
+Dual Licensing
+--------------
+
+pDigital is available under a dual licensing [1] scheme whereby use of pDigital 
+in projects that are licensed so as to be compatible with AGPL Version      
+3 may use pDigital under the terms of the compatible license. Please see      
+agpl-3.0.txt in the pDigital distribution for more details.                   
+
+However, if AGPL Version 3.0 terms are incompatible with your use of        
+pDigital, alternative license terms are available from Eric Ponce Rodríguez --  
+please direct inquiries about pDigital licensing to ponceeric@gmail.com or  
++34 619 753362.                                                    
+
+Why Dual Licensing?
+-------------------
+
+Dual licensing has two advantages in this case:
+
+1. it lets us focus on building pDigital as the best available OWL reasoner
+
+2. it lowers the barriers of evaluation and adoption for organizations who
+want to try OWL and Semantic Web technologies
+
+Which License Should I Choose?
+------------------------------
+
+If your software is licensed under a recognized open source license [2], you 
+can use pDgitial under its open source license terms (see agpl-3.0.txt) without
+further consideration.
+
+However, if your software is not licensed under an open source compatible   
+license, such as a proprietary license, then you should contact Eric Ponce 
+Rodríguez in order to arrange alternative license terms to cover your use  
+of pDigital.                                                                  
+
+In short,
+
+* If you derive a commercial advantage by using pDigital with a closed source 
+  solution, you must arrange alternative license terms for your use of        
+  pDigital which will, at a minimum, remove the need to publish your source    
+  code.
+
+* If you wish to use pDigital under its open source terms, you must           
+  contribute back to the community the source code for the solution you use   
+  pDigital with, so that others may benefit from it as you benefit from pDigital. 
+
+License Inquiries
+-----------------
+
+For more about pDigital's dual license terms, or to arrange proprietary       
+or alternative licensing terms, please direct inquires to                   
+ponceeric@gmail.com or, via phone, +34 619 753362.                      
+
+[1] http://en.wikipedia.org/wiki/Dual_license
+[2] http://www.opensource.org/licenses
