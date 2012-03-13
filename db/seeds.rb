@@ -26,9 +26,21 @@ Configuration.create([
   {:key => 'image_site', :values => 'http://placehold.it/100x100'},
   {:key => 'sitename', :values => 'pDigital'},
 
-  {:key => 'analytics_tracking', :values => ''},
-  {:key => 'link1', :values => ''},
-  {:key => 'link2', :values => ''},
+  {:key => 'analytics_tracking', :values => "<script type='text/javascript'>
+
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'PASTE YOUR ANALYTICS CODE HERE']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+  </script>"},
+  {:key => 'link1', :values => 'test_link'},
+  {:key => 'link2', :values => 'test_link'},
 
   {:key => 'sports_id', :values => '1'},
   {:key => 'opinion_id', :values => '2'}

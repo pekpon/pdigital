@@ -1,12 +1,21 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Papiol Digital</title>
+  <title><%= Configuration.value(:title_site)%></title>
   <%= stylesheet_link_tag  "base", "bootstrap", "article_comments", "application" %>
   <%= javascript_include_tag "application" %>
   <%= include_imperavi_javascript %>
   <%= include_imperavi_stylesheet %>
   <%= csrf_meta_tags %>
+
+	<meta property='og:title' content='<%=Configuration.value(:title_site)%>' />
+	<meta property='og:description' content='<%=Configuration.value(:description_site)%>' />
+	<meta property='og:type' content='website' />
+	<meta property='og:url' content='<%= root_url %>' />
+	<meta property='og:image' content='<%=Configuration.image_url(:image_site)%>' />
+	<meta property='og:site_name' content='<%=Configuration.value(:sitename)%>' />
+
+	<%= raw(Configuration.value(:analytics_tracking))%>
 </head>
 <body>
 <div class="container">

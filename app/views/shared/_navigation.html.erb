@@ -3,7 +3,9 @@
       	<li class="portada <%= "active" if controller.controller_name == 'articles' %>"><%= link_to t(:home), root_path %></li>
 	  	<li class="portada <%= "active" if controller.controller_name == 'polls' %>" ><%= link_to t(:polls), polls_path %></li>
 		<li class="portada <%= "active" if controller.controller_name == 'the_mosts' %>"><%= link_to t(:the_most), the_mosts_path %></li>
-      	<li class="portada"><a href="http://papiolfm.com/" target="_blank">Papiol FM (Ràdio amiga)</a></li>
+		
+		<%= raw(Configuration.links) %>
+      	
 		<div class="clearFloat"></div>
    	</ul>
 </div>
