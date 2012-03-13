@@ -14,10 +14,12 @@ class ArticlesController < ApplicationController
   # GET /articles
   # GET /articles.json
   def index
-    @articles = Article.find(:all, :conditions => ["category_id != ? AND category_id != ? AND published != ?", "1", "2","0"], :order => 'id DESC')
+    sport = ::Configuration.value :sports_id
+    opinion = ::Configuration.value :opinion_id
+    @articles = Article.active.general(sport,opinion).order("id DESC")
     @categories = Category.order('name').all
-    @articles_sport = Article.find(:all, :conditions => ["category_id = ? AND published != ?", "1","0"], :order => 'id DESC')
-    @articles_opinion = Article.find(:all, :conditions => ["category_id = ? AND published != ?", "2","0"], :order => 'id DESC')
+    @articles_sport = Article.active.category(sport).order("id DESC")
+    @articles_opinion = Article.active.category(opinion).order("id DESC")
 
     respond_to do |format|
       format.html # index.html.erb

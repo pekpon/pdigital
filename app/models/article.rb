@@ -29,6 +29,18 @@ class Article < ActiveRecord::Base
       sorted[0..9].each{|x| ids << x[:article] }
       ids
     end
+
+    def self.active
+      self.where(:published => true)
+    end
+
+    def self.category cat
+      self.where(:category_id => cat)
+    end
+    
+    def self.general(cat1, cat2)
+      self.where("category_id != ? and category_id != ?",cat1,cat2)
+    end
 	
 	  #Number
 	  def views_filtered_by_ip
@@ -39,8 +51,7 @@ class Article < ActiveRecord::Base
 	  def comments_count
 	    self.article_comments.count
 	  end
-
-	
+    	
     def resume
       if self.subtitle.nil?
         Sanitize.clean(self.body).slice!(0,160) + "..."
