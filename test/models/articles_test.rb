@@ -26,6 +26,13 @@ describe Article do
          
         assert article.id.must_be_nil
       end
+      
+      it 'should fail because it have long subtitle' do
+        article = Article.create :title => 'Ho', :body => 'test body', :category => Category.create(:name => 'test'),
+         :published_date => '2012-3-11', :subtitle => 'abcdefghijk abcdefghijk abcdefghijk abcdefghijk abcdefghijk abcdefghijk abcdefghijk abcdefghijk abcdefghijk abcdefghijk abcdefghijk abcdefghijk abcdefghijk abcdefghijk abcdefghijk abcdefghijk abcdefghijk abcdefghijk abcdefghijk abcdefghijk abcdefghijk '
+         
+        assert article.id.must_be_nil
+      end
     
       it 'should fail because it have less than 3 characters on title' do
         article = Article.create :title => 'Ho', :body => 'test body', :category => Category.create(:name => 'test'),
