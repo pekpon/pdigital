@@ -14,6 +14,11 @@ describe Category do
       cat2 = Category.create :name => 'test'
       assert cat2.id.must_be_nil
     end
+    
+    it 'should create a category' do 
+      cat = Category.create(:name => "Category")
+      assert cat.id.must_be :>,0
+    end
       
   end
 

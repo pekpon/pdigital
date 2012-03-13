@@ -10,6 +10,11 @@ describe PollOption do
         assert option.errors.messages.has_key? key
       end
     end
+    
+    it 'should create an option' do
+      option = PollOption.create :poll => Poll.create(:question => "Do you like this?"), :option => "Yes"
+      assert option.id.must_be :>,0
+    end
   end
 
 

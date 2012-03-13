@@ -11,6 +11,11 @@ describe User do
       end
     end
     
+    it 'should create and User' do
+      user = User.create :username => 'paco', :email => 'asdsadsa@sdasda.com', :password => '123456'
+      assert user.id.must_be :>,0
+    end
+    
     it 'should fail because username short' do
       user = User.create :username => 'a', :email => 'a@a.com', :password => '123456'
       assert user.id.must_be_nil

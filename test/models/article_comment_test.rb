@@ -35,10 +35,9 @@ describe ArticleComment do
       end
 
       it 'should create a comment with user' do
-        skip 'On hold error with wont_be_nil'
         comment = @article.article_comments.create :user => @user, :comment => 'gagagag'
         puts comment.inspect
-        assert comment.id.wont_be_nil
+        assert comment.id.must_be :>, 0
       end
       
       it 'should create a comment with username' do
@@ -54,7 +53,7 @@ describe ArticleComment do
         skip
         comment = @article.article_comments.create :user => nil, :comment => 'xxxxx', :username => 'test_user'
         vote = comment.vote.create(1,"1.1.1.1")
-        vote2 = comment.vote(1,"1.1.1.1")
+        vote2 = comment.vote.create(1,"1.1.1.1")
         assert vote2.id.must_be_nil
       end
       
