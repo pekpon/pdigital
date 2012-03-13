@@ -48,6 +48,33 @@ describe Article do
         assert article.id.must_be_nil
       end
       
+      describe 'Friendly_id' do
+        it 'should create a slug' do
+          article = Article.create :title => 'Hola', :body => 'test bodyaaaaa', :category => Category.create(:name => 'test'),
+            :published_date => Time.now
+         
+          assert article.slug.blank?.must_equal false
+        end
+
+        it 'should not change the slug when passing one' do
+          article = Article.create :title => 'Hola', :body => 'test bodyaaaaa', :category => Category.create(:name => 'test'),
+            :published_date => Time.now, :slug => 'test'
+         
+          assert article.slug.must_equal 'test'
+        end
+
+        it 'should not change the slug when saving an existing object' do
+          article = Article.create :title => 'Hola', :body => 'test bodyaaaaa', :category => Category.create(:name => 'test'),
+            :published_date => Time.now, :slug => 'test'
+          article.slug = 'test1'
+          article.save
+          
+          assert article.slug.must_equal 'test1'
+        end
+
+        
+      end
+      
     end
     
   end

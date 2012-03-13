@@ -4,8 +4,12 @@ class Article < ActiveRecord::Base
 	is_impressionable
 	
 	extend FriendlyId
-  friendly_id :title, use: :slugged
-	
+  friendly_id :title, :use => :slugged
+
+  def should_generate_new_friendly_id?
+      self.slug.blank? or (new_record? and self.slug.blank?)
+  end	
+  
 	has_attached_file :image, :styles => { :detail => "610x610>", :medium => "330x330>", :thumb => "100x100>" },
       :url => "/system/images/:id/:style/:basename.:extension",          
       :path => ":rails_root/public/system/images/:id/:style/:basename.:extension"
