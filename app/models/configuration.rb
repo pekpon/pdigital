@@ -3,8 +3,7 @@ class Configuration < ActiveRecord::Base
       :url => "/system/configurations/:id/:basename.:extension",          
       :path => ":rails_root/public/system/configurations/:id/:basename.:extension"
       
-    validates :key, :presence => true
-    validates :values, :presence => true
+    validates :key, :values, :presence => true
 
     def self.value key
       data = self.find_by_key key.to_s

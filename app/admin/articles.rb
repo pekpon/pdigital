@@ -14,7 +14,9 @@ ActiveAdmin.register Article do
             
             f.input :category
             f.input :title
+            f.input :title_url
             f.input :body, :input_html => { :class => "editor" }
+            f.input :extract
             f.input :author
             f.input :image, :hint => f.template.image_tag(f.object.image.url(:thumb))
             f.input :published

@@ -7,13 +7,11 @@ class Article < ActiveRecord::Base
       :url => "/system/images/:id/:style/:basename.:extension",          
       :path => ":rails_root/public/system/images/:id/:style/:basename.:extension"
 	
-    validates :category, :presence => true
-    validates :body, :presence => true
+    validates :category, :body, :title, :published_date, :presence => true
     validates :body, :length => { :minimum => 10 }
-    validates :title, :presence => true
     validates :title, :length => { :minimum => 3 }
-    validates :published_date, :presence => true
     validates :published_date, :format => { :with => /\d{4}-\d{2}-\d{2}/ }
+    validates :extract, :length => { :maximum => 160 }
 
     def self.get_comments(method=:views_filtered_by_ip)
       ########## FIX ###########
