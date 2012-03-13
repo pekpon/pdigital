@@ -19,3 +19,17 @@ Category.create([
   { name: 'Politic'},
   { name: 'Society'}
 ])
+
+Configuration.create([
+  {:key => 'title_site', :values => 'pDigital - Your news'},
+  {:key => 'description_site', :values => 'pDigital is a online newspaper used in towns and cities'},
+  {:key => 'image_site', :values => 'http://placehold.it/100x100'},
+  {:key => 'sitename', :values => 'pDigital'},
+
+  {:key => 'analitycs_tracking', :values => ''},
+  {:key => 'link1', :values => ''},
+  {:key => 'link2', :values => ''},
+
+  {:key => 'sports_id', :values => '1'},
+  {:key => 'opinion_id', :values => '2'}
+  ])
