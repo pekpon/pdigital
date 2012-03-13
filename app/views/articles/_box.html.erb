@@ -10,7 +10,7 @@
 			<%= link_to (image_tag article.image.url(:medium) , :class => "article_img", :border => 0), article_path(article) %>
 		<% end %>
 		</div>
-		<div class="article_preview"><%= article.resume %>...</div>
+		<div class="article_preview"><%= article.resume %></div>
 		<div class="article_info">
 			<div class="article_comments">
 				<%= image_tag "ico/comment.png", :class => "thumb_img" %> <%= pluralize(article.article_comments.count,t(:singular_comment),t(:plural_comments)) %>

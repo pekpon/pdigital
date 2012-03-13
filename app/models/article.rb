@@ -9,7 +9,7 @@ class Article < ActiveRecord::Base
 	
     validates :category, :body, :title, :published_date, :presence => true
     validates :body, :length => { :minimum => 10 }
-    validates :title, :length => { :in => 3...60 }
+    validates :title, :length => { :in => 3...100 }
     validates :published_date, :format => { :with => /\d{4}-\d{2}-\d{2}/ }
     validates :subtitle, :length => { :maximum => 160 }
 
@@ -35,7 +35,11 @@ class Article < ActiveRecord::Base
 
 	
     def resume
-      Sanitize.clean(self.body).slice!(0,200)
+      if self.subtitle.nil?
+        Sanitize.clean(self.body).slice!(0,160) + "..."
+      else
+        self.subtitle
+      end
     end
 
     def vote(type, ip)
