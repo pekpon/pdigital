@@ -50,11 +50,9 @@ describe ArticleComment do
     describe 'votes' do
       
       it 'should not vote a comment' do
-        skip
         comment = @article.article_comments.create :user => nil, :comment => 'xxxxx', :username => 'test_user'
-        vote = comment.vote.create(1,"1.1.1.1")
-        vote2 = comment.vote.create(1,"1.1.1.1")
-        assert vote2.id.must_be_nil
+        vote = comment.vote(1,"1.1.1.1")
+        assert lambda { comment.vote(1,"1.1.1.1") }.must_raise(ActiveRecord::RecordInvalid)
       end
       
        it 'should be voted' do

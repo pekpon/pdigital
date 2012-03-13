@@ -25,17 +25,16 @@ describe User do
       user = User.create :username => 'asdf', :email => 'a@a.com', :password => '123'
       assert user.id.must_be_nil
     end
-    
-    it 'should fail because username uniqueness' do
-      skip
-      user = User.create :username => 'asdf', :email => 'a@a.com', :password => '123456'
-      user2 = User.create :username => 'asdf', :email => 'aa@a.com', :password => '123456'
+        
+    it 'should fail because email uniqueness' do
+      user = User.create :username => 'asdfx', :email => 'a@a.com', :password => '123456'
+      user2 = User.create :username => 'asdfdx', :email => 'a@a.com', :password => '123456'
       assert user2.id.must_be_nil
     end
     
-    it 'should fail because email uniqueness' do
-      user = User.create :username => 'asdf', :email => 'a@a.com', :password => '123456'
-      user2 = User.create :username => 'asdfd', :email => 'a@a.com', :password => '123456'
+    it 'should fail because username uniqueness' do
+      user = User.create! :username => 'asdfd', :email => 'as@a.com', :password => '123456'
+      user2 = User.create :username => 'asdfd', :email => 'aa@a.com', :password => '123456'
       assert user2.id.must_be_nil
     end
     
