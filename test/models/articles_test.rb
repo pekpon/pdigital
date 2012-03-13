@@ -14,6 +14,12 @@ describe Article do
         end
       end
       
+      it 'should create an article' do
+        article = Article.create :title => 'My article test', :body => 'The body of the test article', 
+        :category => Category.create(:name => 'test'), :published_date => '2012-03-11'
+        assert article.id.must_be :>, 0
+      end
+      
       it 'should fail because it have wrong format publish_date' do
         article = Article.create :title => 'Ho', :body => 'test body', :category => Category.create(:name => 'test'),
          :published_date => '2012-3-11'
