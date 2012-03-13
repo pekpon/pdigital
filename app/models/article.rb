@@ -3,6 +3,9 @@ class Article < ActiveRecord::Base
 	has_many :article_comments
 	is_impressionable
 	
+	extend FriendlyId
+  friendly_id :title, use: :slugged
+	
 	has_attached_file :image, :styles => { :detail => "610x610>", :medium => "330x330>", :thumb => "100x100>" },
       :url => "/system/images/:id/:style/:basename.:extension",          
       :path => ":rails_root/public/system/images/:id/:style/:basename.:extension"
