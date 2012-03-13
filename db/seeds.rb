@@ -26,7 +26,7 @@ Configuration.create([
   {:key => 'image_site', :values => 'http://placehold.it/100x100'},
   {:key => 'sitename', :values => 'pDigital'},
 
-  {:key => 'analitycs_tracking', :values => ''},
+  {:key => 'analytics_tracking', :values => ''},
   {:key => 'link1', :values => ''},
   {:key => 'link2', :values => ''},
 
