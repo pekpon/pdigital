@@ -51,6 +51,20 @@ class Article < ActiveRecord::Base
 	  def comments_count
 	    self.article_comments.count
 	  end
+	  
+	  def stats_yesterday
+	    comments = self.article_comments.where("created_at like ?","#{Date.yesterday} %")
+	    c = comments.count
+	    v = 0
+	    
+	    comments.each do |comment|
+	      v = v + comment.votes.count
+      end
+      
+	    i = self.impressionist_count(:filter => :ip_address, :start_date => "#{Date.yesterday}", :end_date => "#{Date.today}")
+
+	    return c*10 + v*5 + i
+	  end
     	
     def resume
       if self.subtitle.nil?
@@ -79,5 +93,14 @@ class Article < ActiveRecord::Base
         return true
       end
     end
-	
+    
+    def self.most_moved
+      a = Article.first
+      
+      self.all.each do |x|
+        a = x if x.try(:stats_yesterday) >= a.try(:stats_yesterday)
+      end
+      
+      return a
+    end
 end

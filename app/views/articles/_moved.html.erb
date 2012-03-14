@@ -1,3 +1,7 @@
 <div class="article_box">
 	<div class="article_box_title"><%=t(:the_most_moved)%></div>
+	<div id="article_moved_title"><%= link_to @most_moved.title, article_path(@most_moved) %></div>
+	<div id="article_moved_image"><% if(@most_moved.image.url(:medium) != "/images/medium/missing.png") %>
+		<%= link_to (image_tag @most_moved.image.url(:medium) , :class => "article_img", :border => 0), article_path(@most_moved) %>
+	<% end %></div>
 </div>

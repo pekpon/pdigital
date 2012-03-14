@@ -31,6 +31,7 @@ class ArticlesController < ApplicationController
   def show
     @article = Article.find(params[:id])
     @poll = Poll.last
+    @most_moved = Article.most_moved
     
     respond_to do |format|
       format.html # show.html.erb

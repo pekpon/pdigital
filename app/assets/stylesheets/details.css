@@ -71,3 +71,13 @@
 	color: #222;
 	margin-bottom:10px;
 }
+#article_moved_title{
+	font-family: Georgia, "Times New Roman", Times, serif;
+	font-size: 20px;
+}
+#article_moved_title a{
+	color: #777;
+}
+#article_moved_title a:hover{
+	color: #444;
+}
