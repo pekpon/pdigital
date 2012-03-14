@@ -60,6 +60,11 @@ describe ArticleComment do
          comment.vote(1, "1.1.1.1")
           assert comment.voted "1.1.1.1"
         end
+        
+        it 'should vote cliking' do
+          skip
+          click_on('option')
+        end
       
     end
 
