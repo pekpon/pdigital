@@ -20,6 +20,12 @@ Category.create([
   { name: 'Society'}
 ])
 
+
+Configuration.find_or_create_by_key(:key => 'head_image_left', :values => 'http://placehold.it/500x100')
+Configuration.find_or_create_by_key(:key => 'head_image_right', :values => 'http://placehold.it/400x64')
+
+
+
 Configuration.create([
   {:key => 'title_site', :values => 'pDigital - Your news'},
   {:key => 'description_site', :values => 'pDigital is a online newspaper used in towns and cities'},
