@@ -79,6 +79,7 @@ GEM
       execjs
     coffee-script-source (1.2.0)
     daemons (1.1.8)
+    database_cleaner (0.7.1)
     devise (1.5.3)
       bcrypt-ruby (~> 3.0)
       orm_adapter (~> 0.0.3)
@@ -214,6 +215,7 @@ DEPENDENCIES
   capistrano
   capybara
   coffee-rails (~> 3.2.1)
+  database_cleaner
   devise
   friendly_id (~> 4.0.1)
   imperavi-rails (~> 0.0.3.beta)

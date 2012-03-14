@@ -28,6 +28,7 @@ group :test, :development do
   gem 'minitest'
   gem 'capybara'
   gem 'turn'
+  gem 'database_cleaner'
 end
 
 # Gems used only for assets and not required
