@@ -33,6 +33,15 @@ describe "Articles integration" do
         assert page.has_content?('Dashboard').must_be_same_as true
       end
       
+      it "shouldn't do login in the admin page" do
+        AdminUser.create!(:email => 'admin@example.com', :password => 'password', :password_confirmation => 'password')
+        visit '/admin/login'
+        fill_in('admin_user_email', :with => 'admin@example.com')
+        fill_in('admin_user_password', :with => '')
+        click_on('admin_user_submit')
+        assert page.has_content?('Dashboard').must_be_same_as false
+      end
+      
     end
     
     describe "UserActions" do
@@ -91,7 +100,7 @@ describe "Articles integration" do
         visit '/articles/my-showed-article-test'
         click_on('Option Test')
         PollVote.first.poll_id.must_equal(1)
-      end    
+      end   
     end
     
     describe "Published" do
