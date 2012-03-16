@@ -11,8 +11,11 @@ class PollsController < ApplicationController
     if params[:id_option]
       @poll = Poll.find(params[:id])
       @poll.vote(params[:id_option], request.remote_ip) if @poll
-    end
+    end 
     
-    render :vote_result
+    respond_to do |format|
+      format.html { redirect_to polls_url }
+      format.js   { render :vote_result }
+    end
   end
 end
