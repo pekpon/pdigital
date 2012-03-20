@@ -45,8 +45,8 @@ Configuration.create([
     })();
 
   </script>"},
-  {:key => 'link1', :values => 'test_link'},
-  {:key => 'link2', :values => 'test_link'},
+  {:key => 'link1', :values => "<li class='portada'><a href='http://www.WEB_DE_DESTINO.com' target='_blank'>NOMBRE_A_MSTRAR</a></li>"},
+  {:key => 'link2', :values => "<li class='portada'><a href='http://www.WEB_DE_DESTINO.com' target='_blank'>NOMBRE_A_MSTRAR</a></li>"},
 
   {:key => 'sports_id', :values => '1'},
   {:key => 'opinion_id', :values => '2'}
