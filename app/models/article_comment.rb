@@ -4,7 +4,7 @@ class ArticleComment < ActiveRecord::Base
   has_many :votes
   
   validates :comment, :presence => true
-  validates :comment, :length => { :in => 2..700 }
+  validates :comment, :length => { :minimum => 2 }
   validates :comment, :uniqueness => { :scope => [:user_id, :article_id, :active] }
   
   def clean

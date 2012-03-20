@@ -16,7 +16,7 @@ class Article < ActiveRecord::Base
 	
     validates :category, :body, :title, :published_date, :presence => true
     validates :body, :length => { :minimum => 10 }
-    validates :title, :length => { :in => 3...100 }
+    validates :title, :length => { :in => 3...160 }
     validates :published_date, :format => { :with => /\d{4}-\d{2}-\d{2}/ }
     validates :subtitle, :length => { :maximum => 160 }
 
