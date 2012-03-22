@@ -4,6 +4,7 @@ class Configuration < ActiveRecord::Base
       :path => ":rails_root/public/system/configurations/:id/:basename.:extension"
       
     validates :key, :values, :presence => true
+    validates :key, :uniqueness => true
     
     def self.links
       data = self.find_by_key :link1
