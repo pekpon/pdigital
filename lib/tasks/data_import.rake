@@ -1,4 +1,4 @@
-#require 'CSV'
+require 'CSV'
 
 desc "Migrate polls"
 task :migrate_polls => :environment do
@@ -73,14 +73,22 @@ task :pruebas => :environment do
       cat = 11
   end
       
-    
+  if row[14].to_i == 1
+    act = true
+  else
+    act = false
+  end    
+   
   article = Article.create(:title => row[2], :body => row[4].gsub(/\#/, '"'), :author => row[7],
-      :category => Category.find(cat), :published_date => row[8])
+      :category => Category.find(cat), :published_date => row[8], :published => act)
+      
+    puts row[0]
+    
+    #article = Article.create(:title => "Titol de test", :body => "Text de prova, blablabla", :author => "Eric Ponce",
+     #     :category => Category.find(10), :published_date => "2012-03-03", :published => true)
       
     #Insertamos la imagen
     article.image = File.new("../data/img/#{row[9]}") if File.exists?("../data/img/#{row[9]}")
-   # article.img.attachment = File.open("../data/img/#{row[9]}")
-    #article.image = File.read("../data/img/#{row[9]}")
     article.save
 
     id_old = row[0]
@@ -93,18 +101,23 @@ task :pruebas => :environment do
     if row2[2].to_i != 0
       old_user = users[row2[2].to_s]
     end
-        
+
     #Creamos el comentario con el campo de usuario vacio y un nuevo campo user_old con el nombre
-    a_comment = article.article_comments.create(:comment => row2[5].gsub(/\$/, '"'), 
-      :user => nil, 
-      :username => old_user,
-      :active => row2[3]) if id_old == row2[1]
+    if id_old == row2[1]
+      if row2[5].gsub(/\$/, '"').length < 10000
+        puts "-> #{row2[0]}"
+        a_comment = article.article_comments.create(:comment => row2[5].gsub(/\$/, '"'), 
+          :user => nil, 
+          :username => old_user,
+          :active => row2[3])
+      end
+    end
     
     id_comment_old = row2[0]
     
     #RECORREMOS LOS VOTOS
      votes.each { |row4| 
-       a_comment.vote(row4[2].to_i == 0 ? 2 : 1,"0.0.0.0") if id_comment_old == row4[1] and a_comment != nil
+       a_comment.vote(row4[2].to_i == 0 ? 2 : 1,row4[3]) if id_comment_old == row4[1] and a_comment != nil
      }
     end
   end
