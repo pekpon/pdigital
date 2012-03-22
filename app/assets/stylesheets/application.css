@@ -10,6 +10,7 @@
  *
  *= require_self
  * require_tree .
+ *= require formtastic
 */
 body{
 	background-color:#F2F2F2;
@@ -28,4 +29,11 @@ body{
 }
 .btn-close{
 	margin-left:10px;
+}
+.ads_content{
+	background-color:#EEE;
+	padding:5px;
+	text-align:center;
+	font-size:10px;
+	font-family:arial;
 }
