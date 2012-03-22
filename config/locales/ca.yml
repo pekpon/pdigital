@@ -36,6 +36,7 @@ ca:
   the_most_moved: "La més \"moguda\""
   
   username: "Usuari"
+  name: "Nom"
   email: "Correu elèctronic"
   password: "Contrasenya"
   r_password: "Repeteix la contrasenya"
@@ -48,3 +49,7 @@ ca:
   
   more_viewed: "Els + llegits"
   more_commented: "Els + comentats"
+  
+  contact: "Contacta"
+  subject: "Assumpte"
+  body: "Missatge"

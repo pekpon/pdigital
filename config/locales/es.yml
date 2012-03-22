@@ -39,6 +39,7 @@ es:
   the_most_moved: "La más \"movida\""
   
   username: "Usuario"
+  name: "Nombre"
   email: "Correo electónico"
   password: "Contraseña"
   r_password: "Repite la contraseña"
@@ -51,3 +52,7 @@ es:
   
   more_viewed: "Los + vistos"
   more_commented: "Los + comentados"
+  
+  contact: "Contacta"
+  subject: "Asunto"
+  body: "Mensaje"
