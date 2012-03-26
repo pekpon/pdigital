@@ -1,4 +1,4 @@
-require 'CSV'
+#require 'CSV'
 
 desc "Migrate polls"
 task :migrate_polls => :environment do
