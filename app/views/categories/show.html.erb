@@ -1,7 +1,8 @@
 <%= stylesheet_link_tag    "categories" %>
 
-<div class="row white">
-	<div id="categories_header"><%= @category.name %></div>
+<div id="section_header"><%= @category.name %></div>
+<div class="row">
+	
 		<% if @articles.empty? %>
 		
 		<p class="no_message"><%=t(:no_articles_category)%></p>
@@ -11,32 +12,35 @@
 		<div class="span4">
 		
 		<% @articles.each_with_index do |article,index| %>	
-		<% if (index-2)%2 == 0 %>
-			<span class="title"><%= link_to article.title, article_path(article) %></span>
-			<% if(article.image.url(:medium) != "/images/medium/missing.png") %>
-			<p><%= link_to (image_tag article.image.url(:medium), :border => "0"), article_path(article) %></p>
+			<% if (index-2)%2 == 0 %>
+				
+				<%= render :partial => 'blok', :locals => {:article => article} %>
+				
 			<% end %>
-			<p><%= article.resume %></p>
-		<% end %>
 		<% end %>
 		
 		</div>
 		<div class="span4">
 		
 		<% @articles.each_with_index do |article,index| %>	
-		<% if (index-1)%2 == 0 %>
-			<span class="title"><%= link_to article.title, article_path(article) %></span>
-			<% if(article.image.url(:medium) != "/images/medium/missing.png") %>
-			<p><%= link_to (image_tag article.image.url(:medium), :border => "0"), article_path(article) %></p>
+			<% if (index-1)%2 == 0 %>
+				
+				<%= render :partial => 'blok', :locals => {:article => article} %>
+				
 			<% end %>
-			<p><%= article.resume %></p>
-		<% end %>
 		<% end %>
 		
 		</div>
 		<div class="span4">
-		
-		
+			<%= render :partial => 'articles/banner', :locals => {:ad_zone => Configuration.value(:openx_article_zone_b), :ad_code => Configuration.value(:openx_article_code_b)} %>
+			
+			<div class="ads_cleaner"></div>
+			
+			<%= render :partial => 'articles/banner', :locals => {:ad_zone => Configuration.value(:openx_article_zone_a), :ad_code => Configuration.value(:openx_article_code_a)} %>
+			
+			<div class="ads_cleaner"></div>
+			
+			<%= render :partial => 'articles/banner', :locals => {:ad_zone => Configuration.value(:openx_home_zone_a), :ad_code => Configuration.value(:openx_home_code_a)} %>
 		</div>
 		
 		<% end %>
