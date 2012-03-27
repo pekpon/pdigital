@@ -39,15 +39,15 @@
 	margin-top:15px;
 	color:#333;
 	}
-.general_row .article_title a:hover{
+.general .article_title a:hover{
 	color:#069;
 	text-decoration:none;
 	}
-.sports_row .article_title a:hover{
+.sports .article_title a:hover{
 	color:#9C0;
 	text-decoration:none;
 	}
-.opinion_row .article_title a:hover{
+.opinion .article_title a:hover{
 	color:#F60;
 	text-decoration:none;
 	}
@@ -55,13 +55,13 @@
 	color:#999;
 	font-size:11px;
 	}
-.general_row .article_date{
+.general .article_date{
 	color:#069;
 }
-.sports_row .article_date{
+.sports .article_date{
 	color:#9C0;
 }
-.opinion_row .article_date{
+.opinion .article_date{
 	color:#F60;
 }
 .general_row .article_img{

@@ -2,31 +2,32 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.blok_content{
+	border:1px solid #ccc;
+	padding:10px;
+	background-color:white;
+	margin-bottom:10px;
+}
 .title a{
 	margin-top: 10px;
 	margin-bottom: 10px;
 	font-family: Georgia, "Times New Roman", Times, serif;
 	color: #333;
 	font-weight:normal;
-	font-size: 24px;
+	font-size: 20px;
 	line-height: 20px;
 }
 .title a:hover{
-	color:#999;
+	color:#069;
 	text-decoration:none;
 }
-
-#categories_header{
-	padding:40px 0 10px 20px;
-	font-family:Georgia, "Times New Roman", Times, serif;
-	font-size: 46px;
-	color: #9C0;         
-	border-bottom:1px solid #ccc;
-	padding-bottom:10px;
-	width:95%;
-	margin-left:auto;
-	margin-right:auto;
-	margin-bottom:15px;
+.author{
+	color:#666;
+}
+.cleaner{
+	border-bottom:1px solid #CCC;
+	margin-top:10px;
+	margin-bottom:10px;
 }
 .no_message{
 	margin-left:10px;
