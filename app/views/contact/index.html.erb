@@ -1,7 +1,7 @@
 <%= stylesheet_link_tag    "contact" %>
 
 <div class="row white">
-	<div class="section_header">Contact</div>
+	<div id="section_header"><%=t(:contact)%></div>
 	<div class="span8">
 		<div class="left_div">
 			<%= form_for @message, :url => contact_path do |form| %>
@@ -25,7 +25,7 @@
 			  </fieldset>
 
 			  <fieldset class="actions">
-			    <%= form.submit "Send", :class => 'btn-primary btn-large span4' %>
+			    <%= form.submit t(:send), :class => 'btn-primary btn-large span4' %>
 			  </fieldset>
 			<% end %>
 		</div>
