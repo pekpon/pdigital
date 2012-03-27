@@ -16,10 +16,10 @@ class ArticlesController < ApplicationController
   def index
     sport = ::Configuration.value :sports_id
     opinion = ::Configuration.value :opinion_id
-    @articles = Article.active.general(sport,opinion).order("id DESC")
+    @articles = Article.active.general(sport,opinion).order("id DESC").limit(15)
     @categories = Category.order('name').all
-    @articles_sport = Article.active.category(sport).order("id DESC")
-    @articles_opinion = Article.active.category(opinion).order("id DESC")
+    @articles_sport = Article.active.category(sport).order("id DESC").limit(15)
+    @articles_opinion = Article.active.category(opinion).order("id DESC").limit(15)
 
     respond_to do |format|
       format.html # index.html.erb
