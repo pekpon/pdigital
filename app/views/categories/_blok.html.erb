@@ -1,0 +1,7 @@
+<div class="blok_content">
+	<div class="title"><%= link_to article.title, article_path(article) %></div>
+	<div class="author"><%= article.author.upcase if article.author %>&nbsp;&nbsp;|&nbsp;&nbsp;<%= article.published_date.strftime("%d/%m/%Y") %></div>
+	<% if(article.image.url(:medium) != "/images/medium/missing.png") %>
+	<div><%= link_to (image_tag article.image.url(:medium), :border => "0"), article_path(article) %></div>
+	<% end %>
+</div>
