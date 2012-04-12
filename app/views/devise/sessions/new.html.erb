@@ -1,10 +1,9 @@
 <%= stylesheet_link_tag    "devise" %>
 
 <div class="row white">
+	<div id="section_header"><%=t(:sign_in)%></div>
 	<div class="span3">
 		<div class="left_padding">
-			<h2><%=t(:sign_in)%></h2>
-
 			<%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
 			<br>
 			 <div><%= f.text_field :email, :placeholder => t(:email), :class => "input_signin" %></div>
