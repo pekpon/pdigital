@@ -1,4 +1,8 @@
-#require 'CSV'
+begin
+ require 'CSV'
+rescue
+  puts "CSV not founded"
+end
 
 desc "Migrate polls"
 task :migrate_polls => :environment do
