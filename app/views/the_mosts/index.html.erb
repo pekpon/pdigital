@@ -11,5 +11,10 @@
 		<%= render :partial => 'most_box', :locals => {:articles => @articles_viewed} %>
 	</div>
 	<div class="span4">
+		<%= render :partial => 'articles/banner', :locals => {:ad_zone => Configuration.value(:openx_home_zone_a), :ad_code => Configuration.value(:openx_home_code_a)} %>	
+		<br />
+		<%= render :partial => 'articles/banner', :locals => {:ad_zone => Configuration.value(:openx_home_zone_b), :ad_code => Configuration.value(:openx_home_code_b)} %>
+		<br />
+		<%= render :partial => 'articles/banner', :locals => {:ad_zone => Configuration.value(:openx_home_zone_c), :ad_code => Configuration.value(:openx_home_code_c)} %>
 	</div>
 </div>
