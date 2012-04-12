@@ -22,12 +22,13 @@ class Article < ActiveRecord::Base
 
     def self.get_comments(method=:views_filtered_by_ip)
       ########## FIX ###########
-      numbers = []
-      self.all.each { |x| numbers << {:id => x.id,  :count => x.try(method), :article => x} }
-      sorted = numbers.sort! {|x,y| y[:count] <=> x[:count] }
-      ids =[]
-      sorted[0..9].each{|x| ids << x[:article] }
-      ids
+      self.all.sort_by{|x| -x.try(method) }[0..9]
+      # numbers = []
+      # self.all.each { |x| numbers << {:id => x.id,  :count => x.try(method), :article => x} }
+      # sorted = numbers.sort! {|x,y| y[:count] <=> x[:count] }
+      # ids =[]
+      # sorted[0..9].each{|x| ids << x[:article] }
+      # ids
     end
 
     def self.active
@@ -44,7 +45,12 @@ class Article < ActiveRecord::Base
 	
 	  #Number
 	  def views_filtered_by_ip
-	    self.impressionist_count(:filter => :ip_address)
+	    self.impressions.count
+	  end
+	  
+	  def save_visits_by_ip
+	    self.views_filtered_by_ip = self.impressionist_count(:filter => :ip_address)
+	    self.save!
 	  end
 
 	  #Number
@@ -53,17 +59,17 @@ class Article < ActiveRecord::Base
 	  end
 	  
 	  def stats_yesterday
-	    comments = self.article_comments.where("created_at like ?","#{Date.yesterday} %")
-	    c = comments.count
-	    v = 0
+	      comments = self.article_comments.where("created_at like ?","#{Date.yesterday} %")
+  	    c = comments.count
+  	    v = 0
 	    
-	    comments.each do |comment|
-	      v = v + comment.votes.count
-      end
+  	    comments.each do |comment|
+  	      v = v + comment.votes.count
+        end
       
-	    i = self.impressionist_count(:filter => :ip_address, :start_date => "#{Date.yesterday}", :end_date => "#{Date.today}")
+  	    i = self.impressionist_count(:filter => :ip_address, :start_date => "#{Date.yesterday}", :end_date => "#{Date.today}")
 
-	    return c*10 + v*5 + i
+  	    c*10 + v*5 + i
 	  end
     	
     def resume
@@ -95,12 +101,15 @@ class Article < ActiveRecord::Base
     end
     
     def self.most_moved
-      a = Article.first
+      unless $stats_yesterday or $stats_yesterday[:date].day != Time.now.day
+        a = Article.first
       
-      self.all.each do |x|
-        a = x if x.try(:stats_yesterday) >= a.try(:stats_yesterday)
+        self.all.each do |x|
+          a = x if x.try(:stats_yesterday) >= a.try(:stats_yesterday)
+        end
+      
+        $stats_yesterday = { :data => a, :date => Time.now }
       end
-      
-      return a
+      $stats_yesterday[:data]
     end
 end

@@ -1,6 +1,6 @@
 class ArticlesController < ApplicationController
   before_filter :store_location
-  impressionist :actions=>[:show]
+  #impressionist :actions=>[:show]
 
   def store_location
       session[:user_return_to] = request.url unless params[:controller] == "devise/sessions"
@@ -32,7 +32,9 @@ class ArticlesController < ApplicationController
     @article = Article.find(params[:id])
     @poll = Poll.last
     @most_moved = Article.most_moved
-    
+
+    impressionist(@article)
+
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @article }
