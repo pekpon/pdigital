@@ -1,4 +1,4 @@
-#require 'CSV'
+require 'CSV'
 
 desc "Migrate polls"
 task :migrate_polls => :environment do
@@ -32,6 +32,7 @@ desc "para hacer test"
 task :pruebas => :environment do
   Article.delete_all
   ArticleComment.delete_all
+  Impression.delete_all
   
   #Save users
   users = {}
@@ -39,6 +40,9 @@ task :pruebas => :environment do
   
   #Save comments
   comments = CSV.read("../data/comentaris.csv",:col_sep => ";")
+  
+  #Save impressions
+  impressions = CSV.read("../data/visites.csv",:col_sep => ";")
   
   #Save votes
   votes = CSV.read("../data/votacions.csv",:col_sep => ";")
@@ -93,7 +97,18 @@ task :pruebas => :environment do
 
     id_old = row[0]
     old_user = "usuari"
-   
+    
+    #RECORREMOS LAS VISITAS
+    impressions.each do |view|
+      if id_old == view[1] #id del articulo
+        
+        impression = Impression.create(:impressionable_type => "Article", 
+        :impressionable_id => article.id, :controller_name => "articles", 
+        :action_name => "show", :ip_address => view[4])
+      
+      end
+    end
+    
     #RECORREMOS LOS COMENTARIOS
     comments.each do |row2|
       
