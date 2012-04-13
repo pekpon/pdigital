@@ -1,5 +1,5 @@
 begin
- require 'CSV'
+ require 'csv'
 rescue
   puts "CSV not founded"
 end
