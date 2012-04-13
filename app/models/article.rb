@@ -110,6 +110,6 @@ class Article < ActiveRecord::Base
       
         $stats_yesterday = { :data => a, :date => Time.now }
       end
-      $stats_yesterday
+      Article.first
     end
 end
