@@ -101,7 +101,7 @@ class Article < ActiveRecord::Base
     end
     
     def self.most_moved
-      unless $stats_yesterday or $stats_yesterday[:date].day != Time.now.day
+      if !$stats_yesterday.present? or $stats_yesterday[:date].day != Time.now.day
         a = Article.first
       
         self.all.each do |x|
@@ -110,6 +110,6 @@ class Article < ActiveRecord::Base
       
         $stats_yesterday = { :data => a, :date => Time.now }
       end
-      Article.first
+      $stats_yesterday[:data].reload
     end
 end
