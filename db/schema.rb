@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120313161629) do
+ActiveRecord::Schema.define(:version => 20120416155949) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.integer  "resource_id",   :null => false
@@ -63,8 +63,8 @@ ActiveRecord::Schema.define(:version => 20120313161629) do
     t.string   "image"
     t.boolean  "published"
     t.date     "published_date"
-    t.datetime "created_at",         :null => false
-    t.datetime "updated_at",         :null => false
+    t.datetime "created_at",           :null => false
+    t.datetime "updated_at",           :null => false
     t.integer  "category_id"
     t.string   "image_file_name"
     t.string   "image_content_type"
@@ -72,6 +72,18 @@ ActiveRecord::Schema.define(:version => 20120313161629) do
     t.datetime "image_updated_at"
     t.string   "subtitle"
     t.string   "slug"
+    t.string   "image_2_file_name"
+    t.string   "image_2_content_type"
+    t.integer  "image_2_file_size"
+    t.datetime "image_2_updated_at"
+    t.string   "image_3_file_name"
+    t.string   "image_3_content_type"
+    t.integer  "image_3_file_size"
+    t.datetime "image_3_updated_at"
+    t.string   "image_4_file_name"
+    t.string   "image_4_content_type"
+    t.integer  "image_4_file_size"
+    t.datetime "image_4_updated_at"
   end
 
   add_index "articles", ["slug"], :name => "index_articles_on_slug"
@@ -104,29 +116,8 @@ ActiveRecord::Schema.define(:version => 20120313161629) do
   add_index "friendly_id_slugs", ["sluggable_id"], :name => "index_friendly_id_slugs_on_sluggable_id"
   add_index "friendly_id_slugs", ["sluggable_type"], :name => "index_friendly_id_slugs_on_sluggable_type"
 
-  create_table "impressions", :force => true do |t|
-    t.string   "impressionable_type"
-    t.integer  "impressionable_id"
-    t.integer  "user_id"
-    t.string   "controller_name"
-    t.string   "action_name"
-    t.string   "view_name"
-    t.string   "request_hash"
-    t.string   "ip_address"
-    t.string   "session_hash"
-    t.text     "message"
-    t.text     "referrer"
-    t.datetime "created_at",          :null => false
-    t.datetime "updated_at",          :null => false
-  end
-
-  add_index "impressions", ["controller_name", "action_name", "ip_address"], :name => "controlleraction_ip_index"
-  add_index "impressions", ["controller_name", "action_name", "request_hash"], :name => "controlleraction_request_index"
-  add_index "impressions", ["controller_name", "action_name", "session_hash"], :name => "controlleraction_session_index"
-  add_index "impressions", ["impressionable_type", "impressionable_id", "ip_address"], :name => "poly_ip_index"
-  add_index "impressions", ["impressionable_type", "impressionable_id", "request_hash"], :name => "poly_request_index"
-  add_index "impressions", ["impressionable_type", "impressionable_id", "session_hash"], :name => "poly_session_index"
-  add_index "impressions", ["user_id"], :name => "index_impressions_on_user_id"
+# Could not dump table "impressions" because of following StandardError
+#   Unknown type 'NUM' for column 'created_at'
 
   create_table "poll_options", :force => true do |t|
     t.string   "option"
