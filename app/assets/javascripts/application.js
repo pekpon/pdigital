@@ -23,3 +23,8 @@ $(document).ready(function(){
 		placement:'bottom'
 	});
 });
+
+function show_image(id)
+{
+	$('#article_image').html("<img src='"+id+"'>");
+}

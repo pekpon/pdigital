@@ -8,11 +8,29 @@
 
 <div id="article_title"><%= @article.title %></div>
 
-<div>
-<% if(@article.image.url(:detail) != "/images/detail/missing.png") %>
-	<%= image_tag @article.image.url(:detail) %>
-<% end %>
+<div id="article_image">
+	<% if(@article.image.url(:detail) != "/images/detail/missing.png") %>
+		<%= image_tag @article.image.url(:detail) %>
+	<% end %>
 </div>
+
+<div id="article_gallery">
+	<% if(@article.image_2.url(:thumb) != "/image_2s/thumb/missing.png" and @article.image.url(:thumb) != "/images/thumb/missing.png")%>
+	
+		<%= image_tag @article.image.url(:thumb), :class => 'img_gallery', :onclick => 'javascript:show_image('+"'"+@article.image.url(:detail)+"'"+')' %>
+		
+		<%= image_tag @article.image_2.url(:thumb), :class => 'img_gallery', :onclick => 'javascript:show_image('+"'"+@article.image_2.url(:detail)+"'"+')' %>
+		
+		<% if(@article.image_3.url(:thumb) != "/image_3s/thumb/missing.png")%>
+			<%= image_tag @article.image_3.url(:thumb), :class => 'img_gallery', :onclick => 'javascript:show_image('+"'"+@article.image_3.url(:detail)+"'"+')' %>
+		<% end %>
+		
+		<% if(@article.image_4.url(:thumb) != "/image_4s/thumb/missing.png")%>
+			<%= image_tag @article.image_4.url(:thumb), :class => 'img_gallery', :onclick => 'javascript:show_image('+"'"+@article.image_4.url(:detail)+"'"+')' %>
+		<% end %>
+		
+	<% end %>
+</div>	
 
 <div id="article_body"><%=raw @article.body %></div>
 
