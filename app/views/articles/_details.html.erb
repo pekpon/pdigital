@@ -10,7 +10,7 @@
 
 <div id="article_image">
 	<% if(@article.images.first) %>
-		<%= image_tag @article.images.first.image.url(:detail) %>
+		<%= image_tag @article.images.first.image.url(:detail), :class => 'article_image' %>
 	<% end %>
 </div>
 

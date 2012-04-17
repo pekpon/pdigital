@@ -28,6 +28,9 @@
 #article_image{
 	text-align:center;
 }
+.article_image{
+	width:610px;
+}
 #article_gallery{
 	margin-top:5px;
 }
