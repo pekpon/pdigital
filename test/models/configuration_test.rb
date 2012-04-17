@@ -1,6 +1,6 @@
 require "minitest_helper"
 
-describe Article do
+describe Configuration do
   
   ## Testing Articles validations
   describe 'search by key' do
