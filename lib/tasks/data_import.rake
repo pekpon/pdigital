@@ -37,6 +37,7 @@ task :pruebas => :environment do
   Article.delete_all
   ArticleComment.delete_all
   Impression.delete_all
+  Image.delete_all
   
   #Save users
   users = {}
@@ -87,16 +88,18 @@ task :pruebas => :environment do
     act = false
   end    
    
-  article = Article.create(:title => row[2], :body => row[4].gsub(/\#/, '"'), :author => row[7],
+  article = Article.create(:title => row[2].gsub(/\\#/, '"'), :body => row[4].gsub(/\\#/, '"'), :author => row[7],
       :category => Category.find(cat), :published_date => row[8], :published => act)
       
     puts row[0]
     
-    #article = Article.create(:title => "Titol de test", :body => "Text de prova, blablabla", :author => "Eric Ponce",
-     #     :category => Category.find(10), :published_date => "2012-03-03", :published => true)
-      
     #Insertamos la imagen
-    article.image = File.new("../data/img/#{row[9]}") if File.exists?("../data/img/#{row[9]}")
+    if (File.exists?("../data/img/#{row[9]}"))
+      image = Image.new
+      image.image = File.new("../data/img/#{row[9]}") 
+      article.images << image
+    end
+
     article.save
 
     id_old = row[0]
@@ -114,6 +117,7 @@ task :pruebas => :environment do
     end
     
     #RECORREMOS LOS COMENTARIOS
+    #comments
     comments.each do |row2|
       
     #RECORREMOS LOS USUARIOS   
@@ -125,7 +129,7 @@ task :pruebas => :environment do
     if id_old == row2[1]
       if row2[5].gsub(/\$/, '"').length < 10000
         puts "-> #{row2[0]}"
-        a_comment = article.article_comments.create(:comment => row2[5].gsub(/\$/, '"'), 
+        a_comment = article.article_comments.create(:comment => row2[5].gsub(/\\$/, '"'), 
           :user => nil, 
           :username => old_user,
           :active => row2[3])
@@ -135,8 +139,13 @@ task :pruebas => :environment do
     id_comment_old = row2[0]
     
     #RECORREMOS LOS VOTOS
+     #votes
      votes.each { |row4| 
-       a_comment.vote(row4[2].to_i == 0 ? 2 : 1,row4[3]) if id_comment_old == row4[1] and a_comment != nil
+        begin
+         a_comment.vote(row4[2].to_i == 0 ? 2 : 1,row4[3]) if id_comment_old == row4[1] and a_comment != nil and a_comment.votes
+        rescue
+          puts "already taken #{row4[3]}"
+        end
      }
     end
   end

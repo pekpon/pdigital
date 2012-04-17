@@ -7,17 +7,17 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 Category.create([
-  { name: 'Sports'},
-  { name: 'Opinion'},
-  { name: 'Economy'},
-  { name: 'Education'},
-  { name: 'Entities'},
-  { name: 'Media'},
-  { name: 'Services'},
-  { name: 'Culture'},
-  { name: 'County'},
-  { name: 'Politic'},
-  { name: 'Society'}
+  { name: 'Esports'},
+  { name: 'Opinió'},
+  { name: 'Economia'},
+  { name: 'Educació'},
+  { name: 'Entitats'},
+  { name: 'Mitjans'},
+  { name: 'Serveis'},
+  { name: 'Cultura'},
+  { name: 'Comarca'},
+  { name: 'Política'},
+  { name: 'Societat'}
 ])
 
 
