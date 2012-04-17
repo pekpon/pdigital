@@ -18,6 +18,7 @@ gem "thin", "~> 1.3.1"
 gem 'rails-i18n'
 gem 'therubyracer', require: "v8"
 gem "friendly_id", "~> 4.0.1"
+gem "pg"
 
 
 group :deploy do
