@@ -1,6 +1,7 @@
 class Article < ActiveRecord::Base
 	belongs_to :category
 	has_many :article_comments
+	has_many :images
 	is_impressionable
 	
 	extend FriendlyId
@@ -8,24 +9,7 @@ class Article < ActiveRecord::Base
 
   def should_generate_new_friendly_id?
       self.slug.blank? or (new_record? and self.slug.blank?)
-  end	
-  
-  #paperclip image
-	has_attached_file :image, :styles => { :detail => "610x610>", :medium => "330x330>", :thumb => "100x100>" },
-      :url => "/system/images/:id/:style/:basename.:extension",          
-      :path => ":rails_root/public/system/images/:id/:style/:basename.:extension"
-  #paperclip image 2
-  has_attached_file :image_2, :styles => { :detail => "610x610>", :medium => "330x330>", :thumb => "100x100>" },
-      :url => "/system/images/:id/:style/:basename.:extension",          
-      :path => ":rails_root/public/system/images/:id/:style/:basename.:extension"
-  #paperclip image 3
-  has_attached_file :image_3, :styles => { :detail => "610x610>", :medium => "330x330>", :thumb => "100x100>" },
-      :url => "/system/images/:id/:style/:basename.:extension",          
-      :path => ":rails_root/public/system/images/:id/:style/:basename.:extension"
-  #paperclip image 4
-  has_attached_file :image_4, :styles => { :detail => "610x610>", :medium => "330x330>", :thumb => "100x100>" },
-      :url => "/system/images/:id/:style/:basename.:extension",          
-      :path => ":rails_root/public/system/images/:id/:style/:basename.:extension"
+  end
 	
     validates :category, :body, :title, :published_date, :presence => true
     validates :body, :length => { :minimum => 10 }
