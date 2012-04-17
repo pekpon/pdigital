@@ -8,8 +8,8 @@
 			<span class="article_date">&nbsp;&nbsp;|&nbsp;&nbsp;<%= article.category.name %> - <%= article.published_date %></span>
 		</div>
 		<div class="article_img_div">	
-		<% if(article.image.url(:medium) != "/images/medium/missing.png") %>
-			<%= link_to (image_tag article.image.url(:medium) , :class => "article_img", :border => 0), article_path(article) %>
+		<% if(article.images.first) %>
+			<%= link_to (image_tag article.images.first.image.url(:medium) , :class => "article_img", :border => 0), article_path(article) %>
 		<% end %>
 		</div>
 		<div class="article_info">
