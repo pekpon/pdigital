@@ -26,5 +26,5 @@ $(document).ready(function(){
 
 function show_image(id)
 {
-	$('#article_image').html("<img src='"+id+"'>");
+	$('#article_image').html("<img src='"+id+"' class='article_image'>");
 }
