@@ -127,9 +127,10 @@ task :pruebas => :environment do
 
     #Creamos el comentario con el campo de usuario vacio y un nuevo campo user_old con el nombre
     if id_old == row2[1]
-      if row2[5].gsub(/\$/, '"').length < 10000
+      content = row2[5].gsub(/\\\$/, '"')
+      if content.length < 10000
         puts "-> #{row2[0]}"
-        a_comment = article.article_comments.create(:comment => row2[5].gsub(/\\$/, '"'), 
+        a_comment = article.article_comments.create(:comment => content, 
           :user => nil, 
           :username => old_user,
           :active => row2[3])
