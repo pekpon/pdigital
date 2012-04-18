@@ -7,7 +7,7 @@
 <%= render :partial => 'addThis' %>
 
 <div id="article_title"><%= @article.title %></div>
-
+<div id="article_subtitle"><%= @article.subtitle %></div>
 <div id="article_image">
 	<% if(@article.images.first) %>
 		<%= image_tag @article.images.first.image.url(:detail), :class => 'article_image' %>

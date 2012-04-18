@@ -39,6 +39,12 @@
 	margin-top:15px;
 	color:#333;
 	}
+.article_subtitle{
+	font-family:Verdana;
+	font-weight:bold;
+	font-size:12;
+	color:#000;
+}
 .general .article_title a:hover{
 	color:#069;
 	text-decoration:none;

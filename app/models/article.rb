@@ -56,7 +56,7 @@ class Article < ActiveRecord::Base
 	  end
 	  
 	  def stats_yesterday
-	      comments = self.article_comments.where("created_at like ?","#{Date.yesterday} %")
+	      comments = self.article_comments.where(:created_at => (Time.now.midnight - 1.day)..Time.now.midnight)
   	    c = comments.count
   	    v = 0
 	    
@@ -70,10 +70,10 @@ class Article < ActiveRecord::Base
 	  end
     	
     def resume
-      if self.subtitle.nil?
+      if self.article_resume.nil? or self.article_resume.empty?
         Sanitize.clean(self.body).slice!(0,160) + "..."
       else
-        self.subtitle
+        self.article_resume
       end
     end
 
