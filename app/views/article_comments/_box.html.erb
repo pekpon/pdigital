@@ -15,7 +15,7 @@
 				<%= comment.user.username if comment.user != nil %>
 				<%= comment.username if comment.user == nil %>
 			</span> - <%= comment.created_at.strftime("%d/%m/%Y "+t(:at)+" %H:%M") %></div>			
-			<div class="comment_body"><%= raw(comment.clean) %></div>
+			<div class="comment_body"><%= raw(comment.comment) %></div>
 			<div class="comment_social <%= "comment#{comment.id}" %>">
 				
 			<%= render :partial => 'article_comments/votes', :locals => {:comment => comment} %>
