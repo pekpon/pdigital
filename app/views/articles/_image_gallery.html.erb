@@ -1,7 +1,7 @@
 <% if (@article.images.count > 1)%>
 	<div id="article_gallery">
 	        <% @article.images.each do |image_ob| %>
-	        	<%= image_tag image_ob.image.url(:thumb), :class => 'img_gallery', :onclick => 'javascript:show_image('+"'"+image_ob.image.url(:detail)+"'"+')' %>
+	        	<%= image_tag image_ob.image.url(:thumb), :class => 'img_gallery', :onclick => 'javascript:show_image('+"'"+image_ob.image.url(:detail)+"'"+','+"'"+image_ob.image_foot+"'"+')' %>
 	        <% end %>	
 	</div>
 <% end %>

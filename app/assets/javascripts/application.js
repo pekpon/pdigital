@@ -24,7 +24,13 @@ $(document).ready(function(){
 	});
 });
 
-function show_image(id)
+function show_image(id,foot)
 {
-	$('#article_image').html("<img src='"+id+"' class='article_image'>");
+	if(foot == ""){
+		$('#article_image').html("<img src='"+id+"' class='article_image'>");
+	}else{
+		$('#article_image').html("<img src='"+id+"' class='article_image'><span id='article_foot'></span>");
+		$('#article_foot').html(foot);
+	}
+	
 }

@@ -24,6 +24,20 @@
 	margin-bottom: 10px;
 	font-family:Verdana;
 }
+#article_foot{
+	background-color:black;
+	text-align:left;
+	color:white;
+	font-size:10px;
+	opacity:0.8;
+	filter:alpha(opacity=80);
+	line-height:14px;
+	position:absolute;
+	bottom:5px; /* in conjunction with left property, decides the text position */
+	left:0;
+	width:590px;
+	padding:5px 10px 5px 10px;
+}
 #article_info{
 	margin-bottom:5px;
 	padding-bottom:5px;
@@ -31,6 +45,8 @@
 }
 #article_image{
 	text-align:center;
+	position:relative;
+	float:left;
 }
 .article_image{
 	width:610px;

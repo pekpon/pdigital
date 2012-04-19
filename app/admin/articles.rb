@@ -5,6 +5,12 @@ ActiveAdmin.register Article do
   		column "Category", :category do |art|
   			art.category.name if art.category
   		end
+  		column "Total Views" do |article|
+  			article.views_filtered_by_ip
+  		end
+  		column "Ip Views" do |article|
+  			article.impressionist_count(:filter => :ip_address)
+  		end
   		default_actions
   	end
   
