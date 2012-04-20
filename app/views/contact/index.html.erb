@@ -1,38 +1,31 @@
 <%= stylesheet_link_tag    "contact" %>
 
-<div class="row white">
+<div class="white">
 	<div id="section_header"><%=t(:contact)%></div>
-	<div class="span8">
-		<div class="left_div">
-			<%= form_for @message, :url => contact_path do |form| %>
-			  <fieldset class="fields">
-			    <div class="field">
-			      <%= form.label t(:name) %>
-			      <%= form.text_field :name, :class => 'span4' %>
-			    </div>
-			    <div class="field">
-			      <%= form.label t(:email) %>
-			      <%= form.text_field :email, :class => 'span4' %>
-			    </div>
-			    <div class="field">
-			      <%= form.label t(:subject) %>
-			      <%= form.text_field :subject, :class => 'span4' %>
-			    </div>
-			    <div class="field">
-			      <%= form.label t(:body) %>
-			      <%= form.text_area :body, :rows => 5, :class => 'textarea_contact' %>
-			    </div>
-			  </fieldset>
+	<div class="left_div">
+	<%= form_for @message, :url => contact_path do |form| %>
+	  <fieldset class="fields">
+	    <div class="field">
+	      <%= form.label t(:name) %>
+	      <%= form.text_field :name, :class => 'span4' %>
+	    </div>
+	    <div class="field">
+	      <%= form.label t(:email) %>
+	      <%= form.text_field :email, :class => 'span4' %>
+	    </div>
+	    <div class="field">
+	      <%= form.label t(:subject) %>
+	      <%= form.text_field :subject, :class => 'span4' %>
+	    </div>
+	    <div class="field">
+	      <%= form.label t(:body) %>
+	      <%= form.text_area :body, :rows => 5, :class => 'textarea_contact' %>
+	    </div>
+	  </fieldset>
 
-			  <fieldset class="actions">
-			    <%= form.submit t(:send), :class => 'btn-primary btn-large span4' %>
-			  </fieldset>
-			<% end %>
-		</div>
-	</div>
-	<div class="span4">
-		<div class="right_div">
-
-		</div>
+	  <fieldset class="actions">
+	    <%= form.submit t(:send), :class => 'btn-primary btn-large span4' %>
+	  </fieldset>
+	<% end %>
 	</div>
 </div>

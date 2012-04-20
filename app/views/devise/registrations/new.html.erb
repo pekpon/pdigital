@@ -1,24 +1,22 @@
 <%= stylesheet_link_tag    "devise" %>
 
-<div class="row white">
-<div id="section_header"><%=t(:register)%></div>
-	<div class="span3">
-		<div class="left_padding">
-			<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
-			  <%= devise_error_messages! %>
+<div class="white">
+	<div id="section_header"><%=t(:register)%></div>
+	<div class="left_padding">
+		<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
+			<%= devise_error_messages! %>
 
 			<div><%= f.text_field :username, :placeholder => t(:username) %></div><br>
 
-			  <div><%= f.email_field :email, :placeholder => t(:email) %></div><br>
+		  	<div><%= f.email_field :email, :placeholder => t(:email) %></div><br>
 
-			  <div><%= f.password_field :password, :placeholder => t(:password) %></div><br>
+			<div><%= f.password_field :password, :placeholder => t(:password) %></div><br>
 
-			  <div><%= f.password_field :password_confirmation, :placeholder => t(:r_password) %></div><br>
+			<div><%= f.password_field :password_confirmation, :placeholder => t(:r_password) %></div><br>
 
-			  <div><%= f.submit :class => "btn-primary span3", :value => t(:register) %></div>
-			<% end %>
+			<div><%= f.submit :class => "btn-primary span3", :value => t(:register) %></div>
+		<% end %>
 
-			<%= render :partial => "devise/shared/links" %>
-		</div>
+		<%= render :partial => "devise/shared/links" %>
 	</div>
 </div>

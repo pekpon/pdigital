@@ -1,8 +1,7 @@
 <%= stylesheet_link_tag    "devise" %>
 
-<div class="row white">
+<div class="white">
 	<div id="section_header"><%=t(:sign_in)%></div>
-	<div class="span3">
 		<div class="left_padding">
 			<%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
 			<br>
@@ -19,5 +18,4 @@
 
 			<%= render :partial => "devise/shared/links" %>
 		</div>
-	</div>
 </div>

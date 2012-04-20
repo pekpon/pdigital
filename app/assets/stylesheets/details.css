@@ -119,3 +119,6 @@
 #article_moved_title a:hover{
 	color: #444;
 }
+#article_moved_image img{
+	width:274px;
+}
