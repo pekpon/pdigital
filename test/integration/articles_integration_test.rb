@@ -101,6 +101,14 @@ describe "Articles integration" do
         click_on('Option Test')
         PollVote.first.poll_id.must_equal(1)
       end   
+    
+      it "should search an article" do
+        visit '/'
+        fill_in('search', :with => 'showed article')
+        click_on('Search')
+        
+        assert page.has_content?('My showed article test').must_be_same_as true
+      end
     end
     
     describe "Published" do
