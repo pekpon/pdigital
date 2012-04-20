@@ -57,7 +57,11 @@ Configuration.create([
   {:key => 'openx_pos_home_a', :values => '1'},
   {:key => 'openx_pos_home_b', :values => '2'},
   {:key => 'openx_pos_home_c', :values => '1'},
-
+  
+  {:key => 'facebook_plugin_pos', :values => '3'},
+  {:key => 'facebook_plugin_code', :values => '<div class="fb-like-box" data-href="http://www.URL_WEBSITE.com" data-width="300" data-height="360" data-show-faces="true" data-border-color="white" data-stream="false" data-header="true"></div>
+  '},
+  
   {:key => 'sports_id', :values => '1'},
   {:key => 'opinion_id', :values => '2'}
   ])

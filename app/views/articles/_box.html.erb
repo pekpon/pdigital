@@ -2,6 +2,9 @@
 <% articles.each do |article| %>
 
 	<%= render :partial => 'banner', :locals => {:ad_zone => ad_zone, :ad_code => ad_code} if x == pos.to_i %>
+	<% unless facebook_pos.nil? %>
+		<%= render :partial => 'facebook_social', :locals => { :code => facebook_code } if x == facebook_pos.to_i%>
+	<% end %>
 	
 	<div class="articleBoxContent <%= "lastBox" if article == articles.last %>">
 		<div class="article_title"><%= link_to article.title, article_path(article) %></div>

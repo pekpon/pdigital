@@ -1,16 +1,25 @@
 <%= stylesheet_link_tag    "articleBox","articles" %>
 
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/es_ES/all.js#xfbml=1&appId=285250344834364";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
 <div class="white">
 	<div class="col_left general">
 		<p id="news_header"><%= t(:news)%></p>
-		<%= render :partial => 'box', :locals => {:articles => @articles, :ad_zone => Configuration.value(:openx_home_zone_a), :ad_code => Configuration.value(:openx_home_code_a), :pos => Configuration.value(:openx_pos_home_a)} %>
+		<%= render :partial => 'box', :locals => {:articles => @articles, :ad_zone => Configuration.value(:openx_home_zone_a), :ad_code => Configuration.value(:openx_home_code_a), :pos => Configuration.value(:openx_pos_home_a), :facebook_pos => nil, :facebook_code => nil} %>
 	</div>
 	<div class="col_mid sports">
 		<p id="sports_header"><%= t(:sports)%></p>
-		<%= render :partial => 'box', :locals => {:articles => @articles_sport, :ad_zone => Configuration.value(:openx_home_zone_b), :ad_code => Configuration.value(:openx_home_code_b), :pos => Configuration.value(:openx_pos_home_b)} %>
+		<%= render :partial => 'box', :locals => {:articles => @articles_sport, :ad_zone => Configuration.value(:openx_home_zone_b), :ad_code => Configuration.value(:openx_home_code_b), :pos => Configuration.value(:openx_pos_home_b), :facebook_pos => nil, :facebook_code => nil} %>
 	</div>
 	<div class="col_right opinion"> 
 		<p id="opinion_header"><%= t(:opinion)%></p>
-		<%= render :partial => 'box', :locals => {:articles => @articles_opinion, :ad_zone => Configuration.value(:openx_home_zone_c), :ad_code => Configuration.value(:openx_home_code_c), :pos => Configuration.value(:openx_pos_home_c)} %>
+		<%= render :partial => 'box', :locals => {:articles => @articles_opinion, :ad_zone => Configuration.value(:openx_home_zone_c), :ad_code => Configuration.value(:openx_home_code_c), :pos => Configuration.value(:openx_pos_home_c), :facebook_pos => Configuration.value(:facebook_plugin_pos), :facebook_code => Configuration.value(:facebook_plugin_code)} %>
 	</div>
 </div>
