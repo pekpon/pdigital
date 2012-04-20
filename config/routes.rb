@@ -7,9 +7,11 @@ Pdigital::Application.routes.draw do
     resources :articles, :categories, :polls, :the_mosts, :contact
     
     match 'search/' => 'articles#search'
+    
+    root :to => 'articles#index'
   end
 
-  root :to => 'articles#index'
+  
 
   resources :articles, :categories, :article_comments, :polls, :the_mosts, :contact
 
