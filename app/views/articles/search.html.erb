@@ -1,0 +1,6 @@
+<%= stylesheet_link_tag    "search" %>
+
+<div id="section_header"><%=t(:search)%></div>	
+<div id="search_results"><%= "#{@articles.count} #{t(:search_results)}"%><span class='words'><%=@words%></span></div>
+
+<%= render :partial => 'searchBox', :locals => {:articles => @articles} %>

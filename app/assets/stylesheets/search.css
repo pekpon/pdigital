@@ -1,0 +1,65 @@
+.left_block{
+	float:left;
+}
+.right_block{
+	float:left;
+}
+.date_block{
+	float:right;
+	padding:10px 10px 0 25px;
+	text-align:center;
+	margin-right:10px;
+	border-left:1px solid #ccc;
+	width:50px;
+}
+.date_day{
+	font-size:40px;
+	margin-bottom:3px;
+}
+.date_month{
+	margin-top:10px;
+	font-weight:bold;
+	color:#069;
+}
+.date_year{
+	color:#666;
+}
+.searchBoxContent{
+	display:table;
+	background-color:white;
+	border:1px solid #ccc;
+	border-left:3px solid #069;
+	padding:10px;
+	margin-top:10px;
+	width:100%;
+}
+.searchImage{
+	padding:1px;
+	border:1px solid #ccc;
+}
+.searchTitle{
+	font-family:Georgia;
+	font-size:20px;
+	margin-left:10px;
+	margin-bottom:5px;
+	width:700px;
+}
+.searchTitle a{
+	color:#069;
+}
+.searchTitle a:hover{
+	color:#333;
+}
+#search_results{
+	font-size:14px;
+	font-family:verdana;
+}
+.words{
+	color:#069;
+	font-style:bold;
+}
+.searchResume{
+	margin-left:10px;
+	width:700px;
+	line-height:15px;
+}

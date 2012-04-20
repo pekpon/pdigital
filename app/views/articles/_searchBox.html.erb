@@ -1,0 +1,20 @@
+<% articles.each do |article| %>
+	<div class="searchBoxContent">
+		<div class="left_block">
+			<div class="searchImage">
+				<% if(article.images.first) %>
+					<%= link_to (image_tag article.images.first.image.url(:thumb) , :class => "article_img", :border => 0), article_path(article) %>
+				<% end %>
+			</div>
+		</div>
+		<div class="right_block">
+			<div class="searchTitle"><%= link_to article.title, article_path(article) %></div>
+			<div class="searchResume"><%= article.resume %></div>
+		</div>
+		<div class="date_block">
+			<div class="date_day"><%= article.day %></div>
+			<div class="date_month"><%= article.month %></div>
+			<div class="date_year"><%= article.year %></div>
+		</div>
+	</div>
+<% end %>

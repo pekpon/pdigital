@@ -4,8 +4,17 @@
 	  	<li class="portada <%= "active" if controller.controller_name == 'polls' %>" ><%= link_to t(:polls), polls_path %></li>
 		<li class="portada <%= "active" if controller.controller_name == 'the_mosts' %>"><%= link_to t(:the_most), the_mosts_path %></li>
 		<li class="portada <%= "active" if controller.controller_name == 'contact' %>"><%= link_to t(:contact), contact_path %></li>
-		
+			
 		<%= raw(Configuration.links) %>
+		
+		<li class="search">
+			
+			<%= form_tag "search", :method => 'post', :class => "form-search" do %>
+			<i class='icon-search icon-white'></i>
+			    <%= text_field_tag :search, params[:search], :class => "search-query" %>
+			    <%= submit_tag t(:search), :name => nil, :class => "btn btn-mini btn-primary" %>
+			<% end %>
+		</li>
       	
 		<div class="clearFloat"></div>
    	</ul>

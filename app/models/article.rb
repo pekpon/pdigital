@@ -109,4 +109,17 @@ class Article < ActiveRecord::Base
       end
       $stats_yesterday[:data].reload
     end
+    
+    def day
+      self.published_date.day()
+    end
+    
+    def month
+      t = self.published_date
+      t.strftime("%B")
+    end
+    
+     def year
+        self.published_date.year()
+      end
 end

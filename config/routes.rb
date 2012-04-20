@@ -5,6 +5,8 @@ Pdigital::Application.routes.draw do
 
     devise_for :users
     resources :articles, :categories, :polls, :the_mosts, :contact
+    
+    match 'search/' => 'articles#search'
   end
 
   root :to => 'articles#index'
