@@ -19,6 +19,7 @@ gem 'rails-i18n'
 gem 'therubyracer', require: "v8"
 gem "friendly_id", "~> 4.0.1"
 gem "pg"
+gem "twitter-bootstrap-rails"
 
 
 group :deploy do
