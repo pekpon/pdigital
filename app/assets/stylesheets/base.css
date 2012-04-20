@@ -1,8 +1,5 @@
 @charset "utf-8";
 /* CSS Document */
-body{
-	background-color:#F2F2F2;
-}
 a{
 	text-decoration:none;
 }
@@ -23,10 +20,17 @@ a{
     padding:0;
 
 }
+
 .navigation li{
 	display:inline-block;
     float:left;
 }
+
+.navigation li.search{
+	float:right;
+	margin-right:10px;
+}
+
 .navigation a{
     display:block;
     padding:10px;
@@ -95,4 +99,18 @@ a{
 .submenu_active{
 	font-weight:bold;
 	color:#9C0;
+}
+.navigation form{
+	margin:0;
+	padding-top:9px;
+}
+.search-query{
+	height:8px;
+	width:100px;
+	color:#777;
+	font-size:11px;
+	font-family:verdana;
+}
+.icon-search{
+	vertical-align:-4px;
 }

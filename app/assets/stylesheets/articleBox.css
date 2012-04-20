@@ -27,6 +27,7 @@
 	border-bottom:1px solid #CCC;
 	padding:5px;
 	margin-top:20px;
+	font-family:Verdana;
 	
 }
 .lastBox{
@@ -60,26 +61,25 @@
 .article_author{
 	color:#999;
 	font-size:11px;
+	font-family:Verdana;
 	}
 .general .article_date{
 	color:#069;
+	font-family:Verdana;
 }
 .sports .article_date{
 	color:#9C0;
+	font-family:Verdana;
 }
 .opinion .article_date{
 	color:#F60;
+	font-family:Verdana;
 }
-.general_row .article_img{
-	width:330px;
-}
-.sports_row .article_img{
-	width:270px;
-}
-.opinion_row .article_img{
-	width:270px;
+.article_img{
+	width:290px;
 }
 .article_preview{
+	margin-top:7px;
 	margin-bottom:7px;
 }
 .article_info{

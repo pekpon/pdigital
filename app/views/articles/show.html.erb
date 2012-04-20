@@ -1,21 +1,16 @@
 <%= stylesheet_link_tag    "details","articles" %>
 
-<div class="row white">
-	<div class="span8 border_right">
-		<div class="left_div">
-			<%= render :partial => 'details', :locals => {:article => @articles} %>
-		</div>
+<div class="white">
+	<div class="col_left_article">
+		<%= render :partial => 'details', :locals => {:article => @articles} %>
 	</div>
-	<div class="span4">
-		<div class="right_div">
+	<div class="col_right_article">
+		<%= render :partial => 'banner', :locals => {:ad_zone => Configuration.value(:openx_article_zone_a), :ad_code => Configuration.value(:openx_article_code_a)} %>
 			
-			<%= render :partial => 'banner', :locals => {:ad_zone => Configuration.value(:openx_article_zone_a), :ad_code => Configuration.value(:openx_article_code_a)} %>
+		<%= render :partial => 'polls/box', :locals => {:poll => @poll} %>
 			
-			<%= render :partial => 'polls/box', :locals => {:poll => @poll} %>
+		<%= render :partial => 'moved', :locals => {:article => @articles} %>		
 			
-			<%= render :partial => 'moved', :locals => {:article => @articles} %>
-			
-			<%= render :partial => 'banner', :locals => {:ad_zone => Configuration.value(:openx_article_zone_b), :ad_code => Configuration.value(:openx_article_code_b)} %>
-		</div>
+		<%= render :partial => 'banner', :locals => {:ad_zone => Configuration.value(:openx_article_zone_b), :ad_code => Configuration.value(:openx_article_code_b)} %>
 	</div>
 </div>

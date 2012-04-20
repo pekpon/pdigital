@@ -8,10 +8,12 @@
 #article_author{
 	color:#333;
 	font-size:11px;
+	font-family:Verdana;
 }
 #article_date{
 	color:#666;
 	font-size:11px;
+	font-family:Verdana;
 }
 #article_title{
 	margin-bottom:3px;
@@ -22,20 +24,24 @@
 }
 #article_subtitle{
 	margin-bottom: 10px;
-	font-family:Verdana;
+	font-family:Georgia;
+	color:#069;
+	font-size:16px;
+	font-style:italic;
 }
 #article_foot{
 	background-color:black;
+	font-family:verdana;
 	text-align:left;
 	color:white;
-	font-size:10px;
+	font-size:11px;
 	opacity:0.8;
 	filter:alpha(opacity=80);
 	line-height:14px;
 	position:absolute;
-	bottom:5px; /* in conjunction with left property, decides the text position */
+	bottom:0px; /* in conjunction with left property, decides the text position */
 	left:0;
-	width:590px;
+	width:580px;
 	padding:5px 10px 5px 10px;
 }
 #article_info{
@@ -47,12 +53,10 @@
 	text-align:center;
 	position:relative;
 	float:left;
+	margin-bottom:10px;
 }
 .article_image{
-	width:610px;
-}
-#article_gallery{
-	margin-top:5px;
+	width:600px;
 }
 .img_gallery{
 	height:70px;

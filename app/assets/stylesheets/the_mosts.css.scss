@@ -10,8 +10,10 @@
 }
 .mostBoxContent{
 	border:1px solid #ccc;
+	font-family:Verdana;
 	padding:10px;
 	background-color:white;
+	font-size:12px;
 	margin-bottom:10px;
 }
 
@@ -28,4 +30,8 @@
 
 .mostBoxContent .article_title a:hover{
 	color:#0088cc;
+}
+.article_img{
+	width:278px;
+	margin-bottom:10px;
 }
