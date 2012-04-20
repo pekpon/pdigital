@@ -9,7 +9,7 @@
 		
 		<li class="search">
 			
-			<%= form_tag "search", :method => 'post', :class => "form-search" do %>
+			<%= form_for :articles,:url => {:action => "search"}, :method => 'post', :class => "form-search" do %>
 			<i class='icon-search icon-white'></i>
 			    <%= text_field_tag :search, params[:search], :class => "search-query" %>
 			    <%= submit_tag t(:search), :name => nil, :class => "btn btn-mini btn-primary" %>
