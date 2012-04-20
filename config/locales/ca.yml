@@ -9,6 +9,8 @@ ca:
   sign_in: "Inicia sessió"
   sign_out: "Tanca sessió"
   welcome: "Benvingut,"
+  search: "Cercar"
+  search_results: "resultats cercats amb les paraules: "
   
   singular_comment: "comentari"
   plural_comments: "comentaris"
@@ -55,3 +57,4 @@ ca:
   subject: "Assumpte"
   body: "Missatge"
   send: "Enviar"
+  month_names: [~, Gener, Febrer, Març, Abril, May, June, July, August, September, October, November, December]

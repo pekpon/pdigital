@@ -11,6 +11,8 @@ es:
   sign_in: "Entra"
   sign_out: "Cierra sessión"
   welcome: "Bienvenido,"
+  search: "Buscar"
+  search_results: "resultados encontrados buscando por: "
   
   
   singular_comment: "comentario"

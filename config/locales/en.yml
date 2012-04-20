@@ -5,3 +5,5 @@ en:
   hello: "Hello world"
   sports: "Sports"
   send: "Send"
+  search: "Search"
+  search_results: "results found searching by: "
