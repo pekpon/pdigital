@@ -11,9 +11,11 @@
 <div id="article_image">
 	<% if(@article.images.first) %>
 		<%= image_tag @article.images.first.image.url(:detail), :class => 'article_image' %>
-	<% end %>
-	<% if !@article.images.first.image_foot.nil? %>
-		<span id="article_foot"><%= @article.images.first.image_foot %></span>
+		
+		<% unless @article.images.first.image_foot.nil? %>
+			<span id="article_foot"><%= @article.images.first.image_foot %></span>
+		<% end %>
+		
 	<% end %>
 </div>
 
