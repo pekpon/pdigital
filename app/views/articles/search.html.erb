@@ -5,6 +5,8 @@
 
 <%= render :partial => 'searchBox', :locals => {:articles => @articles} %>
 
+<%= paginate @articles %>
+
 <!-- PUBLICIDAD -->
 <!--<div class="row">
 	<div class="span8">

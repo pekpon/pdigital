@@ -20,6 +20,7 @@ gem 'therubyracer', require: "v8"
 gem "friendly_id", "~> 4.0.1"
 gem "pg"
 gem "twitter-bootstrap-rails"
+gem 'kaminari'
 
 
 group :deploy do

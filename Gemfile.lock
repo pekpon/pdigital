@@ -233,6 +233,7 @@ DEPENDENCIES
   imperavi-rails (~> 0.0.3.beta)
   impressionist
   jquery-rails
+  kaminari
   meta_search (>= 1.1.0.pre)
   minitest
   paperclip!

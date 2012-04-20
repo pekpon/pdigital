@@ -53,6 +53,9 @@ class ArticlesController < ApplicationController
        end
       
       @articles = final.reverse
+      
+      @articles = Kaminari.paginate_array(@articles).page(params[:page]).per(10)
+      
       @words = params[:search]
     
       respond_to do |format|

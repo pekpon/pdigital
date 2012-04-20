@@ -9,6 +9,8 @@
 		
 		<% else %>
 		
+		<%= paginate @articles, :window => 2 %>
+		
 		<div class="span4">
 		
 		<% @articles.each_with_index do |article,index| %>	
