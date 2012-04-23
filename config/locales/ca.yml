@@ -58,3 +58,11 @@ ca:
   body: "Missatge"
   send: "Enviar"
   month_names: [~, Gener, Febrer, Març, Abril, May, June, July, August, September, October, November, December]
+  
+  views:
+      pagination:
+        first: "&laquo; Primera"
+        last: "Darrera &raquo;"
+        previous: "&lsaquo; Anterior"
+        next: "Següent &rsaquo;"
+        truncate: "..."

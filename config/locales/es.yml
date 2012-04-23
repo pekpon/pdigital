@@ -60,3 +60,11 @@ es:
   subject: "Asunto"
   body: "Mensaje"
   send: "Enviar"
+  
+  views:
+      pagination:
+        first: "&laquo; Primera"
+        last: "Última &raquo;"
+        previous: "&lsaquo; Anterior"
+        next: "Siguiente &rsaquo;"
+        truncate: "..."

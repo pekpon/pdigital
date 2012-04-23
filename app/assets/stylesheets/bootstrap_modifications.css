@@ -1,9 +1,12 @@
 body{
 	padding:0;
 }
+.container{
+	width:940px;
+}
 .header img{
 	vertical-align:bottom;
 }
-.page{
-	background-color:white;
+.pagination_new{
+	margin:10px;
 }
