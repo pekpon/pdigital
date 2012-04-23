@@ -3,6 +3,8 @@
 <div id="section_header"><%=t(:search)%></div>	
 <div id="search_results"><%= "#{@articles.count} #{t(:search_results)}"%><span class='words'><%=@words%></span></div>
 
+<%= paginate @articles %>
+
 <%= render :partial => 'searchBox', :locals => {:articles => @articles} %>
 
 <%= paginate @articles %>

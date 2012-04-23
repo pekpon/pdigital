@@ -65,4 +65,4 @@ ca:
         last: "Darrera &raquo;"
         previous: "&lsaquo; Anterior"
         next: "Següent &rsaquo;"
-        truncate: "..."
+        truncate: ""
