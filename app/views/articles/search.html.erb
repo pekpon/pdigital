@@ -1,24 +1,32 @@
 <%= stylesheet_link_tag    "search" %>
 
-<div id="section_header"><%=t(:search)%></div>	
-<div id="search_results"><%= "#{@articles.count} #{t(:search_results)}"%><span class='words'><%=@words%></span></div>
+<div id="section_header"><%=t(:search)%></div>
 
-<%= paginate @articles %>
+<% if @articles.empty? %>
 
-<%= render :partial => 'searchBox', :locals => {:articles => @articles} %>
+	<div id="search_results">0 <%= t(:search_results)%><span class='words'>...</span></div>
+<% else %>
+	
+	<div id="search_results"><%= "#{@total_articles} #{t(:search_results)}"%><span class='words'><%=@words%></span></div>
 
-<%= paginate @articles %>
+	<%= paginate @articles %>
 
-<!-- PUBLICIDAD -->
-<!--<div class="row">
-	<div class="span8">
+	<%= render :partial => 'searchBox', :locals => {:articles => @articles} %>
+
+	<%= paginate @articles %>
+
+	<!-- PUBLICIDAD -->
+	<!--<div class="row">
+		<div class="span8">
 		
-	</div>
-	<div class="span4">
-		<%= render :partial => 'articles/banner', :locals => {:ad_zone => Configuration.value(:openx_home_zone_a), :ad_code => Configuration.value(:openx_home_code_a)} %>	
-		<br />
-		<%= render :partial => 'articles/banner', :locals => {:ad_zone => Configuration.value(:openx_home_zone_b), :ad_code => Configuration.value(:openx_home_code_b)} %>
-		<br />
-		<%= render :partial => 'articles/banner', :locals => {:ad_zone => Configuration.value(:openx_home_zone_c), :ad_code => Configuration.value(:openx_home_code_c)} %>
-	</div>
-</div>-->
+		</div>
+		<div class="span4">
+			<%= render :partial => 'articles/banner', :locals => {:ad_zone => Configuration.value(:openx_home_zone_a), :ad_code => Configuration.value(:openx_home_code_a)} %>	
+			<br />
+			<%= render :partial => 'articles/banner', :locals => {:ad_zone => Configuration.value(:openx_home_zone_b), :ad_code => Configuration.value(:openx_home_code_b)} %>
+			<br />
+			<%= render :partial => 'articles/banner', :locals => {:ad_zone => Configuration.value(:openx_home_zone_c), :ad_code => Configuration.value(:openx_home_code_c)} %>
+		</div>
+	</div>-->
+
+<% end %>

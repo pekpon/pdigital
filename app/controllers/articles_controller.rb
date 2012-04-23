@@ -28,6 +28,12 @@ class ArticlesController < ApplicationController
   
   def search
     if params[:search].empty?
+      
+      @articles = []
+      
+      respond_to do |format|
+        format.html # search.html.erb
+      end
     else
       search = params[:search].split(' ')
     
@@ -52,10 +58,9 @@ class ArticlesController < ApplicationController
          end
        end
       
+      @total_articles = final.count
       @articles = final.reverse
-      
       @articles = Kaminari.paginate_array(@articles).page(params[:page]).per(10)
-      
       @words = params[:search]
     
       respond_to do |format|
