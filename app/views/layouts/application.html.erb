@@ -11,24 +11,7 @@
 	<%= include_imperavi_stylesheet %>
 	<%= csrf_meta_tags %>
 
-	<meta property='og:title' content='<%=Configuration.value(:title_site)%>' />
-	<meta property='og:description' content='<%=Configuration.value(:description_site)%>' />
-	<meta property='og:type' content='website' />
-	<meta property='og:url' content='<%= root_url %>' />
-	<meta property='og:image' content='<%=Configuration.image_url(:image_site)%>' />
-	<meta property='og:site_name' content='<%=Configuration.value(:sitename)%>' />
-	
-	<script type="text/javascript">
-		var _gaq = _gaq || [];
-		_gaq.push(['_setAccount', '<%= raw(Configuration.value(:analytics_tracking))%>']);
-		_gaq.push(['_trackPageview']);
-
-		(function() {
-		  var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-		  ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-		  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-		})();
-	</script>
+	<%= render :partial => 'shared/facebook_tags' %>
 	
 	<link rel="icon" href="/favicon.ico" type="image/ico" />
 </head>
