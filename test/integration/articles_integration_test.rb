@@ -42,6 +42,16 @@ describe "Articles integration" do
         assert page.has_content?('Dashboard').must_be_same_as false
       end
       
+      it "should do login in the web" do
+        visit '/articles/my-showed-article-test' 
+        click_link('Sign In')
+        fill_in('user_email', :with => 'test@test.com')
+        fill_in('user_password', :with => '123456') 
+        click_on('signin_button') 
+
+        assert page.has_content?('Welcome, test_user').must_be_same_as true
+      end
+      
     end
     
     describe "UserActions" do

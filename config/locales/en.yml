@@ -2,8 +2,67 @@
 # See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 en:
-  hello: "Hello world"
   sports: "Sports"
-  send: "Send"
+  news: "News"
+  opinion: "Opinion"
+  home: "Home"
+  polls: "Polls"
+  the_most: "The Most"
+  register: "Register"
+  sign_in: "Sign In"
+  sign_out: "Sign Out"
+  welcome: "Welcome,"
   search: "Search"
-  search_results: "results found searching by: "
+  search_results: "results finded for: "
+
+
+  singular_comment: "comment"
+  plural_comments: "comments"  
+  singular_vote: "vote"
+  plural_votes: "votes"
+
+  comment_succefull: "Commment correctly added"
+  comment_error: "You should write a comment"
+  comments: "Comments"
+  add_comment: "Add a comment"
+  no_comments: "There aren't comments on this article"
+  user_required_comments: "You need be a registred user to comment"
+  at: "at"
+  logged_as: "Logged as"
+  if_not_you: "If not you"
+  
+  vote_ok: "Vote Ok"
+  vote_ko: "Vote Ko"
+  votes: "votes"
+  voted: "Voted!"
+
+  or: "or"
+
+  the_poll_of_the_week: "The poll of the week"
+  the_most_moved: "The most \"moved\""
+
+  username: "User"
+  name: "Name"
+  email: "Email"
+  password: "Password"
+  r_password: "Repeat the password"
+  remember: "Remember me"
+  forgot_password: "Have you lost your password?"
+
+  no_articles_category: "There aren't articles on this category"
+
+  more_viewed: "The most looked"
+  more_commented: "The most commented"
+
+  contact: "Contact"
+  subject: "Subject"
+  body: "Message"
+  send: "Send"
+
+  views:
+      pagination:
+        first: "&laquo; First"
+        last: "Last &raquo;"
+        previous: "&lsaquo; Previous"
+        next: "Next &rsaquo;"
+        truncate: "..."

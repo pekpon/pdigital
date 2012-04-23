@@ -4,17 +4,14 @@ Pdigital::Application.routes.draw do
     ActiveAdmin.routes(self)
 
     devise_for :users
-    resources :articles, :categories, :polls, :the_mosts, :contact
+    resources :articles, :categories, :polls, :the_mosts, :contact, :article_comments
     
     match 'search/' => 'articles#search'
     
     root :to => 'articles#index'
+    
   end
-
   
-
-  resources :articles, :categories, :article_comments, :polls, :the_mosts, :contact
-
   match 'article_comments/vote/:id/:vote_type' => 'article_comments#vote', :as => :vote
   match 'polls/vote/:id/:id_option' => 'polls#vote', :as => :vote_poll
   
