@@ -1,6 +1,7 @@
 <%= stylesheet_link_tag    "categories" %>
 
 <div id="section_header"><%= @category.name %></div>
+<%= paginate @articles %>
 <div class="row">
 	
 		<% if @articles.empty? %>
@@ -8,8 +9,6 @@
 		<p class="no_message"><%=t(:no_articles_category)%></p>
 		
 		<% else %>
-		
-		<%= paginate @articles, :window => 2 %>
 		
 		<div class="span4">
 		
@@ -48,3 +47,4 @@
 		<% end %>
 	
 </div>
+<%= paginate @articles %>
