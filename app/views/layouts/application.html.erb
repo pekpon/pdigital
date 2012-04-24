@@ -16,7 +16,9 @@
 	<%= render :partial => 'shared/analitycs_code' %>
 	
 	<link rel="icon" href="/favicon.ico" type="image/ico" />
-	<link rel="alternate" type="application/rss+xml" title="RSS" href="articles/rss.rxml" />
+	
+	<%= auto_discovery_link_tag(:rss, "http://papioldigital.impulzia.com") %>
+	
 </head>
 <body>
 <div class="container">

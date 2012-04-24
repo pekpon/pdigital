@@ -23,6 +23,7 @@ class ArticlesController < ApplicationController
   
     respond_to do |format|
       format.html # index.html.erb
+      format.xml
     end
   end
   
@@ -91,8 +92,10 @@ class ArticlesController < ApplicationController
   end
   
   def rss
-    @articles = Article.find(:all, :order => "id DESC", :limit => 10)
-    render :layout => false
-    response.headers["Content-Type"] = "application/xml; charset=utf-8"
+    @articles = Article.find(:all, :order => "id DESC", :limit => 20)
+
+    respond_to do |format|
+       format.rss { render :layout => false }
+    end
   end
 end
