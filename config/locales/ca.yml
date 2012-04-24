@@ -8,7 +8,7 @@ ca:
   register: "Registra't"
   sign_in: "Inicia sessió"
   sign_out: "Tanca sessió"
-  welcome: "Benvingut,"
+  welcome: " Benvingut,"
   search: "Cercar"
   search_results: "resultats cercats amb les paraules: "
   
@@ -66,3 +66,5 @@ ca:
         previous: "&lsaquo; Anterior"
         next: "Següent &rsaquo;"
         truncate: ""
+        
+  newspaper_group: "diari online pertanyent a la xarxa informativa "

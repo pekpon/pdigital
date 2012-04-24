@@ -68,3 +68,5 @@ es:
         previous: "&lsaquo; Anterior"
         next: "Siguiente &rsaquo;"
         truncate: "..."
+        
+  newspaper_group: "periódico online perteneciente a la red informativa "
