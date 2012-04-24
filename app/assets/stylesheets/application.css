@@ -28,7 +28,7 @@ body{
 	border:1px solid #ccc;
 	padding: 0 10px 10px 10px;
 	display:table;
-	width:918px;
+	width:100%;
 	margin-bottom:20px;
 }
 .col_left{
@@ -86,4 +86,20 @@ body{
 	margin-left:auto;
 	margin-right:auto;
 	margin-bottom:15px;
+}
+.user-panel{
+	display:table;
+	width:180px;
+	margin-left:auto;
+}
+.user-text{
+	float:left;
+	margin-right:5px;
+}
+.user-comments{
+	float:left;
+}
+.user-dropdown{
+	width:162px;
+	margin-left:auto;
 }
