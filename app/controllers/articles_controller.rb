@@ -23,7 +23,6 @@ class ArticlesController < ApplicationController
   
     respond_to do |format|
       format.html # index.html.erb
-      format.xml
     end
   end
   
@@ -96,6 +95,7 @@ class ArticlesController < ApplicationController
 
     respond_to do |format|
        format.rss { render :layout => false }
+       format.xml
     end
   end
 end

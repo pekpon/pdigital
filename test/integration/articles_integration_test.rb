@@ -132,5 +132,12 @@ describe "Articles integration" do
         assert page.has_content?('My showed article test').must_be_same_as true
       end
     end
+    
+    describe "GET RSS feed" do
+      it "returns an RSS feed" do
+        visit '/rss.xml'
+        assert page.has_content?('body of the test').must_be_same_as true
+      end
+    end
   end
 end

@@ -1,4 +1,7 @@
 Pdigital::Application.routes.draw do
+
+  match '/rss' => 'articles#rss'
+
   scope "/(:locale)" do
     devise_for :admin_users, ActiveAdmin::Devise.config
     ActiveAdmin.routes(self)
