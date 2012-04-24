@@ -15,9 +15,9 @@ xml.rss :version => "2.0" do
         xml.title article.title
         xml.description article.body
         xml.image do
-          xml.url article.images.first.image.url(:thumb) if article.images.first
+          xml.url request.env['HTTP_HOST']+article.images.first.image.url(:detail) if article.images.first
           xml.title article.title
-          xml.link article_url(article)
+          xml.link request.env['HTTP_HOST']+article.images.first.image.url(:detail) if article.images.first
         end
         xml.pubDate article.published_date.to_s(:rfc822)
         xml.link article_url(article)
