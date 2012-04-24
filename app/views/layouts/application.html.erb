@@ -17,7 +17,7 @@
 	
 	<link rel="icon" href="/favicon.ico" type="image/ico" />
 	
-	<%= auto_discovery_link_tag(:rss, "http://papioldigital.impulzia.com") %>
+	<%= auto_discovery_link_tag(:rss, request.env['HTTP_HOST']+"/rss.xml") %>
 	
 </head>
 <body>
