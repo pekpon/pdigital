@@ -13,7 +13,8 @@ es:
   welcome: "Bienvenido,"
   search: "Buscar"
   search_results: "resultados encontrados buscando por: "
-  
+  resend_mail: "Reenviar el mail de activación"
+  resend: "Reenviar"
   
   singular_comment: "comentario"
   plural_comments: "comentarios"  
@@ -50,6 +51,8 @@ es:
   forgot_password: "¿Has olvidado tu contraseña?"
   confirmation_instructions: "¿No has recibido la confirmación por correo electrónico?"
   unlock_instructions: "¿No has recibido las instrucciones de desbloqueo?"
+  new_password: "Nova contrasenya"
+  change_password: "Renovar la contrasenya"
   
   no_articles_category: "No hay artículos en esta categoría"
   

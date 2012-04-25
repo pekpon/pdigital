@@ -1,12 +1,16 @@
-<h2>Resend confirmation instructions</h2>
+<%= stylesheet_link_tag    "devise" %>
 
-<%= form_for(resource, :as => resource_name, :url => confirmation_path(resource_name), :html => { :method => :post }) do |f| %>
-  <%= devise_error_messages! %>
+<div class="white">
+	<div id="section_header"><%=t(:resend_mail)%></div>
+		<div class="left_padding">
+			<%= form_for(resource, :as => resource_name, :url => confirmation_path(resource_name), :html => { :method => :post }) do |f| %>
+			  <%= devise_error_messages! %>
+			<br>
+			 <div><%= f.text_field :email, :placeholder => t(:email), :class => "input_signin" %></div>
+			<br>
+			 <div><%= f.submit :id => "signin_button", :class => "btn-success span3", :value => t(:resend) %></div>
+			<% end %>
 
-  <div><%= f.label :email %><br />
-  <%= f.email_field :email %></div>
-
-  <div><%= f.submit "Resend confirmation instructions" %></div>
-<% end %>
-
-<%= render :partial => "devise/shared/links" %>
+			<%= render :partial => "devise/shared/links" %>
+		</div>
+</div>

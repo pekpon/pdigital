@@ -1,3 +1,5 @@
+#Català
+
 ca:
   sports: "Esports"
   news: "Notícies"
@@ -11,6 +13,8 @@ ca:
   welcome: " Benvingut,"
   search: "Cercar"
   search_results: "resultats cercats amb les paraules: "
+  resend_mail: "Reenviar el mail de confirmació"
+  resend: "Reenviar"
   
   singular_comment: "comentari"
   plural_comments: "comentaris"
@@ -47,6 +51,8 @@ ca:
   forgot_password: "Has perdut la contrasenya?"
   confirmation_instructions: "No has rebut la comfirmació per correu electrònic?"
   unlock_instructions: "No has rebut les instruccions de desbloquejament?"
+  new_password: "Nova contrasenya"
+  change_password: "Renovar la contrasenya"
   
   no_articles_category: "No hi ha articles en aquesta categoria"
   

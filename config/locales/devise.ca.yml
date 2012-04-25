@@ -31,7 +31,7 @@ ca:
       confirmed: "El teu compte ha estat confirmat correctament.  S'ha iniciat la sessió."
     registrations:
       signed_up: 'Has estat registrat correctament.'
-      inactive_signed_up: 'Has estat registrat correctament. Tanmateix, no hem pogut processar el teu compte perquẻ %{reason}.'
+      inactive_signed_up: "Has estat registrat correctament. Hem enviat un email per comfirmar l'adreça que has indicat. Si no el veus, revisa la bústia d'SPAM."
       updated: 'Has actualitzat el teu compte correctament.'
       destroyed: 'Adéu! El teu compte ha estat cancel·lat correctament. Esperem tornar-te a veure!'
     unlocks:
@@ -41,7 +41,7 @@ ca:
       success: 'Autoritzat satisfactoriament el compte des de %{kind}.'
       failure: 'No hem pogut autoritzar el compte des de %{kind} perquè "%{reason}".'
     mailer:
-      confirmation_instructions:
+      confirmation_instructions: 
         subject: 'Instruccions de confirmació'
       reset_password_instructions:
         subject: 'Instruccions de regeneració de contrasenya'
