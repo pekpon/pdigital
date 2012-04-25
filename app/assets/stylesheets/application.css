@@ -87,14 +87,15 @@ body{
 	margin-right:auto;
 	margin-bottom:15px;
 }
-.user-panel{
+/*.user-panel{
 	display:table;
-	width:180px;
+	width:184px;
 	margin-left:auto;
 }
 .user-text{
 	float:left;
 	margin-right:5px;
+	margin-top:3px;
 }
 .user-comments{
 	float:left;
@@ -102,4 +103,4 @@ body{
 .user-dropdown{
 	width:162px;
 	margin-left:auto;
-}
+}*/

@@ -1,7 +1,30 @@
 <div id="users_block">
 	<% if user_signed_in? %>
-		<p><b><%= t(:welcome)+" "+current_user.username %></b> <%= link_to raw("<i class='icon-off icon-white'></i>  "), destroy_user_session_path, :method => :delete, :class => "btn btn-danger btn-small btn-close", :rel => "tooltip", :title => t(:sign_out) %></p>
 
+		<!--<div class="user-panel">
+
+		<span class="user-text"><b><%= t(:welcome)+" "+current_user.username %></b></span> 
+		
+		<span class="user-comments"><%= link_to raw("<i class='icon-comment'></i> <b>0</b>"), articles_path, :class => "btn btn-default btn-small" %></span>
+		
+	<ul class="user-dropdown">
+	 <li class="dropdown">
+	   <a class="dropdown-toggle" data-toggle="dropdown">
+	     <span class="btn btn-small"><i class='icon-chevron-down '></i></span>
+	   </a>
+	   <ul class="dropdown-menu">
+	     <li><a href="#">Perfil</a></li>
+	     <li><a href="#">Enviar notícia</a></li>
+	     <li class="divider"></li>
+	     <li><%= link_to t(:sign_out), destroy_user_session_path, :method => :delete %></li>
+	   </ul>
+	 </li>
+	</ul>
+	
+	</div>-->
+	
+			<p><b><%= t(:welcome)+" "+current_user.username %></b> <%= link_to raw("<i class='icon-off icon-white'></i>  "), destroy_user_session_path, :method => :delete, :class => "btn btn-danger btn-small btn-close", :rel => "tooltip", :title => t(:sign_out) %></p>
+	
 	<% else %>
 	
 		 <%= link_to t(:register), new_user_registration_path, :class => "btn btn-default btn-small"%>  <%= link_to t(:sign_in), new_user_session_path , :class => "btn btn-small btn-success"%>
