@@ -9,6 +9,8 @@ describe "Articles integration" do
          :category => Category.first, :published_date => '2012-03-11', :published => true, :author => 'Test'
          
     @user = User.create :email => 'test@test.com', :username => 'test_user', :password => '123456'
+    @user.confirm!
+
   end
   
   describe "Home" do
