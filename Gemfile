@@ -21,6 +21,7 @@ gem "friendly_id", "~> 4.0.1"
 gem "pg"
 gem "twitter-bootstrap-rails"
 gem 'kaminari'
+gem 'galetahub-simple_captcha', :require => 'simple_captcha', :git => 'git://github.com/galetahub/simple-captcha.git'
 
 
 group :deploy do

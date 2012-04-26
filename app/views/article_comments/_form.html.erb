@@ -2,6 +2,7 @@
 	<%= form_tag(article_comments_path, :method => "POST") do %>
 		<%= text_area(:article_comment, :comment, :rows => 3, :class => "textarea_comment") %><br />
 		<%= hidden_field(:article_comment, :article_id, :value => @article.id) %>
+		<%= show_simple_captcha %>
 		<div class="disclaimer"><%=t(:comment_responsability) %></div>
 		<%= submit_tag(t(:send), :class => "btn-primary btn-large") %>
 	<% end %>

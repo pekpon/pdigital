@@ -1,26 +1,27 @@
-<%= stylesheet_link_tag    "contact" %>
+<%= stylesheet_link_tag    "contact","devise" %>
 
 <div class="white">
 	<div id="section_header"><%=t(:contact)%></div>
-	<div class="left_div">
+	<div class="left_padding">
 	<%= form_for @message, :url => contact_path do |form| %>
 	  <fieldset class="fields">
 	    <div class="field">
-	      <%= form.label t(:name) %>
-	      <%= form.text_field :name, :class => 'span4' %>
+	      <%= form.text_field :name, :class => 'span4', :placeholder => t(:name) %>
 	    </div>
+	<br>
 	    <div class="field">
-	      <%= form.label t(:email) %>
-	      <%= form.text_field :email, :class => 'span4' %>
+	      <%= form.text_field :email, :class => 'span4', :placeholder => t(:email) %>
 	    </div>
+	<br>
 	    <div class="field">
-	      <%= form.label t(:subject) %>
-	      <%= form.text_field :subject, :class => 'span4' %>
+	      <%= form.text_field :subject, :class => 'span4', :placeholder => t(:subject) %>
 	    </div>
+	<br>
 	    <div class="field">
-	      <%= form.label t(:body) %>
-	      <%= form.text_area :body, :rows => 5, :class => 'textarea_contact' %>
+	      <%= form.text_area :body, :rows => 5, :class => 'textarea_contact', :placeholder => t(:body) %>
 	    </div>
+	<br>
+			<%= show_simple_captcha %>
 	  </fieldset>
 
 	  <fieldset class="actions">

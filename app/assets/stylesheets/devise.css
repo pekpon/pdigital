@@ -7,3 +7,11 @@
 .size_3{
 	width:91%;
 }
+#error_explanation{
+	margin-bottom:30px;
+}
+#error_explanation li{
+	color:#666;
+	list-style:none;
+	padding:2px;
+}
