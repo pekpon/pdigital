@@ -20,3 +20,4 @@ public/assets
 Gemfile.lock
 public/configurations
 public/system
+config/initializers/setup_mail.rb
