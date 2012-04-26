@@ -21,6 +21,7 @@ ca:
   singular_vote: "vot"
   plural_votes: "vots"
   
+  captcha_error: "Has d'escriure el codi vermell correctament"
   comment_succefull: "Comentari afegit correctament"
   comment_error: "Has d'afegir un comentari"
   comments: "Comentaris"
@@ -73,4 +74,10 @@ ca:
         next: "Següent &rsaquo;"
         truncate: ""
         
+  simple_captcha:
+      message:
+          default: "Codi secret no trobat amb la imatge"
+          user: "El codi que ha escrit no és correcte"
+      label: "Escriu el codi vermell al recuadre de dalt"
+  
   newspaper_group: "diari online pertanyent a la xarxa informativa "

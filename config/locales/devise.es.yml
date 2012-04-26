@@ -4,6 +4,9 @@ es:
       not_found: "no encontrado"
       already_confirmed: "ya ha sido confirmado"
       not_locked: "no está bloqueado"
+      not_saved:
+          one: "Ep! Ha ocurrido un error:"
+          other: "Ep! Han ocurrido varios errores:"
 
   devise:
     sessions:

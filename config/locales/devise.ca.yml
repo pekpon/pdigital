@@ -6,8 +6,8 @@ ca:
       already_confirmed: "ja està confirmat"
       not_locked: "no està bloquejat"
       not_saved:
-        one: "1 error ha evitat que %{resource} es pugui desar:"
-        other: "%{count} errors han evitat que %{resource} es pugui desar:"
+        one: "Ep! Hi ha hagut un error:"
+        other: "Ep! Hi han hagut alguns errors:"
 
   devise:
     failure:

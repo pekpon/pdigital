@@ -8,7 +8,7 @@ es:
   polls: "Encuestas"
   the_most: "Los +"
   register: "Regístrate"
-  sign_in: "Entra"
+  sign_in: "Inicia sessión"
   sign_out: "Cierra sessión"
   welcome: "Bienvenido,"
   search: "Buscar"
@@ -21,6 +21,7 @@ es:
   singular_vote: "voto"
   plural_votes: "votos"
   
+  captcha_error: "Debes escribir el código rojo correctamente"
   comment_succefull: "Comentario añadido correctamente"
   comment_error: "Debes escribir un mensaje"
   comments: "Comentarios"
@@ -71,5 +72,11 @@ es:
         previous: "&lsaquo; Anterior"
         next: "Siguiente &rsaquo;"
         truncate: "..."
-        
+
+  simple_captcha:
+      message:
+          default: "Código secreto no encintrado en la imagen"
+          user: "El código que ha escrito no es correcto"
+      label: "Escribe el código rojo en el recuadro de arriba"
+    
   newspaper_group: "periódico online perteneciente a la red informativa "
