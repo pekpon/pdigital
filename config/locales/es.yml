@@ -12,6 +12,7 @@ es:
   sign_out: "Cierra sessión"
   welcome: "Bienvenido,"
   search: "Buscar"
+  search_min_length: "Recuerda que las palabras de menos de 4 letras no se tendrán en cuenta."
   search_results: "resultados encontrados buscando por: "
   resend_mail: "Reenviar el mail de activación"
   resend: "Reenviar"

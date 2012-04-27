@@ -12,6 +12,7 @@ ca:
   sign_out: "Tanca sessió"
   welcome: " Benvingut,"
   search: "Cercar"
+  search_min_length: "Recorda que les paraules de menys de 4 lletres no es tindran en compte."
   search_results: "resultats cercats amb les paraules: "
   resend_mail: "Reenviar el mail de confirmació"
   resend: "Reenviar"

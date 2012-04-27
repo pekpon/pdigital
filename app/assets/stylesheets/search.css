@@ -4,6 +4,10 @@
 .right_block{
 	float:left;
 }
+.words_length{
+	font-weight:bold;
+	font-size:11px;
+}
 .date_block{
 	float:right;
 	padding:10px 10px 0 25px;

@@ -4,10 +4,21 @@
 
 <% if @articles.empty? %>
 
-	<div id="search_results">0 <%= t(:search_results)%><span class='words'>...</span></div>
+	<div id="search_results">
+		0 <%= t(:search_results)%>
+		<span class='words'><% if @words.nil?%>...<% else %><%= @words %><% end %></span>
+	<br>
+	<% if @little_words > 0 %>
+		<span class="words_length"><%= t(:search_min_length) %></span>
+	<% end %>
+	</div>
 <% else %>
 	
-	<div id="search_results"><%= "#{@total_articles} #{t(:search_results)}"%><span class='words'><%=@words%></span></div>
+	<div id="search_results"><%= "#{@total_articles} #{t(:search_results)}"%><span class='words'><%=@words%></span>
+		<br>
+		<% if @little_words > 0 %>
+			<span class="words_length"><%= t(:search_min_length) %></span>
+		<% end %></div>
 
 	<%= paginate @articles %>
 

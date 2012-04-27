@@ -36,11 +36,14 @@ class ArticlesController < ApplicationController
       end
     else
       search = params[:search].split(' ')
-    
+      @little_words = 0
+            
       ok_words = []
       search.each do |word|
         if word.length > 3
            ok_words << word
+          else
+            @little_words = @little_words + 1
          end
        end
     
