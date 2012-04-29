@@ -1,0 +1,101 @@
+// Place all the styles related to the pages controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.left_padding{
+	padding-left:10px;
+	padding-right:10px;
+}
+p {
+	font-size:13px;
+}
+.intro{
+	border:1px dashed #999;
+	padding:10px;
+	background-color:#f7f7f7;
+}
+.sub_section{
+	font-size:27px;
+	margin-bottom:30px;
+	margin-top:30px;
+	font-family:Arial;
+	color:white;
+	width:250px;
+	background-color:#9fc54e;
+	border-left:7px solid #6a8236;
+	padding:12px;
+	
+	-webkit-border-top-right-radius: 10px;
+	-webkit-border-bottom-right-radius: 10px;
+	-moz-border-radius-topright: 10px;
+	-moz-border-radius-bottomright: 10px;
+	border-top-right-radius: 10px;
+	border-bottom-right-radius: 10px;
+}
+.left_padding li {
+	display:table;
+	margin-bottom:20px;
+}
+.img_item{
+	float:left;
+}
+.text_item{
+	float:right;
+	margin-left:20px;
+	width:800px;
+}
+.item{
+	font-size:20px;
+	color:#069;
+	font-style:italic;
+	margin-bottom:5px;
+	font-family:georgia;
+}
+.description_item{
+
+}
+
+.packs{
+	display:table;
+}
+.pack{
+	float:left;
+	margin-right:10px;
+	width:230px;
+	padding:20px;
+	text-align:center;
+	margin-left:15px;
+	border:1px solid #999;
+	background-color:#f7f7f7;
+}
+.pack_price{
+	font-family:georgia;
+	font-style:italic;
+	font-size:46px;
+	margin-bottom:25px;
+	color:#069;
+}
+.pack_content{
+	font-weight:bold;
+}
+.pack_views{
+	color:#069;
+}
+.views_aprox{
+	margin-top:5px;
+	margin-left:20px;
+	color:red;
+}
+.promo{
+	padding:5px;
+	font-family:georgia;
+	font-style:italic;
+	color:#333;
+	font-size:18px;
+	margin-bottom:5px;
+	margin-top:10px;
+	border:1px dashed #e2d222;
+	border-left:5px solid #e2d222;
+	padding:10px;
+	background-color:#fffbb7;
+}
