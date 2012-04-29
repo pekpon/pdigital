@@ -7,5 +7,4 @@ class NotificationsMailer < ActionMailer::Base
     @message = message
     mail(:subject => "Missatge web: #{message.subject}")
   end
-
 end

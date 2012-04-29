@@ -5,19 +5,29 @@
 	<div class="left_padding">
 	<%= form_for @message, :url => contact_path do |form| %>
 	  <fieldset class="fields">
-	    <div class="field">
+	    <% 
+			browser = request.env['HTTP_USER_AGENT'] 
+			ie = false
+			ie = true if browser.include? "MSIE" or browser.include? "MSI"
+			%>
+			
+			<%= t(:name) if ie %><div class="field">
+			
 	      <%= form.text_field :name, :class => 'span4', :placeholder => t(:name) %>
 	    </div>
 	<br>
-	    <div class="field">
+	    <%= t(:email) if ie %><div class="field">
+		
 	      <%= form.text_field :email, :class => 'span4', :placeholder => t(:email) %>
 	    </div>
 	<br>
-	    <div class="field">
+	    <%= t(:subject) if ie %><div class="field">
+		
 	      <%= form.text_field :subject, :class => 'span4', :placeholder => t(:subject) %>
 	    </div>
 	<br>
-	    <div class="field">
+	    <%= t(:body) if ie %><div class="field">
+		
 	      <%= form.text_area :body, :rows => 5, :class => 'textarea_contact', :placeholder => t(:body) %>
 	    </div>
 	<br>

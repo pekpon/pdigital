@@ -62,6 +62,8 @@ Configuration.create([
   {:key => 'facebook_plugin_code', :values => '<div class="fb-like-box" data-href="http://www.URL_WEBSITE.com" data-width="300" data-height="360" data-show-faces="true" data-border-color="white" data-stream="false" data-header="true"></div>
   '},
   
+  {:key => 'twitter_plugin_pos', :values => '1'},
+  
   {:key => 'sports_id', :values => '1'},
   {:key => 'opinion_id', :values => '2'}
   ])

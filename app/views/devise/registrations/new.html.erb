@@ -5,13 +5,20 @@
 	<div class="left_padding">
 		<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
 			<%= devise_error_messages! %>
-
+			
+			<% 
+			browser = request.env['HTTP_USER_AGENT'] 
+			ie = false
+			ie = true if browser.include? "MSIE" or browser.include? "MSI"
+			%>
+			
+			<%= t(:username) if ie %>
 			<div><%= f.text_field :username, :placeholder => t(:username) %></div><br>
-
+			<%= t(:email) if ie %>
 		  	<div><%= f.email_field :email, :placeholder => t(:email) %></div><br>
-
+			<%= t(:password) if ie %>
 			<div><%= f.password_field :password, :placeholder => t(:password) %></div><br>
-
+			<%= t(:r_password) if ie %>
 			<div><%= f.password_field :password_confirmation, :placeholder => t(:r_password) %></div><br>
 
 			<div><%= f.submit :class => "btn-primary span3", :value => t(:register) %></div>

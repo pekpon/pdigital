@@ -6,6 +6,13 @@
 			<%= form_for(resource, :as => resource_name, :url => confirmation_path(resource_name), :html => { :method => :post }) do |f| %>
 			  <%= devise_error_messages! %>
 			<br>
+			<% 
+			browser = request.env['HTTP_USER_AGENT'] 
+			ie = false
+			ie = true if browser.include? "MSIE" or browser.include? "MSI"
+			%>
+			
+			<%= t(:email) if ie %>
 			 <div><%= f.text_field :email, :placeholder => t(:email), :class => "input_signin" %></div>
 			<br>
 			 <div><%= f.submit :id => "signin_button", :class => "btn-success span3", :value => t(:resend) %></div>

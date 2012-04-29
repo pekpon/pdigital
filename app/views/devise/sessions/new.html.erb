@@ -5,8 +5,16 @@
 		<div class="left_padding">
 			<%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
 			<br>
+			<% 
+			browser = request.env['HTTP_USER_AGENT'] 
+			ie = false
+			ie = true if browser.include? "MSIE" or browser.include? "MSI"
+			%>
+			
+			<%= t(:email) if ie %>
 			 <div><%= f.text_field :email, :placeholder => t(:email), :class => "input_signin" %></div>
 			<br>
+			<%= t(:password) if ie %>
 			 <div><%= f.password_field :password, :placeholder => t(:password), :class => "input_signin" %></div>
 			<br>
 			 <% if devise_mapping.rememberable? -%>

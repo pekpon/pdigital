@@ -65,7 +65,8 @@ ca:
   subject: "Assumpte"
   body: "Missatge"
   send: "Enviar"
-  month_names: [~, Gener, Febrer, Març, Abril, May, June, July, August, September, October, November, December]
+  
+  advertising: "Publicitat"
   
   views:
       pagination:

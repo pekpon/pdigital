@@ -10,6 +10,7 @@ Pdigital::Application.routes.draw do
     resources :articles, :categories, :polls, :the_mosts, :contact, :article_comments
     
     match 'search/' => 'articles#search'
+    match 'advertising/' => 'pages#advertising'
     
     root :to => 'articles#index'
     

@@ -7,8 +7,16 @@
 			  <%= devise_error_messages! %>
 			  <%= f.hidden_field :reset_password_token %>
 			<br>
+			<% 
+			browser = request.env['HTTP_USER_AGENT'] 
+			ie = false
+			ie = true if browser.include? "MSIE" or browser.include? "MSI"
+			%>
+			
+			<%= t(:new_password) if ie %>
 			 <div><%= f.password_field :password, :placeholder => t(:new_password), :class => "input_signin" %></div>
 			<br>
+			<%= t(:r_password) if ie %>
 			<div><%= f.password_field :password_confirmation, :placeholder => t(:r_password), :class => "input_signin" %></div>
 			<br>
 			 <div><%= f.submit :id => "signin_button", :class => "btn-primary span3", :value => t(:change_password) %></div>

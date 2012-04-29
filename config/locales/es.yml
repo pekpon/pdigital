@@ -66,6 +66,8 @@ es:
   body: "Mensaje"
   send: "Enviar"
   
+  advertising: "Publicidad"
+  
   views:
       pagination:
         first: "&laquo; Primera"
