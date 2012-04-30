@@ -101,9 +101,6 @@ ActiveRecord::Schema.define(:version => 20120430130728) do
   add_index "friendly_id_slugs", ["sluggable_id"], :name => "index_friendly_id_slugs_on_sluggable_id"
   add_index "friendly_id_slugs", ["sluggable_type"], :name => "index_friendly_id_slugs_on_sluggable_type"
 
-# Could not dump table "images" because of following StandardError
-#   Unknown type 'bool' for column 'image_aux'
-
   create_table "impressions", :force => true do |t|
     t.string   "impressionable_type"
     t.integer  "impressionable_id"
