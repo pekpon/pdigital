@@ -76,6 +76,27 @@ class Article < ActiveRecord::Base
         self.article_resume
       end
     end
+    def prepared
+      #Select all aux images
+      images = self.aux_images
+      body = self.body
+      
+      #Change text parts
+      images.each_with_index do |aux_img,index|
+        body = body.gsub("[img#{index}r]", "<img class='aux_image right' src='"+aux_img.image.url(:medium)+"'") 
+        body = body.gsub("[img#{index}l]", "<img class='aux_image left' src='"+aux_img.image.url(:medium)+"'") 
+      end
+      
+      return body
+    end
+    
+    def standar_images
+      self.images.find(:all, :conditions => ["aux = ? OR aux = ?", false, nil])
+    end
+    
+    def aux_images
+      self.images.where(:aux => true)
+    end
 
     def vote(type, ip)
       self.votes.create! :vote_type => type, :ip => ip

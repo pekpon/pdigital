@@ -13,6 +13,7 @@ ActiveAdmin.register Image do
       f.inputs "Image" do         
           f.input :article
           f.input :image_foot
+          f.input :aux
           f.input :image, :hint => f.template.image_tag(f.object.image.url(:thumb))
       end
          f.buttons

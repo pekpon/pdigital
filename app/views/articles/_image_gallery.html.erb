@@ -1,7 +1,15 @@
-<% if (@article.images.count > 1)%>
+<% if (@article.standar_images.count > 1)%>
 	<div id="article_gallery">
-	        <% @article.images.each do |image_ob| %>
-	        	<%= image_tag image_ob.image.url(:thumb), :class => 'img_gallery', :onclick => 'javascript:show_image('+"'"+image_ob.image.url(:detail)+"'"+','+"'"+image_ob.image_foot+"'"+')' %>
+	        <% @article.standar_images.each do |image_ob| %>
+	
+			<% image = image_ob.image.url(:detail) %>
+			<% if image_ob.image_foot.nil?
+					foot = ""
+				else
+					foot = image_ob.image_foot
+				end %>
+				
+	        	<%= image_tag image_ob.image.url(:thumb), :class => 'img_gallery', :onclick => 'javascript:show_image('+"'"+image+"'"+','+"'"+foot+"'"+')' %>
 	        <% end %>	
 	</div>
 <% end %>

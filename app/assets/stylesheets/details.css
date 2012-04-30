@@ -55,6 +55,18 @@
 	float:left;
 	margin-bottom:10px;
 }
+.aux_image{
+	padding:4px;
+	border:1px solid #ccc;
+}
+.right{
+	float:right;
+	margin:5px 0 5px 10px;
+}
+.left{
+	float:left;
+	margin:5px 10px 5px 0;
+}
 .article_image{
 	width:600px;
 }

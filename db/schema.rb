@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120426135706) do
+ActiveRecord::Schema.define(:version => 20120430130728) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.integer  "resource_id",   :null => false
@@ -101,16 +101,8 @@ ActiveRecord::Schema.define(:version => 20120426135706) do
   add_index "friendly_id_slugs", ["sluggable_id"], :name => "index_friendly_id_slugs_on_sluggable_id"
   add_index "friendly_id_slugs", ["sluggable_type"], :name => "index_friendly_id_slugs_on_sluggable_type"
 
-  create_table "images", :force => true do |t|
-    t.integer  "article_id"
-    t.datetime "created_at",         :null => false
-    t.datetime "updated_at",         :null => false
-    t.string   "image_file_name"
-    t.string   "image_content_type"
-    t.integer  "image_file_size"
-    t.datetime "image_updated_at"
-    t.string   "image_foot"
-  end
+# Could not dump table "images" because of following StandardError
+#   Unknown type 'bool' for column 'image_aux'
 
   create_table "impressions", :force => true do |t|
     t.string   "impressionable_type"

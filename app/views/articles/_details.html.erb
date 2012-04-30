@@ -9,11 +9,12 @@
 <div id="article_title"><%= @article.title %></div>
 <div id="article_subtitle"><%= @article.subtitle %></div>
 <div id="article_image">
-	<% if(@article.images.first) %>
-		<%= image_tag @article.images.first.image.url(:detail), :class => 'article_image' %>
+	<% image = @article.standar_images.first 
+	if(image) %>
+		<%= image_tag image.image.url(:detail), :class => 'article_image' %>
 		
-		<% unless @article.images.first.image_foot.nil? %>
-			<span id="article_foot"><%= @article.images.first.image_foot %></span>
+		<% unless image.image_foot.nil? or image.image_foot.empty? %>
+			<span id="article_foot"><%= image.image_foot %></span>
 		<% end %>
 		
 	<% end %>
@@ -21,7 +22,7 @@
 
 <%= render :partial => 'image_gallery' %>
 
-<div id="article_body"><%=raw @article.body %></div>
+<div id="article_body"><%=raw @article.prepared %></div>
 
 <%= render :partial => 'addThis' %>
 

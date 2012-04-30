@@ -57,12 +57,13 @@ p {
 
 .packs{
 	display:table;
+	margin-top:10px;
 }
 .pack{
 	float:left;
 	margin-right:10px;
 	width:230px;
-	padding:20px;
+	padding:50px 20px 50px 20px;
 	text-align:center;
 	margin-left:15px;
 	border:1px solid #999;
@@ -77,9 +78,6 @@ p {
 }
 .pack_content{
 	font-weight:bold;
-}
-.pack_views{
-	color:#069;
 }
 .views_aprox{
 	margin-top:5px;
