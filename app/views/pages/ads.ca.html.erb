@@ -1,0 +1,85 @@
+<%= stylesheet_link_tag    "pages" %>
+
+<div class="white">
+	<div id="section_header"><%=t(:advertising)%></div>
+	<div class="left_padding">
+	<!--<div class="sub_section">Explicación</div>-->
+	<div class="intro">
+			<p>Vols donar a conèixer el teu negoci o pàgina web? A <%= Configuration.value(:sitename)%> t’ajudem a aconseguir-ho.</p> 
+
+			<p>Com ho farem possible?</p>
+
+			<p><%= Configuration.value(:sitename)%> rep de mitjana cada mes aproximadament 4000 visitants, una xifra que equival a 15.500 pàgines vistes en el mateix període de temps. Cada visita i cada pàgina vista equivalen a un impacte publicitari que pot ser teu.</p>
+
+			<p>Si encara no ho tens clar, tot seguit t’expliquem quins altres avantatges posa al teu abast <%= Configuration.value(:sitename)%>:</p>
+	</div>		
+			
+	<div class="sub_section">Avantatges</div>
+	
+	<ul>
+		<li>
+			<div class="img_item"><%= image_tag('people.png')%></div>
+			<div class="text_item">
+				<div class="item">Arriba als clients que realment t’interessen</div>
+				<div class="description_item">El 95% de visitants de <%= Configuration.value(:sitename)%> viuen al Papiol.</div>
+			</div>
+		</li>
+		<li>
+			<div class="img_item"><%= image_tag('money.png')%></div>
+			<div class="text_item">
+				<div class="item">Preus realment assequibles</div>
+				<div class="description_item">Sigui quin sigui el teu pressupost, a <%= Configuration.value(:sitename)%> hem pensat en tu. Anuncia’t per 10, 20 o 30 euros al mes. Tu tries. </div>
+			</div>
+		</li>
+		<li>
+			<div class="img_item"><%= image_tag('calendar.png')%></div>
+			<div class="text_item">
+				<div class="item">Sense compromisos de permanència</div>
+				<div class="description_item">Et pots anunciar des de 1 mes i fins a 1 any.  Si tries 6 mesos el primer et surt de franc. Si tries 1 any els dos primers et surten de franc.</div>
+			</div>
+		</li>
+		<li>
+			<div class="img_item"><%= image_tag('refresh.png')%></div>
+			<div class="text_item">
+				<div class="item">Publicitat dinàmica</div>
+				<div class="description_item">Tot i que aquest sistema encara no està operatiu, a partir del mes de juny podràs modificar el teu anunci sempre que vulguis, anunciant ofertes, promocions, etc...</div>
+			</div>
+		</li>
+	</ul>
+	
+	<div class="sub_section">Tarifes</div>
+	
+	Les tarifes s’estableixen en funció de les visites que reben les parts del diari en que surtin l’anunci: 
+	<br>
+	
+	<div class="packs">
+		<div id="pack_1" class="pack">
+			<div class="pack_price">10€/mes</div>
+			<div class="pack_content">Portada</div>
+		</div>
+		<div id="pack_2" class="pack">
+			<div class="pack_price">20€/mes</div>
+			<div class="pack_content">Interiors</div>
+		</div>
+		<div id="pack_3" class="pack">
+			<div class="pack_price">30€/mes</div>
+			<div class="pack_content">Portada + Interiors</div>
+		</div>
+	</div>
+	
+	<div class="sub_section">Promocions</div>
+	
+	<div class="promo">
+		Contracta mig any en qualsevol de les 3 opcions i el primer mes et surt de franc.
+	</div>	
+	<div class="promo">
+		Contracta 1 any en qualsevol de les 3 opcions i els dos primers mesos et surten de franc.
+	</div>
+	
+	<div class="sub_section">Contacta'ns</div>
+	
+	<div class="">Per a més informació i contractació: <%= link_to "contacta via web", contact_path %> o envians un mail a <%= mail_to "info@papioldigital.com"%></div>
+	
+	
+	</div>
+</div>

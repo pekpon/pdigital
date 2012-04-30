@@ -1,0 +1,85 @@
+<%= stylesheet_link_tag    "pages" %>
+
+<div class="white">
+	<div id="section_header"><%=t(:advertising)%></div>
+	<div class="left_padding">
+	<!--<div class="sub_section">Explicación</div>-->
+	<div class="intro">
+			<p>¿Quieres dar a conocer tu negocio o tu página web? En <%= Configuration.value(:sitename)%> te ayudamos a conseguirlo.</p> 
+
+			<p>¿Com lo haremos posible?</p>
+
+			<p><%= Configuration.value(:sitename)%> recibe de media cada mes aproximadamente 4000 visitantes, una cifra que equivale a 15.500 páginas vistas en el mismo periodo de tiempo. Cada visita y cada página vista equivalen a un impacto publicitario que puede ser tuyo.</p>
+
+			<p>Si todavia no lo tienes claro, a continuación te explicamos que otras ventajas pone a disposición <%= Configuration.value(:sitename)%>:</p>
+	</div>		
+			
+	<div class="sub_section">Ventajas</div>
+	
+	<ul>
+		<li>
+			<div class="img_item"><%= image_tag('people.png')%></div>
+			<div class="text_item">
+				<div class="item">Llega a los clientes que realmente te interesan</div>
+				<div class="description_item">El 95% de los visitantes de <%= Configuration.value(:sitename)%> viven el el mismo municipio.</div>
+			</div>
+		</li>
+		<li>
+			<div class="img_item"><%= image_tag('money.png')%></div>
+			<div class="text_item">
+				<div class="item">Precios realmente asequibles</div>
+				<div class="description_item">Sea cual sea tu presupuesto, en <%= Configuration.value(:sitename)%> hemos pensado en ti. Anúnciate por 10, 20 o 30 euros al mes. Tu decides.</div>
+			</div>
+		</li>
+		<li>
+			<div class="img_item"><%= image_tag('calendar.png')%></div>
+			<div class="text_item">
+				<div class="item">Sin compromisos de permanencias</div>
+				<div class="description_item">Te puedes anunciar desde 1 mes y hasta 1 año. Si escoges 6 meses el primero te saldrá gratis. Si escoges 1 año los dos primeros meses te saldrán gratis.</div>
+			</div>
+		</li>
+		<li>
+			<div class="img_item"><%= image_tag('refresh.png')%></div>
+			<div class="text_item">
+				<div class="item">Publicidad dinámica</div>
+				<div class="description_item">Aunque este sistema no está operativo todavía, a partir del mes de junio podrás modificar tu anuncio siempre que quieras, anunciando ofertas, promociones, etc...</div>
+			</div>
+		</li>
+	</ul>
+	
+	<div class="sub_section">Tarifas</div>
+	
+	Las tarifas se establecen en función de las visitas que reciben las partes del diario en las que sale el anuncio:
+	<br>
+	
+	<div class="packs">
+		<div id="pack_1" class="pack">
+			<div class="pack_price">10€/mes</div>
+			<div class="pack_content">Portada</div>
+		</div>
+		<div id="pack_2" class="pack">
+			<div class="pack_price">20€/mes</div>
+			<div class="pack_content">Interiores</div>
+		</div>
+		<div id="pack_3" class="pack">
+			<div class="pack_price">30€/mes</div>
+			<div class="pack_content">Portada + Interiorse</div>
+		</div>
+	</div>
+	
+	<div class="sub_section">Promociones</div>
+	
+	<div class="promo">
+		Contrata medio año en cualquiera de las 3 opciones y el primer mes te saldrá gratis.
+	</div>	
+	<div class="promo">
+		Contrata 1 año en cualquiera de las 3 opciones y los dos primeros meses te saldrán gratis.
+	</div>
+	
+	<div class="sub_section">Contáctanos</div>
+	
+	<div class="">Para más información y contractación: <%= link_to "contacta via web", contact_path %> o envíanos un mail a <%= mail_to "info@papioldigital.com"%></div>
+	
+	
+	</div>
+</div>

@@ -1,7 +1,7 @@
 class PagesController < ApplicationController
-  def advertising
+  def ads
     respond_to do |format|
-       format.html # advertising.html.erb
+       format.html # ads.html.erb
      end
   end
 end
