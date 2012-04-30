@@ -8,7 +8,9 @@
 			<% 
 			browser = request.env['HTTP_USER_AGENT'] 
 			ie = false
-			ie = true if browser.include? "MSIE" or browser.include? "MSI"
+			unless browser.nil?
+				ie = true if browser.include? "MSIE" or browser.include? "MSI"
+			end
 			%>
 			
 			<%= t(:email) if ie %>

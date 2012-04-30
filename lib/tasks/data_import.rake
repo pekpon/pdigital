@@ -88,10 +88,14 @@ task :migration => :environment do
     act = false
   end    
    
+  begin 
   article = Article.create(:title => row[2].gsub(/\\#/, '"'), :body => row[4].gsub(/\\#/, '"'), :author => row[7],
       :category => Category.find(cat), :published_date => row[8], :published => act)
       
     puts row[0]
+  rescue
+    puts "#{row[0]} - error"
+  end
     
     #Insertamos la imagen
     if (File.exists?("../data/img/#{row[9]}"))
@@ -109,9 +113,13 @@ task :migration => :environment do
     impressions.each do |view|
       if id_old == view[1] #id del articulo
         
+        begin
         impression = Impression.create(:impressionable_type => "Article", 
         :impressionable_id => article.id, :controller_name => "articles", 
         :action_name => "show", :ip_address => view[4])
+        rescue
+          "error con impresion"
+        end
       
       end
     end
@@ -130,10 +138,14 @@ task :migration => :environment do
       content = row2[5].gsub(/\\\$/, '"')
       if content.length < 10000
         puts "-> #{row2[0]}"
+        begin
         a_comment = article.article_comments.create(:comment => content, 
           :user => nil, 
           :username => old_user,
           :active => row2[3])
+        rescue
+          puts "error comentario"
+        end
       end
     end
     

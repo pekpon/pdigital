@@ -8,7 +8,7 @@ describe "Articles integration" do
     @article = Article.create :title => 'My showed article test', :body => 'The body of the test article',
          :category => Category.first, :published_date => '2012-03-11', :published => true, :author => 'Test'
          
-    @user = User.create :email => 'test@test.com', :username => 'test_user', :password => '123456'
+    @user = User.create :email => 'test@test.com', :username => 'test_user', :password => '123456', :password_confirmation => '123456'
     @user.confirm!
 
   end
@@ -50,7 +50,7 @@ describe "Articles integration" do
         fill_in('user_email', :with => 'test@test.com')
         fill_in('user_password', :with => '123456') 
         click_on('signin_button') 
-
+        puts page
         assert page.has_content?('Welcome, test_user').must_be_same_as true
       end
       

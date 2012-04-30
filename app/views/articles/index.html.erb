@@ -12,14 +12,14 @@
 <div class="white">
 	<div class="col_left general">
 		<p id="news_header"><%= t(:news)%></p>
-		<%= render :partial => 'box', :locals => {:articles => @articles, :ad_zone => Configuration.value(:openx_home_zone_a), :ad_code => Configuration.value(:openx_home_code_a), :pos => Configuration.value(:openx_pos_home_a), :facebook_pos => nil, :facebook_code => nil} %>
+		<%= render :partial => 'box', :locals => {:articles => @articles, :ad_zone => Configuration.value(:openx_home_zone_a), :ad_code => Configuration.value(:openx_home_code_a), :pos => Configuration.value(:openx_pos_home_a), :facebook_pos => nil, :facebook_code => nil, :twitter => false} %>
 	</div>
 	<div class="col_mid sports">
 		<p id="sports_header"><%= t(:sports)%></p>
-		<%= render :partial => 'box', :locals => {:articles => @articles_sport, :ad_zone => Configuration.value(:openx_home_zone_b), :ad_code => Configuration.value(:openx_home_code_b), :pos => Configuration.value(:openx_pos_home_b), :facebook_pos => nil, :facebook_code => nil} %>
+		<%= render :partial => 'box', :locals => {:articles => @articles_sport, :ad_zone => Configuration.value(:openx_home_zone_b), :ad_code => Configuration.value(:openx_home_code_b), :pos => Configuration.value(:openx_pos_home_b), :facebook_pos => nil, :facebook_code => nil, :twitter => false} %>
 	</div>
 	<div class="col_right opinion"> 
 		<p id="opinion_header"><%= t(:opinion)%></p>
-		<%= render :partial => 'box', :locals => {:articles => @articles_opinion, :ad_zone => Configuration.value(:openx_home_zone_c), :ad_code => Configuration.value(:openx_home_code_c), :pos => Configuration.value(:openx_pos_home_c), :facebook_pos => Configuration.value(:facebook_plugin_pos), :facebook_code => Configuration.value(:facebook_plugin_code)} %>
+		<%= render :partial => 'box', :locals => {:articles => @articles_opinion, :ad_zone => Configuration.value(:openx_home_zone_c), :ad_code => Configuration.value(:openx_home_code_c), :pos => Configuration.value(:openx_pos_home_c), :facebook_pos => Configuration.value(:facebook_plugin_pos), :facebook_code => Configuration.value(:facebook_plugin_code), :twitter => true} %>
 	</div>
 </div>
