@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120430130728) do
+ActiveRecord::Schema.define(:version => 20120430234508) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.integer  "resource_id",   :null => false
@@ -101,6 +101,9 @@ ActiveRecord::Schema.define(:version => 20120430130728) do
   add_index "friendly_id_slugs", ["sluggable_id"], :name => "index_friendly_id_slugs_on_sluggable_id"
   add_index "friendly_id_slugs", ["sluggable_type"], :name => "index_friendly_id_slugs_on_sluggable_type"
 
+# Could not dump table "images" because of following StandardError
+#   Unknown type 'bool' for column 'image_aux'
+
   create_table "impressions", :force => true do |t|
     t.string   "impressionable_type"
     t.integer  "impressionable_id"
@@ -177,6 +180,15 @@ ActiveRecord::Schema.define(:version => 20120430130728) do
   add_index "users", ["confirmation_token"], :name => "index_users_on_confirmation_token", :unique => true
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
   add_index "users", ["reset_password_token"], :name => "index_users_on_reset_password_token", :unique => true
+
+  create_table "videos", :force => true do |t|
+    t.integer  "article_id"
+    t.string   "youtube_code"
+    t.integer  "width"
+    t.integer  "height"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+  end
 
   create_table "votes", :force => true do |t|
     t.integer  "article_comment_id"

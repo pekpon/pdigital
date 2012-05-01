@@ -2,6 +2,7 @@ class Article < ActiveRecord::Base
 	belongs_to :category
 	has_many :article_comments
 	has_many :images
+	has_many :videos
 	is_impressionable
 	
 	extend FriendlyId
@@ -79,12 +80,27 @@ class Article < ActiveRecord::Base
     def prepared
       #Select all aux images
       images = self.aux_images
+      videos = self.videos
       body = self.body
       
       #Change text parts
       images.each_with_index do |aux_img,index|
         body = body.gsub("[img#{index}r]", "<img class='aux_image right' src='"+aux_img.image.url(:medium)+"'") 
         body = body.gsub("[img#{index}l]", "<img class='aux_image left' src='"+aux_img.image.url(:medium)+"'") 
+      end
+      
+      #Video
+      videos.each_with_index do |video,index|
+        width = video.width
+        height = video.height
+        
+        if width.nil? or height.nil?
+          width = 600
+          height = 355
+        end
+        
+        body = body.gsub("[video#{index}]", "<iframe width='#{width}' height='#{height}' src='http://www.youtube.com/embed/#{video.youtube_code}?rel=0' frameborder='0' allowfullscreen></iframe>") 
+        
       end
       
       return body
