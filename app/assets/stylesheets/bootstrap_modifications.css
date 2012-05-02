@@ -24,3 +24,6 @@ body{
 .btn{
 	behavior: url(path/to/PIE.htc);
 }
+.span4{
+	width:292px;
+}
