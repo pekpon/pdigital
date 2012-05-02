@@ -1,5 +1,5 @@
 <div id="footer">
-	<div class="languaje"><%= link_to "Publi", :controller => "pages", :action => "ads" %> | <%= link_to "Català", :locale => 'ca'%> | <%= link_to "Castellano", :locale => 'es' %></div>
+	<div class="languaje"><%= link_to "Publi", "/#{I18n.locale}/ads" %> | <%= link_to "Català", :locale => 'ca'%> | <%= link_to "Castellano", :locale => 'es' %></div>
 	<div class="group"><%= Configuration.value(:sitename)%>, <%= t(:newspaper_group)%> <%= link_to "pDigital","https://github.com/pekpon/pdigital" %></div>
 	<div class="license">This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/3.0/">Creative Commons Attribution-NonCommercial-NoDerivs 3.0 Unported License</a>.<br />
 			<a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/3.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-nc-nd/3.0/88x31.png" /></a>

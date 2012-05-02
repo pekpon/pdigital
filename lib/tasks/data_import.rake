@@ -168,17 +168,15 @@ desc "Migrate users"
 task :migrate_users => :environment do
   User.delete_all
   CSV.foreach("../data/usuaris.csv",:col_sep => ";") do |row|
-    if row[0].to_i == 3 #row[6]
-      begin
-        u = User.new({:email => row[7], :password => "111111", :password_confirmation => "111111", :username => row[1] })
-        u.confirm!
-        u.skip_confirmation!
-        u.save
-        u.send_reset_password_instructions
-        puts row[0]
-      rescue
-        puts "error"
-      end
+    begin
+      u = User.new({:email => row[7], :password => "111111", :password_confirmation => "111111", :username => row[1] })
+      u.confirm!
+      u.skip_confirmation!
+      u.save
+      u.send_reset_password_instructions
+      puts row[0]
+    rescue
+      puts "error"
     end
   end
 end
