@@ -182,3 +182,12 @@ task :migrate_users => :environment do
     end
   end
 end
+
+desc "Change AUX value for images"
+task :images_aux => :environment do
+  x = Image.all
+  x.each do |image|
+    image.aux = false
+    image.save
+  end
+end
