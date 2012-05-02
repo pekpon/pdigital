@@ -47,13 +47,13 @@ task :migration => :environment do
   comments = CSV.read("../data/comentaris.csv",:col_sep => ";")
   
   #Save impressions
-  impressions = CSV.read("../data/visites.csv",:col_sep => ";")
+  impressions = CSV.read("../data/lectures_noticies.csv",:col_sep => ";")
   
   #Save votes
-  votes = CSV.read("../data/votacions.csv",:col_sep => ";")
+  votes = CSV.read("../data/votacions_comentaris.csv",:col_sep => ";")
   
   #Read the news file
-  CSV.foreach("../data/noticies_validas.csv",:col_sep => ";") do |row|
+  CSV.foreach("../data/noticies.csv",:col_sep => ";") do |row|
   
   case row[6].to_i
     when 1
