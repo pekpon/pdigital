@@ -107,7 +107,7 @@ class Article < ActiveRecord::Base
     end
     
     def standar_images
-      self.images.find(:all, :conditions => ["aux = ? OR aux = ?", false, nil])
+      self.images.find(:all, :conditions => ["aux != ?", true])
     end
     
     def aux_images

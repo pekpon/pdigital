@@ -26,24 +26,26 @@ body{
 .white{
 	background-color:white;
 	border:1px solid #ccc;
-	padding: 0 10px 10px 10px;
+	/*padding: 0 0px 10px 10px;*/
 	display:table;
-	width:918px;
+	width:940px;
 	margin-bottom:20px;
 }
 .col_left{
 	float:left;
 	width:300px;
-	margin-right:9px;
+	margin-left:10px;
 }
 .col_mid{
 	float:left;
 	width:300px;
 	margin-right:9px;
+	margin-left:9px;
 }
 .col_right{
 	float:left;
 	width:300px;
+	margin-right:9px;
 }
 .col_left_article{
 	float:left;
@@ -56,6 +58,7 @@ body{
 	float:left;
 	width:295px;
 	margin-top:10px;
+	margin-right:11px;
 }
 .category_separator{
 	margin-left:4px;

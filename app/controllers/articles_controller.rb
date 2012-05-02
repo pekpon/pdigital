@@ -30,6 +30,8 @@ class ArticlesController < ApplicationController
     if params[:search].empty?
       
       @articles = []
+      @words = "..."
+      @little_words = 0
       
       respond_to do |format|
         format.html # search.html.erb

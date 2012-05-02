@@ -2,7 +2,7 @@
 	margin-left:16px;
 }
 .left_padding{
-	padding:5px 0 5px 10px;
+	padding:5px 0 15px 20px;
 }
 .size_3{
 	width:91%;
@@ -14,4 +14,10 @@
 	color:#666;
 	list-style:none;
 	padding:2px;
+}
+.user_account_alert{
+	padding:15px;
+	background-color:#f98690;
+	border:1px solid #999;
+	margin-bottom:10px;
 }
