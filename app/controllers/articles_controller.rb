@@ -43,7 +43,7 @@ class ArticlesController < ApplicationController
       ok_words = []
       search.each do |word|
         if word.length > 3
-           ok_words << word
+           ok_words << word.downcase
           else
             @little_words = @little_words + 1
          end
@@ -51,7 +51,7 @@ class ArticlesController < ApplicationController
     
       articles = []
       ok_words.each_with_index do |word,index|
-        articles[index] = Article.find(:all, :conditions => ['title Like ?', "%#{word}%"])
+        articles[index] = Article.find(:all, :conditions => ['title Like ? OR title Like ? OR title Like ?', "%#{word}%","%#{word.capitalize}%","%#{word.upcase}%"])
       end
      
        final = []
