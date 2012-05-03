@@ -5,7 +5,9 @@
 		<%=t(:the_poll_of_the_week)%>
 	</div>
 	<div id="question">
+	<% if @poll %>
 		<%= @poll.question %>
+	<% end %>
 	</div>
 	<div id="poll_content">
         <% if @poll %>
