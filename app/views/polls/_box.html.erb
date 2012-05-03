@@ -4,6 +4,9 @@
 	<div class="article_box_title">
 		<%=t(:the_poll_of_the_week)%>
 	</div>
+	<div id="question">
+		<%= @poll.question %>
+	</div>
 	<div id="poll_content">
         <% if @poll %>
           <% if @poll.voted(request.remote_ip) == false %>
