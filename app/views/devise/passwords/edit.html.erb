@@ -13,6 +13,8 @@
 			ie = true if browser.include? "MSIE" or browser.include? "MSI"
 			%>
 			
+			<div class="password_notice">Si al intentar crear la nova contrasenya et diu que el token ha caducat, fes clic aquí: <%= link_to t(:forgot_password), new_password_path(resource_name) %> i segueix les instruccions.</div>
+			
 			<%= t(:new_password) if ie %>
 			 <div><%= f.password_field :password, :placeholder => t(:new_password), :class => "input_signin" %></div>
 			<br>

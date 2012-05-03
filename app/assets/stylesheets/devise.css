@@ -21,3 +21,10 @@
 	border:1px solid #999;
 	margin-bottom:10px;
 }
+.password_notice{
+	padding:10px;
+	border:1px solid #666;
+	background-color:#ecffcc;
+	margin-bottom:20px;
+	width:800px;
+}
