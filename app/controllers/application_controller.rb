@@ -13,6 +13,12 @@ class ApplicationController < ActionController::Base
     { :locale => I18n.locale }
   end
   
+  def render_404
+    respond_to do |format|
+      format.html { render :template => "errors/404.html.erb", :status => :not_found }
+    end
+  end
+  
 end
 
 
