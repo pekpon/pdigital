@@ -1,17 +1,21 @@
 <%= stylesheet_link_tag    "polls","details" %>
 
-<% @polls.each do |poll| %>
+<%= paginate @polls %>
 
-<div id="poll_box" class="article_box poll_index_box">
-	<div id="question">
-		<%= poll.question %>
+<div class="polls">
+	<% @polls.each do |poll| %>
+
+	<div id="poll_box" class="article_box poll_index_box">
+		<div id="question">
+			<%= poll.question %>
+		</div>
+		<div id="poll_content">
+			<%= render :partial => 'results', :locals => {:poll => poll} %>
+		</div>
 	</div>
-	<div id="poll_content">
-		<%= render :partial => 'results', :locals => {:poll => poll} %>
-	</div>
+
+	<% end %>
 </div>
-
-<% end %>
 
 
 

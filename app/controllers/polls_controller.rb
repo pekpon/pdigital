@@ -1,6 +1,6 @@
 class PollsController < ApplicationController
   def index
-    @polls = Poll.all
+    @polls = Poll.page(params[:page]).per(3)
     
     respond_to do |format|
       format.html # index.html.erb

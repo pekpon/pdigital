@@ -9,6 +9,10 @@ class PollOption < ActiveRecord::Base
   end
   
   def percent
-    Float(self.poll_votes.count)/Float(self.poll.poll_votes.count)*100
+    if self.poll_votes.count > 0
+      Float(self.poll_votes.count)/Float(self.poll.poll_votes.count)*100
+    else
+      0
+    end
   end
 end

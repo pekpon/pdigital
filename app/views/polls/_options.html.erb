@@ -1,7 +1,3 @@
-<div id="question">
-	<%= @poll.question %>
-</div>
-
 <% @poll.poll_options.each do |option|  %>
 <%= link_to raw("<div class='option'>"+option.option+"</div>"), vote_poll_url(@poll,option),  :remote => true %> 
 <% end %>
