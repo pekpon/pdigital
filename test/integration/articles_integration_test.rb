@@ -113,14 +113,6 @@ describe "Articles integration" do
         click_on('Option Test')
         PollVote.first.poll_id.must_equal(1)
       end   
-    
-      it "should search an article" do
-        visit '/'
-        fill_in('search', :with => 'showed article')
-        click_on('Search')
-        
-        assert page.has_content?('My showed article test').must_be_same_as true
-      end
     end
     
     describe "Published" do
@@ -132,6 +124,44 @@ describe "Articles integration" do
       it "should show the article if its published" do
         visit '/'
         assert page.has_content?('My showed article test').must_be_same_as true
+      end
+    end
+    
+    describe "Search Page" do
+    
+      it "should load the page directly" do
+        visit '/search'
+        assert page.has_content?('Search').must_be_same_as true
+      end
+      
+      it "should load the page without params" do
+        visit '/'
+        click_on('Search')
+        assert page.has_content?('Search').must_be_same_as true
+      end
+      
+      it "should search an article" do
+        visit '/'
+        fill_in('search', :with => 'showed article')
+        click_on('Search')
+        
+        assert page.has_content?('My showed article test').must_be_same_as true
+      end
+      
+      it "should search an article with small word" do
+        visit '/'
+        fill_in('search', :with => 'a-d')
+        click_on('Search')
+        
+        assert page.has_content?('Search').must_be_same_as true
+      end
+      
+      it "should search an article with large word" do
+        visit '/'
+        fill_in('search', :with => 'sdbsadh78yd78hiunsdsdsafdfs-fdf,dsf')
+        click_on('Search')
+        
+        assert page.has_content?('Search').must_be_same_as true
       end
     end
     

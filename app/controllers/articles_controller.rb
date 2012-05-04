@@ -30,26 +30,30 @@ class ArticlesController < ApplicationController
     
     @articles = []
     
-    Article.all.each do |article|
-      @articles << article if article.search(params[:search])
-    end
-  
-    @total_articles = @articles.count
-    @articles = @articles.reverse
-    @articles = Kaminari.paginate_array(@articles).page(params[:page]).per(10)
-    
-    @little_words = false
-    search = params[:search].split(' ')
-    search.each do |word|
-      if word.length <= 3
-        @little_words = true
+    if params[:search].present?
+      
+      Article.all.each do |article|
+        @articles << article if article.search(params[:search])
       end
-    end
+  
+      @total_articles = @articles.count
+      @articles = @articles.reverse
+      @articles = Kaminari.paginate_array(@articles).page(params[:page]).per(10)
     
-    if params[:search].blank?
-      @words = "..."
-    else
+      @little_words = false
+      search = params[:search].split(' ')
+      
+      search.each do |word|
+        if word.length <= 3
+          @little_words = true
+        end
+      end
+
       @words = params[:search] 
+    else
+      @words = "..."
+      @little_words = false
+      @total_articles = 0
     end
     
     respond_to do |format|
