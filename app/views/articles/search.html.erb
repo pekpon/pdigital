@@ -8,7 +8,7 @@
 		0 <%= t(:search_results)%>
 		<span class='words'><% if @words.nil?%>...<% else %><%= @words %><% end %></span>
 	<br>
-	<% if @little_words > 0 %>
+	<% if @little_words  %>
 		<span class="words_length"><%= t(:search_min_length) %></span>
 	<% end %>
 	</div>
@@ -16,7 +16,7 @@
 	
 	<div id="search_results"><%= "#{@total_articles} #{t(:search_results)}"%><span class='words'><%=@words%></span>
 		<br>
-		<% if @little_words > 0 %>
+		<% if @little_words %>
 			<span class="words_length"><%= t(:search_min_length) %></span>
 		<% end %></div>
 

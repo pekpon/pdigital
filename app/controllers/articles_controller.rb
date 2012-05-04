@@ -27,50 +27,33 @@ class ArticlesController < ApplicationController
   end
   
   def search
-    if params[:search].empty?
-      
-      @articles = []
+    
+    @articles = []
+    
+    Article.all.each do |article|
+      @articles << article if article.search(params[:search])
+    end
+  
+    @total_articles = @articles.count
+    @articles = @articles.reverse
+    @articles = Kaminari.paginate_array(@articles).page(params[:page]).per(10)
+    
+    @little_words = false
+    search = params[:search].split(' ')
+    search.each do |word|
+      if word.length <= 3
+        @little_words = true
+      end
+    end
+    
+    if params[:search].blank?
       @words = "..."
-      @little_words = 0
-      
-      respond_to do |format|
-        format.html # search.html.erb
-      end
     else
-      search = params[:search].split(' ')
-      @little_words = 0
-            
-      ok_words = []
-      search.each do |word|
-        if word.length > 3
-           ok_words << word.downcase
-          else
-            @little_words = @little_words + 1
-         end
-       end
+      @words = params[:search] 
+    end
     
-      articles = []
-      ok_words.each_with_index do |word,index|
-        articles[index] = Article.find(:all, :conditions => ['title Like ? OR title Like ? OR title Like ?', "%#{word}%","%#{word.capitalize}%","%#{word.upcase}%"])
-      end
-     
-       final = []
-       ok_words.each_with_index do |word,index|
-        if final.empty?
-           final = articles[0]
-         else
-           final = final & articles[index]
-         end
-       end
-      
-      @total_articles = final.count
-      @articles = final.reverse
-      @articles = Kaminari.paginate_array(@articles).page(params[:page]).per(10)
-      @words = params[:search]
-    
-      respond_to do |format|
-        format.html # search.html.erb
-      end
+    respond_to do |format|
+      format.html # search.html.erb
     end
   end
 

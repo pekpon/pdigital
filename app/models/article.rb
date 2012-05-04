@@ -156,7 +156,34 @@ class Article < ActiveRecord::Base
       t.strftime("%B")
     end
     
-     def year
-        self.published_date.year()
+    def year
+      self.published_date.year()
+    end
+    
+    def search(string)
+      response = true
+      
+      if string.present?
+        search = string.split(' ')
+        ok_words = []
+        search.each do |word|
+          if word.length > 3
+             ok_words << word.downcase
+          end
+        end
+        
+        if ok_words == []
+          response = false
+        end
+
+        ok_words.each_with_index do |word,index|
+          response = false if self.title.downcase.exclude? word
+        end
+      else
+        response = false
       end
+      
+      
+      return response
+    end
 end
