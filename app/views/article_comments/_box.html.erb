@@ -7,7 +7,7 @@
 <% else %>
 
 	<% comment_number = 0 %>
-	<% @article.article_comments.each do |comment| %>
+	<% @comments.each do |comment| %>
 	
 		<div class="comment_box">
 			<div class="comment_header">#<%= comment_number+=1 %> 
