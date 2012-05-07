@@ -67,7 +67,7 @@ class Article < ActiveRecord::Base
         
         c = comments.count
   	   
-  	    c*10 + v*5 + i
+  	    c*10 + v*5 + impressions
 	  end
     	
     def resume
