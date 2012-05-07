@@ -72,3 +72,20 @@ a:hover{
 	background-repeat:no-repeat;
 	background-position:20px 10px;
 }
+.delete{
+	display:none;
+	float:right;
+	background-color:#999;
+	color:white;
+	padding:0 3px 0 3px;
+	font-size:11px;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+}
+.delete:hover{
+	background-color:#C11B17;
+}
+.delete a{
+	color:white;
+}

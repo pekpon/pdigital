@@ -30,6 +30,18 @@ class ArticleCommentsController < ApplicationController
       format.js
     end
   end
+  
+  def delete
+    @comment = ArticleComment.find(params[:id])
+    
+    if @comment.user == current_user and @comment.created_at+15.minutes > Time.now
+      @comment.delete
+    end
+    
+    respond_to do |format|
+      format.js
+    end
+  end
 end
 
 

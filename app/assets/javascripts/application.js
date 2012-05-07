@@ -25,6 +25,15 @@ $(document).ready(function(){
 	});
 });
 
+function show_delete_comment(id)
+{
+	$('#comment_'+id+' .delete').show();
+}
+function hide_delete_comment(id)
+{
+	$('#comment_'+id+' .delete').hide();
+}
+
 function show_image(id,foot)
 {
 	if(foot == ""){

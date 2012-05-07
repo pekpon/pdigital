@@ -12,6 +12,11 @@ class ArticleComment < ActiveRecord::Base
     self.votes.create! :vote_type => type, :ip => ip
   end
   
+  def delete
+    self.active = false
+    self.save!
+  end
+  
   def vots_result
     positive = self.votes.where(:vote_type => 1)
     negative = self.votes.where(:vote_type => 2)

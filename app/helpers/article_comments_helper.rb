@@ -11,5 +11,11 @@ module ArticleCommentsHelper
         return "neutral"
       end
     end
+    
+    def delete_actions(comment)
+      if comment.user.present? and comment.created_at+15.minutes > Time.now
+        "onmouseover='javascript:show_delete_comment(#{comment.id})' onmouseout='javascript:hide_delete_comment(#{comment.id})'" if current_user.username == comment.user.username
+      end
+    end
 
 end

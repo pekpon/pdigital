@@ -1,4 +1,4 @@
-<% if @article.article_comments.empty? %>
+<% if @comments.empty? %>
 
 	<div class="comment_box">
 		<div class="comment_body"><%=t(:no_comments)%></div>
@@ -9,12 +9,15 @@
 	<% comment_number = 0 %>
 	<% @comments.each do |comment| %>
 	
-		<div class="comment_box">
+		<div id="comment_<%= comment.id %>" class="comment_box" <%= delete_actions(comment) %>>
+			
 			<div class="comment_header">#<%= comment_number+=1 %> 
-			<span class="comment_author">
-				<%= comment.user.username if comment.user != nil %>
-				<%= comment.username if comment.user == nil %>
-			</span> - <%= comment.created_at.strftime("%d/%m/%Y "+t(:at)+" %H:%M") %></div>			
+				<span class="comment_author">
+					<%= comment.user.username if comment.user != nil %>
+					<%= comment.username if comment.user == nil %>
+				</span> - <%= comment.created_at.strftime("%d/%m/%Y "+t(:at)+" %H:%M") %>
+				<%= link_to raw("<span class='delete'>eliminar</span>"), delete_url(comment.id), :remote => true, :confirm => "Segur que vols esborrar aquest missatge?" %>
+			</div>			
 			<div class="comment_body"><%= raw(comment.comment) %></div>
 			<div class="comment_social <%= "comment#{comment.id}" %>">
 				

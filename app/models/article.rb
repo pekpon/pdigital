@@ -71,8 +71,8 @@ class Article < ActiveRecord::Base
 	  end
     	
     def resume
-      if self.article_resume.nil? or self.article_resume.empty?
-        Sanitize.clean(self.body).slice!(0,160) + "..."
+      if self.article_resume.blank?
+        Sanitize.clean(self.body.gsub(/\[\w+\]/,'')).slice!(0,160) + "..."
       else
         self.article_resume
       end

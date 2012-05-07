@@ -17,6 +17,7 @@ Pdigital::Application.routes.draw do
   end
 
   match 'article_comments/vote/:id/:vote_type' => 'article_comments#vote', :as => :vote
+  match 'article_comments/delete/:id' => 'article_comments#delete', :as => :delete
   match 'polls/vote/:id/:id_option' => 'polls#vote', :as => :vote_poll
   
   match 'polls/vote_result/:id' => 'polls#vote_result', :as => :vote_result
