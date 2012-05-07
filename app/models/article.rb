@@ -57,16 +57,16 @@ class Article < ActiveRecord::Base
 	  end
 	  
 	  def stats_yesterday
-	      comments = self.article_comments.where(:created_at => (Time.now.midnight - 1.day)..Time.now.midnight)
-  	    c = comments.count
+	      comments = self.article_comments.where(:created_at => (Date.yesterday.beginning_of_day)..(Date.yesterday.end_of_day))
+	      impressions = self.impressionist_count(:filter => :ip_address, :start_date => "#{Date.yesterday.beginning_of_day}", :end_date => "#{Date.yesterday.end_of_day}")
+  	    
   	    v = 0
-	    
   	    comments.each do |comment|
   	      v = v + comment.votes.count
         end
-      
-  	    i = self.impressionist_count(:filter => :ip_address, :start_date => "#{Date.yesterday}", :end_date => "#{Date.today}")
-
+        
+        c = comments.count
+  	   
   	    c*10 + v*5 + i
 	  end
     	
