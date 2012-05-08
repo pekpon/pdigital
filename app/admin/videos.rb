@@ -1,4 +1,5 @@
 ActiveAdmin.register Video do
+  menu :parent => "Media"
   index do
 		column "Video" do |video|
     raw("<iframe width='200' height='120' src='http://www.youtube.com/embed/#{video.youtube_code}?rel=0' frameborder='0' allowfullscreen></iframe>")

@@ -1,4 +1,7 @@
 ActiveAdmin.register Article do
+  
+  menu :parent => "Articles"
+  
   	index do
   		column :title
   		column :author

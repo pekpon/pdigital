@@ -1,4 +1,5 @@
 ActiveAdmin.register Image do
+  menu :parent => "Media"
   index do
 		column "Image" do |img|
       image_tag(img.image.url(:thumb),:class => "img_thumb")
