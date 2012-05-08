@@ -1,7 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title><%= Configuration.value(:title_site)%></title>
+  <title><% if @article.present? %>
+		<%= @article.title %>
+	<% else %>
+		<%= Configuration.value(:title_site)%>
+	<% end %></title>
 
 	<%=  raw(Configuration.value(:openx_header)) %>
 
