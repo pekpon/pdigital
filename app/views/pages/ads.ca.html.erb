@@ -85,8 +85,11 @@
 	
 	<div class="sub_section">Contacta'ns</div>
 	
-	<div class="">Per a més informació i contractació: <%= link_to "contacta via web", contact_path %> o envians un mail a <%= mail_to "info@papioldigital.com"%></div>
-	
-	
+	<p>Per a més informació i contractació:</p> 
+	<ul class="contact_list">
+		<li><b>Mail:</b> <%= mail_to " info@papioldigital.com"%></li>
+		<li><b>Online:</b> <%= link_to " contacta via web", contact_path %></li>
+		<li><b>Telèfon:</b> 652 423 591</li>
+	</ul>
 	</div>
 </div>
