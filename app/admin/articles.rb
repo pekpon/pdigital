@@ -24,7 +24,6 @@ ActiveAdmin.register Article do
             f.input :category
             f.input :title
             f.input :subtitle
-            f.input :slug
             f.input :body, :input_html => { :class => "editor" }
             f.input :article_resume
             f.input :author
