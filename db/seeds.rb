@@ -39,20 +39,23 @@ Configuration.create([
   
   {:key => 'openx_header', :values => ''},
   
-  {:key => 'openx_home_zone_a', :values => ''},
-  {:key => 'openx_home_code_a', :values => ''},
+  {:key => 'openx_home_zone_a', :values => '[ZONE]'},
+  {:key => 'openx_home_code_a', :values => '[CODE]'},
   
-  {:key => 'openx_home_zone_b', :values => ''},
-  {:key => 'openx_home_code_b', :values => ''},
+  {:key => 'openx_home_zone_b', :values => '[ZONE]'},
+  {:key => 'openx_home_code_b', :values => '[CODE]'},
   
-  {:key => 'openx_home_zone_c', :values => ''},
-  {:key => 'openx_home_code_c', :values => ''},
+  {:key => 'openx_home_zone_c', :values => '[ZONE]'},
+  {:key => 'openx_home_code_c', :values => '[CODE]'},
   
-  {:key => 'openx_article_zone_a', :values => ''},
-  {:key => 'openx_article_code_a', :values => ''},
+  {:key => 'openx_inner_zone_a', :values => '[ZONE]'},
+  {:key => 'openx_inner_code_a', :values => '[CODE]'},
   
-  {:key => 'openx_article_zone_b', :values => ''},
-  {:key => 'openx_article_code_b', :values => ''},
+  {:key => 'openx_inner_zone_b', :values => '[ZONE]'},
+  {:key => 'openx_inner_code_b', :values => '[CODE]'},
+  
+  {:key => 'openx_inner_zone_c', :values => '[ZONE]'},
+  {:key => 'openx_inner_code_c', :values => '[CODE]'},
   
   {:key => 'openx_pos_home_a', :values => '1'},
   {:key => 'openx_pos_home_b', :values => '2'},
