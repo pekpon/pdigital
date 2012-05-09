@@ -7,6 +7,9 @@ Pdigital::Application.routes.draw do
     ActiveAdmin.routes(self)
 
     devise_for :users
+    match 'the_mosts/day' => 'the_mosts#day', :as => :day
+    match 'the_mosts/month' => 'the_mosts#month', :as => :month
+    
     resources :articles, :categories, :polls, :the_mosts, :contact, :article_comments
     
     match 'search/' => 'articles#search'
@@ -18,8 +21,8 @@ Pdigital::Application.routes.draw do
 
   match 'article_comments/vote/:id/:vote_type' => 'article_comments#vote', :as => :vote
   match 'article_comments/delete/:id' => 'article_comments#delete', :as => :delete
-  match 'polls/vote/:id/:id_option' => 'polls#vote', :as => :vote_poll
   
+  match 'polls/vote/:id/:id_option' => 'polls#vote', :as => :vote_poll
   match 'polls/vote_result/:id' => 'polls#vote_result', :as => :vote_result
   match 'polls/poll_options/:id' => 'polls#poll_options', :as => :poll_options
   

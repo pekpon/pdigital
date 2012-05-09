@@ -1,0 +1,25 @@
+<%= stylesheet_link_tag    "the_mosts" %>
+
+<div class="buttons">
+	<%= link_to raw("<span class='btn #{'btn-primary' if controller.action_name == 'day'}'>#{t(:day)}</span>"), day_url() %>
+	<%= link_to raw("<span class='btn #{'btn-primary' if controller.action_name == 'month'}'>#{t(:month)}</span>"), month_url() %>
+	<%= link_to raw("<span class='btn #{'btn-primary' if controller.action_name == 'index'}'>#{t(:allways)}</span>"), the_mosts_url() %>
+</div>
+
+<div class="row">
+	<div class="span4">
+		<p class="mostTitle"><%= t(:more_commented)%></p>
+		<%= render :partial => 'most_box', :locals => {:articles => @articles_commented} %>
+	</div>
+	<div class="span4">
+		<p class="mostTitle"><%= t(:more_viewed)%></p>
+		<%= render :partial => 'most_box', :locals => {:articles => @articles_viewed} %>
+	</div>
+	<div class="span4">
+		<%= render :partial => 'articles/banner', :locals => {:ad_zone => Configuration.value(:openx_inner_zone_a), :ad_code => Configuration.value(:openx_inner_code_a)} %>	
+		<br />
+		<%= render :partial => 'articles/banner', :locals => {:ad_zone => Configuration.value(:openx_inner_zone_b), :ad_code => Configuration.value(:openx_inner_code_b)} %>
+		<br />
+		<%= render :partial => 'articles/banner', :locals => {:ad_zone => Configuration.value(:openx_inner_zone_c), :ad_code => Configuration.value(:openx_inner_code_c)} %>
+	</div>
+</div>

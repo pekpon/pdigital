@@ -83,3 +83,7 @@ es:
       label: "Escribe el código rojo en el recuadro de arriba"
     
   newspaper_group: "periódico online perteneciente a la red informativa "
+  
+  day: "Día"
+  month: "Mes"
+  allways: "Siemprels"

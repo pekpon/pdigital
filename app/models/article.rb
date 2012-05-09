@@ -19,15 +19,26 @@ class Article < ActiveRecord::Base
     validates :subtitle, :length => { :maximum => 160 }
 
     def self.get_comments(method=:views_filtered_by_ip)
-      ########## FIX ###########
       self.all.sort_by{|x| -x.try(method) }[0..9]
-      # numbers = []
-      # self.all.each { |x| numbers << {:id => x.id,  :count => x.try(method), :article => x} }
-      # sorted = numbers.sort! {|x,y| y[:count] <=> x[:count] }
-      # ids =[]
-      # sorted[0..9].each{|x| ids << x[:article] }
-      # ids
     end
+    
+    ############################
+    def views_day
+	    self.impressions.where(:created_at => (Date.today.beginning_of_day)..(Date.today.end_of_day)).count
+	  end
+	  
+	  def comments_day
+	   self.article_comments.where(:created_at => (Date.today.beginning_of_day)..(Date.today.end_of_day)).count
+	  end
+	  
+	  def views_month
+	    self.impressions.where(:created_at => (Date.today-30.days)..(Date.today)).count
+	  end
+	  
+	  def comments_month
+	   self.article_comments.where(:created_at => (Date.today-30.days)..(Date.today)).count
+	  end
+	  ##########################
 
     def self.active
       self.where(:published => true)

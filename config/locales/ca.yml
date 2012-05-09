@@ -83,3 +83,7 @@ ca:
       label: "Escriu el codi vermell al recuadre de dalt"
   
   newspaper_group: "diari online pertanyent a la xarxa informativa "
+  
+  day: "Dia"
+  month: "Mes"
+  allways: "Sempre"
