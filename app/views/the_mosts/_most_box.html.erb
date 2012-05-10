@@ -14,7 +14,7 @@
 		</div>
 		<div class="article_info">
 			<div class="article_comments">
-				<%= image_tag "ico/comment.png", :class => "thumb_img" %> <%= pluralize(article.article_comments.count,t(:singular_comment),t(:plural_comments)) %>
+				<%= image_tag "ico/comment.png", :class => "thumb_img" %> <%= pluralize(article.article_comments.where(:active => true).count,t(:singular_comment),t(:plural_comments)) %>
 			</div>
 		</div>
 	</div>
