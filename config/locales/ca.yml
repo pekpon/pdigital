@@ -87,3 +87,13 @@ ca:
   day: "Dia"
   month: "Mes"
   allways: "Sempre"
+  
+  real_time: "Al minut"
+  real_time_explaining: "Aquí podràs veure tot el que està passant al digital d'un cop de vista."
+  today: "Avui"
+  yesterday: "Ahir"
+  new_new: "Nova notícia publicada: "
+  there_are_votes: "S'han votat "
+  comments_new: " comentaris a la notícia: "
+  new_comment_user: "Nou comentari de l'usuari "
+  in_new: " a la notícia: "

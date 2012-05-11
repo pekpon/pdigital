@@ -52,30 +52,8 @@ a{
     color:#dddddd;
     border-top:2px solid #09F;
 }
-.navigation li.mes_llegits a:hover{
-    background:#3d3d3d;
-    color:#dddddd;
-    border-top:2px solid #ff4800;
-}
-.navigation li.enquestes a:hover{
-    background:#3d3d3d;
-    color:#dddddd;
-    border-top:2px solid #06F;
-}
-.navigation li.colabos a:hover{
-    background:#3d3d3d;
-    color:#dddddd;
-    border-top:2px solid #FF0;
-}
-.navigation li.contacta a:hover{
-    background:#3d3d3d;
-    color:#dddddd;
-    border-top:2px solid #F00;
-}
-.navigation li.envians a:hover{
-    background:#3d3d3d;
-    color:#dddddd;
-    border-top:2px solid #fff;
+.navigation li.new{
+    background:#a50d0f;
 }
 .clearFloat{
     clear:both;

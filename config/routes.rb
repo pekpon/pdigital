@@ -10,7 +10,7 @@ Pdigital::Application.routes.draw do
     match 'the_mosts/day' => 'the_mosts#day', :as => :day
     match 'the_mosts/month' => 'the_mosts#month', :as => :month
     
-    resources :articles, :categories, :polls, :the_mosts, :contact, :article_comments
+    resources :articles, :categories, :polls, :the_mosts, :contact, :article_comments, :real_time
     
     match 'search/' => 'articles#search'
     match 'ads/' => 'pages#ads'

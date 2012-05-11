@@ -6,6 +6,7 @@ class ArticleCommentsController < ApplicationController
                                             :comment => params[:article_comment][:comment], 
                                             :user => current_user,
                                             :active => true)
+                              
       @article = @article_comment.article
       
     if simple_captcha_valid?

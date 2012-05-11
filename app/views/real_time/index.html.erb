@@ -1,0 +1,44 @@
+<%= stylesheet_link_tag    "real_time" %>
+
+<div class="white">
+	<div id="section_header"><%=t(:real_time)%></div>
+	<div class="padding">
+		<p><%= t(:real_time_explaining)%></p>
+		<% 
+		votes_array = [] 
+		date1 = false
+		%>
+		<% @objects.each do |object| %>
+		
+		<% if date1 == false %>
+			<div class="date"><% date1 = object.created_at.strftime('%d/%m/%y')%><%=t(:today)%></div>
+		<% end %>
+		
+		<% if object.created_at.strftime('%d/%m/%y') < date1 %>
+			<div class="date"><%= t(:yesterday) %></div>
+		<% end %>
+		
+			<% if object.class.to_s == 'Article' %>
+			
+				<%= render :partial => "box", :locals => {:type => "article", :object => object} %>
+
+			<% elsif object.class.to_s == 'ArticleComment' %>
+			
+				<%= render :partial => "box", :locals => {:type => "comment", :object => object} %>
+				
+			<% else %>
+			
+				<% if votes_array.include? object.article_comment.article %>
+				<% else %>
+					<% 
+					total = vote_multiple(@votes,object)
+					if total > 70 %>
+						<%= render :partial => "box", :locals => {:count => total, :type => "vote", :object => object} %>
+						<% votes_array << object.article_comment.article %>
+					<% end %>
+				<% end %>
+					
+			<% end %>
+		<% end %>
+	</div>
+</div>

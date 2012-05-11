@@ -86,4 +86,14 @@ es:
   
   day: "Día"
   month: "Mes"
-  allways: "Siemprels"
+  allways: "Siempre"
+  
+  real_time: "Al minuto"
+  real_time_explaining: "Aquí podrás ver todo lo que está pasando en el digital de un vistazo."
+  today: "Hoy"
+  yesterday: "Ayer"
+  new_new: "Nueva notícia publicada: "
+  there_are_votes: "Se han votado "
+  comments_new: " comentarios en la notícia: "
+  new_comment_user: "Nuevo comentario del usuario "
+  in_new: " en la notícia: "
