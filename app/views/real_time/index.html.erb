@@ -8,6 +8,7 @@
 		votes_array = [] 
 		date1 = false
 		date2 = false
+		date3 = false
 		%>
 		<% @objects.each do |object| %>
 		
@@ -17,7 +18,14 @@
 		
 		<% if object.created_at.strftime('%d/%m/%y') < date1 and date2 == false %>
 			<div class="date"><%= t(:yesterday) %></div>
-			<% date2 = true%>
+			<% date2 = object.created_at.strftime('%d/%m/%y') %>
+		<% end %>
+		
+		<% if date2 != false %>
+		<% if object.created_at.strftime('%d/%m/%y') < date2 and date3 == false %>
+			<div class="date"><%= I18n.localize object.created_at, :format => '%A' %></div>
+			<% date3 = true %>
+		<% end %>
 		<% end %>
 		
 			<% if object.class.to_s == 'Article' %>
@@ -34,7 +42,7 @@
 				<% else %>
 					<% 
 					total = vote_multiple(@votes,object)
-					if total > 70 %>
+					if total > 20 %>
 						<%= render :partial => "box", :locals => {:count => total, :type => "vote", :object => object} %>
 						<% votes_array << object.article_comment.article %>
 					<% end %>

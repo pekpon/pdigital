@@ -84,12 +84,16 @@ ca:
   
   newspaper_group: "diari online pertanyent a la xarxa informativa "
   
+  date:
+      day_names: [Diumenge, Dilluns, Dimarts, Dimecres, Dijous, Divendres, Dissabte]
+      month_names: [~, Gener, Febrer, Març, Abril, Maig, Juny, Juliol, Agost, Septembre, Octubre, Novembre, Desembre]
+  
   day: "Dia"
   month: "Mes"
   allways: "Sempre"
   
   real_time: "Al minut"
-  real_time_explaining: "Aquí podràs veure tot el que està passant al digital d'un cop de vista."
+  real_time_explaining: "Per poder veure el que passa al digital d'un cop d'ull."
   today: "Avui"
   yesterday: "Ahir"
   new_new: "Nova notícia publicada: "
@@ -97,3 +101,6 @@ ca:
   comments_new: " comentaris a la notícia: "
   new_comment_user: "Nou comentari de l'usuari "
   in_new: " a la notícia: "
+  new: "Notícia"
+  vote: "Vot"
+  comment: "Comentari"

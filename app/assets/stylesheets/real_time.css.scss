@@ -9,6 +9,21 @@
 	margin-left:auto;
 	margin-right:auto;
 }
+.box.article:hover{
+	background-color:#bddeed;
+}
+.box.comment:hover{
+	background-color:#b5e5b5;
+}
+.box.vote:hover{
+	background-color:#efb4b3;
+}
+.box.vote a{
+	color:#b94a48;
+}
+.box.comment a{
+	color:#468847;
+}
 .padding{
 	padding:0 15px 15px 15px;
 }
