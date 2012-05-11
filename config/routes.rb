@@ -9,6 +9,7 @@ Pdigital::Application.routes.draw do
     devise_for :users
     match 'the_mosts/day' => 'the_mosts#day', :as => :day
     match 'the_mosts/month' => 'the_mosts#month', :as => :month
+    match '/calendar(/:year(/:month))' => 'calendar#index', :as => :calendar, :constraints => {:year => /\d{4}/, :month => /\d{1,2}/}
     
     resources :articles, :categories, :polls, :the_mosts, :contact, :article_comments, :real_time
     
