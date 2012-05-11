@@ -7,6 +7,7 @@
 		<% 
 		votes_array = [] 
 		date1 = false
+		date2 = false
 		%>
 		<% @objects.each do |object| %>
 		
@@ -14,8 +15,9 @@
 			<div class="date"><% date1 = object.created_at.strftime('%d/%m/%y')%><%=t(:today)%></div>
 		<% end %>
 		
-		<% if object.created_at.strftime('%d/%m/%y') < date1 %>
+		<% if object.created_at.strftime('%d/%m/%y') < date1 and date2 == false %>
 			<div class="date"><%= t(:yesterday) %></div>
+			<% date2 = true%>
 		<% end %>
 		
 			<% if object.class.to_s == 'Article' %>
