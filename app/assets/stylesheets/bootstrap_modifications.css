@@ -27,3 +27,6 @@ body{
 .span4{
 	width:292px;
 }
+select{
+	width:110px;
+}

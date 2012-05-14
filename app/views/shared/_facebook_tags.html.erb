@@ -13,6 +13,20 @@
 	
 	<meta property='og:site_name' content='<%=Configuration.value(:sitename)%>' />
 	
+<% elsif @event.present?%>
+	<% if @event.name.present? %>
+	<meta property='og:title' content='Esdeveniment: <%= @event.name.gsub(/'/, "") %>' />
+	<% end %>
+	<% if @event.description.present? %>
+	<meta property='og:description' content='<%= @event.description.gsub(/'/, "") %>' />
+	<% else %>
+	<meta property='og:description' content='<%= t(:no_description)%>' />
+	<% end %>
+	<meta property='og:type' content='event' />
+	<meta property='og:url' content='<%= request.protocol+request.host+request.fullpath %>' />
+	<meta property='og:image' content='<%= request.protocol+request.host+image_path("events.png") %>'>
+	<meta property='og:site_name' content='<%=Configuration.value(:sitename)%>' />
+	
 <% else %>
 
 	<meta property='og:title' content='<%=Configuration.value(:title_site).gsub(/'/, "") %>' />

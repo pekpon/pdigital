@@ -92,6 +92,9 @@ body{
 	margin-right:auto;
 	margin-bottom:15px;
 }
+.left_padding{
+	padding:5px 0 15px 20px;
+}
 /*.user-panel{
 	display:table;
 	width:184px;

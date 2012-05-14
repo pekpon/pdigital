@@ -66,3 +66,8 @@ en:
         previous: "&lsaquo; Previous"
         next: "Next &rsaquo;"
         truncate: "..."
+        
+  description: "Description"
+  start_at: "Start"
+  end_at: "End"
+  add_event: "Add Event"

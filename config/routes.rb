@@ -11,7 +11,7 @@ Pdigital::Application.routes.draw do
     match 'the_mosts/month' => 'the_mosts#month', :as => :month
     match '/calendar(/:year(/:month))' => 'calendar#index', :as => :calendar, :constraints => {:year => /\d{4}/, :month => /\d{1,2}/}
     
-    resources :articles, :categories, :polls, :the_mosts, :contact, :article_comments, :real_time
+    resources :articles, :categories, :polls, :the_mosts, :contact, :article_comments, :real_time, :calendar, :events
     
     match 'search/' => 'articles#search'
     match 'ads/' => 'pages#ads'

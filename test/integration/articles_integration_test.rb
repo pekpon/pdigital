@@ -171,5 +171,6 @@ describe "Articles integration" do
         assert page.has_content?('body of the test').must_be_same_as true
       end
     end
+    
   end
 end

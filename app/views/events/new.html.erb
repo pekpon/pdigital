@@ -1,0 +1,22 @@
+<%= stylesheet_link_tag    "events" %>
+
+<div class="white">
+	<div id="section_header"><%=t(:add_event)%></div>
+	<div class="left_padding">
+		
+	<% if user_signed_in? %>
+		
+	<div class="alert alert-warning" style="margin-right:15px"><%=t(:event_active)%></div>
+		
+	<%= render 'form' %>
+
+	<%= link_to t(:back), calendar_path %>
+	
+	<% else %>
+	
+	<div class="alert alert-error" style="margin-right:15px"><%=t(:need_login)%></div>
+	<%= link_to t(:sign_in), user_session_path, :class => "btn btn-success" %> o <%= link_to t(:register), new_user_registration_path, :class => "btn btn-primary"%></div>
+	
+	<% end%>
+	</div>
+</div>
