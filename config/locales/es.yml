@@ -114,3 +114,4 @@ es:
   description: "Descripción"
   need_login: "Necesitas iniciar sesión para poder añadir un evento. Si no lo has hecho nunca, regístrate, es un momento!"
   no_description: "Sin descripción"
+  calendar_welcome: "Aquí podréis introducir todos los eventos que queráis mediante el botón de la derecha: Añadir evento."

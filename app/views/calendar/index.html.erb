@@ -4,7 +4,7 @@
 
 <div class="white">
 	<div id="section_header"><%=t(:calendar)%></div>
-	<div style="text-align:right; margin:0 15px 25px 0;"><%= link_to t(:add_event), new_event_path(), :class => "btn  btn-primary" %></div>
+	<div style="margin:0 15px 40px 15px;"><%= t(:calendar_welcome) %><%= link_to t(:add_event), new_event_path(), :class => "btn btn-large btn-afegir" %></div>
 	
 <%= raw(event_calendar) %>
 </div>

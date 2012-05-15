@@ -117,3 +117,4 @@ ca:
   description: "Descripció"
   need_login: "Necesites iniciar sessió per poder afegir un esdeveniment. Si no has iniciat sessió mai, registra't, es un moment!"
   no_description: "Sense descripció"
+  calendar_welcome: "Aquí podreu introduïr tots els esdeveniments que volgueu mitjançant el botó de la dreta: Afegir esdeveniment."

@@ -41,7 +41,16 @@ margin-bottom:6px;
 }
 
 .ec-month-nav {
-
+	
+}
+.ec-previous-month {
+	text-align:right;
+}
+.ec-next-month {
+	text-align:left;
+}
+.btn-afegir{
+	float:right;
 }
 
 /* Containers */
@@ -61,6 +70,7 @@ margin-bottom:6px;
   padding: 2px 0;
   background: #069;
   color: white;
+  height:20px;
 }
 
 .ec-day-name {
