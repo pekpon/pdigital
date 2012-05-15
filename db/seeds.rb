@@ -68,5 +68,7 @@ Configuration.create([
   {:key => 'twitter_plugin_pos', :values => '1'},
   
   {:key => 'sports_id', :values => '1'},
-  {:key => 'opinion_id', :values => '2'}
+  {:key => 'opinion_id', :values => '2'},
+  
+  {:key => 'real_time_votes', :values => '20'},
   ])

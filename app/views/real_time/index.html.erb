@@ -42,7 +42,7 @@
 				<% else %>
 					<% 
 					total = vote_multiple(@votes,object)
-					if total > 20 %>
+					if total > Configuration.value(:real_time_votes) %>
 						<%= render :partial => "box", :locals => {:count => total, :type => "vote", :object => object} %>
 						<% votes_array << object.article_comment.article %>
 					<% end %>
