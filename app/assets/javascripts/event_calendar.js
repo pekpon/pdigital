@@ -2,6 +2,7 @@
  * Smart event highlighting
  * Handles for when events span rows, or don't have a background color
  */
+
 Event.observe(window, "load", function() {
   var highlight_color = "#2EAC6A";
   

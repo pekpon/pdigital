@@ -1,10 +1,74 @@
 <!-- Probably move the stylesheet to you layout. Also make sure you include the javascript. -->
-<%= stylesheet_link_tag "event_calendar" %>
-<%= javascript_include_tag "event_calendar" %>
+<%= stylesheet_link_tag "event_calendar","events" %>
 
 <div class="white">
 	<div id="section_header"><%=t(:calendar)%></div>
-	<div style="margin:0 15px 40px 15px;"><%= t(:calendar_welcome) %><%= link_to t(:add_event), new_event_path(), :class => "btn btn-large btn-afegir" %></div>
+	<div style="margin:0 15px 25px 15px;">
+	<%= t(:calendar_welcome) %>
+	<a class="btn btn-large btn-afegir" data-toggle="modal" href="#myModal"><i class='icon-plus'></i> <%= t(:add_event)%></a>
 	
+	<%# link_to raw("<i class='icon-plus'></i>") + " " + t(:add_event), new_event_path(), :class => "btn btn-large btn-afegir" %>
+	
+	</div>
+</div>
+<div class="white">
+	<br><br>
 <%= raw(event_calendar) %>
+
+</div>
+
+<!-- MODAL -->
+<div class="modal hide fade" id="myModal">
+  <div class="modal-header">
+    <button class="close" data-dismiss="modal">×</button>
+    <h3><%=t(:add_event)%></h3>
+  </div>
+	<% if user_signed_in? %>
+  		<div class="modal-body">
+			<div class="alert alert-info" style="margin-right:15px"><%=t(:event_active)%></div>
+			
+			<%= form_for(@event) do |f| %>
+			  <% if @event.errors.any? %>
+			  <div id="errorExplanation">
+			    <h2><%= pluralize(@event.errors.count, "error") %> prohibited
+			        this post from being saved:</h2>
+			    <ul>
+			    <% @event.errors.full_messages.each do |msg| %>
+			      <li><%= msg %></li>
+			    <% end %>
+			    </ul>
+			  </div>
+			  <% end %>
+
+			  <div class="field">
+			    <%= f.label t(:name) %>
+			    <%= f.text_field :name %> ej. Torneig de tennis
+			  </div>
+			  <div class="field">
+			    <%= f.label t(:description) %>
+			    <%= f.text_area :description, :class => "description" %>
+			  </div>
+			  <div class="field">
+			    <%= f.label t(:start_at) %>
+			    <%= datetime_select("event", "start_at")%>
+			  </div>
+			  <div class="field">
+			    <%= f.label t(:end_at) %>
+			    <%= datetime_select("event", "end_at")%>
+			  </div>
+		</div>
+		<div class="modal-footer">
+			<div class="actions">
+			    <%= submit_tag t(:add_event), :class => "btn btn-success" %>
+			  </div>
+			<% end %>
+		</div>
+	<% else %>
+    	<div class="modal-body">
+			<div class="alert alert-error" style="margin-right:15px"><%=t(:need_login)%></div>
+		</div>
+		<div class="modal-footer">
+			<%= link_to t(:sign_in), user_session_path, :class => "btn btn-success" %> o <%= link_to t(:register), new_user_registration_path, :class => "btn btn-primary"%>
+		</div>
+	<% end %>
 </div>

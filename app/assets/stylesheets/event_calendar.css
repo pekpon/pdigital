@@ -21,23 +21,24 @@
   margin: 0;
   padding: 0;
   border-bottom: 1px solid #d5d5d5;
-  width:910px;
-	margin-left:auto;
-	margin-right:auto;
-	margin-bottom:5px;
+  width:880px;
+  margin-left:auto;
+  margin-right:auto;
+  margin-bottom:5px;
 }
 
 /* Month name header & links */
 .ec-calendar-header {
-  padding: 5px 0;
+  padding: 10px 0;
   width: 100%;
   table-layout: fixed;
-margin-bottom:6px;
+margin-bottom:26px;
 }
 
 .ec-month-name {
-  font-size: 16px;
+  font-size: 36px;
   font-weight: bold;
+color:#333;
 }
 
 .ec-month-nav {
@@ -56,7 +57,7 @@ margin-bottom:6px;
 /* Containers */
 .ec-body {
   position: relative;
-  border-right: 1px solid #303030;
+  border-right: 1px dashed #eee;
   white-space: nowrap;
 }
 
@@ -67,14 +68,17 @@ margin-bottom:6px;
   left: 0;
   width: 100%;
   table-layout: fixed;
-  padding: 2px 0;
-  background: #069;
-  color: white;
+  padding: 5px 0 5px 0;
+  color: black;
   height:20px;
+  border-top:1px solid #fff;
 }
 
 .ec-day-name {
-  font-weight: normal;
+  font-weight: bold;
+border-top:1px solid #ccc;
+background-color:#b0d133;
+color:white;
 }
 
 /* Rows container and Row */
@@ -85,7 +89,7 @@ margin-bottom:6px;
   width: 100%;
   background: white;
   overflow: hidden;
-  border-right: 1px solid #d5d5d5;
+  border-right: 1px dashed #eee;
 }
 
 .ec-row {
@@ -106,11 +110,11 @@ margin-bottom:6px;
 }
 
 .ec-day-bg {
-  border-left: 1px solid #d5d5d5;
+  border-left: 1px dashed #eee;
 }
 
 .ec-today-bg {
-  background-color: #ffffdd;
+  background-color: #eee;
 }
 
 .ec-row-table {
@@ -121,23 +125,26 @@ margin-bottom:6px;
 
 /* Day header */
 .ec-day-header {
-  color: #444;
-  text-align: right;
-  padding: 0 5px;
+  color: #999;
+  text-align: left;
+  padding: 4px 5px;
   line-height: 16px;
-  border-top: 1px solid #d5d5d5;
-  border-left: 1px solid #d5d5d5;
-  border-bottom: 1px dotted #bbbbbb;
-  background-color: #ecede2;
+  border-top: 1px solid #ccc;
+  border-left: 1px dashed #eee;
+  border-bottom: 1px dotted ###;
+  background-color:###;
   overflow: hidden;
+  font-size:26px;
+	
 }
 
 a.ec-day-link {
-  color: #444;
+  color: #333;
 }
 
 .ec-today-header {
-  background-color: #d7d7ba;
+  background-color: #eee;
+color:black;
 }
 
 .ec-weekend-day-header {
@@ -145,12 +152,12 @@ a.ec-day-link {
 }
 
 .ec-other-month-header {
-  background-color: #efefef;
-  color: #777;
+  background-color: #fff;
+  color: #f0f0f0;
 }
 
 .ec-other-month-bg {
-  
+  background-color:#fff;
 }
 
 

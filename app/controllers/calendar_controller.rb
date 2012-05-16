@@ -7,7 +7,8 @@ class CalendarController < ApplicationController
     @shown_month = Date.civil(@year, @month)
 
     @first_day_of_week = 1
+    @event = Event.new
     @event_strips = Event.event_strips_for_month(@shown_month, @first_day_of_week, :conditions => { :active => true})
   end
-
+  
 end
