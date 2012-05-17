@@ -21,10 +21,15 @@
   margin: 0;
   padding: 0;
   border-bottom: 1px solid #d5d5d5;
-  width:880px;
+  width:910px;
   margin-left:auto;
   margin-right:auto;
   margin-bottom:5px;
+}
+
+.btn-month{
+	font-family:georgia;
+	font-weight:normal;
 }
 
 /* Month name header & links */
@@ -36,9 +41,10 @@ margin-bottom:26px;
 }
 
 .ec-month-name {
-  font-size: 36px;
-  font-weight: bold;
-color:#333;
+  font-size: 32px;
+  font-weight: normal;
+font-family:georgia;
+color:#666;
 }
 
 .ec-month-nav {
@@ -75,7 +81,7 @@ color:#333;
 }
 
 .ec-day-name {
-  font-weight: bold;
+  font-weight: normal;
 border-top:1px solid #ccc;
 background-color:#b0d133;
 color:white;
@@ -135,6 +141,7 @@ color:white;
   background-color:###;
   overflow: hidden;
   font-size:26px;
+padding-top:8px;
 	
 }
 
