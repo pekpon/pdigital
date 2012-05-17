@@ -1,7 +1,6 @@
 require "minitest_helper"
 
 describe "Real Time integration" do
-    
    describe "Real Time" do
      it "View the real time page" do
        visit '/real_time'
