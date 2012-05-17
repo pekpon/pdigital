@@ -1,8 +1,15 @@
 <%= stylesheet_link_tag    "real_time" %>
+<%= javascript_include_tag    "real_time" %>
 
 <div class="white">
 	<div id="section_header"><%=t(:real_time)%></div>
 	<div class="padding">
+		<div class="filter"><%= t(:filter)%> :
+			
+			<button class="btn-comment btn btn-success btn-mini"><i class="icon-comment icon-white"></i> <%=t(:comments)%></button>
+			<button class="btn-article btn-info btn btn-mini"><i class="icon-flag icon-white"></i> <%=t(:news)%></button>
+			<button class="btn-vote btn btn-danger btn-mini"><i class="icon-ok icon-white"></i> <%=t(:vots)%></button>
+		</div>
 		<p><%= t(:real_time_explaining)%></p>
 		<% 
 		votes_array = [] 

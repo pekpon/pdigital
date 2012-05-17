@@ -101,6 +101,10 @@ es:
   comments_new: " comentarios en la notícia: "
   new_comment_user: "Nuevo comentario del usuario "
   in_new: " en la notícia: "
+  new: "Notícia"
+  vote: "Voto"
+  comment: "Comentario"
+  filter: "Filtro"
   
   calendar: "Agenda"
   add_event: "Añadir evento"

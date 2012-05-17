@@ -23,6 +23,48 @@ $(document).ready(function(){
 	$('.btn-close').tooltip({
 		placement:'bottom'
 	});
+	
+	//FUNCTION DISABLE-ENABLE VOTE BUTTON
+	$(".btn-vote").toggle(
+		function() {
+	  		$(".vote").fadeOut();
+			$(".btn-vote").removeClass("btn-danger");
+			$(".icon-ok").removeClass("icon-white");	
+		},
+		function(){
+			$(".vote").fadeIn();
+			$(".btn-vote").addClass("btn-danger");
+			$(".icon-ok").addClass("icon-white");
+		}
+	);
+	
+	//FUNCTION DISABLE-ENABLE COMMENT BUTTON
+	$(".btn-comment").toggle(
+		function() {
+	  		$(".comment").fadeOut();
+			$(".btn-comment").removeClass("btn-success");
+			$(".icon-comment").removeClass("icon-white");	
+		},
+		function(){
+			$(".comment").fadeIn();
+			$(".btn-comment").addClass("btn-success");
+			$(".icon-comment").addClass("icon-white");
+		}
+	);
+	
+	//FUNCTION DISABLE-ENABLE ARTICLE BUTTON
+	$(".btn-article").toggle(
+		function() {
+	  		$(".article").fadeOut();
+			$(".btn-article").removeClass("btn-info");
+			$(".icon-flag").removeClass("icon-white");	
+		},
+		function(){
+			$(".article").fadeIn();
+			$(".btn-article").addClass("btn-info");
+			$(".icon-flag").addClass("icon-white");
+		}
+	);
 });
 
 function show_delete_comment(id)

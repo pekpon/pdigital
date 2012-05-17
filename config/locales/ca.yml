@@ -104,6 +104,7 @@ ca:
   new: "Notícia"
   vote: "Vot"
   comment: "Comentari"
+  filter: "Filtre"
   
   calendar: "Agenda"
   add_event: "Afegir esdeveniment"
