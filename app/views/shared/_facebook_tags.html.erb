@@ -6,7 +6,7 @@
 	<meta property='og:url' content='<%= request.protocol+request.host+request.fullpath %>' />
 	
 	<% if @article.images.first %>
-		<meta property='og:image' content='<%= request.protocol+request.host+@article.images.first.image.url(:thumb) %>'/>
+		<meta property='og:image' content='<%= request.protocol+request.host+@article.images.first.image.url(:facebook) %>'/>
 	<% else %>
 		<meta property='og:image' content='<%= request.protocol+request.host+Configuration.image_url(:image_site) %>'/>
 	<% end %>
