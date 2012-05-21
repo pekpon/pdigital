@@ -1,11 +1,11 @@
-<% if user_signed_in? %>
-	<% if current_user.username == "admin" %>
+<% #if user_signed_in? %>
+	<% # if current_user.username == "admin" %>
 		<div id="info_bar">
-			<span class="like">Ens ajudes a arribar als 100? </span>
+			<span class="like">T'agrada Papioldigital? </span>
 			<iframe src="//www.facebook.com/plugins/like.php?href=http%3A%2F%2Fwww.papioldigital.com%2F&amp;send=false&amp;layout=button_count&amp;width=450&amp;show_faces=false&amp;action=like&amp;colorscheme=light&amp;font&amp;height=21&amp;appId=285250344834364" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:130px; height:21px;" allowTransparency="true"></iframe>
 			
 			<span class="stadistics">
-				<i class="icon-comment"></i> Gràcies per confiar cada dia en Papioldigital!
+				<i class="icon-comment"></i> Gràcies per confiar cada dia en el primer diari online del Papiol!
 			</span>
 			
 			<!--<span class="stadistics">
@@ -14,5 +14,5 @@
 				<b> Usuaris: </b><%= User.all.count %>
 			</span>-->
 		</div>
-	<% end %>
-<% end %>
+	<% #  end %>
+<% # end %>
