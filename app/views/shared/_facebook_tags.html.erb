@@ -32,7 +32,7 @@
 	<meta property='og:title' content='<%=Configuration.value(:title_site).gsub(/'/, "") %>' />
 	<meta property='og:description' content='<%=Configuration.value(:description_site).gsub(/'/, "") %>' />
 	<meta property='og:type' content='website' />
-	<meta property='og:url' content='<%= request.protocol+request.host+root_url %>' />
+	<meta property='og:url' content='<%= request.protocol+request.host+root_fullpath %>' />
 	<meta property='og:image' content='<%= request.protocol+request.host+Configuration.image_url(:image_site)%>' />
 	<meta property='og:site_name' content='<%=Configuration.value(:sitename)%>' />
 	
