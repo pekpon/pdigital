@@ -3,7 +3,7 @@
 	<meta property='og:title' content='<%= @article.title.gsub(/'/, "") %>' />
 	<meta property='og:description' content='<%= @article.resume.gsub(/'/, "") %>' />
 	<meta property='og:type' content='article' />
-	<meta property='og:url' content='<%= request.protocol+request.host+request.fullpath %>' />
+	<meta property='og:url' content='<%= request.protocol+request.host+root_fullpath %>' />
 	
 	<% if @article.images.first %>
 		<meta property='og:image' content='<%= request.protocol+request.host+@article.images.first.image.url(:facebook) %>'/>
