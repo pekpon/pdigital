@@ -32,7 +32,7 @@ ca:
   at: "a les"
   logged_as: "Has entrat amb el nom d'usuari"
   if_not_you: "Si no ets tu"
-  comment_responsability: "Els comentaris son responsabilitat dels usuaris. No està permes faltar al respecte ni escriure comentaris que no estiguin relacionats amb l'article. Ens reservem el dret a esborrar o editar els comentaris que no cumpleixin les normes anteriors."
+  comment_responsability: "Els comentaris son responsabilitat dels usuaris. No està permes faltar al respecte. Ens reservem el dret a esborrar o editar els comentaris que no cumpleixin les normes anteriors."
   
   vote_ok: "Ben dit!"
   vote_ko: "No ho comparteixo..."

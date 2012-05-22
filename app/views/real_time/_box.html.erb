@@ -8,12 +8,12 @@
 	<% elsif type == "comment" %>
 	
 		<span class="image"><span class="label label-success"><i class="icon-comment icon-white"></i> <%=t(:comment)%></span></span>
-	<span class="text"><%=t(:new_comment_user)%> <b><%= object.user.username %></b> <%=t(:in_new)%> <b><%= link_to object.article.title.slice(0,50)+"...", article_path(object.article) %></b></span>
+	<span class="text"><%=t(:new_comment_user)%> <b><%= object.user.username %></b> <%=t(:in_new)%> <b><%= link_to object.commentable.title.slice(0,50)+"...", article_path(object.commentable) %></b></span>
 
 	<% else %>
 	
 		<span class="image"><span class="label label-important"><i class="icon-ok icon-white"></i> <%=t(:vote)%></span></span>
-		<span class="text"><%=t(:there_are_votes)%> <b><%= count %></b> <%=t(:comments_new)%> <b><%= link_to object.article_comment.article.title.slice(0,50)+"...", article_path(object.article_comment.article) %></b></span>
+		<span class="text"><%=t(:there_are_votes)%> <b><%= count %></b> <%=t(:comments_new)%> <b><%= link_to object.comment.commentable.title.slice(0,50)+"...", article_path(object.comment.commentable) %></b></span>
 		
 	<% end %>
 </div>

@@ -1,15 +1,25 @@
-<%= stylesheet_link_tag    "events" %>
+<%= stylesheet_link_tag    "events","comments" %>
 
 <div class="white">
 	<div id="section_header"><%= t(:event) %></div>
-	<div class="left_padding">
+
+	<div class="col_left_article">
 		<div class="name"><%= @event.name %></div>
 		<div class="description_show"><%= raw(@event.full_description) %></div>
 		<div><b><%=t(:start_at)%>:</b> <%= @event.start_at.strftime("%d/%m/%Y %H:%Mh") %></div>
 		<div><b><%=t(:end_at)%>:</b> <%= @event.end_at.strftime("%d/%m/%Y %H:%Mh") %></div>
 		<br>
-		
+	
 		<%= render :partial => "articles/addThis" %>
-		
+	
+		<div id="event_comment_content">
+			
+		<%= render :partial => 'comments/show', :locals => {:id => @event.id, :type => "Event"} %>
+		</div>
+	</div>
+	<div class="col_right_article">
+		<%= render :partial => 'articles/banner', :locals => {:ad_zone => Configuration.value(:openx_inner_zone_a), :ad_code => Configuration.value(:openx_inner_code_a)} %>
+	       
+		<%= render :partial => 'articles/banner', :locals => {:ad_zone => Configuration.value(:openx_inner_zone_b), :ad_code => Configuration.value(:openx_inner_code_b)} %>
 	</div>
 </div>

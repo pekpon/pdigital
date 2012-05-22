@@ -38,22 +38,22 @@
 			
 				<%= render :partial => "box", :locals => {:type => "article", :object => object} %>
 
-			<% elsif object.class.to_s == 'ArticleComment' %>
+			<% elsif object.class.to_s == 'Comment' %>
 			
 				<%= render :partial => "box", :locals => {:type => "comment", :object => object} %>
 				
 			<% else %>
-			
-				<% if votes_array.include? object.article_comment.article %>
+				<% if object.comment.present? %>
+				<% if votes_array.include? object.comment.commentable %>
 				<% else %>
 					<% 
 					total = vote_multiple(@votes,object)
 					if total > Configuration.value(:real_time_votes).to_i %>
 						<%= render :partial => "box", :locals => {:count => total, :type => "vote", :object => object} %>
-						<% votes_array << object.article_comment.article %>
+						<% votes_array << object.comment.commentable %>
 					<% end %>
 				<% end %>
-					
+				<% end %>
 			<% end %>
 		<% end %>
 	</div>

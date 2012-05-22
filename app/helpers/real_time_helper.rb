@@ -3,9 +3,12 @@ module RealTimeHelper
     count = 0
     
 		votes.each do |vote|
-      if vote.article_comment.article == object.article_comment.article
-		    count = count + 1
-		  end
+		  if vote.comment.nil?
+	    else
+        if vote.comment.commentable == object.comment.commentable
+		      count = count + 1
+		    end
+	    end
 	  end
 	  count
   end

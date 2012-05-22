@@ -1,6 +1,6 @@
 class Article < ActiveRecord::Base
 	belongs_to :category
-	has_many :article_comments
+	has_many :comments, :as => :commentable
 	has_many :images
 	has_many :videos
 	is_impressionable
@@ -28,7 +28,7 @@ class Article < ActiveRecord::Base
 	  end
 	  
 	  def comments_day
-	   self.article_comments.where(:created_at => (Date.today.beginning_of_day)..(Date.today.end_of_day)).count
+	   self.comments.where(:created_at => (Date.today.beginning_of_day)..(Date.today.end_of_day)).count
 	  end
 	  
 	  def views_month
@@ -36,7 +36,7 @@ class Article < ActiveRecord::Base
 	  end
 	  
 	  def comments_month
-	   self.article_comments.where(:created_at => (Date.today-30.days)..(Date.today)).count
+	   self.comments.where(:created_at => (Date.today-30.days)..(Date.today)).count
 	  end
 	  ##########################
 
@@ -64,11 +64,11 @@ class Article < ActiveRecord::Base
 
 	  #Number
 	  def comments_count
-	    self.article_comments.count
+	    self.comments.count
 	  end
 	  
 	  def stats_yesterday
-	      comments = self.article_comments.where(:created_at => (Date.yesterday.beginning_of_day)..(Date.yesterday.end_of_day))
+	      comments = self.comments.where(:created_at => (Date.yesterday.beginning_of_day)..(Date.yesterday.end_of_day))
 	      impressions = self.impressionist_count(:filter => :ip_address, :start_date => "#{Date.yesterday.beginning_of_day}", :end_date => "#{Date.yesterday.end_of_day}")
   	    
   	    v = 0

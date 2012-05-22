@@ -26,10 +26,4 @@
 
 <%= render :partial => 'addThis' %>
 
-<div id="article_comments_header"><%=t(:comments)%></div>
-
-<%= render :partial => 'article_comments/box'%>
-
-<div id="article_comments_header"><%=t(:add_comment)%></div>
-<%=@comment%>
-<%= render :partial => 'article_comments/addComment', :locals => {:article => @article} %>
+<%= render :partial => 'comments/show', :locals => { :id => @article.id, :type => "Article"} %>

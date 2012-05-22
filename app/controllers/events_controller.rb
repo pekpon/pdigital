@@ -24,6 +24,7 @@ class EventsController < ApplicationController
   
   def show
     @event = Event.find(params[:id])
+    @comments = @event.comments.where(:active => true).order("created_at ASC")
     
     if @event.active == true
       

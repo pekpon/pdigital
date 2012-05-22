@@ -2,12 +2,13 @@ class ArticleCommentsController < ApplicationController
   # POST /article_comments
   # POST /article_comments.json
   def create
-      @article_comment = ArticleComment.new(:article_id => params[:article_comment][:article_id],
-                                            :comment => params[:article_comment][:comment], 
+      @article_comment = ArticleComment.new(:comment => params[:article_comment][:comment], 
                                             :user => current_user,
-                                            :active => true)
+                                            :active => true, 
+                                            :commentable_id => params[:article_comment][:id], 
+                                            :commentable_type => params[:article_comment][:type])
                               
-      @article = @article_comment.article
+      @article = @article_comment.commentable
       
     if simple_captcha_valid?
       respond_to do |format|

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120514214139) do
+ActiveRecord::Schema.define(:version => 20120522085012) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.integer  "resource_id",   :null => false
@@ -51,9 +51,11 @@ ActiveRecord::Schema.define(:version => 20120514214139) do
     t.integer  "user_id"
     t.integer  "article_id"
     t.boolean  "active"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
     t.string   "username"
+    t.integer  "commentable_id"
+    t.string   "commentable_type"
   end
 
   create_table "articles", :force => true do |t|
@@ -77,6 +79,17 @@ ActiveRecord::Schema.define(:version => 20120514214139) do
     t.string   "name"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+  end
+
+  create_table "comments", :force => true do |t|
+    t.integer  "user_id"
+    t.text     "body"
+    t.integer  "commentable_id"
+    t.string   "commentable_type"
+    t.boolean  "active"
+    t.string   "username"
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
   end
 
   create_table "configurations", :force => true do |t|
@@ -216,6 +229,7 @@ ActiveRecord::Schema.define(:version => 20120514214139) do
     t.string   "ip"
     t.datetime "created_at",         :null => false
     t.datetime "updated_at",         :null => false
+    t.integer  "comment_id"
   end
 
 end

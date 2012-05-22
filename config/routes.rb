@@ -10,9 +10,9 @@ Pdigital::Application.routes.draw do
     match 'the_mosts/day' => 'the_mosts#day', :as => :day
     match 'the_mosts/month' => 'the_mosts#month', :as => :month
     match '/calendar(/:year(/:month))' => 'calendar#index', :as => :calendar, :constraints => {:year => /\d{4}/, :month => /\d{1,2}/}
-    
-    resources :articles, :categories, :polls, :the_mosts, :contact, :article_comments, :real_time, :calendar, :events
-    
+      
+    resources :articles, :categories, :polls, :the_mosts, :contact, :comments, :real_time, :calendar, :events
+
     match 'search/' => 'articles#search'
     match 'ads/' => 'pages#ads'
     
@@ -20,8 +20,8 @@ Pdigital::Application.routes.draw do
     
   end
 
-  match 'article_comments/vote/:id/:vote_type' => 'article_comments#vote', :as => :vote
-  match 'article_comments/delete/:id' => 'article_comments#delete', :as => :delete
+  match 'comments/vote/:id/:vote_type' => 'comments#vote', :as => :vote
+  match 'comments/delete/:id' => 'comments#delete', :as => :delete
   
   match 'polls/vote/:id/:id_option' => 'polls#vote', :as => :vote_poll
   match 'polls/vote_result/:id' => 'polls#vote_result', :as => :vote_result

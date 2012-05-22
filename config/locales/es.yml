@@ -32,7 +32,7 @@ es:
   at: "a las"
   logged_as: "Has entrado como"
   if_not_you: "Si no eres tu"
-  comment_responsability: "Los comentarios son responsabilidad de los usuarios. No está permitido faltar al respeto ni escribir comentarios que no estén relacionados con el artículo. Nos reservamos el derecho a borrar o editar los comentarios que no cumplan con las normas anteriores."
+  comment_responsability: "Los comentarios son responsabilidad de los usuarios. No está permitido faltar al respeto. Nos reservamos el derecho a borrar o editar los comentarios que no cumplan con las normas anteriores."
   
   vote_ok: "Bien dicho!"
   vote_ko: "No lo comparto..."

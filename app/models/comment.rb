@@ -1,13 +1,13 @@
-class ArticleComment < ActiveRecord::Base
+class Comment < ActiveRecord::Base
   belongs_to :commentable, :polymorphic => true
   belongs_to :article
   belongs_to :user
   has_many :votes
   before_save :clean
   
-  validates :comment, :presence => true
-  validates :comment, :length => { :minimum => 2 }
-  validates :comment, :uniqueness => { :scope => [:user_id, :article_id, :active] }
+  validates :body, :presence => true
+  validates :body, :length => { :minimum => 2 }
+  validates :body, :uniqueness => { :scope => [:user_id, :commentable_id, :active] }
   
   def vote(type, ip)
     self.votes.create! :vote_type => type, :ip => ip
@@ -38,8 +38,9 @@ class ArticleComment < ActiveRecord::Base
   private
   
   def clean
-    self.comment = Sanitize.clean(self.comment, :elements => ['a','b','br'])
+    self.body = Sanitize.clean(self.body, :elements => ['a','b','br'])
   end
   
   
 end
+  

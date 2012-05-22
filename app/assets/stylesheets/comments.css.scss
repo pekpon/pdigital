@@ -1,0 +1,101 @@
+// Place all the styles related to the ArticleComments controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.comment_box a{
+	color:#666;
+	text-decoration:none;
+}
+#comments_header{
+	margin-top: 20px;
+	margin-bottom: 10px;
+	padding: 5px;
+	border-bottom: 1px solid #CCC;
+	font-family: Georgia, "Times New Roman", Times, serif;
+	font-style: italic;
+	font-size: 30px;
+	color: #333;
+}
+a:hover{
+	color:#903;
+	text-decoration:none;
+}
+.comment_box{
+	padding: 10px;
+	margin-bottom: 10px;
+	border: 1px solid #CCC;
+	font-family: Verdana, Geneva, sans-serif;
+	font-size: 12px;
+	color: #333;
+	background-color: #F9F9F9;
+}
+.comment_social {
+	margin-left: auto;
+	margin-top: 5px;
+	font-size: 10px;
+	display: table;
+	color: #666;
+}
+.comment_header{
+	color: #999;
+	margin-bottom: 15px;
+}
+.comment_author{
+	color: #903;
+	font-weight: bold;
+}
+.total_vot{
+	font-size:9px;
+}
+.result_vot {
+	color: white;
+	padding: 5px;
+	font-weight: bold;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	text-shadow: 0px 1px black;
+	font-size: 12px;
+}
+.negative {
+	background-color: #C00;
+}
+.positive {
+	background-color: #9C0;
+}
+.neutral{
+	background-color: #999;
+}
+.textarea_comment{
+	width:590px;
+}
+#comment_form .btn-primary{
+	width:200px;
+}
+.disclaimer{
+	margin-bottom:15px;
+	line-height:14px;
+	border:1px solid #f7d358;
+	padding:5px 5px 5px 70px;
+	background-color:#F5F6CE;
+	background-image:url(../assets/alert.png);
+	background-repeat:no-repeat;
+	background-position:20px 10px;
+}
+.delete{
+	display:none;
+	float:right;
+	background-color:#999;
+	color:white;
+	padding:0 3px 0 3px;
+	font-size:11px;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+}
+.delete:hover{
+	background-color:#C11B17;
+}
+.delete a{
+	color:white;
+}
