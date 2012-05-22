@@ -3,6 +3,25 @@ begin
 rescue
   puts "CSV not founded"
 end
+desc "Migrate comments"
+task :migrate_comments => :environment do
+  Comment.delete_all
+     ArticleComment.all.each do |c|
+       comment = Comment.create :body => c.comment, 
+                       :user_id => c.user_id, 
+                       :commentable_id => c.article_id,
+                       :commentable_type => "Article",
+                       :created_at => c.created_at,
+                       :username => c.username,
+                       :active => c.active
+      
+      
+      c.votes.each do |v|
+        v.comment = comment
+        v.save!
+      end 
+  end
+end
 
 desc "Migrate polls"
 task :migrate_polls => :environment do

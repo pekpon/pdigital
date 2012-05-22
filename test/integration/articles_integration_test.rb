@@ -64,9 +64,9 @@ describe "Articles integration" do
         fill_in('user_email', :with => 'test@test.com')
         fill_in('user_password', :with => '123456') 
         click_on('signin_button') 
-        fill_in('article_comment_comment', :with => 'Test comment :D') 
+        fill_in('comment_body', :with => 'Test comment :D') 
         click_on('Send')
-        assert ArticleComment.first.comment.must_equal('Test comment :D')
+        assert Comment.first.body.must_equal('Test comment :D')
       end
       
       it "shouldn't write a comment" do
@@ -75,9 +75,9 @@ describe "Articles integration" do
         fill_in('user_email', :with => 'test@test.com')
         fill_in('user_password', :with => '123456')
         click_on('signin_button')
-        fill_in('article_comment_comment', :with => '')
+        fill_in('comment_body', :with => '')
         click_on('Send')
-        assert ArticleComment.first.must_be_nil true
+        assert Comment.first.must_be_nil true
       end
       
       it "should vote a comment" do
@@ -86,7 +86,7 @@ describe "Articles integration" do
         fill_in('user_email', :with => 'test@test.com')
         fill_in('user_password', :with => '123456')
         click_on('signin_button')
-        fill_in('article_comment_comment', :with => 'Test comment :D')
+        fill_in('comment_body', :with => 'Test comment :D')
         click_on('Send')
         click_on('Vote Ok')
         assert Vote.first.vote_type.must_equal(1)
@@ -98,7 +98,7 @@ describe "Articles integration" do
         fill_in('user_email', :with => 'test@test.com')
         fill_in('user_password', :with => '123456')
         click_on('signin_button')
-        fill_in('article_comment_comment', :with => 'Test comment :D')
+        fill_in('comment_body', :with => 'Test comment :D')
         click_on('Send')
         click_on('Vote Ok')
         visit '/articles/my-showed-article-test'

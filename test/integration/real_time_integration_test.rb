@@ -7,7 +7,7 @@ describe "Real Time integration" do
     user = User.create(:username => 'test', :email => 'a@a.com', :password => '123456')
     user.confirm!
     
-    comment = article.article_comments.create :user => user, :comment => 'gagagag', :active => true
+    comment = article.comments.create :user => user, :body => 'gagagag', :active => true
     
     comment.vote(1, "1.1.1.1") 
     comment.vote(1, "12.1.2.1") 
