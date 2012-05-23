@@ -71,3 +71,6 @@ en:
   start_at: "Start"
   end_at: "End"
   add_event: "Add Event"
+  
+  title: "Title"
+  create: "Create"

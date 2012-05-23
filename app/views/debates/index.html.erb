@@ -1,0 +1,71 @@
+<%= stylesheet_link_tag "debates" %>
+
+<div class="white">
+	<div id="section_header"><%= t(:debates) %></div>
+	<div class="col_left_article">
+		<div class="add_debate">
+			<a class="btn btn-large btn-afegir" data-toggle="modal" href="#myModal"><i class='icon-plus'></i> <%= t(:new_debate)%></a>
+		</div>
+		<span class="debate_header"><%= t(:opened_debates)%></span>
+		<div class="opened_debates">
+			<%= render :partial => "box", :locals => { :debates => @debates }%>
+		</div>
+		
+		<span class="debate_header"><%= t(:finished_debates)%></span>
+		<div class="finished_debates">
+			<%= render :partial => "box", :locals => { :debates => @debates_finished }%>
+		</div>
+	</div>
+	
+	<div class="col_right_article">
+	</div>
+</div>
+
+<!-- MODAL -->
+<div class="modal hide fade" id="myModal">
+  <div class="modal-header">
+    <button class="close" data-dismiss="modal">×</button>
+    <h3><%=t(:new_debate)%></h3>
+  </div>
+	<% if user_signed_in? %>
+  		<div class="modal-body">
+			<%= form_for(@debate) do |f| %>
+			  <% if @debate.errors.any? %>
+			  <div id="errorExplanation">
+			    <h2><%= pluralize(@debate.errors.count, "error") %> prohibited
+			        this post from being saved:</h2>
+			    <ul>
+			    <% @debate.errors.full_messages.each do |msg| %>
+			      <li><%= msg %></li>
+			    <% end %>
+			    </ul>
+			  </div>
+			  <% end %>
+
+			  <div class="field">
+			    <%= f.label t(:title) %>
+			    <%= f.text_field :title, :id => "debate_text_field", :maxlenght => 140 %> <%= t(:max_140) %>
+			  </div>
+			  <div class="field">
+			    <%= f.label t(:description) %>
+			    <%= f.text_area :description, :id => "debate_text_area" %>
+			  </div>
+			<div class="field">
+			    <%= show_simple_captcha %>
+			  </div>
+		</div>
+		<div class="modal-footer">
+			<div class="actions">
+			    <%= submit_tag t(:create), :class => "btn btn-success" %>
+			  </div>
+			<% end %>
+		</div>
+	<% else %>
+    	<div class="modal-body">
+			<div class="alert alert-error" style="margin-right:15px"><%=t(:need_login)%></div>
+		</div>
+		<div class="modal-footer">
+			<%= link_to t(:sign_in), user_session_path, :class => "btn btn-success" %> o <%= link_to t(:register), new_user_registration_path, :class => "btn btn-primary"%>
+		</div>
+	<% end %>
+</div>

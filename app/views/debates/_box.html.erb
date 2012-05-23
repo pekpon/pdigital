@@ -1,0 +1,28 @@
+<% if debates.present? 
+	i = 0%>
+	<% debates.each do |debate| %>
+	<% i = i+1 %>
+	<a href="<%= "/#{I18n.locale}/debates/#{debate.slug}" %>">
+		<div class="<%= "par" if i.even? %> debate_box">
+			<div class="info">
+				<span class="debate_title"><%= debate.title%></span>
+				<span class="debate_author">by <b><%= debate.user.username %></b></span><br>
+				<%= debate.description.slice(0,120) + "..." %>
+			</div>
+			
+			<div class="debate_like">
+			<iframe src="//www.facebook.com/plugins/like.php?locale=ca_ES&amp;href=http%3A%2F%2Fwww.papioldigital.com%2Fca%2Fdebates%3<%=debate.slug%>&amp;send=false&amp;layout=box_count&amp;width=10&amp;show_faces=false&amp;action=like&amp;colorscheme=light&amp;font&amp;height=90&amp;appId=210773058935367" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:80px; height:90px;" allowTransparency="true"></iframe>
+			</div>
+			
+			<div class="replys"><%= c = debate.comments.where(:active => true).count %><br><span class="replys_word"><%= c == 1 ? t(:reply) : t(:replys) %></span></div>
+			
+		</div>
+	</a>
+	<% end %>
+<% else %>
+	<div class="no_debate">
+		<div style="padding:10px;">
+			<%= t(:no_debates)%>
+		</div>
+	</div>
+<% end %>

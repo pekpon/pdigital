@@ -1,0 +1,158 @@
+// Place all the styles related to the Debates controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+/* INDEX */
+.debates h1{
+	font-family:georgia;
+	font-weight:normal;
+	color:#666;
+}
+.opened_debates{
+	margin-bottom:20px;
+	margin-top:10px;
+}
+.finished_debates{
+	margin-top:10px;
+}
+.opened_debates .debate_box{
+	background-color:#e2f4ff;
+	border-left:4px solid #069;
+	display:table;
+	height:93px;
+}
+.finished_debates .debate_box{
+	background-color:#ececec;
+	border-left:4px solid #b94a48;
+}
+.debate_box{
+	width:596px;
+	margin-bottom:8px;
+	height:93px;
+}
+.no_debate{
+	background-color:#eee;
+	border-left:4px solid #b94a48;
+}
+.debate_box:hover{
+	background-color:#dbf4a4 !important;
+}
+.par{
+	background-color:#f8f8f8 !important;
+}
+.debate_title{
+	font-weight:bold;
+	color:#069;
+	font-size:14px;
+}
+.debate_author{
+	font-size:11px;
+	color:#555;
+}
+.debate_header{
+	font-weight:bold;
+	font-size:20px;
+	color:#444;
+}
+.add_debate{
+	margin-bottom:15px;
+}
+.info{
+	padding:10px;
+	float:left;
+	width:400px;
+	color:#777;
+}
+.replys{
+	margin-top:25px;
+	margin-right:23px;
+	color:#444;
+	float:right;
+	font-size:50px;
+	text-align:center;
+}
+.replys_word{
+	font-size:10px;
+	color:#333;
+	text-transform:uppercase;
+}
+.debate_like{
+	margin-top:15px;
+	width:80px;
+	float:right;
+	height:60px;
+	margin-right:12px;
+}
+
+/* SHOW */
+
+#debate_title{
+	padding:10px 0 10px 0;
+	font-family:georgia;
+	line-height:30px;
+	font-size:30px;
+	color:#555;
+}
+#debate_author{
+	color:#666;
+	padding-bottom:5px;
+	border-bottom:1px solid #eee;
+}
+#debate_description{
+	margin-top:10px;
+	background-color:#e2f4ff;
+	border-left:4px solid #069;
+	padding:10px;
+}
+#debate_text_area{
+	width:520px;
+	height:100px;
+}
+.end_date{
+	color:#f60;
+}
+#expand_box{
+	background-color:#dbf4a4;
+	display:table;
+	margin-top:10px;
+	width:596px;
+	height:80px;
+	border-left:4px solid #b0d133;
+}
+#expand_box #info{
+	float:left;
+	padding:10px;
+	margin-top:10px;
+	color:#444;
+	text-align:center;
+	font-size:40px;
+	margin-left:0px;
+}
+.stat{
+	margin-left:15px;
+	margin-right:20px;
+	float:left;
+	text-align:center;
+}
+.text{
+	text-transform:uppercase;
+	font-size:11px;
+}
+#expand_box #facebook{
+	float:right;
+	padding:10px;
+	height:60px;
+	margin-right:25px;
+}
+.comment_box{
+	background-color:#f8f8f8;
+	border:1px solid #f0f0f0;
+	border-left:4px solid #069;
+}
+.comment_author{
+	color:#069;
+}
+#comments_header{
+	color:#444;
+	font-size:24px;
+}

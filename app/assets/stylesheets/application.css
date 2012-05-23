@@ -95,6 +95,10 @@ body{
 .left_padding{
 	padding:5px 0 15px 20px;
 }
+.padding{
+	padding-right:15px;
+	padding-left:15px;
+}
 /*.user-panel{
 	display:table;
 	width:184px;
@@ -130,4 +134,7 @@ body{
 	color:#333;
 	font-size:11px;
 	font-family:verdana;
+}
+.btn-afegir{
+	float:right;
 }

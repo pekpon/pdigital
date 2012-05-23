@@ -6,6 +6,7 @@
 		<li class="portada <%= "active" if controller.controller_name == 'contact' %>"><%= link_to t(:contact), contact_path %></li>
 		<li class="portada <%= "active" if controller.controller_name == 'real_time' %>"><%= link_to t(:real_time), real_time_index_path %></li>
 		<li class="portada <%= "active" if controller.controller_name == 'calendar' %>"><%= link_to t(:calendar), calendar_path %></li>
+		<li class="portada <%= "active" if controller.controller_name == 'debates' %>"><%= link_to t(:debates), debates_path %></li>
 			
 		<%= raw(Configuration.links) %>
 		
