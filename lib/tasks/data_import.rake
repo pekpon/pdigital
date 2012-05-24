@@ -5,7 +5,7 @@ rescue
 end
 desc "Migrate comments"
 task :migrate_comments => :environment do
-  Comment.delete_all
+  #Comment.delete_all
      ArticleComment.all.each do |c|
        comment = Comment.create :body => c.comment, 
                        :user_id => c.user_id, 
