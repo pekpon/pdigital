@@ -6,8 +6,10 @@ describe "Debate integration" do
     @user = User.create :email => 'test@test.com', :username => 'test_user', :password => '123456', :password_confirmation => '123456'
     @user.confirm!
     
-    @debate = @user.debates.create :title => "Debate test one", :description => "kjdjkfdhsjkfhdfjkshjfkds"
-    @debate = @user.debates.create :title => "Debate test two", :description => "dhsjskjdskdhsjkdhsjdhkshdkjshadjhsjdhskadshkas"
+    for i in 0..5
+       @debate = @user.debates.create :title => "Debate num #{i}", :description => "Debate text #{i}"
+       @comment = @user.comments.create :body => "comment one", :commentable => @debate, :commentable_type => "Debate", :active => true
+    end
   end
     
     describe "Debates" do
@@ -19,8 +21,11 @@ describe "Debate integration" do
       
       it "View debates list" do
         visit '/debates'
-        assert page.has_content?('Debate test one').must_be_same_as true
-        assert page.has_content?('Debate test two').must_be_same_as true
+        assert page.has_content?('Debate num 1').must_be_same_as true
+        assert page.has_content?('Debate num 2').must_be_same_as true
+        assert page.has_content?('Debate num 3').must_be_same_as true
+        assert page.has_content?('Debate num 4').must_be_same_as true
+        assert page.has_content?('Debate num 5').must_be_same_as true
       end
       
       it "Can't add a debate" do
@@ -30,9 +35,20 @@ describe "Debate integration" do
       end
       
       it "Can view a full debate" do
-        visit '/debates/1'
-        assert page.has_content?('Debates').must_be_same_as true
+        visit '/debates/debate-num-1'
+        assert page.has_content?('Debate num 1').must_be_same_as true
       end
+      
+      it "Can view a debate messages" do
+        visit '/debates/debate-num-1'
+        assert page.has_content?("test_user").must_be_same_as true
+      end
+      
+      # it "Can vote a debate message" do
+      #         visit '/debates/debate-num-1'
+      #         click_on('Vote Ok')
+      #         assert Vote.first.vote_type.must_equal(1)
+      #       end
       
       # it "Can add a debate" do
       #       #First of all SIGN IN

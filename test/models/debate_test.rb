@@ -16,8 +16,18 @@ describe Debate do
       assert debate.id.must_be :>,0
     end
     
-    it 'shouldnt create and debate' do
+    it 'shouldnt create and debate without nothing' do
       debate = Debate.create :title => '', :description => ''
+      assert debate.id.must_be_nil
+    end
+    
+    it 'shouldnt create and debate without description' do
+      debate = Debate.create :title => 'hdshshks', :description => ''
+      assert debate.id.must_be_nil
+    end
+    
+    it 'shouldnt create and debate without title' do
+      debate = Debate.create :title => '', :description => 'dasdsadsadasd'
       assert debate.id.must_be_nil
     end
     

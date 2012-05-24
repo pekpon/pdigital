@@ -26,6 +26,16 @@ describe Event do
       assert event.id.must_be_nil
     end
     
+    it 'should fail without start' do
+      event = Event.create :name => 'asasas', :start_at => '', :end_at => '2012-01-01 10:00:00'
+      assert event.id.must_be_nil
+    end
+    
+    it 'should fail without end' do
+      event = Event.create :name => 'asasas', :start_at => '2012-01-01 10:00:00', :end_at => ''
+      assert event.id.must_be_nil
+    end
+    
   end
 
 end
