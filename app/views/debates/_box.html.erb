@@ -11,7 +11,7 @@
 			</div>
 			
 			<div class="debate_like">
-			<div class="fb-like" data-href="http://www.papioldigital.com/ca/debates/<%=debate.slug%>" data-send="false" data-layout="box_count" data-width="60" data-show-faces="false">
+			<div class="fb-like" data-href="http://www.papioldigital.com/ca/debates/<%=debate.slug%>" data-send="false" data-layout="box_count" data-width="60" data-show-faces="false"></div>
 			</div>
 			
 			<div class="replys"><%= c = debate.comments.where(:active => true).count %><br><span class="replys_word"><%= c == 1 ? t(:reply) : t(:replys) %></span></div>
