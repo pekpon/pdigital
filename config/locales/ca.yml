@@ -137,6 +137,7 @@ ca:
   total_views: "Lectures"
   ip_views: "Usuaris"
   active_days: "Dies d'activitat"
+  debate_added: "Debat afegit correctament."
   
   total_views_content: "Lectures totals que ha rebut el debat."
   ip_views_content: "Indica quants usuaris han llegit el debat."

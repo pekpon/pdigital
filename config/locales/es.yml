@@ -137,6 +137,7 @@ es:
   total_views: "Lecturas"
   ip_views: "Usuarios"
   active_days: "Días de acividad"
+  debate_added: "Debate añadido correctamente."
 
   total_views_content: "Lecturas totales que ha recibido el debate."
   ip_views_content: "Indica cuantos usuarios han leido el debate."
