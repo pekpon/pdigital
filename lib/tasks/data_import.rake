@@ -14,7 +14,8 @@ task :migrate_comments => :environment do
                        :created_at => c.created_at,
                        :username => c.username,
                        :active => c.active
-      
+                       
+      puts "comment #{comment.id}"
       
       c.votes.each do |v|
         v.comment = comment
