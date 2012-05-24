@@ -12,8 +12,21 @@
 
 	<% else%>
 	
+	<% if object.comment.commentable_type == "Article" %>
+	
 		<span class="image"><span class="label label-important"><i class="icon-ok icon-white"></i> <%=t(:vote)%></span></span>
-		<span class="text"><%=t(:there_are_votes)%> <b><%= count %></b> <%=t(:comments_new)%> <b><%= link_to object.comment.commentable.title.slice(0,50)+"...", article_path(object.comment.commentable) %></b></span>
-		
+		<span class="text"><%=t(:there_are_votes)%> <b><%= count %></b> <%=t(:comments_new_article)%> <b><%= link_to object.comment.commentable.title.slice(0,50)+"...", article_path(object.comment.commentable) %></b></span>
+	
+	<% elsif object.comment.commentable_type == "Debate" %>
+	
+		<span class="image"><span class="label label-important"><i class="icon-ok icon-white"></i> <%=t(:vote)%></span></span>
+		<span class="text"><%=t(:there_are_votes)%> <b><%= count %></b> <%=t(:comments_new_debate)%> <b><%= link_to object.comment.commentable.title.slice(0,50), debate_path(object.comment.commentable) %></b></span>
+	
+	<% else %>
+	
+		<span class="image"><span class="label label-important"><i class="icon-ok icon-white"></i> <%=t(:vote)%></span></span>
+		<span class="text"><%=t(:there_are_votes)%> <b><%= count %></b> <%=t(:comments_new_event)%> <b><%= link_to object.comment.commentable.name.slice(0,50)+"...", event_path(object.comment.commentable) %></b></span>
+	
+	<% end %>
 	<% end %>
 </div>

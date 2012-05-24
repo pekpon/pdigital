@@ -8,26 +8,27 @@
 		<div id="debate_description"><%= raw(@debate.description.gsub(/\n/, '<br>')) %></div>
 		<div id="expand_box">
 			<div id="info">
-				<div class="stat">
+				<a class="stat" rel="popover" data-placement="top" data-content="<%= t(:total_views_content) %>" data-original-title="<%= t(:total_views) %>">
 					<%= @debate.impressionist_count %>
 					<br>
 					<span class="text"><%=t(:total_views)%></span>
-				</div>
-				<div class="stat">
+				</a>
+				
+				<a class="stat" rel="popover" data-placement="top" data-content="<%= t(:ip_views_content) %>" data-original-title="<%= t(:ip_views) %>">
 					<%= @debate.impressionist_count(:filter=>:ip_address) %>
 					<br>
 					<span class="text"><%=t(:ip_views)%></span>
-				</div>
-				<div class="stat">
+				</a>
+				<a class="stat">
 					<%= c = @debate.comments.where(:active => true).count %>
 					<br>
 					<span class="text"><%= c == 1 ? t(:reply) : t(:replys) %></span>
-				</div>
-				<div class="stat">
+				</a>
+				<a class="stat">
 					<%= @debate.active_days %>
 					<br>
 					<span class="text"><%=t(:active_days)%></span>
-				</div>
+				</a>
 			</div>
 			<div id="facebook">
 				<iframe src="//www.facebook.com/plugins/like.php?locale=ca_ES&amp;href=http%3A%2F%2Fwww.papioldigital.com%2Fca%2Fdebates%3<%=@debate.slug%>&amp;send=false&amp;layout=box_count&amp;width=10&amp;show_faces=false&amp;action=like&amp;colorscheme=light&amp;font&amp;height=90&amp;appId=210773058935367" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:80px; height:90px;" allowTransparency="true"></iframe>
@@ -39,7 +40,7 @@
 	
 	<div class="col_right_article">
 		<%= render :partial => 'articles/banner', :locals => {:ad_zone => Configuration.value(:openx_inner_zone_a), :ad_code => Configuration.value(:openx_inner_code_a)} %>
-	       
+	       <br>
 		<%= render :partial => 'articles/banner', :locals => {:ad_zone => Configuration.value(:openx_inner_zone_b), :ad_code => Configuration.value(:openx_inner_code_b)} %>
 	</div>
 </div>

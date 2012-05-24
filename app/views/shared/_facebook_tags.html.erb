@@ -31,7 +31,7 @@
 	<% if @debate.title.present? %>
 	<meta property='og:title' content='Debat: <%= @debate.title.gsub(/'/, "") %>' />
 	<meta property='og:description' content='<%= @debate.description.gsub(/'/, "") %>' />
-	<meta property='og:type' content='debate' />
+	<meta property='og:type' content='activity' />
 	<meta property='og:url' content='<%= request.protocol+request.host+request.fullpath %>' />
 	<meta property='og:image' content='<%= request.protocol+request.host+Configuration.image_url(:image_site)%>'>
 	<meta property='og:site_name' content='<%=Configuration.value(:sitename)%>' />
