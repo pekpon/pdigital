@@ -138,3 +138,7 @@ body{
 .btn-afegir{
 	float:right;
 }
+#debate_tab{
+	background-color:#b0d133;
+	color:#222;
+}
