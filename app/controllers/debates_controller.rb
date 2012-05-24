@@ -16,7 +16,7 @@ class DebatesController < InheritedResources::Base
   
   def show
     @debate = Debate.find(params[:id])
-    @comments = @debate.comments.where(:active => true)
+    @comments = @debate.comments.where(:active => true).order("created_at ASC")
     impressionist(@debate)
     
     respond_to do |format|
