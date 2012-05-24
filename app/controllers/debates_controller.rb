@@ -1,6 +1,6 @@
 class DebatesController < InheritedResources::Base
   def index
-    @debates = Debate.find(:all, :order => "created_at DESC")
+    @debates = Debate.find(:all, :conditions => { :active => true }, :order => "created_at DESC")
     @debates_finished = []
     
     # Debate.joins(:comments).where(
