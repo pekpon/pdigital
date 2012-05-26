@@ -14,8 +14,8 @@
 	<meta property='og:site_name' content='<%=Configuration.value(:sitename)%>' />
 	
 <% elsif @event.present?%>
-	<% if @event.name.present? %>
-	<meta property='og:title' content='Esdeveniment: <%= @event.name.gsub(/'/, "") %>' />
+	<% if @event.title.present? %>
+	<meta property='og:title' content='Esdeveniment: <%= @event.title.gsub(/'/, "") %>' />
 	<% end %>
 	<% if @event.description.present? %>
 	<meta property='og:description' content='<%= @event.description.gsub(/'/, "") %>' />

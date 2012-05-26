@@ -1,32 +1,13 @@
 <div class="box <%= type %>">
 	<span class="time"><%= object.created_at.strftime('%H:%M') %>h</span>
-	<% if type == "article" %>
+	
+	<span class="image">
+		<span class="label label-<%= color %>">
+			<i class="icon-flag icon-white"></i> <%=t(type)%>
+		</span>
+	</span>
 
-		<span class="image"><span class="label label-info"><i class="icon-flag icon-white"></i> <%=t(:new)%></span></span>
-		<span class="text"><%=t(:new_new)%><b><%= link_to object.title.slice(0,50)+"...", article_path(object) %></b></span>
-	
-	<% elsif type == "comment" %>
-	
-		<span class="image"><span class="label label-success"><i class="icon-comment icon-white"></i> <%=t(:comment)%></span></span>
-	<span class="text"><%=t(:new_comment_user)%> <b><%= object.user.username %></b> <%=t(:in_new)%> <b><%= link_to object.commentable.title.slice(0,50)+"...", article_path(object.commentable) %></b></span>
-
-	<% else%>
-	
-	<% if object.comment.commentable_type == "Article" %>
-	
-		<span class="image"><span class="label label-important"><i class="icon-ok icon-white"></i> <%=t(:vote)%></span></span>
-		<span class="text"><%=t(:there_are_votes)%> <b><%= count %></b> <%=t(:comments_new_article)%> <b><%= link_to object.comment.commentable.title.slice(0,50)+"...", article_path(object.comment.commentable) %></b></span>
-	
-	<% elsif object.comment.commentable_type == "Debate" %>
-	
-		<span class="image"><span class="label label-important"><i class="icon-ok icon-white"></i> <%=t(:vote)%></span></span>
-		<span class="text"><%=t(:there_are_votes)%> <b><%= count %></b> <%=t(:comments_new_debate)%> <b><%= link_to object.comment.commentable.title.slice(0,50), debate_path(object.comment.commentable) %></b></span>
-	
-	<% else %>
-	
-		<span class="image"><span class="label label-important"><i class="icon-ok icon-white"></i> <%=t(:vote)%></span></span>
-		<span class="text"><%=t(:there_are_votes)%> <b><%= count %></b> <%=t(:comments_new_event)%> <b><%= link_to object.comment.commentable.name.slice(0,50)+"...", event_path(object.comment.commentable) %></b></span>
-	
-	<% end %>
-	<% end %>
+	<span class="text">
+		<%= raw(text) %><b><%= link_to link , path %></b>
+	</span>
 </div>

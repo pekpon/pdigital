@@ -6,8 +6,8 @@ describe "Calendar integration" do
     @user = User.create :email => 'test@test.com', :username => 'test_user', :password => '123456', :password_confirmation => '123456'
     @user.confirm!
     
-    @event = Event.create :name => "TEST", :start_at => "2012-01-01 00:00:00", :end_at => "2012-01-01 20:00:00", :active => true
-    @event = Event.create :name => "TEdfsfsST", :start_at => "2012-01-01 00:00:00", :end_at => "2012-01-01 20:00:00", :active => false
+    @event = Event.create :title => "TEST", :start_at => "2012-01-01 00:00:00", :end_at => "2012-01-01 20:00:00", :active => true
+    @event = Event.create :title => "TEdfsfsST", :start_at => "2012-01-01 00:00:00", :end_at => "2012-01-01 20:00:00", :active => false
   end
     
     describe "Calendar" do

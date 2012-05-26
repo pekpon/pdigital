@@ -3,8 +3,8 @@ class Event < ActiveRecord::Base
   has_many :comments, :as => :commentable
   
   extend FriendlyId
-  friendly_id :name, :use => :slugged
-  validates :name, :start_at, :end_at, :presence => true
+  friendly_id :title, :use => :slugged
+  validates :title, :start_at, :end_at, :presence => true
   
   def full_description
     if self.description.present?

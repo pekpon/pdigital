@@ -4,7 +4,7 @@
 	<div id="section_header"><%= t(:event) %></div>
 
 	<div class="col_left_article">
-		<div class="name"><%= @event.name %></div>
+		<div class="name"><%= @event.title %></div>
 		<div class="description_show"><%= raw(@event.full_description) %></div>
 		<div><b><%=t(:start_at)%>:</b> <%= @event.start_at.strftime("%d/%m/%Y %H:%Mh") %></div>
 		<div><b><%=t(:end_at)%>:</b> <%= @event.end_at.strftime("%d/%m/%Y %H:%Mh") %></div>

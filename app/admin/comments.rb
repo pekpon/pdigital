@@ -1,2 +1,2 @@
-ActiveAdmin.register Comment, :as => "webComments" do
+ActiveAdmin.register Comment, :as => "Comentaris" do
 end
