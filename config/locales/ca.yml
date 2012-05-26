@@ -108,13 +108,7 @@ ca:
   vote_new: "S'han votat <b>%{var}</b> comentaris a la notícia: "
   vote_deb: "S'han votat <b>%{var}</b> comentaris al debat: "
   vote_eve: "S'han votat <b>%{var}</b> comentaris al esdeveniment: "
-  
-  there_are_votes: "S'han votat "
-  comments_new_article: " comentaris a la notícia: "
-  comments_new_debate: " comentaris al debat: "
-  comments_new_event: " comentaris a l'event: "
-  new_comment_user: "Nou comentari de l'usuari "
-  in_new: " a la notícia: "
+
   new: "Novetat"
   vote: "Vot"
   comment: "Comentari"
