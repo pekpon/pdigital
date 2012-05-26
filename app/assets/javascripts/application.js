@@ -53,16 +53,16 @@ $(document).ready(function(){
 	);
 	
 	//FUNCTION DISABLE-ENABLE ARTICLE BUTTON
-	$(".btn-article").toggle(
+	$(".btn-new").toggle(
 		function() {
-	  		$(".article").fadeOut();
-			$(".btn-article").removeClass("btn-info");
-			$(".icon-flag").removeClass("icon-white");	
+	  		$(".new").fadeOut();
+			$(".btn-new").removeClass("btn-info");
+			$(".icon-plus").removeClass("icon-white");	
 		},
 		function(){
-			$(".article").fadeIn();
-			$(".btn-article").addClass("btn-info");
-			$(".icon-flag").addClass("icon-white");
+			$(".new").fadeIn();
+			$(".btn-new").addClass("btn-info");
+			$(".icon-plus").addClass("icon-white");
 		}
 	);
 });

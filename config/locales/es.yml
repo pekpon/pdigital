@@ -97,9 +97,9 @@ es:
   today: "Hoy"
   yesterday: "Ayer"
   
-  new_new: "Nueva notícia publicada: "
-  new_deb: "Nuevo debate publicado: "
-  new_eve: "Nuevo evento publicado: "
+  new_new: "Nueva <b>notícia</b> publicada: "
+  new_deb: "Nuevo <b>debate</b> publicado: "
+  new_eve: "Nuevo <b>evento</b> publicado: "
   
   comment_new: "Nuevo comentario del usuario <b>%{var}</b> en la notícia: "
   comment_deb: "Nuevo comentario del usuario <b>%{var}</b> en el debate: "

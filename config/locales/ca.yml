@@ -97,9 +97,9 @@ ca:
   today: "Avui"
   yesterday: "Ahir"
   
-  new_new: "Nova notícia publicada: "
-  new_deb: "Nou debat publicat: "
-  new_eve: "Nou event publicat: "
+  new_new: "Nova <b>notícia</b> publicada: "
+  new_deb: "Nou <b>debat</b> publicat: "
+  new_eve: "Nou <b>event</b> publicat: "
   
   comment_new: "Nou comentari de l'usuari <b>%{var}</b> a la notícia: "
   comment_deb: "Nou comentari de l'usuari <b>%{var}</b> al debat: "
