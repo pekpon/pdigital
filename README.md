@@ -7,6 +7,8 @@ PDigital is a NewsPaper platform built on ruby on rails
 Test
  [![Build Status](https://secure.travis-ci.org/pekpon/pdigital.png)](http://travis-ci.org/pekpon/pdigital)
 
+![pdigital Logo](http://img513.imageshack.us/img513/6620/github.png)
+
 Deploy to development
 
 
