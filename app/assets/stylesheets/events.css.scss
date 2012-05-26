@@ -6,17 +6,25 @@
 	width:98%;
 	height:80px;
 }
-.name{
-	font-size:22px;
-	margin-bottom:15px;
-	font-weight:bold;
+#event_title{
+	padding:10px 0 10px 0;
+	font-family:georgia;
+	line-height:30px;
+	font-size:30px;
+	color:#555;
+	border-bottom:1px solid #eee;
 }
-.description_show{
-	border:1px solid #ccc;
-	background-color:#fffcd3;
+#event_description{
+	margin-top:10px;
+	background-color:#e2f4ff;
+	border-left:4px solid #069;
 	padding:10px;
-	margin-bottom:15px;
-	width:580px;
+}
+.info_box{
+	background-color:#dbf4a4;
+	margin-top:8px;
+	border-left:4px solid #b0d133;
+	padding:7px;
 }
 #event_comment_content{
 	width:600px;
