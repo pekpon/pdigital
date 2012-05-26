@@ -48,6 +48,10 @@
 			    <%= f.label t(:description) %>
 			    <%= f.text_area :description, :class => "description" %>
 			  </div>
+			<div class="field">
+		    <%= f.label t(:location) %>
+		    <%= f.text_field :location %>
+		  </div>
 			  <div class="field">
 			    <%= f.label t(:start_at) %>
 			    <%= datetime_select("event", "start_at")%>

@@ -13,12 +13,12 @@ class CommentsController < ApplicationController
         if @comment.save
           format.html { redirect_to @commentable, notice: t(:comment_succefull) }
         else
-          format.html { redirect_to @commentable, alert: t(:comment_error) }
+          format.html { redirect_to :back, alert: t(:comment_error) }
         end
       end
     else
       respond_to do |format|
-          format.html { redirect_to @commentable, alert: t(:captcha_error) }
+          format.html { redirect_to :back, alert: t(:captcha_error)}
       end
     end
   end

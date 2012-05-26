@@ -4,10 +4,11 @@
 	<div id="section_header"><%= t(:event) %></div>
 
 	<div class="col_left_article">
-		<div id ="event_title"><%= @event.title %></div>
-		<div id ="event_description"><%= raw(@event.full_description) %></div>
-		<div class = "info_box"><b><%=t(:start_at)%>:</b> <%= @event.start_at.strftime("%d/%m/%Y %H:%Mh") %></div>
-		<div class = "info_box"><b><%=t(:end_at)%>:</b> <%= @event.end_at.strftime("%d/%m/%Y %H:%Mh") %></div>
+		<div id ="event_show_title"><%= @event.title %></div>
+		<div id ="event_show_description"><%= raw(@event.full_description) %></div>
+		<div class = "info_box"><i class="icon-time"></i> <b><%=t(:start_at)%>:</b> <%= @event.start_at.strftime("%d/%m/%Y %H:%Mh") %></div>
+		<div class = "info_box"><i class="icon-time"></i> <b><%=t(:end_at)%>:</b> <%= @event.end_at.strftime("%d/%m/%Y %H:%Mh") %></div>
+		<div class = "info_box"><i class="icon-flag"></i> <b><%=t(:location)%>:</b> <%= @event.location %></div>
 		<br>
 	
 		<%= render :partial => "articles/addThis" %>

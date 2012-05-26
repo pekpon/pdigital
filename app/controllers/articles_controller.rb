@@ -68,6 +68,7 @@ class ArticlesController < ApplicationController
     @comments = @article.comments.where(:active => true).order("created_at ASC")
     @poll = Poll.last
     @most_moved = Article.most_moved
+    
 
     impressionist(@article)
 

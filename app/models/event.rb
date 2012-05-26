@@ -5,6 +5,7 @@ class Event < ActiveRecord::Base
   extend FriendlyId
   friendly_id :title, :use => :slugged
   validates :title, :start_at, :end_at, :presence => true
+  validates :location, :length => { :maximum => 150 }
   
   def full_description
     if self.description.present?
