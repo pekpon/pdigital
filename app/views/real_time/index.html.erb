@@ -44,6 +44,7 @@
 				
 		<% else %>
 				
+				<% if object.comment.present? %>
 				<% if votes_array.include? object.comment.commentable %>
 				<% else %>
 					<% total = vote_multiple(@votes,object) %>
@@ -52,6 +53,7 @@
 <%= render :partial => "box", :locals => {:color => "important", :count => total, :type => "vote", :object => object, :text => getText(object,total), :path => getPath(object), :link => getLink(object.comment.commentable.title)} %>
 						<% votes_array << object.comment.commentable %>
 					<% end %>
+				<% end %>
 				<% end %>
 			<% end %>
 		<% end %>
