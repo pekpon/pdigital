@@ -1,4 +1,7 @@
 class CommentsController < ApplicationController
+  
+  skip_before_filter :store_location
+  
   def create
       @comment = Comment.new(:body => params[:comment][:body], 
                                             :user => current_user,

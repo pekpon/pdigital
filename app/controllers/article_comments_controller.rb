@@ -1,6 +1,8 @@
 class ArticleCommentsController < ApplicationController
   # POST /article_comments
   # POST /article_comments.json
+  skip_before_filter :store_location
+  
   def create
       @article_comment = ArticleComment.new(:comment => params[:article_comment][:comment], 
                                             :user => current_user,
