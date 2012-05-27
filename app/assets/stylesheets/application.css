@@ -15,6 +15,7 @@
  *= require article_comments
  * require formtastic
 */
+
 body{
 	background-color:#F2F2F2;
 	background-image:url(../assets/background.png);

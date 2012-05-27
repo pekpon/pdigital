@@ -5,7 +5,53 @@
 // To customize the Active Admin interfaces, add your
 // styles here:
 
-.img_thumb{
-	border:1px solid #bbb;
-	padding:1px;
+.tag{
+	padding:3px 10px 3px 10px;
+	font-size:9px;
+	margin-right:5px;
+	margin-bottom:1px;
+	text-align:center;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+}
+.tactive{
+	background-color:#b0d133;
+	color:#fff;
+}
+.tinactive{
+	background-color:#C11B17;
+	color:white;
+}
+.tarticle{
+	background-color:#069;
+	color:white;
+}
+.tdebate{
+	background-color:#f93;
+	color:#222;
+}
+.tevent{
+	background-color:#ff0;
+	color:#222;
+}
+.text{
+	margin-top:10px;
+	font-size:12px;
+}
+.content{
+	display:table;
+	width:100%;
+}
+.box{
+	float:left;
+	font-size:40px;
+	color:#444;
+	padding:10px;
+	border-right:1px solid #ccc;
+	text-align:center;
+	width:70px;
+}
+.last{
+	border-right:0px;
 }
