@@ -85,11 +85,11 @@ ActiveAdmin::Dashboards.build do
       unless comments.empty?
         comments.collect do |com|
           if com.commentable.class.to_s == "Article"
-            li raw("<span class='tag tarticle'>ARTICLE</span>") + link_to(com.body.slice(0,30)+"...", admin_comentari_path(com))
+            li raw("<span class='tag tarticle'>ARTICLE</span>") + link_to(raw(com.body.slice(0,30))+"...", admin_comentari_path(com))
           elsif com.commentable.class.to_s == "Debate"
-            li raw("<span class='tag tdebate'>DEBATE</span>") + link_to(com.body.slice(0,30)+"...", admin_comentari_path(com))
+            li raw("<span class='tag tdebate'>DEBATE</span>") + link_to(raw(com.body.slice(0,30))+"...", admin_comentari_path(com))
           else
-            li raw("<span class='tag tevent'>EVENT</span>") + link_to(com.body.slice(0,30)+"...", admin_comentari_path(com))
+            li raw("<span class='tag tevent'>EVENT</span>") + link_to(raw(com.body.slice(0,30))+"...", admin_comentari_path(com))
           end
         end
       else

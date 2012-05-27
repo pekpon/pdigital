@@ -14,7 +14,7 @@ Pdigital::Application.routes.draw do
     resources :articles, :categories, :polls, :the_mosts, :contact, :comments, :real_time, :calendar, :events, :debates
 
     match 'search/' => 'articles#search'
-    match 'ads/' => 'pages#ads'
+    #match 'ads/' => 'pages#ads'
     
     root :to => 'articles#index'
     
