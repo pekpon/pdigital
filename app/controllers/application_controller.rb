@@ -13,12 +13,6 @@ class ApplicationController < ActionController::Base
     { :locale => I18n.locale }
   end
   
-  def render_404
-    respond_to do |format|
-      format.html { render :template => "errors/404.html.erb", :status => :not_found }
-    end
-  end
-  
   def store_location
       session[:user_return_to] = request.url unless params[:controller] == "devise/sessions"
       # If devise model is not User, then replace :user_return_to with :{your devise model}_return_to
@@ -27,6 +21,17 @@ class ApplicationController < ActionController::Base
   def after_sign_in_path_for(resource)
     return request.env['omniauth.origin'] || stored_location_for(resource) || root_path
   end
+  
+  rescue_from ActiveRecord::RecordNotFound, :with => :record_not_found
+
+  private
+
+    def record_not_found
+      #render :text => "404 Not Found", :status => 404
+      #render "#{RAILS_ROOT}/app/views/errors/404.html.erb", :layout => false
+      render "#{Rails.root}/app/views/errors/404.html.erb", :layout => true 
+    end
+    
 end
 
 
