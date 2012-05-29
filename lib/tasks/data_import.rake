@@ -3,6 +3,25 @@ begin
 rescue
   puts "CSV not founded"
 end
+desc "Migrate activity"
+task :migrate_activity => :environment do
+  @objects = Article.where( :created_at => (Time.now-48.hours)..(Time.now), :published => true  )
+  @objects = @objects + Debate.where( :created_at => (Time.now-48.hours)..(Time.now), :active => true )
+  @objects = @objects + Event.where( :created_at => (Time.now-48.hours)..(Time.now), :active => true )
+      
+  @objects = @objects + Comment.where( :created_at => (Time.now-48.hours)..(Time.now), :active => true )
+  @objects = @objects + Vote.where( :created_at => (Time.now-48.hours)..(Time.now) )
+      
+  @votes = Vote.where(:created_at => (Time.now-48.hours)..(Time.now) )
+      
+  @objects.sort! {|x,z| x.created_at <=> z.created_at}
+  
+  @objects.each do |object|
+    RealTime.create! :trackeable_id => object.id, :trackeable_type => object.class.to_s, :created_at => object.created_at
+    puts "ok"
+  end
+end
+
 desc "Migrate comments"
 task :migrate_comments => :environment do
   Comment.delete_all
