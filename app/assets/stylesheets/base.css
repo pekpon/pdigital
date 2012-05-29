@@ -93,6 +93,31 @@ a{
 	vertical-align:-4px;
 }
 #footer{
-	text-align:center;
-	margin:20px;
+	background-color:#2d2d2d;
+	background:url(http://subtlepatterns.com/patterns/txture.png);
+	display:table;
+	padding:30px 10px 30px 10px;
 }
+.foot_block{
+	float:right;
+	width:200px;
+	color:#eee;
+	margin-right:15px;
+	margin-left:15px;
+}
+.foot_block a{
+	color:#666;
+}
+.foot_block .title{
+	font-size:24px;
+	color:#eee;
+	font-family:georgia;
+	border-bottom:1px dashed #f60;
+}
+.foot_block .flag{
+	vertical-align:0px;
+}
+.foot_social{
+	margin-right:6px;
+}
+
