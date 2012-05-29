@@ -80,6 +80,17 @@ module RealTimeHelper
     end
   end
   
+  def isActive(object)
+    
+    if object.class.to_s == "Article"
+      object.published
+    elsif object.class.to_s == "Vote"
+      true
+    else
+      object.active
+    end
+  end
+  
 end
 
 

@@ -1,17 +1,21 @@
 class RealTimeController < ApplicationController
   
   def index
-    @objects = Article.find(:all, :conditions => { :created_at => (Time.now-48.hours)..(Time.now), :published => true })
-    @objects = @objects + Debate.find(:all, :conditions => { :created_at => (Time.now-48.hours)..(Time.now), :active => true })
-    @objects = @objects + Event.find(:all, :conditions => { :created_at => (Time.now-48.hours)..(Time.now), :active => true })
+
+    # @objects = Article.where( :created_at => (Time.now-48.hours)..(Time.now), :published => true  )
+    #    @objects = @objects + Debate.where( :created_at => (Time.now-48.hours)..(Time.now), :active => true )
+    #    @objects = @objects + Event.where( :created_at => (Time.now-48.hours)..(Time.now), :active => true )
+    #    
+    #    @objects = @objects + Comment.where( :created_at => (Time.now-48.hours)..(Time.now), :active => true )
+    #    @objects = @objects + Vote.where( :created_at => (Time.now-48.hours)..(Time.now) )
+    #    
+    #    @votes = Vote.where(:created_at => (Time.now-48.hours)..(Time.now) )
+    #    
+    #    @objects.sort! {|x,z| x.created_at <=> z.created_at}
+    #    @objects.reverse!
     
-    @objects = @objects + Comment.find(:all, :conditions => {  :created_at => (Time.now-48.hours)..(Time.now), :active => true })
-    @objects = @objects + Vote.find(:all, :conditions => {  :created_at => (Time.now-48.hours)..(Time.now) })
-    
-    @votes = Vote.find(:all, :conditions => {  :created_at => (Time.now-48.hours)..(Time.now) })
-    
-    @objects.sort! {|x,z| x.created_at <=> z.created_at}
-    @objects.reverse!
+@objects = RealTime.where( :created_at => (Time.now-48.hours)..(Time.now) ).order("id DESC")
+@votes = Vote.where(:created_at => (Time.now-48.hours)..(Time.now) )
     
   end
   

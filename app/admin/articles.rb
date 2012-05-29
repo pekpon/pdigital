@@ -34,6 +34,24 @@ ActiveAdmin.register Article do
            f.buttons
     end
     
+    controller do
+      
+      def create
+        @article = Article.new(params[:article])
+
+        #respond_to do |format|
+          if @article.save
+            RealTime.create! :trackeable_id => @article.id, :trackeable_type => "Article"
+            redirect_to(admin_articles_path) 
+          else
+            render active_admin_template('edit.html.arb'), :layout => false
+          end
+       #end
+        
+      end
+      
+    end
+    
     
 end
 

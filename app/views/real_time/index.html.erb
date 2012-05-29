@@ -34,6 +34,9 @@
 		<% end %>
 		<% end %>
 		
+		<% object = object.trackeable %>
+		
+		<% if isActive(object) %>
 		<% if isNew(object) %>
 			
 <%= render :partial => "box", :locals => {:type => "new", :object => object, :color => "info", :text => getText(object,""), :link => getLink(object.title), :path => getPath(object), :icon => "icon-plus" } %>
@@ -55,6 +58,7 @@
 					<% end %>
 				<% end %>
 				<% end %>
+			<% end %>
 			<% end %>
 		<% end %>
 	</div>

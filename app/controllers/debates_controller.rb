@@ -31,6 +31,7 @@ class DebatesController < InheritedResources::Base
     if simple_captcha_valid?
       respond_to do |format|
         if @debate.save
+          RealTime.create! :trackeable_id => @debate.id, :trackeable_type => "Debate"
           format.html  { redirect_to(debate_path,
                         :notice => t(:debate_added)) }
         else
