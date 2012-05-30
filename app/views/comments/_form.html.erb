@@ -1,10 +1,11 @@
 <div id="comment_form">
 	<%= form_tag(comments_path, :method => "POST") do %>
-		<%= text_area(:comment, :body, :rows => 3, :class => "textarea_comment") %><%= submit_tag(t(:send), :class => "btn-primary btn-large") %><br />
+		<%= text_area(:comment, :body, :rows => 3, :class => "textarea_comment") %><br />
 		<%= hidden_field(:comment, :id, :value => id) %>
 		<%= hidden_field(:comment, :type, :value => type ) %>
 		<%= show_simple_captcha %>
-		<div class="disclaimer"><%=t(:comment_responsability) %></div>
 		
+		<div class="disclaimer"><%=t(:comment_responsability) %></div>
+		<%= submit_tag(t(:send), :class => "btn-primary btn-large") %>
 	<% end %>
 </div>
