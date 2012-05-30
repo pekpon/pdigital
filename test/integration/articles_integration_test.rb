@@ -49,7 +49,7 @@ describe "Articles integration" do
         click_link('Sign In')
         fill_in('user_email', :with => 'test@test.com')
         fill_in('user_password', :with => '123456') 
-        click_on('signin_button') 
+        click_on('devise_button') 
         puts page
         assert page.has_content?('Welcome, test_user').must_be_same_as true
       end
@@ -63,7 +63,7 @@ describe "Articles integration" do
         click_link('Sign In')
         fill_in('user_email', :with => 'test@test.com')
         fill_in('user_password', :with => '123456') 
-        click_on('signin_button') 
+        click_on('devise_button') 
         fill_in('comment_body', :with => 'Test comment :D') 
         click_on('Send')
         assert Comment.first.body.must_equal('Test comment :D')
@@ -74,7 +74,7 @@ describe "Articles integration" do
         click_link('Sign In')
         fill_in('user_email', :with => 'test@test.com')
         fill_in('user_password', :with => '123456')
-        click_on('signin_button')
+        click_on('devise_button')
         fill_in('comment_body', :with => '')
         click_on('Send')
         assert Comment.first.must_be_nil true
@@ -85,7 +85,7 @@ describe "Articles integration" do
         click_link('Sign In')
         fill_in('user_email', :with => 'test@test.com')
         fill_in('user_password', :with => '123456')
-        click_on('signin_button')
+        click_on('devise_button')
         fill_in('comment_body', :with => 'Test comment :D')
         click_on('Send')
         click_on('Vote Ok')
@@ -97,7 +97,7 @@ describe "Articles integration" do
         click_link('Sign In')
         fill_in('user_email', :with => 'test@test.com')
         fill_in('user_password', :with => '123456')
-        click_on('signin_button')
+        click_on('devise_button')
         fill_in('comment_body', :with => 'Test comment :D')
         click_on('Send')
         click_on('Vote Ok')
