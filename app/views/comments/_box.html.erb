@@ -18,7 +18,7 @@
 				</span> - <%= comment.created_at.strftime("%d/%m/%Y "+t(:at)+" %H:%M") %>
 				<%= link_to raw("<span class='delete'>eliminar</span>"), delete_url(comment.id), :remote => true, :confirm => "Segur que vols esborrar aquest missatge?" %>
 			</div>			
-			<div class="comment_body"><%= auto_link(raw(comment.body.gsub(/\n/, '<br>'))) %></div>
+			<div class="comment_body"><%= auto_link(raw(comment.body.gsub(/\n/, '<br>')), :html => { :target => '_blank' }) %></div>
 			<div class="comment_social <%= "comment#{comment.id}" %>">
 				
 			<%= render :partial => 'comments/votes', :locals => {:comment => comment} %>
