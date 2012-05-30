@@ -1,8 +1,32 @@
+#section_header{
+	width:90%;
+	font-size:36px;
+}
+#devise_block{
+	padding:5px 20px 15px 20px;
+	border:1px solid #ccc;
+	width:400px;
+	margin:40px auto 50px auto;
+	background-color:#fcfcfc;
+	-moz-box-shadow:0px 0px 5px #888;
+	-webkit-box-shadow: 0px 0px 5px #888;
+	box-shadow: 0px 0px 5px #ccc;
+}
+#devise_block_extra{
+	padding:5px 20px 15px 20px;
+	background:white;
+	border:1px solid #ccc;
+	width:550px;
+	margin:10px auto 30px auto;
+}
+.devise_field{
+	font-size:14px;
+	height:20px;
+	margin:0;
+	width:98%;
+}
 .left_margin{
 	margin-left:16px;
-}
-.size_3{
-	width:91%;
 }
 #error_explanation{
 	margin-bottom:30px;
@@ -23,5 +47,5 @@
 	border:1px solid #666;
 	background-color:#ecffcc;
 	margin-bottom:20px;
-	width:800px;
+	width:96%;
 }

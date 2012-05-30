@@ -1,8 +1,8 @@
 <%= stylesheet_link_tag    "devise" %>
 
-<div class="white">
+<div id="devise_block_extra">
 	<div id="section_header"><%=t(:forgot_password)%></div>
-		<div class="left_padding">
+		
 			<%= form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :post }) do |f| %>
 			  <%= devise_error_messages! %>
 			<br>
@@ -13,11 +13,11 @@
 			%>
 			
 			<%= t(:email) if ie %>
-			 <div><%= f.text_field :email, :placeholder => t(:email), :class => "input_signin" %></div>
+			 <div><%= f.text_field :email, :placeholder => t(:email), :class => "devise_field" %></div>
 			<br>
-			 <div><%= f.submit :id => "signin_button", :class => "btn-primary span3", :value => t(:new_password) %></div>
+			 <div><%= f.submit :id => "devise_button", :class => "btn-primary", :value => t(:new_password) %></div>
 			<% end %>
 
 			<%= render :partial => "devise/shared/links" %>
-		</div>
+		
 </div>

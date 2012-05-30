@@ -1,8 +1,7 @@
 <%= stylesheet_link_tag    "devise" %>
 
-<div class="white">
+<div id="devise_block">
 	<div id="section_header"><%=t(:sign_in)%></div>
-		<div class="left_padding">
 			<%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
 			<br>
 			<% 
@@ -14,18 +13,18 @@
 			%>
 			
 			<%= t(:email) if ie %>
-			 <div><%= f.text_field :email, :placeholder => t(:email), :class => "input_signin" %></div>
+			 <div><%= f.text_field :email, :placeholder => t(:email), :class => "input_signin devise_field" %></div>
 			<br>
 			<%= t(:password) if ie %>
-			 <div><%= f.password_field :password, :placeholder => t(:password), :class => "input_signin" %></div>
+			 <div><%= f.password_field :password, :placeholder => t(:password), :class => "input_signin devise_field" %></div>
 			<br>
 			 <% if devise_mapping.rememberable? -%>
 			   <div><%= f.check_box :remember_me %> <%=t(:remember)%></div>
 			 <% end -%>
 			<br>
-			 <div><%= f.submit :id => "signin_button", :class => "btn-success span3", :value => t(:sign_in) %></div>
+			 <div><%= f.submit :id => "devise_button", :class => "btn-success", :value => t(:sign_in) %></div>
 			<% end %>
 
 			<%= render :partial => "devise/shared/links" %>
-		</div>
+		
 </div>

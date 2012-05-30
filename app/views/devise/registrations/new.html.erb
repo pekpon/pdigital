@@ -1,8 +1,7 @@
 <%= stylesheet_link_tag    "devise" %>
 
-<div class="white">
+<div id="devise_block">
 	<div id="section_header"><%=t(:register)%></div>
-	<div class="left_padding">
 		<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
 			<%= devise_error_messages! %>
 			
@@ -13,17 +12,16 @@
 			%>
 			
 			<%= t(:username) if ie %>
-			<div><%= f.text_field :username, :placeholder => t(:username) %></div><br>
+			<div><%= f.text_field :username, :placeholder => t(:username), :class => "devise_field" %></div><br>
 			<%= t(:email) if ie %>
-		  	<div><%= f.email_field :email, :placeholder => t(:email) %></div><br>
+		  	<div><%= f.email_field :email, :placeholder => t(:email), :class => "devise_field" %></div><br>
 			<%= t(:password) if ie %>
-			<div><%= f.password_field :password, :placeholder => t(:password) %></div><br>
+			<div><%= f.password_field :password, :placeholder => t(:password), :class => "devise_field" %></div><br>
 			<%= t(:r_password) if ie %>
-			<div><%= f.password_field :password_confirmation, :placeholder => t(:r_password) %></div><br>
+			<div><%= f.password_field :password_confirmation, :placeholder => t(:r_password), :class => "devise_field" %></div><br>
 
-			<div><%= f.submit :class => "btn-primary span3", :value => t(:register) %></div>
+			<div><%= f.submit :id => "devise_button", :class => "btn-primary", :value => t(:register) %></div>
 		<% end %>
 
 		<%= render :partial => "devise/shared/links" %>
-	</div>
 </div>

@@ -1,8 +1,8 @@
 <%= stylesheet_link_tag    "devise" %>
 
-<div class="white">
+<div id="devise_block_extra">
 	<div id="section_header"><%=t(:change_password)%></div>
-		<div class="left_padding">
+		
 			<%= form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :put }) do |f| %>
 			  <%= devise_error_messages! %>
 			  <%= f.hidden_field :reset_password_token %>
@@ -16,14 +16,14 @@
 			<div class="password_notice">Si al intentar crear la nova contrasenya et diu que el token ha caducat, fes clic aquí: <%= link_to t(:forgot_password), new_password_path(resource_name) %> i segueix les instruccions.</div>
 			
 			<%= t(:new_password) if ie %>
-			 <div><%= f.password_field :password, :placeholder => t(:new_password), :class => "input_signin" %></div>
+			 <div><%= f.password_field :password, :placeholder => t(:new_password), :class => "devise_field" %></div>
 			<br>
 			<%= t(:r_password) if ie %>
-			<div><%= f.password_field :password_confirmation, :placeholder => t(:r_password), :class => "input_signin" %></div>
+			<div><%= f.password_field :password_confirmation, :placeholder => t(:r_password), :class => "devise_field" %></div>
 			<br>
-			 <div><%= f.submit :id => "signin_button", :class => "btn-primary span3", :value => t(:change_password) %></div>
+			 <div><%= f.submit :id => "devise_button", :class => "btn-primary span3", :value => t(:change_password) %></div>
 			<% end %>
 
 			<%= render :partial => "devise/shared/links" %>
-		</div>
+		
 </div>

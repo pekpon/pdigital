@@ -14,7 +14,7 @@ es:
   search: "Buscar"
   search_min_length: "Recuerda que las palabras de menos de 4 letras no se tendrán en cuenta."
   search_results: "resultados encontrados buscando por: "
-  resend_mail: "Reenviar el mail de activación"
+  resend_mail: "Reenviar activación"
   resend: "Reenviar"
   
   singular_comment: "comentario"
@@ -106,12 +106,12 @@ es:
   comment_eve: "Nuevo comentario del usuario <b>%{var}</b> en el evento: "
   
   vote_new: "Se han votado <b>%{var}</b> comentarios en la notícia: "
-  vote_deb: "Se han votado <b>%{var}</b> comentarios en el debat: "
+  vote_deb: "Se han votado <b>%{var}</b> comentarios en el debate: "
   vote_eve: "Se han votado <b>%{var}</b> comentarios en el evento: "
   
-  new: "Novedad"
-  vote: "Voto"
-  comment: "Comentario"
+  New: "Novedad"
+  Vote: "Voto"
+  Comment: "Comentario"
   filter: "Filtro"
   
   calendar: "Agenda"

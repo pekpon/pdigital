@@ -27,4 +27,9 @@ body{
 select{
 	width:96px;
 }
+#devise_button{
+	height:40px;
+	font-size:18px;
+	width:100%;
+}
 
