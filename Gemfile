@@ -23,6 +23,7 @@ gem "twitter-bootstrap-rails"
 gem 'kaminari'
 gem 'galetahub-simple_captcha', :require => 'simple_captcha', :git => 'git://github.com/galetahub/simple-captcha.git'
 gem 'event-calendar', :require => 'event_calendar'
+gem "rails_autolink", "~> 1.0.9"
 
 group :deploy do
   gem 'capistrano'

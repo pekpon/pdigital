@@ -3,7 +3,23 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .comment_box a{
+	color:#069;
+	text-decoration:none;
+}
+#vote_ok{
 	color:#666;
+	text-decoration:none;
+}
+#vote_ko{
+	color:#666;
+	text-decoration:none;
+}
+#vote_ok:hover{
+	color:#903;
+	text-decoration:none;
+}
+#vote_ko:hover{
+	color:#903;
 	text-decoration:none;
 }
 #comments_header{

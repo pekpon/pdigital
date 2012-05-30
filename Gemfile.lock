@@ -171,6 +171,8 @@ GEM
       railties (= 3.2.0)
     rails-i18n (0.4.0)
       i18n (~> 0.5)
+    rails_autolink (1.0.9)
+      rails (~> 3.1)
     railties (3.2.0)
       actionpack (= 3.2.0)
       activesupport (= 3.2.0)
@@ -249,6 +251,7 @@ DEPENDENCIES
   pg
   rails (= 3.2.0)
   rails-i18n
+  rails_autolink (~> 1.0.9)
   sanitize
   sass-rails (~> 3.2.3)
   sqlite3
