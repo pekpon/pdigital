@@ -6,9 +6,15 @@ describe "Real Time integration" do
     user.confirm!
     
     article = Article.create! :category => Category.create(:name => 'test'), :body => 'Esto es un body', :title => 'Article', 
-    :published_date => Time.now
+    :published_date => Time.now, :active => true
+    article2 = Article.create! :category => Category.first, :body => 'Esto es un body', :title => 'Article2', 
+    :published_date => Time.now, :active => true
+    
     event = Event.create! :title => "Event", :description => "some description", :start_at => "2012-01-01 00:00:00", :end_at => "2012-01-01 20:00:00", :active => true
-    debate = user.debates.create :title => "Debate", :description => "Debate text"
+    event2 = Event.create! :title => "Esdsadvent", :description => "some descripsddsation", :start_at => "2012-01-01 00:00:00", :end_at => "2012-01-01 20:00:00", :active => true
+    
+    debate = user.debates.create :title => "Debate", :description => "Debate text", :active => true
+    debate2 = user.debates.create :title => "Debate2", :description => "Debate text", :active => true
     
     
     acomment = article.comments.create :user => user, :body => 'gagagag', :active => true

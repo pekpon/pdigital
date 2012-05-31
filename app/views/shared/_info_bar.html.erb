@@ -9,9 +9,9 @@
 			</span>
 			
 			<!--<span class="stadistics">
-				<b>Artícles: </b><%= Article.all(:conditions => { :published => true}).count %> |
-				<b> Comentaris: </b><%= ArticleComment.all(:conditions => { :active => true}).count %> |
-				<b> Usuaris: </b><%= User.all.count %>
+				<b>Artícles: </b><% Article.all(:conditions => { :active => true}).count %> |
+				<b> Comentaris: </b><% ArticleComment.all(:conditions => { :active => true}).count %> |
+				<b> Usuaris: </b><% User.all.count %>
 			</span>-->
 		</div>
 	<% #  end %>

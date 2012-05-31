@@ -27,12 +27,12 @@ $(document).ready(function(){
 	//FUNCTION DISABLE-ENABLE VOTE BUTTON
 	$(".btn-vote").toggle(
 		function() {
-	  		$(".vote").fadeOut();
+	  		$(".Vote").fadeOut();
 			$(".btn-vote").removeClass("btn-danger");
 			$(".icon-ok").removeClass("icon-white");	
 		},
 		function(){
-			$(".vote").fadeIn();
+			$(".Vote").fadeIn();
 			$(".btn-vote").addClass("btn-danger");
 			$(".icon-ok").addClass("icon-white");
 		}
@@ -41,12 +41,12 @@ $(document).ready(function(){
 	//FUNCTION DISABLE-ENABLE COMMENT BUTTON
 	$(".btn-comment").toggle(
 		function() {
-	  		$(".comment").fadeOut();
+	  		$(".Comment").fadeOut();
 			$(".btn-comment").removeClass("btn-success");
 			$(".icon-comment").removeClass("icon-white");	
 		},
 		function(){
-			$(".comment").fadeIn();
+			$(".Comment").fadeIn();
 			$(".btn-comment").addClass("btn-success");
 			$(".icon-comment").addClass("icon-white");
 		}
@@ -55,12 +55,12 @@ $(document).ready(function(){
 	//FUNCTION DISABLE-ENABLE ARTICLE BUTTON
 	$(".btn-new").toggle(
 		function() {
-	  		$(".new").fadeOut();
+	  		$(".New").fadeOut();
 			$(".btn-new").removeClass("btn-info");
 			$(".icon-plus").removeClass("icon-white");	
 		},
 		function(){
-			$(".new").fadeIn();
+			$(".New").fadeIn();
 			$(".btn-new").addClass("btn-info");
 			$(".icon-plus").addClass("icon-white");
 		}

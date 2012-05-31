@@ -7,9 +7,47 @@
 			
 			<button class="btn-comment btn btn-success btn-mini"><i class="icon-comment icon-white"></i> <%=t(:comment)%>s</button>
 			<button class="btn-new btn-info btn btn-mini"><i class="icon-plus icon-white"></i> <%=t(:new)%>s</button>
-			<button class="btn-vote btn btn-danger btn-mini"><i class="icon-ok icon-white"></i> <%=t(:vote)%>s</button>
+			<!-- <button class="btn-vote btn btn-danger btn-mini"><i class="icon-ok icon-white"></i> <%#t(:vote)%>s</button> -->
 		</div>
-		<p><%= t(:real_time_explaining)%></p><br><br>
-		<div class="alert alert-info"><b>Espera! </b>Estem treballant per millorar aquesta secció. Tornarà a estar disponible tant aviat com sigui possible. Gràcies!</div>
+		<p><%= t(:real_time_explaining)%></p>
+		
+		<%
+		date1 = false
+		date2 = false
+		date3 = false
+		%>
+		
+		<% @objects.each do |object| %>
+
+			<% if date1 == false %>
+				<div class="date"><% date1 = object.created_at.strftime('%d/%m/%y')%><%=t(:today)%></div>
+			<% end %>
+		
+			<% if object.created_at.strftime('%d/%m/%y') < date1 and date2 == false %>
+				<div class="date"><%= t(:yesterday) %></div>
+				<% date2 = object.created_at.strftime('%d/%m/%y') %>
+			<% end %>
+		
+			<% if date2 != false %>
+				<% if object.created_at.strftime('%d/%m/%y') < date2 and date3 == false %>
+					<div class="date"><%= I18n.localize object.created_at, :format => '%A' %></div>
+					<% date3 = true %>
+				<% end %>
+			<% end %>
+		
+			<% if object.subtype == "New" %>
+		
+				<%= render :partial => "new_box", :locals => {:type => object.trackeable_type, :object => object.trackeable, :subtype => object.subtype } %>
+				
+			<% end %>
+			
+			<% if object.trackeable_type == "Comment" %>
+			
+				<%= render :partial => "comment_box", :locals => {:type => object.trackeable_type, :object => object.trackeable, :user => object.user.username, :subtype => object.subtype} %>
+			
+			<% end %>
+			
+		<% end %>
+		
 	</div>
 </div>

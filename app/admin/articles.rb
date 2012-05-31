@@ -27,7 +27,7 @@ ActiveAdmin.register Article do
             f.input :body, :input_html => { :class => "editor" }
             f.input :article_resume
             f.input :author
-            f.input :published
+            f.input :active
             f.input :published_date, :as => :datepicker, :input_html => { :width => "50px" }
             
         end
@@ -41,7 +41,12 @@ ActiveAdmin.register Article do
 
         #respond_to do |format|
           if @article.save
-            RealTime.create! :trackeable_id => @article.id, :trackeable_type => "Article"
+            
+            RealTime.create!  :trackeable_id => @article.id, 
+                              :trackeable_type => "Article", 
+                              :subtype => "New", 
+                              :user_id => current_user
+            
             redirect_to(admin_articles_path) 
           else
             render active_admin_template('edit.html.arb'), :layout => false

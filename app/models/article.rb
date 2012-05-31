@@ -41,7 +41,7 @@ class Article < ActiveRecord::Base
 	  ##########################
 
     def self.active
-      self.where(:published => true)
+      self.where(:active => true)
     end
 
     def self.category cat

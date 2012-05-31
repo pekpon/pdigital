@@ -14,7 +14,12 @@ class CommentsController < ApplicationController
     if simple_captcha_valid?
       respond_to do |format|
         if @comment.save
-          RealTime.create! :trackeable_id => @comment.id, :trackeable_type => "Comment"
+          
+          RealTime.create!  :trackeable_id => @comment.id, 
+                            :trackeable_type => "Comment", 
+                            :subtype => @commentable.class.to_s, 
+                            :user_id => current_user
+                            
           format.html { redirect_to @commentable, notice: t(:comment_succefull) }
         else
           format.html { redirect_to :back, alert: t(:comment_error) }
@@ -30,7 +35,12 @@ class CommentsController < ApplicationController
   def vote
     @comment = Comment.find(params[:id])
     vote = @comment.vote(params[:vote_type], request.ip) if @comment
-    RealTime.create! :trackeable_id => vote.id, :trackeable_type => "Vote" if vote
+    
+    RealTime.create!  :trackeable_id => vote.id, 
+                              :trackeable_type => "Vote", 
+                              :subtype => vote.comment.commentable.class.to_s, 
+                              :user_id => nil if vote
+    
     respond_to do |format|
       format.js
     end

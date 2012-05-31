@@ -1,4 +1,5 @@
 module CommentsHelper
+  
   def vote_status(comment)
     if comment > 0
       return "positive"

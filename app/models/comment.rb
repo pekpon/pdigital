@@ -34,6 +34,10 @@ class Comment < ActiveRecord::Base
       return true
     end
   end
+  
+  def show_body 
+    my_body = self.body.gsub(/\n/, '<br>')
+  end
 
 
   private

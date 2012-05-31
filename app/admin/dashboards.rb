@@ -58,7 +58,7 @@ ActiveAdmin::Dashboards.build do
   section "Statistics Last 24h", :priority => 1 do
     div :class => "content" do
       div :class => "box" do
-        articles = Article.find(:all, :conditions => { :published => true, :created_at => (Time.now-24.hours)..(Time.now) }).count
+        articles = Article.find(:all, :conditions => { :active => true, :created_at => (Time.now-24.hours)..(Time.now) }).count
         raw(articles.to_s + "<div class = 'text'>Articles</div>")
       end
       

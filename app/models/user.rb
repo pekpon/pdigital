@@ -2,6 +2,7 @@ class User < ActiveRecord::Base
   #has_many :article_comments
   has_many :comments, :as => :commentable
   has_many :debates
+  has_many :real_times
   
   validates :username, :password, :email, :presence => true
   validates :username, :uniqueness => true

@@ -6,7 +6,7 @@ describe "Articles integration" do
         :category => Category.create(:name => 'test'), :published_date => '2012-03-11', :author => 'Test'
         
     @article = Article.create :title => 'My showed article test', :body => 'The body of the test article',
-         :category => Category.first, :published_date => '2012-03-11', :published => true, :author => 'Test'
+         :category => Category.first, :published_date => '2012-03-11', :active => true, :author => 'Test'
          
     @user = User.create :email => 'test@test.com', :username => 'test_user', :password => '123456', :password_confirmation => '123456'
     @user.confirm!

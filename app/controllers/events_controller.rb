@@ -13,7 +13,12 @@ class EventsController < ApplicationController
 
     respond_to do |format|
       if @event.save
-        RealTime.create! :trackeable_id => @event.id, :trackeable_type => "Event"
+        
+        RealTime.create!  :trackeable_id => @event.id, 
+                          :trackeable_type => "Event", 
+                          :subtype => "New", 
+                          :user_id => current_user
+        
         format.html  { redirect_to(calendar_path,
                       :notice => t(:event_added)) }
       else

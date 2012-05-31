@@ -1,0 +1,19 @@
+<div class="box New">
+	<span class="time"><%= object.created_at.strftime('%H:%M') %>h</span>
+	
+	<span class="image">
+		<span class="label label-info">
+			<i class="icon-white icon-plus"></i> <%=t(:New)%>
+		</span>
+	</span>
+
+	<span class="text">
+		<% if type == "Article" %>
+			<%= raw(t(:new_new)) %><b><%= link_to object.title , article_path(object) %></b>
+		<% elsif type == "Debate" %>
+			<%= raw(t(:new_deb)) %><b><%= link_to object.title , debate_path(object) %></b>
+		<% else %>
+			<%= raw(t(:new_eve)) %><b><%= link_to object.title , event_path(object) %></b>
+		<% end %>
+	</span>
+</div>
