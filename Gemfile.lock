@@ -251,7 +251,7 @@ DEPENDENCIES
   pg
   rails (= 3.2.0)
   rails-i18n
-  rails_autolink (~> 1.0.9)
+  rails_autolink
   sanitize
   sass-rails (~> 3.2.3)
   sqlite3

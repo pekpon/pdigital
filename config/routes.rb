@@ -15,7 +15,6 @@ Pdigital::Application.routes.draw do
 
     match 'search/' => 'articles#search'
     #match 'ads/' => 'pages#ads'
-    match 'test/' => 'real_time#test'
     
     root :to => 'articles#index'
     
