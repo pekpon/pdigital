@@ -9,57 +9,7 @@
 			<button class="btn-new btn-info btn btn-mini"><i class="icon-plus icon-white"></i> <%=t(:new)%>s</button>
 			<button class="btn-vote btn btn-danger btn-mini"><i class="icon-ok icon-white"></i> <%=t(:vote)%>s</button>
 		</div>
-		<p><%= t(:real_time_explaining)%></p>
-		<% 
-		votes_array = [] 
-		date1 = false
-		date2 = false
-		date3 = false
-		%>
-		<% @objects.each do |object| %>
-		
-		<% if date1 == false %>
-			<div class="date"><% date1 = object.created_at.strftime('%d/%m/%y')%><%=t(:today)%></div>
-		<% end %>
-		
-		<% if object.created_at.strftime('%d/%m/%y') < date1 and date2 == false %>
-			<div class="date"><%= t(:yesterday) %></div>
-			<% date2 = object.created_at.strftime('%d/%m/%y') %>
-		<% end %>
-		
-		<% if date2 != false %>
-		<% if object.created_at.strftime('%d/%m/%y') < date2 and date3 == false %>
-			<div class="date"><%= I18n.localize object.created_at, :format => '%A' %></div>
-			<% date3 = true %>
-		<% end %>
-		<% end %>
-		
-		<% object = object.trackeable %>
-		
-		<% if isActive(object) %>
-		<% if isNew(object) %>
-			
-<%= render :partial => "box", :locals => {:type => "new", :object => object, :color => "info", :text => getText(object,""), :link => getLink(object.title), :path => getPath(object), :icon => "icon-plus" } %>
-
-		<% elsif isComment(object) %>
-			
-<%= render :partial => "box", :locals => {:type => "comment", :object => object, :color => "success", :text => getText(object,object.user.username), :path => getPath(object), :link => getLink(object.commentable.title), :icon => "icon-comment"} %>
-				
-		<% else %>
-				
-				<% if object.comment.present? %>
-				<% if votes_array.include? object.comment.commentable %>
-				<% else %>
-					<% total = vote_multiple(@votes,object) %>
-
-					<% if total > Configuration.value(:real_time_votes).to_i %>
-<%= render :partial => "box", :locals => {:color => "important", :count => total, :type => "vote", :object => object, :text => getText(object,total), :path => getPath(object), :link => getLink(object.comment.commentable.title), :icon => "icon-ok"} %>
-						<% votes_array << object.comment.commentable %>
-					<% end %>
-				<% end %>
-				<% end %>
-			<% end %>
-			<% end %>
-		<% end %>
+		<p><%= t(:real_time_explaining)%></p><br><br>
+		<div class="alert alert-info"><b>Espera! </b>Estem treballant per millorar aquesta secció. Tornarà a estar disponible tant aviat com sigui possible. Gràcies!</div>
 	</div>
 </div>
