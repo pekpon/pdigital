@@ -43,7 +43,15 @@
 			
 			<% if object.trackeable_type == "Comment" %>
 			
-				<%= render :partial => "comment_box", :locals => {:type => object.trackeable_type, :object => object.trackeable, :user => object.user.username, :subtype => object.subtype} %>
+			<% 
+				user = "usuari"
+				
+				if object.user.present?
+					user = object.user.username
+				end
+			%>
+			
+				<%= render :partial => "comment_box", :locals => {:type => object.trackeable_type, :object => object.trackeable, :user => user, :subtype => object.subtype} %>
 			
 			<% end %>
 			
