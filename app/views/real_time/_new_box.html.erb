@@ -8,12 +8,17 @@
 	</span>
 
 	<span class="text">
+		<% 
+		title = object.title
+		title = object.title.slice(0,35)+"..." if object.title.length > 35
+		%>
+		
 		<% if type == "Article" %>
-			<%= raw(t(:new_new)) %><b><%= link_to object.title , article_path(object) %></b>
+			<%= raw(t(:new_new)) %><b><%= link_to title , article_path(object) %></b>
 		<% elsif type == "Debate" %>
-			<%= raw(t(:new_deb)) %><b><%= link_to object.title , debate_path(object) %></b>
+			<%= raw(t(:new_deb)) %><b><%= link_to title , debate_path(object) %></b>
 		<% else %>
-			<%= raw(t(:new_eve)) %><b><%= link_to object.title , event_path(object) %></b>
+			<%= raw(t(:new_eve)) %><b><%= link_to title , event_path(object) %></b>
 		<% end %>
 	</span>
 </div>

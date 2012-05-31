@@ -8,12 +8,17 @@
 	</span>
 
 	<span class="text">
+		<% 
+		title = object.commentable.title
+		title = object.commentable.title.slice(0,35)+"..." if object.commentable.title.length > 35
+		%>
+		
 		<% if subtype == "Article" %>
-			<%= raw(t(:comment_new, :var => user)) %><b><%= link_to object.commentable.title , article_path(object.commentable) %></b>
+			<%= raw(t(:comment_new, :var => user)) %><b><%= link_to title , article_path(object.commentable) %></b>
 		<% elsif subtype == "Debate" %>
-			<%= raw(t(:comment_deb, :var => user)) %><b><%= link_to object.commentable.title , debate_path(object.commentable) %></b>
+			<%= raw(t(:comment_deb, :var => user)) %><b><%= link_to title , debate_path(object.commentable) %></b>
 		<% else %>
-			<%= raw(t(:comment_eve, :var => user)) %><b><%= link_to object.commentable.title , event_path(object.commentable) %></b>
+			<%= raw(t(:comment_eve, :var => user)) %><b><%= link_to title , event_path(object.commentable) %></b>
 		<% end %>
 	</span>
 </div>
