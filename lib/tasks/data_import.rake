@@ -5,19 +5,32 @@ rescue
 end
 desc "Migrate activity"
 task :migrate_activity => :environment do
-  @objects = Article.where( :created_at => (Time.now-48.hours)..(Time.now), :published => true  )
+  RealTime.delete_all
+  
+  @objects = Article.where( :created_at => (Time.now-48.hours)..(Time.now), :active => true  )
   @objects = @objects + Debate.where( :created_at => (Time.now-48.hours)..(Time.now), :active => true )
   @objects = @objects + Event.where( :created_at => (Time.now-48.hours)..(Time.now), :active => true )
-      
-  @objects = @objects + Comment.where( :created_at => (Time.now-48.hours)..(Time.now), :active => true )
-  @objects = @objects + Vote.where( :created_at => (Time.now-48.hours)..(Time.now) )
-      
-  @votes = Vote.where(:created_at => (Time.now-48.hours)..(Time.now) )
-      
+  @objects = @objects + Comment.where( :created_at => (Time.now-48.hours)..(Time.now), :active => true )    
   @objects.sort! {|x,z| x.created_at <=> z.created_at}
   
   @objects.each do |object|
-    RealTime.create! :trackeable_id => object.id, :trackeable_type => object.class.to_s, :created_at => object.created_at
+    if object.class.to_s == "Comment"
+      
+      RealTime.create!  :trackeable_id => object.id, 
+                        :trackeable_type => object.class.to_s, 
+                        :created_at => object.created_at,
+                        :subtype => object.commentable.class.to_s,
+                        :user_id => object.user
+                        
+    else
+      
+      RealTime.create!  :trackeable_id => object.id, 
+                        :trackeable_type => object.class.to_s, 
+                        :created_at => object.created_at,
+                        :subtype => "New"
+                        
+    end
+      
     puts "ok"
   end
 end
