@@ -20,7 +20,7 @@ task :migrate_activity => :environment do
                         :trackeable_type => object.class.to_s, 
                         :created_at => object.created_at,
                         :subtype => object.commentable.class.to_s,
-                        :user_id => object.user
+                        :user_id => object.user.id
                         
     else
       
