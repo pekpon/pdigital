@@ -18,7 +18,7 @@ class CommentsController < ApplicationController
           RealTime.create!  :trackeable_id => @comment.id, 
                             :trackeable_type => "Comment", 
                             :subtype => @commentable.class.to_s, 
-                            :user_id => current_user
+                            :user_id => current_user.id
                             
           format.html { redirect_to @commentable, notice: t(:comment_succefull) }
         else
