@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120531111742) do
+ActiveRecord::Schema.define(:version => 20120601003952) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.integer  "resource_id",   :null => false
@@ -196,10 +196,12 @@ ActiveRecord::Schema.define(:version => 20120531111742) do
   create_table "real_times", :force => true do |t|
     t.integer  "trackeable_id"
     t.string   "trackeable_type"
-    t.datetime "created_at",      :null => false
-    t.datetime "updated_at",      :null => false
+    t.datetime "created_at",                     :null => false
+    t.datetime "updated_at",                     :null => false
     t.string   "subtype"
     t.integer  "user_id"
+    t.integer  "count",           :default => 1
+    t.integer  "object_id"
   end
 
   create_table "simple_captcha_data", :force => true do |t|

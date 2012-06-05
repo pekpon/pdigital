@@ -36,11 +36,12 @@ class CommentsController < ApplicationController
     @comment = Comment.find(params[:id])
     vote = @comment.vote(params[:vote_type], request.ip) if @comment
     
-    RealTime.create!  :trackeable_id => vote.id, 
-                              :trackeable_type => "Vote", 
-                              :subtype => vote.comment.commentable.class.to_s, 
-                              :user_id => nil if vote
-    
+    # RealTime.create!  :trackeable_id => @comment.commentable, 
+    #                       :trackeable_type => "Vote", 
+    #                       :subtype => @comment.commentable.class.to_s, 
+    #                       :user_id => nil,
+    #                       :object_id => @comment.commentable.id if vote
+                              
     respond_to do |format|
       format.js
     end
