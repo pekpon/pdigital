@@ -165,7 +165,7 @@ es:
   add_email: "Añadir correo electrónico"
   configuration: "Configuración"
   config_explain: "<b>Para añadir cualquiera de los servicios de arriba, contacta con nosotros.</b><br/>Como creador de la página, solo tú ves el panel de configuración de arriba."
-  commerce_added: "Comercio añadido con éxito!"
+  commerce_added: "Comercio añadido con éxito! "
   commerce_error: "Ha habido un error. Revisa que los datos sean correctos!"
   active_error: "Debes estar autorizado para poder añadir un comercio."
   authorized: "Soy propietario/a de este negocio o estoy autorizado para añadirlo al directorio de comercios."
