@@ -1,0 +1,97 @@
+<%= stylesheet_link_tag "commerces" %>
+
+<div class="white">
+	<div id="section_header"><%= t(:commerces) %></div>
+		<div class="add_commerce">
+			<a class="btn btn-large btn-primary btn-afegir" data-toggle="modal" href="#myModal"><i class='icon-plus icon-white'></i> <%= t(:new_commerce)%></a>
+		</div>
+		
+			<% count = 1 %>
+			<% @commerces.each do |c| %>
+			
+			<% count = count - 1 %>
+			<% if count == 0 %>
+			<div class="content">
+				<% count = 3 %>
+			<% end %>
+			
+			<div class="box">
+				<div class="image">
+					<% if c.pro == true and c.image.url(:index) != "/images/index/missing.png" %>
+						<%= link_to (image_tag c.image.url(:index)), commerce_path(c) %>
+					<% else %>
+						<%= link_to (image_tag("commerce.png")), commerce_path(c) %>
+					<% end %>
+				</div>
+				
+				<%= link_to raw("<div class='name'>#{c.name}</div>"), commerce_path(c) %>
+			</div>
+			
+			<% if count == 1 %>
+				<%= raw("</div>") %>
+			<% end %>
+			
+			<% end %>
+			
+			<% if count > 1 %>
+				<%= raw("</div>") %>
+			<% end %>
+			
+</div>
+
+<!-- MODAL -->
+<div class="modal hide fade" id="myModal">
+  <div class="modal-header">
+    <button class="close" data-dismiss="modal">×</button>
+    <h3><%=t(:new_commerce)%></h3>
+  </div>
+	<% if user_signed_in? %>
+  		<div class="modal-body">
+			<%= form_for(@commerce) do |f| %>
+			  <% if @commerce.errors.any? %>
+			  <div id="errorExplanation">
+			    <h2><%= pluralize(@commerce.errors.count, "error") %> prohibited
+			        this post from being saved:</h2>
+			    <ul>
+			    <% @commerce.errors.full_messages.each do |msg| %>
+			      <li><%= msg %></li>
+			    <% end %>
+			    </ul>
+			  </div>
+			  <% end %>
+
+			  <div class="field">
+			    <%= f.label t(:commerce_name) %>
+			    <%= f.text_field :name, :id => "commerce_text_field" %>
+			  </div>
+			  <div class="field">
+			    <%= f.label t(:street) %>
+			    <%= f.text_field :street, :id => "commerce_text_field" %>
+			  </div>
+			<div class="field">
+			    <%= f.label t(:telephone) %>
+			    <%= f.text_field :telephone, :id => "commerce_text_field" %>
+			  </div>
+			<div class="field">
+			    <%= show_simple_captcha %>
+			  </div>
+			<div class="field">
+			    <%= f.check_box :active %> <span class="active"><%= t(:authorized) %></span>
+			  </div>
+
+		</div>
+		<div class="modal-footer">
+			<div class="actions">
+			    <%= submit_tag t(:create), :class => "btn btn-success" %>
+			  </div>
+			<% end %>
+		</div>
+	<% else %>
+    	<div class="modal-body">
+			<div class="alert alert-error" style="margin-right:15px"><%=t(:need_login)%></div>
+		</div>
+		<div class="modal-footer">
+			<%= link_to t(:sign_in), user_session_path, :class => "btn btn-success" %> o <%= link_to t(:register), new_user_registration_path, :class => "btn btn-primary"%>
+		</div>
+	<% end %>
+</div>

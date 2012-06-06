@@ -3,6 +3,7 @@ class User < ActiveRecord::Base
   has_many :comments, :as => :commentable
   has_many :debates
   has_many :real_times
+  has_many :commerces
   
   validates :username, :password, :email, :presence => true
   validates :username, :uniqueness => true

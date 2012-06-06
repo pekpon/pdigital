@@ -11,12 +11,15 @@ Pdigital::Application.routes.draw do
     match 'the_mosts/month' => 'the_mosts#month', :as => :month
     match '/calendar(/:year(/:month))' => 'calendar#index', :as => :calendar, :constraints => {:year => /\d{4}/, :month => /\d{1,2}/}
       
-    resources :articles, :categories, :polls, :the_mosts, :contact, :comments, :real_time, :calendar, :events, :debates
+    resources :articles, :categories, :polls, :the_mosts, :contact, :comments, :real_time, :calendar, :events, :debates, :commerces
 
     match 'search/' => 'articles#search'
     #match 'ads/' => 'pages#ads'
     
     root :to => 'articles#index'
+    
+    match 'contact' => 'contact#new', :as => 'contact', :via => :get
+    match 'contact' => 'contact#create', :as => 'contact', :via => :post
     
   end
 
@@ -26,9 +29,6 @@ Pdigital::Application.routes.draw do
   match 'polls/vote/:id/:id_option' => 'polls#vote', :as => :vote_poll
   match 'polls/vote_result/:id' => 'polls#vote_result', :as => :vote_result
   match 'polls/poll_options/:id' => 'polls#poll_options', :as => :poll_options
-  
-  match 'contact' => 'contact#new', :as => 'contact', :via => :get
-  match 'contact' => 'contact#create', :as => 'contact', :via => :post
   
   mount ImperaviRails::Engine => "/imperavi"
   

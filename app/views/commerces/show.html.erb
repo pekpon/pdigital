@@ -1,0 +1,102 @@
+<%= stylesheet_link_tag "commerces","comments" %>
+
+<div class="white">
+	<div id="section_header"><%= @commerce.name %></div>
+	
+	<div class="content">
+		
+		<div class="left_col">
+			
+			<div class="info">
+				<i class="icon-flag"></i>
+				<b> <%=t(:street)%>: </b>
+				<%= @commerce.street %>
+			</div>
+			<div class="info">
+				<i class="icon-signal"></i>
+				<b> <%=t(:telephone)%>: </b>
+				<%= @commerce.telephone %>
+			</div>
+			
+			<% if @commerce.email.present? and @commerce.pro == true %>
+			<div class="info label1">
+				<i class="icon-envelope"></i>
+				<b> <%=t(:email)%>: </b>
+				<%= @commerce.email %>
+			</div>
+			<% end %>
+			
+			<% if @commerce.web.present? and @commerce.pro == true %>
+			<div class="info label1">
+				<i class="icon-home"></i>
+				<b> <%=t(:web)%>: </b>
+				<%= @commerce.web %>
+			</div>
+			<% end %>
+			
+			<% if @commerce.schedule.present? and @commerce.pro == true %>
+			<div class="info label2">
+				<i class="icon-time"></i>
+				<b> <%=t(:schedule)%>: </b><br/>
+				<%= raw(@commerce.schedule.gsub("\n","<br/>")) %>
+			</div>
+			<% end %>
+			
+			<% if @commerce.pro != true and @commerce.user == current_user %>
+			<!-- NO PREMIUM USER ADVISE -->
+			<br/>
+			<div id="config_tab">
+				<i class="icon-th icon-white"></i> <%= t(:configuration) %>
+			</div>
+			<ul>
+				<li class="new_list">
+					<i class="icon-plus"></i> <%= link_to t(:add_image), contact_path() %>
+				</li>
+				<li class="new_list">
+					<i class="icon-plus"></i> <%= link_to t(:add_email), contact_path() %>
+				</li>
+				<li class="new_list">
+					<i class="icon-plus"></i> <%= link_to t(:add_scheudle), contact_path() %>
+				</li>
+				<li class="new_list">
+					<i class="icon-plus"></i> <%= link_to t(:add_map), contact_path() %>
+				</li>
+				<li class="new_list">
+					<i class="icon-plus"></i> <%= link_to t(:add_comments), contact_path() %>
+				</li>
+			</ul>
+			<div class="alert alert-error">
+				<%= raw(t(:config_explain)) %>
+			</div>
+			<% end %>
+			<!-- END ADVISE -->
+			
+			<% if @commerce.map_code.present? and @commerce.pro == true %>
+			<br/>
+			<div>
+				<%= raw(@commerce.map_code) %>
+			</div>
+			<% end %>
+			
+			<% if @commerce.pro == true %>
+			<div id="commerce_comment_content">
+
+			<%= render :partial => 'comments/show', :locals => {:id => @commerce.id, :type => "Commerce"} %>
+			</div>
+			<% end %>
+			
+		</div>
+		
+		<div class="right_col">
+			<div class="image inside_image">
+				<% if @commerce.pro == true and @commerce.image.url(:index) != "/images/index/missing.png" %>
+					<%= image_tag @commerce.image.url(:inside) %>
+				<% else %>
+					<%= image_tag("commerce.png") %>
+				<% end %>
+			</div>
+		</div>
+		<% @commerce.telephone %>
+		
+	</div>
+</div>

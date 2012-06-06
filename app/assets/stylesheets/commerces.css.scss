@@ -1,0 +1,107 @@
+// Place all the styles related to the Commerces controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.add_commerce{
+	margin-right:15px;
+	margin-bottom:50px;
+}
+.content{
+	display:table;
+	width:938px;
+}
+
+.box{
+	margin:15px;
+	width:280px;
+	float:left;
+	/*-moz-box-shadow: 0px 0px 5px #ccc;
+	-webkit-box-shadow: 0px 0px 5px #ccc;
+	box-shadow: 0px 0px 5px #ccc;*/
+}
+.image{
+	border:1px solid #ccc;
+	padding:10px;
+	-moz-box-shadow: 0px 0px 10px #eee;
+	-webkit-box-shadow: 0px 0px 10px #eee;
+	box-shadow: 0px 0px 10px #eee;
+	margin-bottom:10px;
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	border-radius: 2px;
+}
+.name{
+	font-size:20px;
+	padding:10px;
+	color:#222;
+	font-family:georgia;
+	text-align:center;
+	background-color:#b0d133;
+	color:white;
+	text-shadow: 1px 1px #333;
+	-moz-box-shadow: 0px 0px 10px #eee;
+	-webkit-box-shadow: 0px 0px 10px #eee;
+	box-shadow: 0px 0px 10px #eee;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+}
+.name:hover{
+	background-color:#069;
+}
+
+.left_col{
+	float:left;
+	width:560px;
+	padding:0 0 0 15px;
+}
+.right_col{
+	float:right;
+	width:325px;
+	padding:0 10px 0 0;
+}
+.name_inside{
+	text-align:left;
+	font-size:25px;	
+	margin-bottom:10px;
+}
+.inside_image{
+	width:300px;
+	text-align:center;
+	font-size:20px;
+}
+.info{
+	margin-bottom:4px;
+	padding:7px;
+	background-color:#f9f9f9;
+	border-left:3px solid #ccc;
+}
+.label1{
+	background-color:#DBF4A4;
+	border-left:3px solid #b0d133;
+}
+.label2{
+	background-color:#E2F4FF;
+	border-left:3px solid #069;
+}
+#comment_body{
+	width:550px;
+}
+#config_tab{
+	background-color:#666;
+	color:white;
+	padding:7px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+}
+.new_option{
+	padding:7px;
+}
+.new_list{
+	list-style:none;
+	margin-top:5px;
+}
+.active{
+	color:red;
+}
