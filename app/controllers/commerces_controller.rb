@@ -1,7 +1,11 @@
 class CommercesController < ApplicationController
   
   def index
-    @commerces = Commerce.where(:active => true).order("pro DESC, name ASC")
+    commerces1 = Commerce.where(:active => true, :pro => true).order("name ASC")
+    commerces2 = Commerce.where(:active => true, :pro => nil).order("name ASC")
+    commerces3 = Commerce.where(:active => true, :pro => false).order("name ASC")
+    
+    @commerces = commerces1 + commerces2 + commerces3
     @commerce = Commerce.new
     
     respond_to do |format|
