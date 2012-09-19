@@ -27,12 +27,12 @@
 	</div>
 	
 	<div class="foot_block">
-		<span class="title">Papioldigital</span><br><br>
-		Papioldigital és el primer diari online del Papiol que et fa arribar tota l'actualitat del poble.<br><br><br>
-		<%=link_to image_tag("foot_face.png", :class => "foot_social"), "http://www.facebook.com/groups/246548322071821/" %>
-		<%=link_to image_tag("foot_twitter.png", :class => "foot_social"), "https://twitter.com/#!/papioldigital" %>
+		<span class="title"><%= Configuration.value(:sitename)%></span><br><br>
+		<%= Configuration.value(:sitename)%> <%= Configuration.value(:foot_description)%><br><br><br>
+		<%=link_to image_tag("foot_face.png", :class => "foot_social"), Configuration.value(:facebook_web), :target => "_blank"  %>
+		<%=link_to image_tag("foot_twitter.png", :class => "foot_social"), Configuration.value(:twitter_web), :target => "_blank"  %>
 		<%=image_tag "foot_rss.png", :class => "foot_social" %>
-		<%=image_tag "foot_you.png", :class => "foot_social" %>
+		<%=link_to image_tag("foot_you.png", :class => "foot_social"), Configuration.value(:youtube_channel), :target => "_blank" %>
 	</div>
 	</div>
 	

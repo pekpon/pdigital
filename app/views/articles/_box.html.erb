@@ -7,8 +7,6 @@
 	<%= render :partial => 'facebook_social', :locals => { :code => facebook_code } if x == facebook_pos.to_i%>
 	<% end %>
 	
-	<%= render :partial => 'twitter_social' if x == Configuration.value(:twitter_plugin_pos).to_i and twitter %>
-	
 	<div class="articleBoxContent <%= "lastBox" if article == articles.last %>">
 		<div class="article_title"><%= link_to article.title, article_path(article) %></div>
 		<div class="article_subtitle"><%= article.subtitle %></div>

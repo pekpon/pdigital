@@ -31,13 +31,20 @@ Configuration.create([
   {:key => 'description_site', :values => 'pDigital is a online newspaper used in towns and cities'},
   {:key => 'image_site', :values => 'http://placehold.it/100x100'},
   {:key => 'sitename', :values => 'pDigital'},
+  
+  {:key => 'like_sentence', :values => 'Thanks for visiting!'},
+  {:key => 'facebook_like_button', :values => 'www.google.com'},
+  {:key => 'facebook_web', :values => 'Facebook Website'},
+  {:key => 'foot_description', :values => 'is a newspaper....'},
+  {:key => 'youtube_channel', :values => 'Youtube Channel'},
+  {:key => 'twitter_web', :values => 'Twitter Website'},
 
   {:key => 'analytics_tracking', :values => "UU-00000-AA"},
   
   {:key => 'link1', :values => "<li class='portada'><a href='http://www.WEB_DE_DESTINO.com' target='_blank'>NOMBRE_A_MSTRAR</a></li>"},
   {:key => 'link2', :values => "<li class='portada'><a href='http://www.WEB_DE_DESTINO.com' target='_blank'>NOMBRE_A_MSTRAR</a></li>"},
   
-  {:key => 'openx_header', :values => ''},
+  {:key => 'openx_header', :values => 'OpenX Header'},
   
   {:key => 'openx_home_zone_a', :values => '[ZONE]'},
   {:key => 'openx_home_code_a', :values => '[CODE]'},
