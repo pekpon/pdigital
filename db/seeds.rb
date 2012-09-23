@@ -31,6 +31,7 @@ Configuration.create([
   {:key => 'description_site', :values => 'pDigital is a online newspaper used in towns and cities'},
   {:key => 'image_site', :values => 'http://placehold.it/100x100'},
   {:key => 'sitename', :values => 'pDigital'},
+  {:key => 'domain', :values => 'http://URL_WEB'},
   
   {:key => 'like_sentence', :values => 'Thanks for visiting!'},
   {:key => 'facebook_like_button', :values => 'www.google.com'},

@@ -11,7 +11,7 @@ class CategoriesController < ApplicationController
    # GET /categories/1
    def show
      @category = Category.find(params[:id])
-     @articles = @category.articles.order('id DESC').page(params[:page]).per(10)
+     @articles = @category.articles.where(:active => true).order('id DESC').page(params[:page]).per(10)
 
      respond_to do |format|
        format.html # show.html.erb
