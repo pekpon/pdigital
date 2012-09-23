@@ -37,16 +37,16 @@ class DebatesController < InheritedResources::Base
                             :subtype => "New", 
                             :user_id => current_user
           
-          format.html  { redirect_to(debate_path,
+          format.html  { redirect_to(debates_path,
                         :notice => t(:debate_added)) }
         else
-          format.html  { redirect_to(debate_path,
+          format.html  { redirect_to(debates_path,
                         :alert => t(:debate_error)) }
         end
       end
     else
       respond_to do |format|
-        format.html  { redirect_to(debate_path,
+        format.html  { redirect_to(debates_path,
                       :alert => t(:captcha_error)) }
       end
     end
