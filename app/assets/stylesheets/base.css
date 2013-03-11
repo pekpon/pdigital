@@ -93,8 +93,7 @@ a{
 	vertical-align:-4px;
 }
 #footer{
-	background-color:#2d2d2d;
-	background:url(http://subtlepatterns.com/patterns/txture.png);
+	background-color:#222;
 	display:table;
 	padding:30px 10px 30px 10px;
 	width:100%;

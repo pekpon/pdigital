@@ -5,7 +5,11 @@ ActiveAdmin.register Image do
       image_tag(img.image.url(:thumb),:class => "img_thumb")
     end
 		column "Article" do |post|
-      post.article.title
+      unless post.article.nil?
+        post.article.title
+      else
+        "Imatge ZOMBIE, sense noticia"
+      end
     end
 		default_actions
 	end
